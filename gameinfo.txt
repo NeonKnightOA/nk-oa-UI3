@@ -21,11 +21,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 gametypes {
-  { "Deathmatch" 0 }
+  { "Free For All" 0 }
   { "Tournament" 1 }
   { "Team Deathmatch" 3 } //any and all maps marked for ffa will be team
-  { "Capture the flag" 4 }
-  { "One flag" 5 }
+  { "Capture The Flag" 4 }
+  { "One Flag CTF" 5 }
   { "Overload" 6 }
   { "Harvester" 7 }
   { "Elimination" 8 }
@@ -39,24 +39,23 @@ gametypes {
 
 joingametypes {
   { "Don't care" -1 }
-  { "Deathmatch" 0 }
+  { "Free For All" 0 }
   { "Tournament" 1 }
-  { "Team DM" 3 } //any and all maps marked for ffa will be team
-  { "CTF" 4 }
-  { "One flag" 5 }
+  { "Team Deathmatch" 3 } //any and all maps marked for ffa will be team
+  { "Capture The Flag" 4 }
+  { "One Flag CTF" 5 }
   { "Overload" 6 }
   { "Harvester" 7 }
-  { "Elim" 8 }
-  { "CTF Elim" 9 }
-  { "LMS" 10 }
-  { "Double D" 11 }
-  { "Dom" 12 }
-  { "Possess" 13 }
+  { "Elimination" 8 }
+  { "CTF Elimination" 9 }
+  { "Last Man Standing" 10 }
+  { "Double Domination" 11 }
+  { "Domination" 12 }
+  { "Possession" 13 }
 
 }
 
 // Single Player Maps
-maps	{
 
 // Column Info
 // Name - Name of the map, displayed under levelshot/cinematic
@@ -64,59 +63,394 @@ maps	{
 // Maximum amount of clients possible (for bots etc)
 // Bot?
 
-
 // NOTE: These map picks are not final.  They are temporary for testing the progress of the campaign.
-
-	// Mapname Mapfilename TeamMembers OpponentName ParTimeToBeatsPerGametype
-	// ffa maps 
-/*0 */	{ "Egyptian Trouble" "oacmpdm3" "4" "ssssss" 2 "4" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*1 */	{ "Some Spacee" "oacmpdm4" "4" "ilara sorceress" 2 "4" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*2 */	{ "Blitzkrieg Base" "blitzkrieg2" "4" "yon xyphr" 2 "4" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*3 */	{ "The Other Side" "oacmpdm5" "4" "saki ilara yon" 2 "4" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*4 */	{ "The Crypt" "oacmpdm1" "6" "xyphr sorceress ssssss" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*5 */	{ "The Sanctuary" "oacmpdm9" "6" "saki ssssss yon" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*6 */	{ "Subdivision" "oacmpdm8" "6" "ilara yon saki" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*7 */	{ "nullmap" "pul1duel-oa" "6" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-
-	// ctf maps 
-/*8 */	{ "Uphill Battle" "oacmpctf2" "6" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*9 */	{ "Inner Yard" "ctF_inyard" "16" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*10*/	{ "OBEY 9" "ps9ctf" "10" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*11*/	{ "Turtles Forever" "oacmpctf1" "10" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*12*/	{ "Foul Compromise" "ctf_compromise" "16" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*13*/	{ "Encephalomalacia" "mlctf1beta" "10" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*14*/	{ "Where Fears Collide" "oa_spirit3" "10" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*15*/	{ "Facing Giants" "oacmpctf3" "24" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-
-	// DOM maps
-/*16*/	{ "Under Destruction" "oacmpdm10" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*17*/	{ "Sleek grinder" "sleekgrinder" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*18*/	{ "Floating Tower" "oa_koth2" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*19*/	{ "Strange House" "oa_shouse" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*20*/	{ "nullmap" "sleekgrinder" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*21*/	{ "nullmap" "sleekgrinder" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*22*/	{ "nullmap" "sleekgrinder" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*23*/	{ "nullmap" "sleekgrinder" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-	
-	// OVERLOAD maps
-
-/*24*/	{ "Factory" "oa_reptctf11" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*25*/	{ "Obey 37" "ps37ctf2" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*26*/	{ "Der Koberwascher" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*27*/	{ "nullmap" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*28*/	{ "nullmap" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*29*/	{ "nullmap" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*30*/	{ "nullmap" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*31*/	{ "nullmap" "pul1ctf" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-
-	// Tournament maps
-
-/*32*/	{ "Five Steps Ahead" "pul1duel-oa" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*33*/	{ "Plan 6 from The" "oacmpdm7" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*34*/	{ "Danger Arena" "oacmpdm2" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*35*/	{ "Slime Facility" "slimefac" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*36*/	{ "Big Fan of Death" "pxlfan" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*37*/	{ "Aggressor" "Aggressor" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*38*/	{ "Space Spire" "czest1tourney" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-/*39*/	{ "nullmap" "pul1duel-oa" "8" "ilara" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
+// Mapname - Mapfilename - TeamMembers  OpponentName - ParTimeToBeatsPerGametype
+maps {
+  // Tutorial
+/*00*/ { "OA Tutorial" "oad_tutorial"  "1" "ayumi" 0 "110" 1 "110" 10 "110"}
+  // FFA
+/*01*/ { "Mini Lava Arena" "oad_minilava"  "1" "assassin tony" 0 "110" 1 "110" 2 "110" 10 "110"}
+/*02*/ { "Outer Facility"  "oad_outerfac"  "1" "beret skelebot" 0 "110" 1 "110" 2 "110" 10 "110"}
+/*03*/ { "Slime Facility"  "slimefac"  "1" "assassin tony beret skelebot" 0 "110" 1 "110" 2 "110" 10 "110"}
+  // Pos
+/*04*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "1" "penguin metalbot" 0 "110" 1 "110" 2 "110" 10 "110" 13 "110"}
+/*05*/ { "Under Working 2.0" "oad_underworks" "1" "major sergei" 0 "110" 2 "110" 3 "110" 8 "110" 10 "110" 12 "110" 13 "110"}
+/*06*/ { "Nemesis Online"  "oad_nemesis" "1" "major sergei penguin metalbot" 0 "110" 1 "110" 2 "110" 10 "110" 12 "110"}
+  // LMS
+/*07*/ { "The Fan of Death!" "pxlfan"   "1" "grunt s_marine" 0 "110" 1 "110" 2 "110" 3 "110" 10 "110" 12 "110"}
+/*08*/ { "Galmevish Hub 1" "oad_galmevish" "1" "sarge grism" 0 "110" 1 "110" 2 "110" 5 "110" 7 "120" 10 "110" 11 "110" 13 "110"}
+/*09*/ { "Shine Up There"  "oa_shine"  "1" "sarge grism grunt s_marine" 0 "110" 2 "110" 10 "110"}
+  // TDM
+/*10*/ { "Floating Tower"  "oa_koth2"  "2" "" 0 "110" 2 "110" 3 "110" 10 "110" 12 "110"}
+/*11*/ { "Khaos Everywhere!" "kaos2"   "3" "" 0 "110" 2 "110" 3 "110" 10 "110"}
+/*12*/ { "Repulsive Castle" "oa_koth1"  "3" "" 0 "110" 2 "110" 3 "110" 10 "110"}
+  // Elim
+/*13*/ { "Kit's Mini Arena"  "oa_minia"  "2" "" 0 "110" 1 "110" 2 "110" 8 "110" 10 "110" 11 "110"}
+/*14*/ { "Meister's Temple" "mlca1"   "3" "" 0 "110" 2 "110" 3 "110" 8 "110" 10 "110" 12 "110"}
+/*15*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+  // DOM
+/*16*/ { "Strange House"  "oa_shouse"  "2" "" 0 "110" 1 "110" 2 "110" 3 "110" 8 "110" 10 "110" 11 "110" 12 "110"}
+/*17*/ { "Monastery At Night" "czest1dm"  "3" "" 0 "110" 1 "110" 2 "110" 3 "110" 8 "110" 10 "110" 12 "110"}
+/*18*/ { "Sleek Grinder"  "sleekgrinder"  "3" "" 0 "110" 2 "110" 3 "110" 10 "110" 12 "110"}
+  // DD
+/*19*/ { "Obey 37 2.0"  "ps37ctf2"  "2" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*20*/ { "Outer Gates"  "ctf_gate1"  "3" "" 2 "110" 4 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+/*21*/ { "Obey 9"   "ps9ctf"   "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+  // Over
+/*22*/ { "Lava Arena CTF"  "oac_lava2"  "2" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*23*/ { "Factory Collision" "oac_factory"  "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*24*/ { "Encephalomacia" "mlctf1beta"  "4" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+  // 1FCTF
+/*25*/ { "McKinley Retributes" "am_mckinleyish2" "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*26*/ { "Thor's Valhalla"  "oa_Thor"  "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+/*27*/ { "Hydrocapture 2.0" "hydronex2"  "4" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+  // CTF
+/*28*/ { "Sago's Outer Castle" "oac_sago2" "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" 13 "110"}
+/*29*/ { "Der Koberwascher" "pul1ctf"   "4" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*30*/ { "Bridge of Despair" "oac_czest2"  "5" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" 13 "110"}
+  // eCTF
+/*31*/ { "Inner Yard"   "ctf_inyard"  "4" "" 2 "110" 4 "110" 5 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+/*32*/ { "Where Fears Collide" "oa_spirit3"  "5" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*33*/ { "Sago's Inner Castle" "oasago1"  "5" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+  // Harv
+/*34*/ { "Thornish Revenge" "am_thornish"  "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*35*/ { "Floating Platforms" "oa_ctf2"   "3" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/*36*/ { "Improved Bases" "oa_bases3plus3" "5" "" 2 "110" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+  // 1on1
+/*37*/ { "Trial By Error"  "oa_rpg3dm2"  "1" "cyber-garg" 0 "110" 1 "110" 2 "110" 10 "110"}
+/*38*/ { "Five Steps Ahead" "pul1duel-oa"  "1" "angelyss" 0 "110" 1 "110" 2 "110" 10 "110"}
+/*39*/ { "The Space Spire" "oad_czest1_1on1" "1" "kyonshi" 0 "110" 1 "110" 2 "110" 10 "110" 13 "110"}
+  // 1on1 Bonus
+/*40*/ { "Aggressor Tendency" "oad_aggress" "1" "arachna" 0 "110" 1 "110" 2 "110" 10 "110" 12 "110" 13 "110"}
+/*  // Other
+/ *?? * / { "Space Contact"  "am_spacecont" "" "" 0 "110" 10 "110"}
+/ *??* / { "Foul Compromise" "ctf_compromise" "" "" 4 "110" 5 "110" 8 "110" 9 "110" 11 "110" 12 "110"}
+/ *??* / { "Holy Wars"   "czest3ctf"  "" "" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/ *??* / { "Some Awful Bases" "oa_bases7"  "" "" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110"}
+/ *?? * / { "Projectile Vomit" "oa_pvomit"  "" "" 0 "110" 10 "110"}
+/ *?? * / { "Suspended Satellite" "suspended"  "" "" 0 "110" 10 "110"} */
 }
+
+// Endurance ladder - FFA
+// MapName - FileName - OpponentName - FragLimit - TimeLimit
+maps_ffa {
+/*00*/ { "OA Tutorial" "oad_tutorial" "2" "10" "10" }
+/*01*/ { "Mini Lava Arena" "oad_minilava" "2" "10" "10" }
+/*02*/ { "Outer Facility" "oad_outerfac" "2" "10" "10" }
+/*03*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "2" "10" "15" }
+/*04*/ { "Aggressor Tendency" "oad_aggress" "2" "15" "15" }
+/*05*/ { "The Fan of Death!" "pxlfan" "3" "15" "15" }
+/*06*/ { "Slime Facility" "slimefac" "3" "15" "15" }
+/*07*/ { "Kit's Mini Arena"  "oa_minia" "3" "15" "15" }
+/*08*/ { "Five Steps Ahead" "pul1duel-oa" "3" "15" "15" }
+/*09*/ { "Nemesis Online" "oad_nemesis" "3" "15" "15" }
+/*10*/ { "Galmevish Hub 1" "oad_galmevish" "3" "15" "15" }
+/*11*/ { "Trial By Error"  "oa_rpg3dm2" "3" "20" "15" }
+/*12*/ { "Lava Arena" "am_lavaarena" "3" "20" "15" }
+/*13*/ { "Projectile Vomit" "oa_pvomit" "3" "20" "15" }
+/*14*/ { "Space Contact"  "am_spacecont" "3" "20" "15" }
+/*15*/ { "Suspended Satellite" "suspended" "3" "20" "15" }
+/*16*/ { "Shine Up There" "oa_shine" "4" "20" "15" }
+/*17*/ { "Floating Tower" "oa_koth2" "4" "20" "15" }
+/*18*/ { "Strange House"  "oa_shouse" "4" "20" "15" }
+/*19*/ { "Khaos Everywhere!" "kaos2" "4" "20" "15" }
+/*20*/ { "Repulsive Castle" "oa_koth1" "4" "20" "15" }
+/*21*/ { "Meister's Temple" "mlca1" "4" "20" "15" }
+/*22*/ { "Monastery At Night" "czest1dm" "4" "20" "15" }
+/*23*/ { "Under Working 2.0" "oad_underworks" "4" "20" "15" }
+/*24*/ { "Sleek Grinder"  "sleekgrinder" "5" "25" "15" }
+/*25*/ { "The Space Spire" "oad_czest1_1on1" "3" "15" "15" }
+}
+
+// Endurance ladder - 1on1
+// MapName - FileName - OpponentName - FragLimit - TimeLimit
+maps_1on1 {
+/*00*/ { "OA Tutorial" "oad_tutorial" "ayumi" "10" "10" }
+/*01*/ { "Mini Lava Arena" "oad_minilava" "assassin" "10" "10" }
+/*02*/ { "Outer Facility" "oad_outerfac" "beret" "10" "10" }
+/*03*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "tony" "10" "10" }
+/*04*/ { "Aggressor Tendency" "oad_aggress" "skelebot" "10" "10" }
+/*05*/ { "The Fan of Death!" "pxlfan" "metalbot" "10" "10" }
+/*06*/ { "Slime Facility" "slimefac" "ayumi" "10" "15" }
+/*07*/ { "Kit's Mini Arena"  "oa_minia" "neko" "10" "15" }
+/*08*/ { "Five Steps Ahead" "pul1duel-oa" "ghost" "10" "15" }
+/*09*/ { "Galmevish Hub 1" "oad_galmevish" "cyber-garg" "15" "15" }
+/*10*/ { "Nemesis Online" "oad_nemesis" "gargoyle" "15" "15" }
+/*11*/ { "Trial By Error"  "oa_rpg3dm2" "merman" "15" "15" }
+/*12*/ { "Lava Arena" "am_lavaarena" "headcrash" "15" "15" }
+/*13*/ { "Strange House"  "oa_shouse" "angelyss" "15" "15" }
+/*14*/ { "Monastery At Night" "czest1dm" "arachna" "15" "15" }
+/*15*/ { "The Space Spire" "oad_czest1_1on1" "kyonshi" "15" "15" }
+}
+
+// Endurance ladder - TDM
+// MapName - FileName - TeamMembers - FragLimit - TimeLimit
+maps_team {
+/*01*/ { "The Fan of Death!" "pxlfan" "2" "10" "10" }
+/*02*/ { "Nemesis Online" "oad_nemesis" "2" "10" "15" }
+/*03*/ { "Floating Tower" "oa_koth2" "3" "15" "15" }
+/*04*/ { "Strange House"  "oa_shouse" "3" "15" "15" }
+/*05*/ { "Khaos Everywhere!" "kaos2" "3" "20" "15" }
+/*06*/ { "Repulsive Castle" "oa_koth1" "3" "20" "15" }
+/*07*/ { "Meister's Temple" "mlca1" "3" "20" "15" }
+/*08*/ { "Monastery At Night" "czest1dm" "3" "20" "15" }
+/*09*/ { "Under Working 2.0" "oad_underworks" "4" "25" "15" }
+/*10*/ { "Sleek Grinder"  "sleekgrinder" "5" "25" "15" }
+}
+
+// Endurance ladder - CTF
+// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+maps_ctf {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Outer Gates" "ctf_gate1" "3" "4" "15" }
+/*08*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*09*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*10*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*11*/ { "Inner Yard" "ctf_inyard" "4" "5" "15" }
+/*12*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*13*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*14*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*15*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*16*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*17*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*18*/ { "Foul Compromise" "ctf_compromise" "5" "6" "15" }
+/*19*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*20*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*21*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - 1FCTF
+// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+maps_1fctf {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Galmevish Hub 1" "oad_galmevish" "3" "4" "15" }
+/*08*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*09*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*10*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*11*/ { "Inner Yard" "ctf_inyard" "4" "5" "15" }
+/*12*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*13*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*14*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*15*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*16*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*17*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*18*/ { "Foul Compromise" "ctf_compromise" "5" "6" "15" }
+/*19*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*20*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*21*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - Overload
+// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+maps_over {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*08*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*09*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*10*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*11*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*12*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*13*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*14*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*15*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*16*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*17*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*18*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*19*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - Harvester
+// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+maps_harv {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "10" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "15" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "15" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "15" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "15" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "15" "15" }
+/*07*/ { "Where Fears Collide" "oa_spirit3" "3" "20" "15" }
+/*08*/ { "Galmevish Hub 1" "oad_galmevish" "3" "20" "15" }
+/*09*/ { "Obey 9" "ps9ctf" "3" "20" "15" }
+/*10*/ { "Sago's Outer Castle" "oac_sago2" "4" "20" "15" }
+/*11*/ { "Encephalomacia" "mlctf1beta" "4" "20" "15" }
+/*12*/ { "Improved Bases" "oa_bases3plus3" "4" "20" "15" }
+/*13*/ { "Der Koberwascher" "pul1ctf" "4" "25" "15" }
+/*14*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "25" "15" }
+/*15*/ { "Sago's Inner Castle" "oasago1" "5" "25" "15" }
+/*16*/ { "Hydrocapture 2.0" "hydronex2" "5" "25" "15" }
+/*17*/ { "Some Awful Bases" "oa_bases7" "5" "25" "15" }
+/*18*/ { "Bridge of Despair" "oac_czest2" "5" "256" "15" }
+/*19*/ { "Thor's Valhalla" "oa_Thor" "5" "30" "15" }
+/*20*/ { "Holy Wars" "czest3ctf" "5" "30" "15" }
+}
+
+// Endurance ladder - Elimination
+// MapName - FileName - TeamMembers - Rounds - TimeLimit
+maps_elim {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Outer Gates" "ctf_gate1" "3" "4" "15" }
+/*08*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*09*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*10*/ { "Kit's Mini Arena"  "oa_minia" "3" "4" "15" }
+/*11*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*12*/ { "Inner Yard" "ctf_inyard" "4" "5" "15" }
+/*13*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*14*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*15*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*16*/ { "Strange House"  "oa_shouse" "4" "5" "15" }
+/*17*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*18*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*19*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*20*/ { "Monastery At Night" "czest1dm" "5" "6" "15" }
+/*21*/ { "Under Working 2.0" "oad_underworks" "5" "6" "15" }
+/*22*/ { "Foul Compromise" "ctf_compromise" "5" "6" "15" }
+/*23*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*24*/ { "Meister's Temple" "mlca1" "5" "6" "15" }
+/*25*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*26*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*27*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - CTF Elimination
+// MapName - FileName - TeamMembers - Rounds - TimeLimit
+maps_ectf {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Outer Gates" "ctf_gate1" "3" "4" "15" }
+/*08*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*09*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*10*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*11*/ { "Inner Yard" "ctf_inyard" "4" "5" "15" }
+/*12*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*13*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*14*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*15*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*16*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*17*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*18*/ { "Foul Compromise" "ctf_compromise" "5" "6" "15" }
+/*19*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*20*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*21*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - LMS
+// MapName - FileName - TeamMembers - RoundLimit - TimeLimit
+maps_lms {
+/*00*/ { "OA Tutorial" "oad_tutorial" "2" "5" "10" }
+/*01*/ { "Mini Lava Arena" "oad_minilava" "2" "5" "10" }
+/*02*/ { "Outer Facility" "oad_outerfac" "2" "5" "10" }
+/*03*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "2" "5" "15" }
+/*04*/ { "Aggressor Tendency" "oad_aggress" "2" "5" "15" }
+/*05*/ { "The Fan of Death!" "pxlfan" "3" "7" "15" }
+/*06*/ { "Slime Facility" "slimefac" "3" "7" "15" }
+/*07*/ { "Kit's Mini Arena"  "oa_minia" "3" "7" "15" }
+/*08*/ { "Five Steps Ahead" "pul1duel-oa" "3" "7" "15" }
+/*09*/ { "Galmevish Hub 1" "oad_galmevish" "3" "7" "15" }
+/*10*/ { "Trial By Error"  "oa_rpg3dm2" "3" "7" "15" }
+/*11*/ { "Lava Arena" "am_lavaarena" "3" "7" "15" }
+/*12*/ { "Projectile Vomit" "oa_pvomit" "3" "7" "15" }
+/*13*/ { "Space Contact"  "am_spacecont" "3" "7" "15" }
+/*14*/ { "Suspended Satellite" "suspended" "3" "7" "15" }
+/*15*/ { "Shine Up There" "oa_shine" "4" "9" "15" }
+/*16*/ { "Floating Tower" "oa_koth2" "4" "9" "15" }
+/*17*/ { "Strange House"  "oa_shouse" "4" "9" "15" }
+/*18*/ { "Khaos Everywhere!" "kaos2" "4" "9" "15" }
+/*19*/ { "Repulsive Castle" "oa_koth1" "4" "9" "15" }
+/*20*/ { "Meister's Temple" "mlca1" "4" "9" "15" }
+/*21*/ { "Monastery At Night" "czest1dm" "4" "9" "15" }
+/*22*/ { "Under Working 2.0" "oad_underworks" "4" "9" "15" }
+/*23*/ { "Sleek Grinder"  "sleekgrinder" "5" "11" "15" }
+/*24*/ { "The Space Spire" "oad_czest1_1on1" "3" "5" "15" }
+}
+
+// Endurance ladder - Double Domination
+// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+maps_dd {
+/*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
+/*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
+/*03*/ { "Thornish Revenge" "am_thornish" "3" "3" "15" }
+/*04*/ { "Floating Platforms" "oa_ctf2" "3" "4" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "4" "15" }
+/*06*/ { "McKinley Retributes" "am_mckinleyish2" "3" "4" "15" }
+/*07*/ { "Kit's Mini Arena"  "oa_minia" "3" "4" "15" }
+/*08*/ { "Outer Gates" "ctf_gate1" "3" "4" "15" }
+/*09*/ { "Where Fears Collide" "oa_spirit3" "3" "4" "15" }
+/*10*/ { "Obey 9" "ps9ctf" "3" "4" "15" }
+/*11*/ { "Galmevish Hub 1" "oad_galmevish" "3" "4" "15" }
+/*12*/ { "Sago's Outer Castle" "oac_sago2" "4" "5" "15" }
+/*13*/ { "Inner Yard" "ctf_inyard" "4" "5" "15" }
+/*14*/ { "Encephalomacia" "mlctf1beta" "4" "5" "15" }
+/*15*/ { "Improved Bases" "oa_bases3plus3" "4" "5" "15" }
+/*16*/ { "Der Koberwascher" "pul1ctf" "4" "5" "15" }
+/*17*/ { "Lava Arena CTF (XL)" "am_lavactfxl" "4" "5" "15" }
+/*18*/ { "Strange House"  "oa_shouse" "4" "5" "15" }
+/*19*/ { "Sago's Inner Castle" "oasago1" "5" "6" "15" }
+/*20*/ { "Hydrocapture 2.0" "hydronex2" "5" "6" "15" }
+/*21*/ { "Foul Compromise" "ctf_compromise" "5" "6" "15" }
+/*22*/ { "Some Awful Bases" "oa_bases7" "5" "6" "15" }
+/*23*/ { "Bridge of Despair" "oac_czest2" "5" "6" "15" }
+/*24*/ { "Thor's Valhalla" "oa_Thor" "5" "6" "15" }
+/*25*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
+}
+
+// Endurance ladder - Domination
+// MapName - FileName - OpponentName - CaptureLimit - TimeLimit
+maps_dom {
+/*01*/ { "Aggressor Tendency" "oad_aggress" "2" "100" "15" }
+/*02*/ { "The Fan of Death!" "pxlfan" "3" "100" "15" }
+/*03*/ { "Outer Gates" "ctf_gate1" "3" "100" "15" }
+/*04*/ { "Lava Arena" "am_lavaarena" "3" "125" "15" }
+/*05*/ { "Floating Tower" "oa_koth2" "4" "125" "15" }
+/*06*/ { "Strange House"  "oa_shouse" "4" "125" "15" }
+/*07*/ { "Inner Yard" "ctf_inyard" "4" "150" "15" }
+/*08*/ { "Meister's Temple" "mlca1" "4" "150" "15" }
+/*09*/ { "Monastery At Night" "czest1dm" "4" "150" "15" }
+/*10*/ { "Improved Bases" "oa_bases3plus3" "4" "175" "15" }
+/*11*/ { "Under Working 2.0" "oad_underworks" "4" "175" "15" }
+/*12*/ { "Hydrocapture 2.0" "hydronex2" "5" "175" "15" }
+/*13*/ { "Thor's Valhalla" "oa_Thor" "5" "200" "15" }
+/*14*/ { "Foul Compromise" "ctf_compromise" "5" "200" "15" }
+/*15*/ { "Sleek Grinder"  "sleekgrinder" "5" "200" "15" }
+}
+
+// Endurance ladder - Possession
+// MapName - FileName - OpponentName - CaptureLimit - TimeLimit
+maps_pos {
+/*01*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "2" "60" "15" }
+/*02*/ { "Aggressor Tendency" "oad_aggress" "2" "60" "15" }
+/*05*/ { "Factory Collision" "oac_factory" "3" "60" "15" }
+/*09* / { "Nemesis Online" "oad_nemesis" "3" "75" "15" } - Not yet */
+/*03*/ { "Galmevish Hub 1" "oad_galmevish" "3" "75" "15" }
+/*04*/ { "Sago's Outer Castle" "oac_sago2" "4" "75" "15" }
+/*05*/ { "Under Working 2.0" "oad_underworks" "4" "90" "15" }
+/*06*/ { "Bridge of Despair" "oac_czest2" "5" "90" "15" }
+/*07*/ { "The Space Spire" "oad_czest1_1on1" "3" "60" "15" }
+}
+

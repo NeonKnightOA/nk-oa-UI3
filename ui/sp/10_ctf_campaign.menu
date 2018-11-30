@@ -1,0 +1,125 @@
+/*
+===========================================================================
+Copyright (C) 2015 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+// Internal workings that don't really need to be modified
+
+#define SPCUR_MENUNAME		"singleplayercampaign_10_ctf"
+#define SPCUR_MENUFULLNAME	"Capture The Flag"
+
+#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_26"
+#define SPCUR_MAP1NUM		27
+#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_27"
+#define SPCUR_MAP2NUM		28
+#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_28"
+#define SPCUR_MAP3NUM		29
+#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_29"
+
+#define SPCUR_MAP1_NAME			"Capture The Castle" /* oac_sago2 */
+#define SPCUR_MAP2_NAME			"Living Colours" /* pul1ctf */
+#define SPCUR_MAP3_NAME			"They Float!" /* oac_czest2 */
+#define SPCUR_MAP1_DESCRIPTION		"Welcome to Capture The Flag! All of this was to prepare you for THE mode. You know the drill. Go to the enemy base, steal their flag, and bring it to your base. Go!"
+#define SPCUR_MAP2_DESCRIPTION		"This map may contain no colours, but is no less dangerous because of that, so you better learn the ways in and out of the bases."
+#define SPCUR_MAP3_DESCRIPTION		"The final match of the CTF ladder is played with Low Gravity rules. The gravity of the area has been halved."
+#define SPCUR_MAP1_FRAGLIMIT		0
+#define SPCUR_MAP2_FRAGLIMIT		0
+#define SPCUR_MAP3_FRAGLIMIT		0
+#define SPCUR_MAP1_CAPTURELIMIT	5
+#define SPCUR_MAP2_CAPTURELIMIT	6
+#define SPCUR_MAP3_CAPTURELIMIT	7
+#define SPCUR_MAP1_TIMELIMIT		10
+#define SPCUR_MAP2_TIMELIMIT		10
+#define SPCUR_MAP3_TIMELIMIT		15
+#define SPCUR_MAP1_ADDITIONALRULES	""
+#define SPCUR_MAP2_ADDITIONALRULES	""
+#define SPCUR_MAP3_ADDITIONALRULES	"Low Gravity"
+#define SPCUR_MAP1_ADDITIONALRULE1	""
+#define SPCUR_MAP1_ADDITIONALRULE2	""
+#define SPCUR_MAP1_ADDITIONALRULE3	""
+#define SPCUR_MAP2_ADDITIONALRULE1	""
+#define SPCUR_MAP2_ADDITIONALRULE2	""
+#define SPCUR_MAP2_ADDITIONALRULE3	""
+#define SPCUR_MAP3_ADDITIONALRULE1	"g_gravityModifier 0.5"
+#define SPCUR_MAP3_ADDITIONALRULE2	""
+#define SPCUR_MAP3_ADDITIONALRULE3	""
+
+{
+	assetGlobalDef
+	{
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+	}
+	menuDef
+	{
+		name SPCUR_MENUNAME
+		background MP_BACKGROUND1
+		fullScreen 1				
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR			
+		focuscolor MP_TEXTCOLOR
+
+		onOpen
+		{
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
+			setcvar ui_currentMap SPCUR_MAP1NUM;	// set it to the first map in the listlist
+			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
+			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
+			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
+		}
+
+		#include "ui/common/mapbg.panel"	
+
+		/* -----------------------------------------------------------
+		   TAB 0 - SELECTING MAP
+		   ----------------------------------------------------------- */
+
+		// MAP stats and info
+
+		#include "ui/sp/sp_mapinfo.panel"
+
+		/* Ladder Name */
+
+		#include "ui/sp/sp_laddername.panel"
+
+		/* Rungs */
+
+		#include "ui/sp/sp_rungs.panel"
+
+		/* Common Stuff Area */
+
+		#include "ui/sp/sp_common.panel"
+
+		#include "ui/common/tooltip.panel"
+
+		}
+		}
+		}
+		}
+	}
+}

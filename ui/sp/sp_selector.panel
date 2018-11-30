@@ -1,0 +1,735 @@
+
+onOpen { 
+/*	hide uistuff;
+	xtransition windowone 16 -480 300 400   16 32 300 400 1 20; 
+	xtransition windowtwo 316 480 300 400  316 32 300 400 1 20; */
+}
+
+opentransitionEnd {
+/*    show uistuff; */
+}
+#include "ui/sp/checker.panel" / * Save state * /
+/* -----------------------------------------------------------
+    TAB 0 - SELECTING A "LADDER"
+    ----------------------------------------------------------- */
+
+itemDef { /* Title */
+	name windowone
+	text "Select a Ladder"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+/*	cvarTest "ui_sptab"
+	showCVar {
+		"0"
+	} */
+	decoration
+	rect 16 32 300 400
+	textalignx 32	
+	scralign ALIGN_CENTER
+	textaligny 24
+	border 1
+	backcolor MP_DIALOGBGCOLOR
+	bordercolor MP_BOX_BORDER
+	visible 1
+}
+
+itemDef { /* Tutorial - Always active */
+	name button1
+	text "^4Tutorial"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 80 256 32
+	textalignx 32	
+	textaligny 24
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Learn the basics of fragging in this series of tutorials."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_00_tutorial;
+		
+		setcvar ui_gametype 0;
+		setcvar g_gametype 0;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Free For All - Always active */
+	name button1
+	text "Free For All"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 96 256 32
+	textalignx 32	
+	textaligny 24
+/*	cvarTest "ui_sptab"
+	showCVar {
+		"0"
+	} */
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "You're on your own. Get as much frags as you can."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_01_ffa;
+		
+		setcvar ui_gametype 0;
+		setcvar g_gametype 0;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Possession */
+	name button1
+	text "Possession"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 112 256 32
+	textalignx 32	
+	textaligny 24
+	cvarTest "ui_sp_unlock_2"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "There's a flag on the level. Catch it and keep it."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {  	
+		close singleplayercampaign;
+		open singleplayercampaign_02_pos;
+
+		setcvar ui_gametype 12;
+		setcvar g_gametype 13;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Last Man Standing */
+	name button1
+	text "Last Man Standing"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 128 256 32
+	textalignx 32	
+	textaligny 24
+	cvarTest "ui_sp_unlock_5"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Nobody lives forever. Be the last one standing."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_03_lms;
+
+		setcvar ui_gametype 9;
+		setcvar g_gametype 10;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Team Deathmatch */
+	name button1
+	text "Team Deathmatch"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 144 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_8"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "You're not alone. Work with your team to frag as much as possible." fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {  	
+		close singleplayercampaign;
+		open singleplayercampaign_04_team;
+
+		setcvar ui_gametype 2;
+		setcvar g_gametype 3;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Elimination */
+	name button1
+	text "Elimination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 160 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_11"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Work with your team to eradicate the opposition in round-based matches."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_05_elim;
+
+		setcvar ui_gametype 7;
+		setcvar g_gametype 8;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Domination */
+	name button1
+	text "Domination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 176 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_14"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Work with your team to capture and hold the control points to rack up points."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_06_dom;
+
+		setcvar ui_gametype 11;
+		setcvar g_gametype 12;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Double Domination */
+	name button1
+	text "Double Domination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 192 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_17"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Two points. Two teams. Hold the points in 10 sec to win the rounds."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_07_ddom;
+
+		setcvar ui_gametype 10;
+		setcvar g_gametype 11;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Overload */
+	name button1
+	text "Overload"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 208 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_20"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Both teams have bases. Infiltrate and destroy the enemy crystal in order to win."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {  	
+		close singleplayercampaign;
+		open singleplayercampaign_08_over;
+
+		setcvar ui_gametype 5;
+		setcvar g_gametype 6;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* One Flag CTF */
+	name button1
+	text "One Flag CTF"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 224 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_23"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Your team must take the central flag and deliver it to the enemy base."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	} 	
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_09_1fctf;
+
+		setcvar ui_gametype 4;
+		setcvar g_gametype 5;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Capture the Flag */
+	name button1
+	text "Capture The Flag"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 240 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_26"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "A classic. Infiltrate the enemy base, steal their flag and bring it to your base."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_10_ctf;
+
+		setcvar ui_gametype 3;
+		setcvar g_gametype 4;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* CTF Elimination */
+	name button1
+	text "CTF Elimination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 256 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_29"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Capture the flag, but with lives!"
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_11_ectf;
+
+		setcvar ui_gametype 8;
+		setcvar g_gametype 9;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Harvester */
+	name button1
+	text "Harvester"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	group uistuff
+	textstyle 2
+	textscale 0.25
+	rect 32 272 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_32"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Each frag spawns a skull in the middle. Bring those skulls to the enemy base."
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_12_harv;
+
+		setcvar ui_gametype 6;
+		setcvar g_gametype 7;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Tournament */
+	name button1
+	text "Tournament"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 0.25
+	group uistuff
+	rect 32 288 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_35"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "That's it! Now you have to face final 1on1 challenges. If you do well, you'll be rewarded. :)"
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_13_1on1;
+
+		setcvar ui_gametype 1;
+		setcvar g_gametype 1;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+itemDef { /* Tournament (Bonus) */
+	name button1
+	text "Tournament (Bonus)"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 0.25
+	group uistuff
+	rect 32 304 256 32
+	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_sp_unlock_38"
+	showCVar { "1" }
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Your determination and courage awarded you with this special match. Enjoy it!"
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+		open singleplayercampaign_14_1on1;
+
+		setcvar ui_gametype 1;
+		setcvar g_gametype 1;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;  
+	}
+	visible 1 
+}
+
+/* player's info and brief stats */
+
+itemDef { /* Player's info and stats */
+	name windowtwo
+	text "You"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+/*	cvarTest "ui_sptab"
+	showCVar {
+		"0"
+	} */
+	decoration
+	rect 316 32 300 400
+	textalignx 32	
+	textaligny 24
+	border 1
+	backcolor MP_DIALOGBGCOLOR
+	bordercolor MP_BOX_BORDER
+	visible 1
+}
+
+
+/* Show trophies */
+
+itemDef { /* Gold trophies */
+	name trophygold
+	background "trophy_gold"
+	group uistuff
+	style 1
+	text ""
+	cvar "ui_sp_trophies_gold"
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+	textscale 0.33
+	decoration
+	textalignx 32	
+	textaligny 24
+	mouseEnter {
+		setcvar ui_tip SP_TROPHIES_GOLD_TEXT
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	rect 342 352 32 32
+	backcolor 1 0.6 0.3 1
+	visible 1
+}
+
+itemDef { /* Silver trophies */
+	name trophygold
+	background "trophy_gold"
+	group uistuff
+	style 1
+	text ""
+	cvar "ui_sp_trophies_silver"
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+	textscale 0.33
+	decoration
+	textalignx 32	
+	textaligny 24
+	mouseEnter {
+		setcvar ui_tip SP_TROPHIES_SILV_TEXT
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	rect 400 352 32 32
+	backcolor 0.7 0.7 0.74 1
+	visible 1
+}
+
+itemDef { /* Bronze trophies */
+	name trophygold
+	background "trophy_gold"
+	group uistuff
+	style 1
+	text ""
+	cvar "ui_sp_trophies_bronze"
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+	textscale 0.33
+	decoration
+	textalignx 32	
+	textaligny 24
+	mouseEnter {
+		setcvar ui_tip SP_TROPHIES_BRON_TEXT
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	rect 458 352 32 32
+	backcolor 0.6 0.2 0.1 1
+	visible 1
+}
+
+itemDef { /* Platinum trophies */
+	name trophygold
+	background "trophy_gold"
+	group uistuff
+	style 1
+	text ""
+	cvar "ui_sp_trophies_platinum"
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+	textscale 0.33
+	decoration
+	textalignx 32	
+	textaligny 24
+	mouseEnter {
+		setcvar ui_tip SP_TROPHIES_PLAT_TEXT
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	rect 512 352 32 32
+	backcolor 0.6 0.7 0.9 1
+	visible 1
+}
+
+itemDef { /* Player portrait */
+	name themodel
+	ownerdraw UI_PLAYERPORTRAIT	
+	group uistuff
+/*	rect 330 0 300 480
+	rect 16 32 340 480 */
+	rect 382 64 180 280
+	style 1
+	decoration 
+	backcolor 0.6 0.7 0.9 0.2
+	visible 1
+}
+
+/* always have this button available */
+
+itemDef { /* Cancel button */
+	name button1
+	text "Cancel"
+	background MP_WIDEBUTTONBG
+	group uistuff
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 0.5
+	rect 32 384 256 32
+	textalignx 32
+	textaligny 24
+
+	forecolor MP_TEXTCOLOR
+	mouseEnter {
+		setcvar ui_tip "Go back to main menu"
+		fadein tooltip;
+	}
+	mouseExit {
+		fadeout tooltip;
+	}
+	action {
+		close singleplayercampaign;
+
+		open mainmenu;
+
+		setcvar ui_sptab 0; /* reset the tabs */
+		play MP_SND_SELECT;
+	}
+	visible 1
+}

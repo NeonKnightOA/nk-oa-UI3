@@ -1,0 +1,100 @@
+teams
+{
+	/* TeamName - TeamLogo - Member1 - Member2 - Member3 - Member4 - Member5 */
+	{"Angels"	"" "Angelyss" "Dark" "Murielle" "Tanisha" "Rai"}
+	{"Supernaturals"	"" "Sorceress" "Ghost" "Gargoyle" "Broadklin" "Cyber-Garg"}
+	{"Naturals"	"" "Kyonshi" "Arachna" "Liz" "Merman" "Neko"}
+	{"EDF"		"" "Beret" "Headcrash" "Morgan" "Sergei" "Major"}
+	{"Marines"	"" "Sarge" "Andriy" "Grism" "Grunt" "S_Marine"}
+	{"Normals"	"" "Tony" "Ayumi" "Jenna" "Penguin" "Assassin"}
+}
+characters
+{
+	/* Character - Sex */
+	// Angels
+	{"Angelyss"	"female"}
+	{"Dark"		"female"}
+	{"Murielle"	"female"}
+	{"Tanisha"	"female"}
+	{"Rai"		"female"}
+
+	// Supernaturals
+	{"Sorceress"	"female"}
+	{"Ghost"	"male"}
+	{"Gargoyle"	"male"}
+	{"Broadklin"	"male"}
+	{"Cyber-Garg"	"male"}
+
+	// Naturals
+	{"Kyonshi"	"female"}
+	{"Arachna"	"female"}
+	{"Liz"		"female"}
+	{"Merman"	"male"}
+	{"Neko"		"female"}
+
+	// EDF
+	{"Beret"	"male"}
+	{"Headcrash"	"male"}
+	{"Morgan"	"male"}
+	{"Sergei"	"male"}
+	{"Major"	"female"}
+
+	// Marines
+	{"Sarge"	"male"}
+	{"Andriy"	"male"}
+	{"Grism"	"male"}
+	{"Grunt"	"male"}
+	{"S_Marine"	"male"}
+
+	// Normals
+	{"Tony"		"male"}
+	{"Ayumi"	"female"}
+	{"Jenna"	"female"}
+	{"Penguin"	"male"}
+	{"Assassin"	"male"}
+}
+
+aliases {
+	/* Alias - Original - Role (a/o/d) */
+	// Angels
+	{"Angelyss"	"Angelyss"	"d"}
+	{"Dark"		"Dark"		"a"}
+	{"Murielle"	"Murielle"	"o"}
+	{"Tanisha"	"Tanisha"	"d"}
+	{"Rai"		"Rai"		"a"}
+
+	// Supernaturals
+	{"Sorceress"	"Sorceress"	"o"}
+	{"Ghost"	"Ghost"		"d"}
+	{"Gargoyle"	"Gargoyle"	"a"}
+	{"Broadklin"	"Broadklin"	"o"}
+	{"Cyber-Garg"	"Cyber-Garg"	"d"}
+
+	// Naturals
+	{"Kyonshi"	"Kyonshi"	"a"}
+	{"Arachna"	"Arachna"	"o"}
+	{"Liz"		"Liz"		"d"}
+	{"Merman"	"Merman"	"a"}
+	{"Neko"		"Neko"		"o"}
+
+	// EDF
+	{"Beret"	"Beret"		"d"}
+	{"Headcrash"	"Headcrash"	"a"}
+	{"Morgan"	"Morgan"	"o"}
+	{"Sergei"	"Sergei"	"d"}
+	{"Major"	"Major"		"a"}
+
+	// Marines
+	{"Sarge"	"Sarge"		"o"}
+	{"Andriy"	"Andriy"	"d"}
+	{"Grism"	"Grism"		"a"}
+	{"Grunt"	"Grunt"		"o"}
+	{"S_Marine"	"S_Marine"	"d"}
+
+	// Normals
+	{"Tony"		"Tony"		"a"}
+	{"Ayumi"	"Ayumi"		"o"}
+	{"Jenna"	"Jenna"		"d"}
+	{"Penguin"	"Penguin"	"a"}
+	{"Assassin"	"Assassin"	"o"}
+}

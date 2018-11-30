@@ -1,0 +1,440 @@
+itemDef { /* 1ON1B */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_39"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 40";
+	}
+}
+itemDef { /* 1ON13 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_38"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 39";
+	}
+}
+itemDef { /* 1ON12 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_37"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 38";
+	}
+}
+itemDef { /* 1ON11 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_36"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 37";
+	}
+}
+itemDef { /* HAR3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_35"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 36";
+	}
+}
+itemDef { /* HAR2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_34"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 35";
+	}
+}
+itemDef { /* HAR1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_33"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 34";
+	}
+}
+itemDef { /* ECTF3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_32"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 33";
+	}
+}
+itemDef { /* ECTF2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_31"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 32";
+	}
+}
+itemDef { /* ECTF1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_30"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 31";
+	}
+}
+itemDef { /* CTF3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_29"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 30";
+	}
+}
+itemDef { /* CTF2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_28"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 29";
+	}
+}
+itemDef { /* CTF1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_27"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 28";
+	}
+}
+itemDef { /* 1FCTF3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_26"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 27";
+	}
+}
+itemDef { /* 1FCTF2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_25"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 26";
+	}
+}
+itemDef { /* 1FCTF1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_24"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 25";
+	}
+}
+itemDef { /* OVER3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_23"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 24";
+	}
+}
+itemDef { /* OVER2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_22"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 23";
+	}
+}
+itemDef { /* OVER1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_21"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 22";
+	}
+}
+itemDef { /* DD3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_20"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 21";
+	}
+}
+itemDef { /* DD2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_19"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 20";
+	}
+}
+itemDef { /* DD1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_18"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 19";
+	}
+}
+itemDef { /* DOM3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_17"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 18";
+	}
+}
+itemDef { /* DOM2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_16"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 17";
+	}
+}
+itemDef { /* DOM1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_15"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 16";
+	}
+}
+itemDef { /* ELIM3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_14"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 15";
+	}
+}
+itemDef { /* ELIM2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_13"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 14";
+	}
+}
+itemDef { /* ELIM1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_12"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 13";
+	}
+}
+itemDef { /* TDM3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_11"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 12";
+	}
+}
+itemDef { /* TDM2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_10"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 11";
+	}
+}
+itemDef { /* TDM1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_9"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 10";
+	}
+}
+itemDef { /* LMS3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_8"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 9";
+	}
+}
+itemDef { /* LMS2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_7"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 8";
+	}
+}
+itemDef { /* LMS1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_6"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 7";
+	}
+}
+itemDef { /* POS3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_5"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 6";
+	}
+}
+itemDef { /* POS2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_4"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 5";
+	}
+}
+itemDef { /* POS1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_3"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 4";
+	}
+}
+itemDef { /* FFA3 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_2"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 3";
+	}
+}
+itemDef { /* FFA2 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_1"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 2";
+	}
+}
+itemDef { /* FFA1 */
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	cvarTest "ui_sp_unlock_0"
+	showCVar { "1" }
+	action {
+		exec "seta ui_spProgress 1";
+	}
+}

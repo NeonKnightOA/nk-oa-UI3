@@ -1,0 +1,20 @@
+
+itemDef
+{
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text SPCUR_MENUFULLNAME
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	backcolor 	MP_DIALOGBGCOLOR
+	visible 1 
+}

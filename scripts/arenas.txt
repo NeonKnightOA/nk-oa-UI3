@@ -1,0 +1,248 @@
+{
+	map		"oa-tutorial"
+	longname	"OpenArena Tutorial"
+	type		"ffa lms tourney"
+}
+{
+	map		"oad_minilava"
+	longname	"Mini Lava Arena"
+	fraglimit	"5"
+	type		"ffa lms tourney"
+}
+{
+	map		"oad_outerfac"
+	longname	"Outer Training Facility"
+	type		"ffa lms tourney"
+}
+{
+	map		"oa_rpg3dm2"
+	longname	"Trial By Error"
+	type		"ffa lms tourney"
+}
+{
+	map		"oa_minia"
+	longname	"Kit's Mini Arena"
+	type		"ffa lms tourney elimination dd"
+}
+{
+	map		"pul1duel-oa"
+	longname	"Five Steps Ahead"
+	type		"ffa lms tourney"
+}
+{
+	map		"slimefac"
+	longname	"Slime Facility"
+	type		"ffa lms tourney"
+}
+{
+	map		"sleekgrinder"
+	longname	"Sleek Grinder"
+	type		"ffa lms team dom"
+}
+{
+	map		"pxlfan"
+	longname	"The Fan Of Death!"
+	type		"ffa lms team tourney dom"
+}
+{
+	map		"oa_nemesis"
+	longname	"Nemesis Online"
+	type		"ffa tourney team"
+}
+{
+	map		"am_lavaarena"
+	longname	"Lava Arena"
+	type		"ffa lms tourney dom"
+}
+{
+	map		"oad_underworks"
+	longname	"Under Working"
+	type	        "ffa lms team elimination dom pos"
+}
+{
+	map		"oad_blitzkrieg"
+	longname	"Blitzkrieg Base (OA3 Version)"
+	type		"ffa lms tourney pos"
+}
+{
+	map		"czest1dm"
+	longname	"Monastery At Night"
+	type		"ffa lms tourney team elimination dom"
+}
+{
+	map		"mlca1"
+	longname	"Meisterlampe's Temple"
+	type		"ffa lms team elimination dom"
+}
+{
+	map		"oa_koth2"
+	longname	"Floating Tower"
+	type		"ffa lms team dom"
+}
+{
+	map		"oad_galmevish"
+	longname	"Galmevish Hub Area 1"
+	type		"ffa tourney lms oneflag harvester dd pos"
+}
+{
+	map		"oa_koth1"
+	longname	"Repulsive Castle"
+	type		"ffa lms team"
+}
+{
+	map		"oad_aggress"
+	longname	"Aggressive Tendencies"
+	type		"ffa tourney lms dom pos"
+}
+{
+	map		"oa_shouse"
+	longname	"Strange House"
+	type		"ffa lms team elimination tourney dd dom"
+}
+{
+	map		"kaos2"
+	longname	"Khaos Everywhere!"
+	type		"ffa lms team"
+}
+{
+	map		"oa_shine"
+	longname	"Shine In The Atmosphere"
+	type		"ffa lms"
+}
+{
+	map		"am_spacecont"
+	longname	"Space Contact"
+	type		"ffa lms"
+}
+{
+	map		"suspended"
+	longname	"Suspended Satellite"
+	type		"ffa lms"
+}
+{
+	map		"oad_czest1_1on1"
+	longname	"The Space Spire"
+	type		"ffa tourney lms pos"
+}
+
+{
+	map		"oa_pvomit"
+	longname	"Projectile Vomit"
+	type		"ffa lms"
+}
+{
+	map		"oa_nemesis"
+	longname	"Nemesis Online"
+	type		"ffa tourney team"
+}
+{
+	map		"oad_lava2"
+	longname	"Lava Arena (CTF version)"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"am_lavactfxl"
+	longname	"Lava Arena (CTF XL)"
+	type		"ctf ctfelimination oneflag harvester overload elimination dd"
+}
+{
+	map		"am_mckinleyish2"
+	longname	"McKinleyish Retribution"
+	type		"ctf ctfelimination oneflag harvester overload elimination dd"
+}
+{
+	map		"am_thornish"
+	longname	"Thornish Revenge"
+	type		"ctf ctfelimination oneflag harvester overload elimination dd"
+}
+{
+	map		"ctf_compromise"
+	longname	"Foul Compromise"
+	type		"ctf oneflag elimination ctfelimination dd dom"
+}
+{
+	map		"ctf_gate1"
+	longname	"Outer Gates"
+	type		"ctf elimination ctfelimination dd dom"
+}
+{
+	map		"ctf_inyard"
+	longname	"Inner Yard"
+	type		"ctf oneflag elimination ctfelimination dd dom"
+}
+{
+	map		"oac_czest2"
+	longname	"The Bridge Of Despair"
+	type		"ctf oneflag harvester overload elimination ctfelim ctfelimination dd pos"
+}
+{
+	map		"czest3ctf"
+	longname	"Holy Wars"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"hydronex2"
+	longname	"Hydrocapture 2.0"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd dom"
+}
+{
+	map		"mlctf1beta"
+	longname	"Encephalomalacia"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"oa_bases3plus3"
+	longname	"Some Bases (Improved)"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd dom"
+}
+{
+	map		"oa_bases7"
+	longname	"Some Awful Bases"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"oa_ctf2"
+	longname	"OA_CTF2"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"oac_factory"
+	longname	"Colliding in the Factory"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd pos"
+}
+{
+	map		"oasago1"
+	longname	"Sago's Inner Castle"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"oac_sago2"
+	longname	"Sago's Outer Castle"
+	type		"ctf oneflag harvester overload elimination ctfelim ctfelimination dd pos"
+}
+
+{
+	map		"oa_spirit3"
+	longname	"Where Fears Collide"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"oa_thor"
+	longname	"Thor's Valhalla"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd dom"
+}
+{
+	map		"ps37ctf2"
+	longname	"Obey 37 2.0"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"ps9ctf"
+	longname	"Obey 9"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+	map		"pul1ctf"
+	longname	"Der Koberwascher"
+	type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}

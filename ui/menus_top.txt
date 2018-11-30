@@ -9,12 +9,21 @@
 	loadMenu { "ui/main_profile.menu" }
 	loadMenu { "ui/main_single_player.menu" }
 	loadMenu { "ui/main_instant.menu" }
-	loadMenu { "ui/main_campaign.menu" }
-	loadMenu { "ui/main_campaign_ffa.menu" }
-	loadMenu { "ui/main_campaign_ctf.menu" }
-	loadMenu { "ui/main_campaign_dom.menu" }
-	loadMenu { "ui/main_campaign_over.menu" }
-	loadMenu { "ui/main_campaign_tourney.menu" }
+	loadMenu { "ui/sp/campaign.menu" }
+	loadMenu { "ui/sp/01_ffa_campaign.menu" }
+	loadMenu { "ui/sp/02_pos_campaign.menu" }
+	loadMenu { "ui/sp/03_lms_campaign.menu" }
+	loadMenu { "ui/sp/04_team_campaign.menu" }
+	loadMenu { "ui/sp/05_elim_campaign.menu" }
+	loadMenu { "ui/sp/06_dom_campaign.menu" }
+	loadMenu { "ui/sp/07_ddom_campaign.menu" }
+	loadMenu { "ui/sp/08_over_campaign.menu" }
+	loadMenu { "ui/sp/09_1fctf_campaign.menu" }
+	loadMenu { "ui/sp/10_ctf_campaign.menu" }
+	loadMenu { "ui/sp/11_ectf_campaign.menu" }
+	loadMenu { "ui/sp/12_harv_campaign.menu" }
+	loadMenu { "ui/sp/13_1on1_campaign.menu" }
+	loadMenu { "ui/sp/transition_campaign.menu" }
 	loadMenu { "ui/main_play_maker.menu" }
 	loadMenu { "ui/main_join_server.menu" }
 	loadMenu { "ui/main_controls.menu" }
@@ -27,6 +36,5 @@
 	loadMenu { "ui/main_popup_quit.menu" }
 	loadMenu { "ui/connecting.menu" }
  	loadMenu { "ui/error.menu" }
-	loadMenu { "ui/transition_campaign.menu" }
 	loadMenu { "ui/debug/debug.menu" }
 }

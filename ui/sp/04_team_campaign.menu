@@ -1,0 +1,125 @@
+/*
+===========================================================================
+Copyright (C) 2015 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+// Internal workings that don't really need to be modified
+
+#define SPCUR_MENUNAME		"singleplayercampaign_04_team"
+#define SPCUR_MENUFULLNAME	"Team Deathmatch"
+
+#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_8"
+#define SPCUR_MAP1NUM		9
+#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_9"
+#define SPCUR_MAP2NUM		10
+#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_10"
+#define SPCUR_MAP3NUM		11
+#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_11"
+
+#define SPCUR_MAP1_NAME			"Meet Your Mates" /* oa_koth2 */
+#define SPCUR_MAP2_NAME			"Chaotic Match" /* kaos2 */
+#define SPCUR_MAP3_NAME			"Friendly Fire" /* oa_koth1 */
+#define SPCUR_MAP1_DESCRIPTION		"Welcome to Team Deathmatch. Here you'll play with a fellow against two opponents. Be the one team to rule them all!"
+#define SPCUR_MAP2_DESCRIPTION		"Since you got used so well to your team, here are other two bots to challenge you."
+#define SPCUR_MAP3_DESCRIPTION		"Another special rules match. This time everyone plays with friendly fire rules, so any damage you inflict on your teammates can be lethal. Watch your fire!"
+#define SPCUR_MAP1_FRAGLIMIT		35
+#define SPCUR_MAP2_FRAGLIMIT		50
+#define SPCUR_MAP3_FRAGLIMIT		65
+#define SPCUR_MAP1_CAPTURELIMIT	0
+#define SPCUR_MAP2_CAPTURELIMIT	0
+#define SPCUR_MAP3_CAPTURELIMIT	0
+#define SPCUR_MAP1_TIMELIMIT		10
+#define SPCUR_MAP2_TIMELIMIT		10
+#define SPCUR_MAP3_TIMELIMIT		15
+#define SPCUR_MAP1_ADDITIONALRULES	""
+#define SPCUR_MAP2_ADDITIONALRULES	""
+#define SPCUR_MAP3_ADDITIONALRULES	"Friendly Fire"
+#define SPCUR_MAP1_ADDITIONALRULE1	""
+#define SPCUR_MAP1_ADDITIONALRULE2	""
+#define SPCUR_MAP1_ADDITIONALRULE3	""
+#define SPCUR_MAP2_ADDITIONALRULE1	""
+#define SPCUR_MAP2_ADDITIONALRULE2	""
+#define SPCUR_MAP2_ADDITIONALRULE3	""
+#define SPCUR_MAP3_ADDITIONALRULE1	"g_friendlyFire 1"
+#define SPCUR_MAP3_ADDITIONALRULE2	""
+#define SPCUR_MAP3_ADDITIONALRULE3	""
+
+{
+	assetGlobalDef
+	{
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+	}
+	menuDef
+	{
+		name SPCUR_MENUNAME
+		background MP_BACKGROUND1
+		fullScreen 1				
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR			
+		focuscolor MP_TEXTCOLOR
+
+		onOpen
+		{
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
+			setcvar ui_currentMap SPCUR_MAP1NUM;	// set it to the first map in the list
+			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
+			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
+			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
+		}
+
+		#include "ui/common/mapbg.panel"	
+
+		/* -----------------------------------------------------------
+		   TAB 0 - SELECTING MAP
+		   ----------------------------------------------------------- */
+
+		// MAP stats and info
+
+		#include "ui/sp/sp_mapinfo.panel"
+
+		/* Ladder Name */
+
+		#include "ui/sp/sp_laddername.panel"
+
+		/* Rungs */
+
+		#include "ui/sp/sp_rungs.panel"
+
+		/* Common Stuff Area */
+
+		#include "ui/sp/sp_common.panel"
+
+		#include "ui/common/tooltip.panel"
+
+		}
+		}
+		}
+		}
+	}
+}

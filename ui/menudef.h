@@ -383,7 +383,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
 // if building with this in your ../ui/ file you MUST remove the ui/!!
-#include "ui/lang_english.h" // load english language
+// #include "ui/lang_english.h" // load english language
 // #include "lang_fr.h" // load french
 // #include "lang_de.h" // load german
 // #include "lang_sp.h" // load spanish
