@@ -13,18 +13,8 @@ echo ""
 printf 'Press Enter to continue...'
 read _
 echo "Compressing..."
-zip -9r zz_oax_m3.pk3 fonts/*
-zip -9r zz_oax_m3.pk3 levelshots/*
-zip -9r zz_oax_m3.pk3 maps/*
-zip -9r zz_oax_m3.pk3 models/*
-zip -9r zz_oax_m3.pk3 scripts/*
-zip -9r zz_oax_m3.pk3 textures/*
-zip -9r zz_oax_m3.pk3 ui/*
-zip -9r zz_oax_m3.pk3 vm/*
-zip -9r zz_oax_m3.pk3 gameinfo.txt
-zip -9r zz_oax_m3.pk3 README.md
-zip -9r zz_oax_m3.pk3 teaminfo.txt
-zip -9r zz_oax_m3.pk3 themesetting.txt
+zip -9r zz_oax_m3.pk3 * -x sources/* -x .git/* -x builddevpk3.bat -x builddevpk3.sh -x builddevpk3-mpvm.sh -x zip.exe
+
 echo "Done"
 
 exit 0
