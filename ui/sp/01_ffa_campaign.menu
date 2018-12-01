@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Free For All"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	""
-#define SPCUR_MAP1NUM		0
+#define SPCUR_MAP1NUM		1
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_0"
-#define SPCUR_MAP2NUM		1
+#define SPCUR_MAP2NUM		2
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_1"
-#define SPCUR_MAP3NUM		2
+#define SPCUR_MAP3NUM		3
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_2"
 
 #define SPCUR_MAP1_NAME			"Hot Beginning" /*oad_minilava*/

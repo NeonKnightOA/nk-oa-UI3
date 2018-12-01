@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Last Man Standing"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_5"
-#define SPCUR_MAP1NUM		6
+#define SPCUR_MAP1NUM		7
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_6"
-#define SPCUR_MAP2NUM		7
+#define SPCUR_MAP2NUM		8
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_7"
-#define SPCUR_MAP3NUM		8
+#define SPCUR_MAP3NUM		9
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_8"
 
 #define SPCUR_MAP1_NAME			"Beware The Fan!" /* pxlfan */

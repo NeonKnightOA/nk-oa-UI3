@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"CTF Elimination"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_29"
-#define SPCUR_MAP1NUM		30
+#define SPCUR_MAP1NUM		31
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_30"
-#define SPCUR_MAP2NUM		31
+#define SPCUR_MAP2NUM		32
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_31"
-#define SPCUR_MAP3NUM		32
+#define SPCUR_MAP3NUM		33
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_32"
 
 #define SPCUR_MAP1_NAME			"Convolution" /* ctf_inyard */

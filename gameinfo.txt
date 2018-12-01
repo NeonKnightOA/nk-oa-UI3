@@ -57,14 +57,14 @@ joingametypes {
 
 // Single Player Maps
 
-// Column Info
-// Name - Name of the map, displayed under levelshot/cinematic
-// Mapname - the BSP to load of the map
-// Maximum amount of clients possible (for bots etc)
-// Bot?
+/* Column Info
+   Name - Name of the map, displayed under levelshot/cinematic
+   Mapname - the BSP to load of the map
+   Maximum amount of clients possible (for bots etc)
+   Bot? */
 
-// NOTE: These map picks are not final.  They are temporary for testing the progress of the campaign.
-// Mapname - Mapfilename - TeamMembers  OpponentName - ParTimeToBeatsPerGametype
+/* NOTE: These map picks are not final.  They are temporary for testing the progress of the campaign.
+   Mapname - Mapfilename - TeamMembers  OpponentName - ParTimeToBeatsPerGametype */
 maps {
   // Tutorial
 /*00*/ { "OA Tutorial" "oad_tutorial"  "1" "ayumi" 0 "110" 1 "110" 10 "110"}
@@ -131,8 +131,8 @@ maps {
 / *?? * / { "Suspended Satellite" "suspended"  "" "" 0 "110" 10 "110"} */
 }
 
-// Endurance ladder - FFA
-// MapName - FileName - OpponentName - FragLimit - TimeLimit
+/* Endurance ladder - Free For All
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_ffa {
 /*00*/ { "OA Tutorial" "oad_tutorial" "2" "10" "10" }
 /*01*/ { "Mini Lava Arena" "oad_minilava" "2" "10" "10" }
@@ -162,8 +162,8 @@ maps_ffa {
 /*25*/ { "The Space Spire" "oad_czest1_1on1" "3" "15" "15" }
 }
 
-// Endurance ladder - 1on1
-// MapName - FileName - OpponentName - FragLimit - TimeLimit
+/* Endurance ladder - Tournament
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_1on1 {
 /*00*/ { "OA Tutorial" "oad_tutorial" "ayumi" "10" "10" }
 /*01*/ { "Mini Lava Arena" "oad_minilava" "assassin" "10" "10" }
@@ -183,8 +183,8 @@ maps_1on1 {
 /*15*/ { "The Space Spire" "oad_czest1_1on1" "kyonshi" "15" "15" }
 }
 
-// Endurance ladder - TDM
-// MapName - FileName - TeamMembers - FragLimit - TimeLimit
+/* Endurance ladder - Team Deathmatch
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_team {
 /*01*/ { "The Fan of Death!" "pxlfan" "2" "10" "10" }
 /*02*/ { "Nemesis Online" "oad_nemesis" "2" "10" "15" }
@@ -198,8 +198,8 @@ maps_team {
 /*10*/ { "Sleek Grinder"  "sleekgrinder" "5" "25" "15" }
 }
 
-// Endurance ladder - CTF
-// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+/* Endurance ladder - Capture The Flag
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_ctf {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -225,8 +225,8 @@ maps_ctf {
 /*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - 1FCTF
-// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+/* Endurance ladder - One Flag CTF
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_1fctf {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -252,8 +252,8 @@ maps_1fctf {
 /*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - Overload
-// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+/* Endurance ladder - Overload
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_over {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -276,8 +276,8 @@ maps_over {
 /*19*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - Harvester
-// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+/* Endurance ladder - Harvester
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_harv {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "10" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "15" "15" }
@@ -301,8 +301,8 @@ maps_harv {
 /*20*/ { "Holy Wars" "czest3ctf" "5" "30" "15" }
 }
 
-// Endurance ladder - Elimination
-// MapName - FileName - TeamMembers - Rounds - TimeLimit
+/* Endurance ladder - Elimination
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_elim {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -333,8 +333,8 @@ maps_elim {
 /*27*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - CTF Elimination
-// MapName - FileName - TeamMembers - Rounds - TimeLimit
+/* Endurance ladder - CTF Elimination
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_ectf {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -360,8 +360,8 @@ maps_ectf {
 /*22*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - LMS
-// MapName - FileName - TeamMembers - RoundLimit - TimeLimit
+/* Endurance ladder - Last Man Standing
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_lms {
 /*00*/ { "OA Tutorial" "oad_tutorial" "2" "5" "10" }
 /*01*/ { "Mini Lava Arena" "oad_minilava" "2" "5" "10" }
@@ -390,8 +390,8 @@ maps_lms {
 /*24*/ { "The Space Spire" "oad_czest1_1on1" "3" "5" "15" }
 }
 
-// Endurance ladder - Double Domination
-// MapName - FileName - TeamMembers - CaptureLimit - TimeLimit
+/* Endurance ladder - Double Domination
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_dd {
 /*01*/ { "Lava Arena CTF" "oac_lava2" "2" "3" "10" }
 /*02*/ { "Obey 37 2.0" "ps37ctf2" "3" "3" "15" }
@@ -420,8 +420,8 @@ maps_dd {
 /*25*/ { "Holy Wars" "czest3ctf" "5" "7" "15" }
 }
 
-// Endurance ladder - Domination
-// MapName - FileName - OpponentName - CaptureLimit - TimeLimit
+/* Endurance ladder - Domination
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_dom {
 /*01*/ { "Aggressor Tendency" "oad_aggress" "2" "100" "15" }
 /*02*/ { "The Fan of Death!" "pxlfan" "3" "100" "15" }
@@ -440,8 +440,8 @@ maps_dom {
 /*15*/ { "Sleek Grinder"  "sleekgrinder" "5" "200" "15" }
 }
 
-// Endurance ladder - Possession
-// MapName - FileName - OpponentName - CaptureLimit - TimeLimit
+/* Endurance ladder - Possession
+   MapName - FileName - Opponent(s) - ScoreLimit - TimeLimit */
 maps_pos {
 /*01*/ { "Blitzkrieg Base"  "oad_blitzkrieg" "2" "60" "15" }
 /*02*/ { "Aggressor Tendency" "oad_aggress" "2" "60" "15" }

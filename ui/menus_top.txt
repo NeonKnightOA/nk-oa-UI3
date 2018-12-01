@@ -10,6 +10,7 @@
 	loadMenu { "ui/main_single_player.menu" }
 	loadMenu { "ui/main_instant.menu" }
 	loadMenu { "ui/sp/campaign.menu" }
+	loadMenu { "ui/sp/00_tutorial_campaign.menu" }
 	loadMenu { "ui/sp/01_ffa_campaign.menu" }
 	loadMenu { "ui/sp/02_pos_campaign.menu" }
 	loadMenu { "ui/sp/03_lms_campaign.menu" }

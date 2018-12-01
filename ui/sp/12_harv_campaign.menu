@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Harvester"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_32"
-#define SPCUR_MAP1NUM		33
+#define SPCUR_MAP1NUM		34
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_33"
-#define SPCUR_MAP2NUM		34
+#define SPCUR_MAP2NUM		35
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_34"
-#define SPCUR_MAP3NUM		35
+#define SPCUR_MAP3NUM		36
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_35"
 
 #define SPCUR_MAP1_NAME			"Harvest What You Sow" /* am_thornish */

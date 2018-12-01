@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Capture The Flag"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_26"
-#define SPCUR_MAP1NUM		27
+#define SPCUR_MAP1NUM		28
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_27"
-#define SPCUR_MAP2NUM		28
+#define SPCUR_MAP2NUM		29
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_28"
-#define SPCUR_MAP3NUM		29
+#define SPCUR_MAP3NUM		30
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_29"
 
 #define SPCUR_MAP1_NAME			"Capture The Castle" /* oac_sago2 */

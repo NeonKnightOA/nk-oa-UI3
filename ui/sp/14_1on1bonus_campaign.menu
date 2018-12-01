@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Tournament (Bonus)"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_38"
-#define SPCUR_MAP1NUM		39
+#define SPCUR_MAP1NUM		40
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_39"
 #define SPCUR_MAP2NUM		0
 #define SPCUR_MAP3_UNLOCKCVAR 	0

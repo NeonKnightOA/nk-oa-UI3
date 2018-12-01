@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Double Domination"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_17"
-#define SPCUR_MAP1NUM		18
+#define SPCUR_MAP1NUM		19
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_18"
-#define SPCUR_MAP2NUM		19
+#define SPCUR_MAP2NUM		20
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_19"
-#define SPCUR_MAP3NUM		20
+#define SPCUR_MAP3NUM		21
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_20"
 
 #define SPCUR_MAP1_NAME			"Double Trouble" /* ps37ctf2 */

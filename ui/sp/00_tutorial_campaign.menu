@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // Internal workings that don't really need to be modified
 
-#define SPCUR_MENUNAME		"singleplayercampaign_00_tutorial"
+#define SPCUR_MENUNAME		"singleplayercampaign_00_tut"
 #define SPCUR_MENUFULLNAME	"^4Tutorial"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	""
@@ -38,7 +38,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MAP1_NAME			"FFA Tutorial" /* oad_tutorial */
 #define SPCUR_MAP2_NAME			""
 #define SPCUR_MAP3_NAME			""
-#define SPCUR_MAP1_DESCRIPTION		""
+#define SPCUR_MAP1_DESCRIPTION		"Learn the basics of OpenArena."
 #define SPCUR_MAP2_DESCRIPTION		""
 #define SPCUR_MAP3_DESCRIPTION		""
 #define SPCUR_MAP1_FRAGLIMIT		5

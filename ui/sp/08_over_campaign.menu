@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Overload"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_20"
-#define SPCUR_MAP1NUM		21
+#define SPCUR_MAP1NUM		22
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_21"
-#define SPCUR_MAP2NUM		22
+#define SPCUR_MAP2NUM		23
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_22"
-#define SPCUR_MAP3NUM		23
+#define SPCUR_MAP3NUM		24
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_23"
 
 #define SPCUR_MAP1_NAME			"Blow It Up!" /* oac_lava2 */

@@ -44,23 +44,6 @@ itemDef { /* Time to beat */
 	border 0
 	visible 1 
 }
-/*
-itemDef { / * Own time * /
-      	name mapparred
-	ownerdraw UI_MAP_TIMETOBEAT
-	textstyle 2
-      	textscale 0.27
-	decoration
-	text "Yer time:"
-	cvar "ui_scoreTime" 
-	textalign ITEM_ALIGN_LEFT
-   	rect 360 306 127 32
-     	textalignx	0	
-	textaligny	0
-	border 0
-	visible 1 
-}
-*/
 itemDef { /* Fraglimit */
       	name mapfraglimit
 	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
@@ -126,23 +109,6 @@ itemDef { /* Gametype */
 	border 0
 	visible 1 
 }
-/*
-itemDef { /* Opponents * /
-      	name mapopponents
-	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
-      	ownerdraw UI_OPPONENT_NAME
-	textstyle 2
-      	textscale 0.27
-	decoration
-	text "Opponent(s):"
-	textalign ITEM_ALIGN_LEFT
-   	rect 360 341 127 32
-     	textalignx	0	
-	textaligny	0
-	border 0
-	visible 1 
-}
-*/
 itemDef { /* Special Rules - Map 1 */
       	name mapopponents
 	textstyle 2
@@ -207,7 +173,6 @@ itemDef { /* Red Team */
 	border 0
 	visible 1 
 }
-
 itemDef { /* Blue Team */
       	name mapblueteam
 	ownerdrawflag UI_SHOW_ANYTEAMGAME 
@@ -219,22 +184,6 @@ itemDef { /* Blue Team */
 	cvar "ui_blueTeam"
 	textalign ITEM_ALIGN_LEFT
    	rect 360 356 127 32
-     	textalignx	0	
-	textaligny	0
-	border 0
-	visible 1 
-}
-
-itemDef { /* Campaign progress */
-      	name mapprogress
-	type 0
-	textstyle 2
-      	textscale 0.27
-	decoration
-	text "Completed maps:"
-	cvar "ui_spProgress"
-	textalign ITEM_ALIGN_LEFT
-   	rect 360 371 127 32
      	textalignx	0	
 	textaligny	0
 	border 0

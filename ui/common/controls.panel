@@ -1,29 +1,54 @@
 
-
-
-// The "Simple" consolified game starting interface for easy selection
-// of setting up the game options and the like.
-// Designed for controllers really. Apologies if this is "too dumb"
-// but i'd like to make the interface less daunting by default.
+/* The "Simple" consolified game starting interface for easy selection
+	of setting up the game options and the like.
+	Designed for controllers really. Apologies if this is "too dumb"
+	but i'd like to make the interface less daunting by default. */
 
 #include "ui/common/borders600400.panel"
+/* Define Zone. */
+#define KEYBINDLEFT	144
+#define KEYBINDRIGHT	400
+#define KEYBINDTEXSIZE 0.28
+#define KEYBINDTITSIZE 0.5
+#define KEYBIND_MAX_WIDTH		128
+#define KEYBIND_MAX_HEIGHT		16
 
-// -----------------------------------------------------------
-// TAB 0 - CONTROLS
-// -----------------------------------------------------------
+#define KEY_ITEM_T	70
+#define KEY_ITEM_1	100
+#define KEY_ITEM_2	120
+#define KEY_ITEM_3	140
+#define KEY_ITEM_4	160
+#define KEY_ITEM_5	180
+#define KEY_ITEM_6	200
+#define KEY_ITEM_7	220
+#define KEY_ITEM_8	240
+#define KEY_ITEM_9	260
+#define KEY_ITEM_10	280
+#define KEY_ITEM_11	300
+#define KEY_ITEM_12	320
+#define KEY_ITEM_13	340
+
+#define TOOLTIP_SLIDER	"Slide until you get the preference you wish."
+#define TOOLTIP_KEYBINDS "Press the already bound key to set a new one."
+#define TOOLTIP_CHECKBOX	"To activate this function, press the checkbox."
+#define TOOLTIP_MULTI	"Select an option from the list."
+
+/*	-----------------------------------------------------------
+	TAB 0 - CONTROLS
+	----------------------------------------------------------- */
 
 itemDef {
-      	name dmgamefield
+	name dmgamefield
 	text	""
 	background MP_DIALOGBG
 	backcolor 	MP_DIALOGBGCOLOR
 	style 1
 	type 0
 	textstyle 2
-      	textscale 0.5
+	textscale 0.5
 	decoration
-   	rect 16 32 600 400
-     	textalignx	 32	
+	rect 16 32 600 400
+	textalignx	 32	
 	textaligny	 24
 	border 1
 	bordercolor   MP_BOX_BORDER
@@ -32,15 +57,15 @@ itemDef {
 }
 
 itemDef {
-      	name titlebar
+	name titlebar
 	text	"Controls"
 	style 1
 	type 0
 	textstyle 2
-      	textscale 0.333
+	textscale 0.333
 	decoration
-   	rect 0 0 600 400
-     	textalignx	 16	
+	rect 0 0 600 400
+	textalignx	 16	
 	textaligny	 24
 	border 1
 	bordercolor   MP_BOX_BORDER
@@ -49,566 +74,757 @@ itemDef {
 }
 
 itemDef {
-      	name keybindstat
-      	text " "
+	name keybindstat
+	text " "
 	type ITEM_TYPE_CHECKBOX
 	ownerdraw UI_BIND2CLICK
 	style 1
 	textstyle 6
-      	textscale 0.255
-   	rect 86 366 256 20
-     	textalignx	24	
+	textscale 0.255
+	rect 86 366 256 20
+	textalignx	24	
 	textaligny	 17
 	forecolor MP_TEXTCOLOR
 	visible 0
 	decoration
 }
-	
 
 
-// leilei - it's a bunch of includes, to keep this file looking small and readable. 
-// Ok this was a mistake. All those redefinitions flood the console too much
-// so i'm unrolling it. :(
 
-#define	KEYBINDCENTER	256
-#define KEYBINDTEXSIZE 0.28
-#define	KEYBINDCATEGORY	"0"
+/* 20 on 20 from 100  - 60 is for the title */
+itemDef { /* Movement */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDLEFT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Movement"
+	cvarTest "ui_menutab" showCVar { "0" }
+}
 
-#define IMAKEY (KEYBINDDOWN, BINDTITLE, ACTIONNAME, ALTNAME, BINDNAME, THEACTION) { itemDef { name ACTIONNAME type ITEM_TYPE_BUTTON group bind2click  style WINDOW_STYLE_FILLED rect 136 KEYBINDDOWN 196 20 background "emptykey" visible 1 noFocusColor MENU_TRUE text BINDTITLE textalign ITEM_ALIGN_CENTER textalignx 96 textaligny 13    backcolor MP_KEYBINDBGCOLOR textscale .2  cvarTest "ui_menutab"	showCVar { KEYBINDCATEGORY } forecolor 1 1 1 1 action  { clearclick bind2click setitemcolor bind2click backcolor MP_KEYBINDBGCOLOR ; setitemcolor ACTIONNAME backcolor MP_KEYBINDSELCOLOR ;setitemcolor BINDNAME backcolor MP_KEYBINDBGCOLOR ; setitemcolor ALTNAME backcolor MP_KEYBINDBGCOLOR ;    }      mouseenter        {          show keybindstat ;        }        mouseexit        {          hide keybindstat ;        }      }      itemDef              name BINDNAME        group bind2click        style WINDOW_STYLE_FILLED        background "emptykey"        type ITEM_TYPE_BIND        bindType BIND_PRIMARY        bind2Click MENU_TRUE        noFocusColor MENU_TRUE	backcolor MP_KEYBINDBGCOLOR         cvar THEACTION        rect 333 KEYBINDDOWN 128 20         textalign ITEM_ALIGN_CENTER        textalignx 64        textaligny 13            textscale .2                    forecolor 1 1 1 1	cvarTest "ui_menutab"	showCVar { KEYBINDCATEGORY }           visible 1        mouseenter        {          show keybindstat ;        }        mouseexit        {          hide keybindstat ;        }        action        {          clearclick bind2click	  setitemcolor bind2click backcolor MP_KEYBINDBGCOLOR ;          setitemcolor ACTIONNAME backcolor MP_KEYBINDBGCOLOR ;          setitemcolor BINDNAME backcolor MP_KEYBINDSELCOLOR ;          setitemcolor ALTNAME backcolor MP_KEYBINDBGCOLOR ;        }    	}      itemDef      {        name ALTNAME        group bind2click        style WINDOW_STYLE_FILLED        background "emptykey"        type ITEM_TYPE_BIND        bindType BIND_ALTERNATE        bind2Click MENU_TRUE        noFocusColor MENU_TRUE	backcolor MP_KEYBINDBGCOLOR         cvar THEACTION        rect 461 KEYBINDDOWN 128 20         textalign ITEM_ALIGN_CENTER        textalignx 64        textaligny 13            textscale .2                    forecolor 1 1 1 1	cvarTest "ui_menutab"	showCVar { KEYBINDCATEGORY }           visible 1        mouseenter        {          show keybindstat ;        }        mouseexit        {          hide keybindstat ;        }        action        {          clearclick bind2click	  setitemcolor bind2click backcolor MP_KEYBINDBGCOLOR ;          setitemcolor ACTIONNAME backcolor MP_KEYBINDBGCOLOR ;          setitemcolor BINDNAME backcolor MP_KEYBINDBGCOLOR ;          setitemcolor ALTNAME backcolor MP_KEYBINDSELCOLOR ;        }    	} }
-
-
-//IMAKEY(100, "Move Forward", "forwardact", "forwardalt", "forward", "+forward") 
-// cant do this :(
-
-//trying a condensed key
-#define KEYBASE "name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale 0.25 textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3"
-
-// I'd advise turning off wordwrap at this part.
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 60 256 16
+itemDef { /* +forward - Move forward (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Move forward "
+	text "Move forward "
 	cvar "+forward"
 }
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 80 256 16
+itemDef { /* +back - Move backwards (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Move backward "
+	text "Move backwards "
 	cvar "+back"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 100 256 16
+itemDef { /* +moveleft - Strafe left (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Strafe left "
+	text "Strafe left "
 	cvar "+moveleft"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 120 256 16
+itemDef { /* +moveright - Strafe right (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Strafe right "
+	text "Strafe right "
 	cvar "+moveright"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 140 256 16
+itemDef { /* +moveup - Jump/Swim up (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Jump "
+	text "Jump "
 	cvar "+moveup"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 160 256 16
+itemDef { /* +movedown - Duck/Swim down (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Duck "
+	text "Duck "
 	cvar "+movedown"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 180 256 16
+itemDef { /* +strafe - Toggle strafe (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Turn left "
-	cvar "+left"
-}
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 200 256 16
-	cvarTest "ui_menutab" showCVar { 0 }
-        text "Turn right "
-	cvar "+right"
-}
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 220 256 16
-	cvarTest "ui_menutab" showCVar { 0 }
-        text "Look up "
-	cvar "+lookup"
-}
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 240 256 16
-	cvarTest "ui_menutab" showCVar { 0 }
-        text "Look down "
-	cvar "+lookdown"
-}
-
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 260 256 16
-	cvarTest "ui_menutab" showCVar { 0 }
-        text "Strafe modifier "
+	text "Toggle run/walk "
 	cvar "+strafe"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 280 256 16
+itemDef { /* +speed - Toggle run/walk (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Run/Walk modifier "
+	text "Toggle Sprint "
 	cvar "+speed"
 }
 
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 300 256 16
-	cvarTest "ui_menutab" showCVar { 0 }
-        text "Zoom view "
-	cvar "+zoom"
+itemDef { /* Look */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDRIGHT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Look"
+	cvarTest "ui_menutab" showCVar { "0" }
 }
 
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 320 256 16
+itemDef { /* +left - Turn left (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 0 }
-        text "Center view "
+	text "Turn left "
+	cvar "+left"
+}
+itemDef { /* +right - Turn right (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 0 }
+	text "Turn right "
+	cvar "+right"
+}
+itemDef { /* +lookup - Look up (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 0 }
+	text "Look up "
+	cvar "+lookup"
+}
+itemDef { /* +lookdown - Look down (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 0 }
+	text "Look down "
+	cvar "+lookdown"
+}
+itemDef { /* centerview - Center view (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 0 }
+	text "Center view "
 	cvar "centerview"
 }
-
-	// TODO: Always Run toggle
-
-
-
-
+itemDef { /* +mlook - Mouse Look (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 0 }
+	text "Mouse Look"
+	cvar "+mlook"
+}
 
 // WEAPONS SECTION
 
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 60 256 16
+itemDef { /* Actions */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDLEFT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Actions"
+	cvarTest "ui_menutab" showCVar { "1" }
+}
+itemDef { /* +attack - Fire (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Fire Gun "
+	text "Fire "
 	cvar "+attack"
 }
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 80 256 16
+itemDef { /* weapprev - Previous weapon (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Previous Gun "
+	text "Prev. weapon "
 	cvar "weapprev"
 }
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 100 256 16
+itemDef { /* weapnext - Next weapon (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Next Gun "
+	text "Next weapon "
 	cvar "weapnext"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 120 256 16
+itemDef { /* weapbest - Best weapon (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Gauntlet Gun "
+	text "Best weapon "
+	cvar "weapbest"
+}
+itemDef { /* +zoom - Zoom (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 1 }
+	text "Zoom "
+	cvar "+zoom"
+}
+itemDef { /* +button2 - Use item (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 1 }
+	text "Use item "
+	cvar "+button2"
+}
+itemDef { /* kill - Suicide */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 1 }
+	text "Suicide "
+	cvar "kill"
+}
+
+itemDef { /* Weapons */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDRIGHT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Weapons"
+	cvarTest "ui_menutab" showCVar { "1" }
+}
+
+itemDef { /* weapon 1 - Gauntlet (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 1 }
+	text "Gauntlet "
 	cvar "weapon 1"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 140 256 16
+itemDef { /* weapon 2 - Machinegun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Machine Gun "
+	text "Machinegun "
 	cvar "weapon 2"
 }
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 160 256 16
+itemDef { /* weapon 3 - Shotgun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Shot Gun "
+	text "Shotgun"
 	cvar "weapon 3"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 180 256 16
+itemDef { /* weapon 4 - Grenade Launcher (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Grenade Gun "
+	text "Gren. launcher "
 	cvar "weapon 4"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 200 256 16
+itemDef { /* weapon 5 - Rocket Launcher (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Rocket Gun "
+	text "Rocket launcher "
 	cvar "weapon 5"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 220 256 16
+itemDef { /* weapon 6 - Lightning Gun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Lightning Gun "
+	text "Lightning Gun "
 	cvar "weapon 6"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 240 256 16
+itemDef { /* weapon 7 - Railgun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Rail Gun "
+	text "Railgun "
 	cvar "weapon 7"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 260 256 16
+itemDef { /* weapon 8 - Plasma Gun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Plasma Gun "
+	text "Plasma Gun "
 	cvar "weapon 8"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 280 256 16
+itemDef { /* weapon 9 - BFG (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_9 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Ballistic Faerie Gun "
+	text "Big Phaerie Gun "
 	cvar "weapon 9"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 300 256 16
+itemDef { /* weapon 10 - Grappling Hook (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_10 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Nail Gun "
+	text "Grapple Hook "
 	cvar "weapon 10"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 320 256 16
+itemDef { /* weapon 11 - Nailgun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_11 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "Proximity Gun "
+	text "Nailgun "
 	cvar "weapon 11"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 340 256 16
+itemDef { /* weapon 12 - Prox Launcher (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_12 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 1 }
-        text "The Chain Gun!!! "
+	text "Mine Layer "
 	cvar "weapon 12"
 }
-
-
+itemDef { /* weapon 13 - Chaingun (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_13 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 1 }
+	text "Chaingun "
+	cvar "weapon 13"
+}
 
 // Communicate
 
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 60 256 16
+itemDef { /* Talk and Speech */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDLEFT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Talk and Speech"
+	cvarTest "ui_menutab" showCVar { "2" }
+}
+itemDef { /* messagemode - Chat (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Chat (All) "
+	text "Chat "
 	cvar "messagemode"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 80 256 16
+itemDef { /* messagemode2 - Team chat (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Chat (Team) "
+	text "Chat (Team) "
 	cvar "messagemode2"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 100 256 16
+itemDef { /* messagemode3 - Target chat (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Chat (Target) "
+	text "Chat (Target) "
 	cvar "messagemode3"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 120 256 16
+itemDef { /* messagemode4 - Attacker chat (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Chat (Your attacker) "
+	text "Chat (Attacker) "
 	cvar "messagemode4"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 140 256 16
+itemDef { /* +button3 - Gesture (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Confirm order "
-	cvar "confirmOrder"
-}
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 160 256 16
-	cvarTest "ui_menutab" showCVar { 2 }
-        text "Deny order "
-	cvar "denyOrder"
-}
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 200 256 16
-	cvarTest "ui_menutab" showCVar { 2 }
-        text "Push to talk "
-	cvar "+voiprecord"
-}
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 240 256 16
-	cvarTest "ui_menutab" showCVar { 2 }
-        text "Taunt gesture "
+	text "Gesture "
 	cvar "+button3"
 }
 
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 260 256 16
+itemDef { /* +voiprecord - Voice chat (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 2 }
-        text "Quick voice taunt "
+	text "Voice Chat "
+	cvar "+voiprecord"
+}
+itemDef { /* tauntKillInsult - Taunt (Kill Insult) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Taunt (Kill) "
+	cvar "tauntKillInsult"
+}
+itemDef { /* tauntPraise - Taunt (Praise) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Taunt (Kill Praise) "
+	cvar "tauntPraise"
+}
+itemDef { /* tauntTaunt - Voice taunt */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_9 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Taunt "
 	cvar "tauntTaunt"
+}
+itemDef { /* tauntDeathInsult - Taunt (Death) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_10 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Taunt (Death) "
+	cvar "tauntDeathInsult"
+}
+itemDef { /* tauntGauntlet - Taunt (Gauntlet) */
+	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_11 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Taunt (Gauntlet) "
+	cvar "tauntGauntlet"
+}
+itemDef { /* Orders */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+  	rect KEYBINDRIGHT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Orders"
+	cvarTest "ui_menutab" showCVar { "2" }
+}
+itemDef { /* confirmOrder - Confirm order (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Confirm order "
+	cvar "confirmOrder"
+}
+itemDef { /* denyOrder - Deny order (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Deny order "
+	cvar "denyOrder"
+}
+itemDef { /* nextTeamMember - Next team member (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Next member "
+	cvar "nextTeamMember"
+}
+itemDef { /* prevTeamMember - Previous team member */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Previous member "
+	cvar "prevTeamMember"
+}
+itemDef { /* nextOrder - Next team order (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Next order "
+	cvar "nextOrder"
+}
+itemDef { /* prevOrder - Previous team order */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Previous order "
+	cvar "prevOrder"
+}
+itemDef { /* taskOffense - Attack! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Attack! "
+	cvar "taskOffense"
+}
+itemDef { /* taskDefense - Defend! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Defend! "
+	cvar "taskDefense"
+}
+itemDef { /* taskPatrol - Patrol! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_9 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Patrol! "
+	cvar "taskPatrol"
+}
+itemDef { /* taskCamp - Camp! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_10 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Camp! "
+	cvar "taskCamp"
+}
+itemDef { /* taskFollow - Follow! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_11 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Follow! "
+	cvar "taskFollow"
+}
+itemDef { /* taskRetrieve - Retrieve! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_12 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Retrieve! "
+	cvar "taskRetrieve"
+}
+itemDef { /* taskEscort - Escort! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_13 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 2 }
+	text "Escort! "
+	cvar "taskEscort"
 }
 
 // Misc - more keys we need, plus sliders and toggles we need
 
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 60 256 16
-	cvarTest "ui_menutab" showCVar { 3 }
-        text "Use item "
-	cvar "+button2"
+itemDef { /* Other keybinds */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+   	rect KEYBINDLEFT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Other keybinds"
+	cvarTest "ui_menutab" showCVar { "3" }
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 80 256 16
+itemDef { /* +scores - Show scoreboard (*) */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 3 }
-        text "Show rankings "
+	text "Show scores "
 	cvar "+scores"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 100 256 16
+itemDef { /* scoresUp - Nav. scoreboard up */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 3 }
-        text "Toggle camera "
+	text "Nav. scores up "
+	cvar "scoresUp"
+}
+itemDef { /* scoresDown - Nav. scoreboard down */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Nav. scores down "
+	cvar "scoresDown"
+}
+itemDef { /* toggle cg_thirdPerson - Behindview mode */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Behindview "
 	cvar "toggle cg_thirdPerson"
 }
-
-
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 120 256 16
+itemDef { /* screenshot - Take screenshot */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 3 }
-        text "Vote yes "
+	text "Screenshot "
+	cvar "screenshot"
+}
+itemDef { /* screenshotJPEG - Take JPEG screenshot */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Screenshot (JPEG) "
+	cvar "screenshotJPEG"
+}
+itemDef { /* vote yes - Vote YES! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Vote YES! "
 	cvar "vote yes"
 }
-
-itemDef    
-{ 
-	name keybinder type ITEM_TYPE_BIND style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textalign ITEM_ALIGN_CENTER textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR mouseenter { show keybindstat }	mouseexit { hide keybindstat } hexcolor 0 1 2 3
-	rect KEYBINDCENTER 140 256 16
+itemDef { /* vote no - Vote NO! */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
 	cvarTest "ui_menutab" showCVar { 3 }
-        text "Vote no "
+	text "Vote NO! "
 	cvar "vote no"
 }
-
-itemDef 
-      {
-        name mspeed
-        type ITEM_TYPE_SLIDER
-        text "Mouse sensitivity"
-        cvarfloat "sensitivity" 1 1 10
-        rect 32 160 192 20
-        textalign ITEM_ALIGN_LEFT
-        textalignx 0
-        textaligny 16
-        textscale 0.3
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-	forecolor 1 1 1 1
-        visible MENU_TRUE
-	hexcolor 0 1 2 3	// color schemes
-
+itemDef { /* cg_sizeup - Increase HUD size */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_9 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Increase HUD "
+	cvar "cg_sizeup"
 }
-
-itemDef {
-      	name fraglimt
-      	text "Mouse smoothing"
-	type ITEM_TYPE_CHECKBOX
+itemDef { /* cg_sizedown - Decrease HUD size */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_10 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Decrease HUD "
+	cvar "cg_sizedown"
+}
+itemDef { /* +acc - Show accuracy */
+	name keybinder style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip TOOLTIP_KEYBINDS fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDLEFT KEY_ITEM_11 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Show accuracy "
+	cvar "+acc"
+}
+itemDef { /* Control options */
+	name title_movement style 1 visible 1 noFocusColor 0 textscale KEYBINDTITSIZE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3
+  	rect KEYBINDRIGHT KEY_ITEM_T KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	type 0 decoration
+	text "Control options"
+	cvarTest "ui_menutab" showCVar { "3" }
+}
+itemDef { /* cl_run - Toggle Run (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_1 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Always Run "
+	cvar "cl_run"
+}
+/* itemDef { /* cg_autoswitch - Autoswitch weapons (*) * /
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_MULTI mouseenter { setcvar ui_tip TOOLTIP_MULTI fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_2 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	type ITEM_TYPE_MULTI
+	text "Autoswitch:"
+	cvar "cg_autoswitch"
+	cvarFloatList { { "Never" 0 "Always" 1 "New" 2 "Better" 3 "New & Bet" 4 } }
+} */
+itemDef { /* sensitivity - Mouse sensitivity (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_SLIDER mouseenter { setcvar ui_tip TOOLTIP_SLIDER fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_3 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Mouse sensitivity "
+	cvarfloat "sensitivity" 1 1 10
+}
+itemDef { /* cg_voipTeamOnly - Voice chat only for team (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_4 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Team-Only VoiceChat "
+	cvar "cg_voipTeamOnly"
+}
+itemDef { /* m_filter - Mouse smoothing (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_5 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Mouse smoothing "
 	cvar "m_filter"
-	background MP_FATBUTTONBG
-	backcolor MP_BUTTONBGCOLOR
-	style 1
-	textstyle 6
-      	textscale 0.255
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-   	rect 32 180 256 20
-     	textalignx	24	
-	textaligny	 17
-
-	forecolor MP_TEXTCOLOR
-	mouseEnter { setcvar ui_tip TIP_INPUT_MOUSE_FILTER fadein tooltip; } mouseExit { fadeout tooltip;}  
-	visible 1 
-	hexcolor 0 1 2 3	// color schemes
 }
+itemDef { /* m_pitch - Invert mouse (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_6 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Invert mouse "
+	cvar "m_pitch"
+}
+itemDef { /* cl_freelook - Free Look (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_7 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Free Look"
+	cvar "cl_freelook"
+}
+itemDef { /* in_joystick - Enable joystick (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip TOOLTIP_CHECKBOX fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_8 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Enable joystick "
+	cvar "in_joystick"
+}
+itemDef { /* joy_threshold - Joystick threshold (*) */
+	name keybinder style 1 visible 1 noFocusColor 0 textscale KEYBINDTEXSIZE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR
+	type ITEM_TYPE_SLIDER mouseenter { setcvar ui_tip TOOLTIP_SLIDER fadein tooltip } mouseexit { fadeout tooltip }
+	rect KEYBINDRIGHT KEY_ITEM_9 KEYBIND_MAX_WIDTH KEYBIND_MAX_HEIGHT
+	cvarTest "ui_menutab" showCVar { 3 }
+	text "Joystick threshold "
+	cvarfloat "joy_threshold" 1 0.05 0.1
+}
+
+/* -----------------------------------------------------------
+TAB X - ALL
+----------------------------------------------------------- */
 
 itemDef {
-      	name fraglimt
-      	text "Vertical invert"
-	type ITEM_TYPE_CHECKBOX
-	cvar "ui_mousePitch"
-	background MP_FATBUTTONBG
-	backcolor MP_BUTTONBGCOLOR
-	style 1
-	textstyle 6
-      	textscale 0.255
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-   	rect 32 200 256 20
-     	textalignx	24	
-	textaligny	 17
-
-	forecolor MP_TEXTCOLOR
-	action { uiScript update ui_mousePitch }
-	mouseEnter { setcvar ui_tip TIP_INPUT_MOUSE_INVERT fadein tooltip; } mouseExit { fadeout tooltip;}  
-	visible 1 
-	hexcolor 0 1 2 3	// color schemes
-}
-
-// joystick half
-
-itemDef 
-      {
-        name jthreshspeed
-        type ITEM_TYPE_SLIDER
-        text "Joystick threshold"
-        cvarfloat "joy_threshold" 1 0.05 0.1
-        rect 332 160 192 20
-        textalign ITEM_ALIGN_LEFT
-        textalignx 0
-        textaligny 16
-        textscale 0.3
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-	forecolor 1 1 1 1
-        visible MENU_TRUE
-	hexcolor 0 1 2 3	// color schemes
-
-}
-
-// -----------------------------------------------------------
-// TAB X - ALL
-// -----------------------------------------------------------
-
-
-itemDef {
-      	name tab1
-      	text "Movement"
+	name tab1
+	text "Movement"
 	background MP_TABOFF
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 16 TABPOSY 128 16
+	textscale 0.30
+	rect 16 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	hideCVar { "0" }
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 12
 	forecolor MP_TEXTCOLOR
-
 	backcolor MP_TABOFFBGCOLOR
 	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
-      	name tab2
-      	text "Weapons"
+	name tab2
+	text "Weapons"
 	background MP_TABOFF
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 144 TABPOSY 128 16
+	textscale 0.30
+	rect 144 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	hideCVar { "1" }
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 12
 	forecolor MP_TEXTCOLOR
 	backcolor MP_TABOFFBGCOLOR
@@ -616,19 +832,18 @@ itemDef {
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
-      	name tab3
-      	text "Communicate"
+	name tab3
+	text "Communicate"
 	background MP_TABOFF
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 272 TABPOSY 128 16
+	textscale 0.30
+	rect 272 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	hideCVar { "2" }
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 12
 	forecolor MP_TEXTCOLOR
 	backcolor MP_TABOFFBGCOLOR
@@ -636,19 +851,18 @@ itemDef {
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
-      	name tab4
-      	text "Misc"
+	name tab4
+	text "Misc"
 	background MP_TABOFF
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 400 TABPOSY 128 16
+	textscale 0.30
+	rect 400 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	hideCVar { "3" }
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 12
 	forecolor MP_TEXTCOLOR
 	backcolor MP_TABOFFBGCOLOR
@@ -657,89 +871,77 @@ itemDef {
 	hexcolor 0 1 2 3	// color schemes
 }
 
-
-
-
-
-
-
-
-
 // pressed tabs
-
-
 itemDef {
-      	name tab1
-      	text "Movement"
+	name tab1
+	text "Movement"
 	background MP_TABON
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 16 TABPOSY 128 16
+	textscale 0.30
+	rect 16 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	showCVar { "0" }
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 16
 	decoration
 	backcolor MP_TABONBGCOLOR
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-itemDef {
-      	name tab2
-      	text "Weapons"
+itemDef { 
+	name tab2
+	text "Weapons"
 	background MP_TABON
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 144 TABPOSY 128 16
+	textscale 0.30
+	rect 144 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	showCVar { "1" }
 	decoration
-     	textalignx	 16	
+	textalignx	 16	
 	textaligny	 16
 	backcolor MP_TABONBGCOLOR
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-itemDef {
-      	name tab3
-      	text "Communicate"
+itemDef { 
+	name tab3
+	text "Communicate"
 	background MP_TABON
 	style 1
 	type ITEM_TYPE_BUTTON
 	textstyle 2
-      	textscale 0.30
-   	rect 272 TABPOSY 128 16
+	textscale 0.30
+	rect 272 TABPOSY 128 16
 	cvarTest "ui_menutab"
 	showCVar { "2" }
 	decoration
-     	textalignx	 16	
+	textalignx	 16	
+	textaligny	 16
+	backcolor MP_TABONBGCOLOR
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+itemDef { 
+	name tab4
+	text "Misc"
+	background MP_TABON
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 0.30
+	rect 400 TABPOSY 128 16
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	textalignx	 16	
 	textaligny	 16
 	backcolor MP_TABONBGCOLOR
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
 
-itemDef {
-      	name tab4
-      	text "Misc"
-	background MP_TABON
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-      	textscale 0.30
-   	rect 400 TABPOSY 128 16
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-	decoration
-     	textalignx	 16	
-	textaligny	 16
-	backcolor MP_TABONBGCOLOR
-	visible 1 
-	hexcolor 0 1 2 3	// color schemes
-}

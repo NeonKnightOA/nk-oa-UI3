@@ -28,11 +28,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUFULLNAME	"Domination"
 
 #define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_14"
-#define SPCUR_MAP1NUM		15
+#define SPCUR_MAP1NUM		16
 #define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_15"
-#define SPCUR_MAP2NUM		16
+#define SPCUR_MAP2NUM		17
 #define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_16"
-#define SPCUR_MAP3NUM		17
+#define SPCUR_MAP3NUM		18
 #define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_17"
 
 #define SPCUR_MAP1_NAME			"Private Property" /* oa_shouse */
