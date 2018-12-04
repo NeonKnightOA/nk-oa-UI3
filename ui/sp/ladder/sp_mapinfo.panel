@@ -1,0 +1,191 @@
+
+// Stuff about the map, info box etc.
+
+itemDef { /* Map preview */
+      	name mappreviewblur
+	ownerdraw UI_MAPCINEMATIC
+	textstyle 2
+      	textscale 0.5
+	backcolor 1 1 1 1
+	decoration
+   	rect 330 48 300 220
+     	textalignx	0	
+	textaligny	0
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+}
+
+itemDef { /* Selected map */
+      	name level_info
+	textstyle 2
+	ownerdraw UI_MAPS_SELECTION
+      	textscale 0.33
+	decoration
+	textalign ITEM_ALIGN_CENTER
+   	rect 400 266 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { /* Time to beat */
+      	name mappar
+	ownerdraw UI_MAP_TIMETOBEAT
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Time to beat:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 281 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+itemDef { /* Fraglimit */
+      	name mapfraglimit
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Fraglimit:"
+	cvar "fraglimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 296 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { /* Capturelimit */
+      	name mapcapturelimit
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Capturelimit:"
+	cvar "capturelimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 296 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { /* Timelimit */
+      	name maptimelimit
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Timelimit:"
+	cvar "timelimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 311 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { /* Gametype */
+      	name mapgametype
+	type 0
+      	ownerdraw UI_GAMETYPE
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Gametype:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 326 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+itemDef { /* Special Rules - Map 1 */
+      	name mapopponents
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Special Rules:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 341 127 32
+     	textalignx	0	
+	textaligny	0
+	cvarTest SPCUR_MAP1NUM
+	showCvar { "0" "3" "6" "9" "12" "15" "18" "21" "24" "27" "30" "33" "36" "39" }
+	cvar SPCUR_MAP1_ADDITIONALRULES
+	border 0
+	visible 1 
+}
+itemDef { /* Special Rules - Map 2 */
+      	name mapopponents
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Special Rules:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 341 127 32
+     	textalignx	0	
+	textaligny	0
+	cvarTest SPCUR_MAP2NUM
+	showCvar { "1" "4" "7" "10" "13" "16" "19" "22" "25" "28" "31" "34" "37" }
+	cvar SPCUR_MAP2_ADDITIONALRULES
+	border 0
+	visible 1 
+}
+itemDef { /* Special Rules - Map 3 */
+      	name mapopponents
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Special Rules:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 341 127 32
+     	textalignx	0	
+	textaligny	0
+	cvarTest SPCUR_MAP3NUM
+	showCvar { "2" "5" "8" "11" "14" "17" "20" "23" "26" "29" "32" "35" "38" }
+	cvar SPCUR_MAP3_ADDITIONALRULES
+	border 0
+	visible 1 
+}
+itemDef { /* Red Team */
+      	name mapredteam
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	type 0
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Team 1:"
+	cvar "g_blueTeam"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 341 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+itemDef { /* Blue Team */
+      	name mapblueteam
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	type 0
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Team 2:"
+	cvar "ui_blueTeam"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 356 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}

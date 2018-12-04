@@ -1,0 +1,9 @@
+{
+map		        "am_lavactf2"
+longname	    "Lava Arena (CTF version)"
+bots		    "beret assassin skelebot grism kyonshi"
+capturelimit    8
+timelimit		15
+type		    "ctf oneflag harvester overload elimination ctfelim dd"
+}
+

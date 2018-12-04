@@ -5,32 +5,67 @@
 // This treats every window screen as a popup
 //
 //
-{	
+{
+	/* Main menu */
 	loadMenu { "ui/console_main.menu" }
-	loadMenu { "ui/menutest.menu" }
-	loadMenu { "ui/loading.menu" }
 	loadMenu { "ui/bar/main_menu.menu" }
-	loadMenu { "ui/main_adjustyourscreen.menu" }
-	loadMenu { "ui/main_profile.menu" }
-	loadMenu { "ui/main_single_player.menu" }
-	loadMenu { "ui/main_instant.menu" }
-	loadMenu { "ui/main_campaign.menu" }
-	loadMenu { "ui/main_campaign_ffa.menu" }
-	loadMenu { "ui/main_campaign_ctf.menu" }
-	loadMenu { "ui/main_campaign_dom.menu" }
-	loadMenu { "ui/main_campaign_over.menu" }
-	loadMenu { "ui/main_campaign_tourney.menu" }
-	loadMenu { "ui/main_play_maker.menu" }
-	loadMenu { "ui/main_join_server.menu" }
-	loadMenu { "ui/main_controls.menu" }
+
+	/* Single-player submenu */
+	loadMenu { "ui/sp/main.menu" }
+	loadMenu { "ui/sp/botmatch/botmatch.menu" }
+	loadMenu { "ui/sp/ladder/singleplayer.menu" }
+	loadMenu { "ui/sp/ladder/sp_transition.menu" }
+	loadMenu { "ui/sp/ladder/sp_campaign.menu" }
+	loadMenu { "ui/sp/ladder/sp_rungs.menu" }
+	loadMenu { "ui/sp/ladder/00_tutorial_campaign.menu" }
+	loadMenu { "ui/sp/ladder/01_ffa_campaign.menu" }
+	loadMenu { "ui/sp/ladder/02_pos_campaign.menu" }
+	loadMenu { "ui/sp/ladder/03_lms_campaign.menu" }
+	loadMenu { "ui/sp/ladder/04_team_campaign.menu" }
+	loadMenu { "ui/sp/ladder/05_elim_campaign.menu" }
+	loadMenu { "ui/sp/ladder/06_dom_campaign.menu" }
+	loadMenu { "ui/sp/ladder/07_ddom_campaign.menu" }
+	loadMenu { "ui/sp/ladder/08_over_campaign.menu" }
+	loadMenu { "ui/sp/ladder/09_1fctf_campaign.menu" }
+	loadMenu { "ui/sp/ladder/10_ctf_campaign.menu" }
+	loadMenu { "ui/sp/ladder/11_ectf_campaign.menu" }
+	loadMenu { "ui/sp/ladder/12_harv_campaign.menu" }
+	loadMenu { "ui/sp/ladder/13_1on1_campaign.menu" }
+	loadMenu { "ui/sp/ladder/14_1on1bonus_campaign.menu" }
+	loadMenu { "ui/sp/quickmatch/quickmatch.menu" }
+
+	/* Multiplayer submenu */
+	loadMenu { "ui/mp/main.menu" }
+	loadMenu { "ui/mp/joinserver.menu" }
+
+	/* Game options submenu */
 	loadMenu { "ui/main_options.menu" }
+	loadMenu { "ui/main_controls.menu" }
+	loadMenu { "ui/main_profile.menu" }
+	loadMenu { "ui/main_adjustyourscreen.menu" }
+
+	/* Library/Extras */
 	loadMenu { "ui/main_extras.menu" }
 	loadMenu { "ui/main_gallery.menu" }
 	loadMenu { "ui/main_mods.menu" }
 	loadMenu { "ui/main_bios.menu" }
+
+	/* Quit */
 	loadMenu { "ui/main_credits.menu" }
 	loadMenu { "ui/main_popup_quit.menu" }
+
+	/* Other relevant pages */
+	loadMenu { "ui/loading.menu" }
 	loadMenu { "ui/connecting.menu" }
- 	loadMenu { "ui/error.menu" }
-	loadMenu { "ui/transition_campaign.menu" }
+	loadMenu { "ui/error.menu" }
+
+	/* Debug menu pages for development, video calibration and what not, not necessary to play the game */
+	loadMenu { "ui/menutest.menu" }
+	loadMenu { "ui/debug/debug.menu" }
+	loadMenu { "ui/debug/testfilter.menu" }
+	loadMenu { "ui/debug/testtmufilter.menu" }
+	loadMenu { "ui/debug/testblends.menu" }
+	loadMenu { "ui/debug/testgradients.menu" }
+	loadMenu { "ui/debug/testbilinear.menu" }
+	loadMenu { "ui/debug/testdots.menu" }
 }

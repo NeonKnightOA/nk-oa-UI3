@@ -1,0 +1,7 @@
+{
+map		"oad_spacespire"
+longname	"The Space Spire"
+fraglimit	"15"
+bots		"kyonshi"
+type		"single ffa tourney lms pos"
+}

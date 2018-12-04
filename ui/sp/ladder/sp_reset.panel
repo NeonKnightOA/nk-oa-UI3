@@ -1,0 +1,48 @@
+itemDef { 
+      	name checker
+   	rect 1 1 1 1
+	border 1
+	visible 1
+	action {
+		exec "seta ui_spProgress 0";
+		exec "seta ui_sp_unlock_39 0";
+		exec "seta ui_sp_unlock_38 0";
+		exec "seta ui_sp_unlock_37 0";
+		exec "seta ui_sp_unlock_36 0";
+		exec "seta ui_sp_unlock_35 0";
+		exec "seta ui_sp_unlock_34 0";
+		exec "seta ui_sp_unlock_33 0";
+		exec "seta ui_sp_unlock_32 0";
+		exec "seta ui_sp_unlock_31 0";
+		exec "seta ui_sp_unlock_30 0";
+		exec "seta ui_sp_unlock_29 0";
+		exec "seta ui_sp_unlock_28 0";
+		exec "seta ui_sp_unlock_27 0";
+		exec "seta ui_sp_unlock_26 0";
+		exec "seta ui_sp_unlock_25 0";
+		exec "seta ui_sp_unlock_24 0";
+		exec "seta ui_sp_unlock_23 0";
+		exec "seta ui_sp_unlock_22 0";
+		exec "seta ui_sp_unlock_21 0";
+		exec "seta ui_sp_unlock_20 0";
+		exec "seta ui_sp_unlock_19 0";
+		exec "seta ui_sp_unlock_18 0";
+		exec "seta ui_sp_unlock_17 0";
+		exec "seta ui_sp_unlock_16 0";
+		exec "seta ui_sp_unlock_15 0";
+		exec "seta ui_sp_unlock_14 0";
+		exec "seta ui_sp_unlock_13 0";
+		exec "seta ui_sp_unlock_12 0";
+		exec "seta ui_sp_unlock_11 0";
+		exec "seta ui_sp_unlock_10 0";
+		exec "seta ui_sp_unlock_9 0";
+		exec "seta ui_sp_unlock_8 0";
+		exec "seta ui_sp_unlock_7 0";
+		exec "seta ui_sp_unlock_6 0";
+		exec "seta ui_sp_unlock_5 0";
+		exec "seta ui_sp_unlock_4 0";
+		exec "seta ui_sp_unlock_3 0";
+		exec "seta ui_sp_unlock_2 0";
+		exec "seta ui_sp_unlock_1 0";
+	}
+}

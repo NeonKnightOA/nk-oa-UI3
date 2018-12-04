@@ -65,9 +65,9 @@ itemDef { /* Botmatch (a.k.a. Instant Action) */
 itemDef { /* Quick Match */
 	name buttonhmain2
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	text "^4Quick Match"
+	text "Quick Match"
 	rect MMENU_OFFSETITEMH MAINMENU_ITEM_4 MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
-	/*action { close MAINMENU_TITLE; play MP_SND_SELECT; setcvar ui_menutab "0"; open quickmatch; }*/
+	action { close MAINMENU_TITLE; play MP_SND_SELECT; setcvar ui_menutab "0"; open quickmatch; }
 	mouseEnter { setcvar ui_tip "No options, no fiddling around. Just press this and play a random game!" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Arcade Mode */

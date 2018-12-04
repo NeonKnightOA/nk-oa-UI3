@@ -1,0 +1,6 @@
+{
+map		"oad_lunarbase"
+longname	"Lunar Base"
+bots		"tony rai assassin"
+type		"ffa team tourney lms pos"
+}

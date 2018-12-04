@@ -1,0 +1,161 @@
+{
+map		"oad_tutorial1"
+longname	"OpenArena Tutorial 1"
+type		"ffa lms tourney"
+}
+{
+map		"oad_tutorial2"
+longname	"OpenArena Tutorial 2"
+type		"ffa lms tourney"
+}
+{
+map		"oa_rpg3dm2"
+longname	"Trial By Error"
+type		"ffa lms tourney"
+}
+{
+map		"pul1duel-oa"
+longname	"Five Steps Ahead"
+type		"ffa lms tourney"
+}
+{
+map		"slimefac"
+longname	"Slime Facility"
+type		"ffa lms tourney"
+}
+{
+map		"sleekgrinder"
+longname	"Sleek Grinder"
+type		"ffa lms team dom"
+}
+{
+map		"oad_underworks"
+longname	"Under Working"
+type	        "ffa lms team elimination dom pos"
+}
+{
+map		"oad_blitzkrieg"
+longname	"Blitzkrieg Base"
+type		"ffa lms tourney pos"
+}
+{
+map		"oa_koth2"
+longname	"Floating Tower"
+type		"ffa lms team dom"
+}
+{
+map		"oad_galmevish"
+longname	"Galmevish Hub"
+type		"ffa tourney lms oneflag harvester dd pos"
+}
+{
+map		"oa_koth1"
+longname	"Repulsive Castle"
+type		"ffa lms team"
+}
+{
+map		"oa_shouse"
+longname	"Strange House"
+type		"ffa lms team elimination tourney dd dom"
+}
+{
+map		"kaos2"
+longname	"Khaos Everywhere!"
+type		"ffa lms team"
+}
+{
+map		"oa_shine"
+longname	"Shine In The Atmosphere"
+type		"ffa lms"
+}
+{
+map		"suspended"
+longname	"Suspended Satellite"
+type		"ffa lms"
+}
+{
+map		"oac_spacespire"
+longname	"The Space Spire"
+type		"ffa tourney lms pos"
+}
+{
+map		"oa_pvomit"
+longname	"Projectile Vomit"
+type		"ffa lms"
+}
+{
+map		"oad_lunarbase"
+longname	"Lunar Base"
+type		"ffa team tourney lms pos"
+}
+{
+map		"oad_suicizer"
+longname	"Suicidal!"
+type		"ffa lms tourney"
+}
+// CTF maps
+{
+map		"oac_lavaarena"
+longname	"Lava Arena (CTF)"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map		"ctf_compromise"
+longname	"Foul Compromise"
+type		"ctf oneflag elimination ctfelimination dd dom"
+}
+{
+map		"ctf_gate1"
+longname	"Outer Gates"
+type		"ctf elimination ctfelimination dd dom"
+}
+{
+map		"ctf_inyard"
+longname	"Inner Yard"
+type		"ctf oneflag elimination ctfelimination dd dom"
+}
+{
+map		"oac_bridge"
+longname	"The Bridge of Despair"
+type		"ctf oneflag harvester overload elimination ctfelimination dd pos"
+}
+{
+map		"mlctf1beta"
+longname	"Encephalomalacia"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map		"oac_factory"
+longname	"Colliding in the Factory"
+type		"ctf oneflag harvester overload elimination ctfelimination dd pos"
+}
+{
+map		"oac_sagocastle"
+longname	"Sago's Outer Castle"
+type		"ctf oneflag harvester overload elimination ctfelimination dd pos"
+}
+{
+map		"oa_spirit3"
+longname	"Where Fears Collide"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map		"oa_thor"
+longname	"Thor's Valhalla"
+type		"ctf oneflag harvester overload elimination ctfelimination dd dom"
+}
+{
+map		"ps37ctf2"
+longname	"Obey 37 2.0"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map		"ps9ctf"
+longname	"Obey 9"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map		"pul1ctf"
+longname	"Der Koberwascher"
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
