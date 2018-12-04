@@ -1,7 +1,0 @@
-{
-map		"oad_underworks"
-longname	"Under Working"
-bots		"major beret headcrash sergei assassin"
-fraglimit	"20"
-type	        "ffa lms team elimination dom pos"
-}

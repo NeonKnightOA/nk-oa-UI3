@@ -1,8 +1,0 @@
-{
-map		"oad_tutorial2"
-bots		"skelebot"
-longname	"OpenArena Tutorial"
-special		"Training"
-fraglimit	5
-type		"single"
-}

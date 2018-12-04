@@ -1,7 +1,0 @@
-{
-	map		"blitzkrieg3-oa3"
-	longname	"Blitzkrieg Base (OA3 Version)"
-	bots		"metalbot"
-	fraglimit	"15"
-	type		"single ffa lms tourney pos"
-}

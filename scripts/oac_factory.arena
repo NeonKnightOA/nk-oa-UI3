@@ -1,5 +1,0 @@
-{
-	map			"oac_factory"
-	longname		"Colliding in the Factory"
-	type			"ctf oneflag harvester obelisk elimination ctfelimination dd pos"
-}

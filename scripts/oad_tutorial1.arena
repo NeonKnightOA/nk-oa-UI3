@@ -1,9 +1,0 @@
-
-{
-map			"oad_tutorial1"
-longname	"OpenArena Tutorial 1"
-type		"ffa lms tourney"
-bots		"sorceress"
-special		"Training"
-fraglimit	"10"
-}

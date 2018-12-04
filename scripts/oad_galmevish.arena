@@ -1,9 +1,0 @@
-{
-	map			"oad_galmevish"
-	longname		"Galmevish Hub Area 1"
-	type			"ffa tourney lms oneflag harvester dd pos"
-	fraglimit		"15"
-	capturelimit	"7"
-	timelimit		"10"
-	bots			"neko"
-}
