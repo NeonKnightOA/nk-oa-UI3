@@ -1,0 +1,71 @@
+/* The Multiplayer menu. */
+/* Define Zone */
+#define MAINMENU_ITEM_WIDTH	512
+#define MAINMENU_ITEM_WID_SPL	256
+#define MAINMENU_ITEM_HEIGHT	32
+/* 32 on 32 for menu items */
+#define MAINMENU_ITEM_T		32
+#define MAINMENU_ITEM_1		96
+#define MAINMENU_ITEM_2		128
+#define MAINMENU_ITEM_3		160
+#define MAINMENU_ITEM_4		192
+#define MAINMENU_ITEM_5		224
+#define MAINMENU_ITEM_6		256
+#define MAINMENU_ITEM_7		288
+#define MAINMENU_ITEM_8		320
+#define MAINMENU_ITEM_9		352
+#define MAINMENU_ITEM_10		384
+#define MAINMENU_TITLE		mp-menu
+/* /Define Zone */
+/* Title */
+itemDef {
+	name buttontip1
+	text "Multiplayer"
+	background MP_LONGBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 0.7
+	rect MMENU_OFFSETITEMH MAINMENU_ITEM_T MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
+	decoration
+	textalign MMENU_ALIGNITEM
+	textalignx 256 
+	textaligny 24
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	hexcolor 0 1 2 3 // color schemes
+}
+/* /Title */
+/* Button Zone */
+itemDef { /* Player profile */
+	name buttonhmods
+	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
+	text "Profile"
+	rect MMENU_OFFSETITEMH MAINMENU_ITEM_1 MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
+	action { play MP_SND_SELECT; setcvar ui_menutab "0"; close MAINMENU_TITLE; setcvar ui_profileFromMP "1"; open profile; }
+	mouseEnter { setcvar ui_tip "Customize your profile." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+}
+itemDef { /* Join server */
+	name buttonhmain1
+	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
+	text "Join server"
+	rect MMENU_OFFSETITEMH MAINMENU_ITEM_2 MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
+	action { close MAINMENU_TITLE; play MP_SND_SELECT; setcvar ui_menutab "0"; open joinserver; }
+	mouseEnter { setcvar ui_tip "Join an existing server." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+}
+itemDef { /* Create server */
+	name buttonhmaina
+	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
+	rect MMENU_OFFSETITEMH MAINMENU_ITEM_3 MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
+	text "Create server"
+	action { close MAINMENU_TITLE; play MP_SND_SELECT; setcvar ui_menutab "4"; open createserver; }
+	mouseEnter { setcvar ui_tip "Create a server so others can play with you." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+}
+itemDef { /* Back */
+	name buttonhmain5
+	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
+	text "Back"
+	rect MMENU_OFFSETITEMH MAINMENU_ITEM_9 MAINMENU_ITEM_WIDTH MAINMENU_ITEM_HEIGHT
+	action { close MAINMENU_TITLE; play MP_SND_SELECT; setcvar ui_menutab "0"; open mainmenu; }
+	mouseEnter { setcvar ui_tip "Go back to the main menu" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+}

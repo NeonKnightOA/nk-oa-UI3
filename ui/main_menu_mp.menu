@@ -24,75 +24,56 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
   assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 12
-    	font "gfx/2d/bigchars" 16				
-    	bigFont "gfx/2d/bigchars" 24				
+    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
+    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
+    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE							
 	cursor "ui/assets/cursor"			
 	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25			
+	shadowColor 0.0 0.0 0.0 0.25	
+		
   	}
 	
 
 menuDef {
-    	name "transition_sp"
+    	name "mp-menu"
 	background MP_BACKGROUND1
     	fullScreen 1				
 	rect 0 0 640 480
     	visible MENU_TRUE
     	forecolor MP_FOCUSCOLOR			
 	focuscolor MP_TEXTCOLOR
-				
+					
 	onOpen { 
-	//		hide uistuff;
-			xtransition windowone 16 -480 300 400   16 32 300 400 1 20; 
-			xtransition windowtwo 316 480 300 400  316 32 300 400 1 20; 
+			close main;
 		}
+				
 
-     opentransitionEnd
-      {
-   	open singleplayercampaign;
-	close transition_sp;
-      }
+#include "ui/common/symbol2.panel"
 
-#include "ui/common/symbol2.panel"							   
+#ifdef PLAYERPORTRAITS
+// If one of those menus, display the portrait of the character!
+
+itemDef {
+      	name thisisyou
+	background "portraits/sorceress"
+	style 1
+	textstyle 2
+      	textscale 0.5
+   	rect 0 32 448 448
+	scralign ALIGN_LEFT
+	scralignfactor 0.7
+	forecolor 1 1 1 1
+	backcolor 1 1 1 1
+	visible 1 
+	decoration
+}
+
+#endif
+
+	   
+#include "ui/common/mainmenu-mp.panel"
 #include "ui/common/tooltip.panel"
 
-itemDef {
-      	name windowone
-	text	"Ladder Selection"
-	background MP_DIALOGBG
-	style 1
-	type 0
-	textstyle 2
-      	textscale 0.5
-	decoration
-   	rect 16 32 300 400
-     	textalignx	 32	
-	scralign ALIGN_CENTER
-	textaligny	 24
-	border 1
-	backcolor 	MP_DIALOGBGCOLOR
-	bordercolor   MP_BOX_BORDER
-	visible 1 
-}
-
-itemDef {
-      	name windowtwo
-	text	"You"
-	background MP_DIALOGBG
-	style 1
-	type 0
-	textstyle 2
-      	textscale 0.5
-	decoration
-   	rect 316 32 300 400
-     	textalignx	 32	
-	textaligny	 24
-	border 1
-	backcolor 	MP_DIALOGBGCOLOR
-	bordercolor   MP_BOX_BORDER
-	visible 1 
-}
 
 }
 }
