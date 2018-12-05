@@ -5,7 +5,7 @@
    but i'd like to make the interface less daunting by default. */
 onEsc {
 	close createServer;
-	open mainmenu;
+	open mpmenu;
 	setcvar ui_menutab 0;	// reset the tabs
 	play MP_SND_BACK;  
 }
@@ -1376,7 +1376,7 @@ itemDef {
 	mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	action {
 		close createServer;
-		open mainmenu;
+		open mpmenu;
 		setcvar ui_menutab 0;	// reset the tabs
 		play MP_SND_SELECT;  
 	}

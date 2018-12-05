@@ -35,7 +35,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	action {
 		close botmatch;
-		open mainmenu;
+		open spmenu;
 		setcvar ui_menutab 0;	// reset the tabs
 		play MP_SND_SELECT;  
 	}

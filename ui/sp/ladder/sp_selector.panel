@@ -1,7 +1,32 @@
+
+/* Define Zone */
+/* 32 on 32 for menu items */
+#define MENU_ITEM_TITLE_X1	16
+#define MENU_ITEM_TITLE_X2	16
+#define MENU_ITEM_TITLE_Y	32
+#define MENU_ITEM_T_WIDTH	300
+#define MENU_ITEM_T_HEIGHT	400
+#define MENU_ITEM_X		32
+#define MENU_ITEM_1		64
+#define MENU_ITEM_2		84
+#define MENU_ITEM_3		104
+#define MENU_ITEM_4		124
+#define MENU_ITEM_5		144
+#define MENU_ITEM_6		164
+#define MENU_ITEM_7		184
+#define MENU_ITEM_8		204
+#define MENU_ITEM_9		224
+#define MENU_ITEM_10		244
+#define MENU_ITEM_11		264
+#define MENU_ITEM_12		284
+#define MENU_ITEM_13		304
+#define MENU_ITEM_14		324
+#define MENU_ITEM_WIDTH	256
+#define MENU_ITEM_HEIGHT	32
+/* /Define Zone */
 /* -----------------------------------------------------------
     TAB 0 - SELECTING A "LADDER"
     ----------------------------------------------------------- */
-
 itemDef { /* Title */
 	name windowone
 	text "Select a Ladder"
@@ -13,7 +38,7 @@ itemDef { /* Title */
 /*	cvarTest "ui_sptab"
 	showCVar { "0" } */
 	decoration
-	rect 16 32 300 400
+	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_T_WIDTH MENU_ITEM_T_HEIGHT
 	textalignx 32	
 	scralign ALIGN_CENTER
 	textaligny 24
@@ -23,8 +48,8 @@ itemDef { /* Title */
 	visible 1
 }
 
-itemDef { /* 00.Tutorial */
-	name button_00_tut background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+/* itemDef { /* 00. Tutorial - It's now on its own menu. * /
+	name button_00_tut background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "^4Tutorial"
 	rect 32 80 256 32\
 	mouseEnter { setcvar ui_tip "Learn how to play OpenArena's different modes."; fadein tooltip; }
@@ -36,11 +61,11 @@ itemDef { /* 00.Tutorial */
 		setcvar ui_sptab 0;
 		play MP_SND_SELECT;
 	}
-}
+} */
 itemDef { /* 01. Free For All */
-	name button_01_ffa background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_01_ffa background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Free For All"
-	rect 32 96 256 32\
+	rect MENU_ITEM_X MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "You're on your own. Get as much frags as you can."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -51,11 +76,11 @@ itemDef { /* 01. Free For All */
 		play MP_SND_SELECT;
 	}
 }
-itemDef { /* 02.Possession */
-	name button_02_pos background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+itemDef { /* 02. Possession */
+	name button_02_pos background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Possession"
-	cvarTest "ui_sp_unlock_2" showCVar {"1"}
-	rect 32 112 256 32\
+	/* cvarTest "ui_sp_unlock_2" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "There's a flag on the level. Catch it and keep it."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -67,10 +92,10 @@ itemDef { /* 02.Possession */
 	}
 }
 itemDef { /* 03. Last Man Standing */
-	name button_03_lms background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_03_lms background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Last Man Standing"
-	cvarTest "ui_sp_unlock_5" showCVar {"1"}
-	rect 32 128 256 32\
+	/* cvarTest "ui_sp_unlock_5" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Nobody lives forever. Be the last one standing."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -82,10 +107,10 @@ itemDef { /* 03. Last Man Standing */
 	}
 }
 itemDef { /* 04. Team Deathmatch */
-	name button_04_team background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_04_team background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Team Deathmatch"
-	cvarTest "ui_sp_unlock_8" showCVar {"1"}
-	rect 32 144 256 32\
+	/* cvarTest "ui_sp_unlock_8" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "You're not alone. Work with your team to frag as much as possible."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -97,10 +122,10 @@ itemDef { /* 04. Team Deathmatch */
 	}
 }
 itemDef { /* 05. Elimination */
-	name button_05_elim background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_05_elim background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Elimination"
-	cvarTest "ui_sp_unlock_11" showCVar {"1"}
-	rect 32 160 256 32\
+	/* cvarTest "ui_sp_unlock_11" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Work with your team to eradicate the opposition in round-based matches."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -112,10 +137,10 @@ itemDef { /* 05. Elimination */
 	}
 }
 itemDef { /* 06. Double Domination */
-	name button_06_dd background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_06_dd background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Double Domination"
-	cvarTest "ui_sp_unlock_14" showCVar {"1"}
-	rect 32 176 256 32\
+	/* cvarTest "ui_sp_unlock_14" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Work with your team to capture and hold the control points to rack up points."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -127,10 +152,10 @@ itemDef { /* 06. Double Domination */
 	}
 }
 itemDef { /* 07. Domination */
-	name button_07_dom background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_07_dom background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Domination"
-	cvarTest "ui_sp_unlock_17" showCVar {"1"}
-	rect 32 192 256 32\
+	/* cvarTest "ui_sp_unlock_17" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Two points. Two teams. Hold the points in 10 sec to win the rounds."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -142,10 +167,10 @@ itemDef { /* 07. Domination */
 	}
 }
 itemDef { /* 08. Overload */
-	name button_08_over background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_08_over background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Overload"
-	cvarTest "ui_sp_unlock_20" showCVar {"1"}
-	rect 32 208 256 32\
+	/* cvarTest "ui_sp_unlock_20" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Both teams have bases. Infiltrate and destroy the enemy crystal in order to win."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -157,10 +182,10 @@ itemDef { /* 08. Overload */
 	}
 }
 itemDef { /* 09. One Flag CTF */
-	name button_09_1fctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_09_1fctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "One Flag CTF"
-	cvarTest "ui_sp_unlock_23" showCVar {"1"}
-	rect 32 224 256 32\
+	/* cvarTest "ui_sp_unlock_23" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Your team must take the central flag and deliver it to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -172,10 +197,10 @@ itemDef { /* 09. One Flag CTF */
 	}
 }
 itemDef { /* 10. Capture The Flag */
-	name button_10_ctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_10_ctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Capture The Flag"
-	cvarTest "ui_sp_unlock_26" showCVar {"1"}
-	rect 32 240 256 32\
+	/* cvarTest "ui_sp_unlock_26" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_10 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "A classic. Infiltrate the enemy base, steal their flag and bring it to your base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -187,10 +212,10 @@ itemDef { /* 10. Capture The Flag */
 	}
 }
 itemDef { /* 11. CTF Elimination */
-	name button_11_ectf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_11_ectf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "CTF Elimination"
-	cvarTest "ui_sp_unlock_29" showCVar {"1"}
-	rect 32 256 256 32\
+	/* cvarTest "ui_sp_unlock_29" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_11 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Capture the flag, but with lives!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -202,10 +227,10 @@ itemDef { /* 11. CTF Elimination */
 	}
 }
 itemDef { /* 12. Harvester */
-	name button_12_harv background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_12_harv background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Harvester"
-	cvarTest "ui_sp_unlock_32" showCVar {"1"}
-	rect 32 272 256 32\
+	/* cvarTest "ui_sp_unlock_32" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_12 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Each frag spawns a skull in the middle. Bring those skulls to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -217,10 +242,10 @@ itemDef { /* 12. Harvester */
 	}
 }
 itemDef { /* 13. Tournament */
-	name button_13_1on1 background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_13_1on1 background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Tournament"
-	cvarTest "ui_sp_unlock_35" showCVar {"1"}
-	rect 32 288 256 32\
+	/* cvarTest "ui_sp_unlock_35" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_13 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "That's it! Now you have to face final 1on1 challenges. If you do well, you'll be rewarded. :)"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -232,10 +257,10 @@ itemDef { /* 13. Tournament */
 	}
 }
 itemDef { /*  */
-	name button_14_1on1_bonus background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.25 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
+	name button_14_1on1_bonus background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Tournament (Bonus)"
-	cvarTest "ui_sp_unlock_38" showCVar {"1"}
-	rect 32 304 256 32\
+	/* cvarTest "ui_sp_unlock_38" showCVar {"1"} */
+	rect MENU_ITEM_X MENU_ITEM_14 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Your determination and courage awarded you with this special match. Enjoy it!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
 	action { close spladder;
@@ -248,7 +273,6 @@ itemDef { /*  */
 }
 
 /* player's info and brief stats */
-
 itemDef { /* Player's info and stats */
 	name windowtwo
 	text "You"
@@ -258,7 +282,7 @@ itemDef { /* Player's info and stats */
 	textstyle 2
 	textscale 0.5
 	decoration
-	rect 316 32 300 400
+	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_T_WIDTH MENU_ITEM_T_HEIGHT
 	textalignx 32	
 	textaligny 24
 	border 1
@@ -269,7 +293,6 @@ itemDef { /* Player's info and stats */
 
 
 /* Show trophies */
-
 itemDef { /* Gold trophies */
 	name trophygold
 	background "trophy_gold" group uistuff style 1 text "" type ITEM_TYPE_NUMERICFIELD textstyle 2 textscale 0.33 decoration textalignx 32 textaligny 24 backcolor 1 0.6 0.3 1 visible 1
@@ -314,36 +337,4 @@ itemDef { /* Player portrait */
 	visible 1
 }
 
-/* always have this button available */
 
-itemDef { /* Cancel button */
-	name button1
-	text "Cancel"
-	background MP_WIDEBUTTONBG
-	group uistuff
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.5
-	rect 32 384 256 32
-	textalignx 32
-	textaligny 24
-
-	forecolor MP_TEXTCOLOR
-	mouseEnter {
-		setcvar ui_tip "Go back to main menu"
-		fadein tooltip;
-	}
-	mouseExit {
-		fadeout tooltip;
-	}
-	action {
-		close spladder;
-
-		open mainmenu;
-
-		setcvar ui_sptab 0; /* reset the tabs */
-		play MP_SND_SELECT;
-	}
-	visible 1
-}

@@ -135,7 +135,7 @@ itemDef {
 	mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	action {
 		close joinserver;
-		open mainmenu;
+		open mpmenu;
 		setcvar ui_menutab 0;	// reset the tabs
 		play MP_SND_SELECT;  
 	}
