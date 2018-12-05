@@ -53,10 +53,5 @@ menuDef {
 #include "ui/common/instantaction.panel"
 #include "ui/common/tooltip.panel"
 
-
-}
-}
-}
-}
-}
+	}
 }

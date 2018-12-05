@@ -73,11 +73,5 @@ itemDef {
 	   
 #include "ui/console/mainmenu.panel"
 #include "ui/common/tooltip.panel"
-
-
-}
-}
-}
-}
-}
+	}
 }

@@ -1,3 +1,4 @@
+
 #ifdef UICONTEXTUALTIPS
 // Tool tips
 // this one also notes severely unfinished area
@@ -16,7 +17,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name tooltipped
 	cvar "^1UNDER CONSTRUCTION - FUNCTIONALITY MAY BE BROKEN"
@@ -30,5 +30,4 @@ itemDef {
 	textaligny	 16
 	visible 1 
 }
-
 #endif

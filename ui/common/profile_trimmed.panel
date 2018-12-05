@@ -1,13 +1,7 @@
 
-
-
-
-
-
-// -----------------------------------------------------------
-// TAB 0 - Profile
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 0 - Profile
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"Profile"
@@ -49,15 +43,13 @@ itemDef {
 	showCVar { "0" }
 }
 */
-
-itemDef	{
+itemDef {
 	name playerlist
    	rect 32 260 580 80
 	type ITEM_TYPE_LISTBOX
 	style WINDOW_STYLE_FILLED
 	elementwidth 64
 	elementheight 64
-
 	textscale .33
 	elementtype LISTBOX_IMAGE
 	feeder FEEDER_Q3HEADS
@@ -76,10 +68,9 @@ itemDef	{
 	cvarTest "ui_menutab"
 	showCVar { "0" }
 	mouseEnter { setcvar ui_tip TIP_PROFILE_PLAYERLIST fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	}
-
+}
 /*
-itemDef	{
+itemDef {
 	name playerlist2
    	rect 32 140 64 132
 	type ITEM_TYPE_LISTBOX
@@ -104,18 +95,10 @@ itemDef	{
 	showCVar { "0" }
 	cvarTest "ui_q3model"
 	hideCVar { "1" }
-
 	mouseEnter { setcvar ui_tip TIP_PROFILE_HEADLIST fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	}
-
+}
 */
-
-
-
 // Viewing the player model will be in another tab, for memory saving!!
-
-
-
 itemDef {
       	name playersname
       	text "Name"
@@ -153,15 +136,9 @@ itemDef {
 	cvarTest "ui_menutab"
 	showCVar { "0" }
 }
-
-
-
-// -----------------------------------------------------------
-// TAB 1 - View character
-// -----------------------------------------------------------
-
-
-
+/* -----------------------------------------------------------
+   TAB 1 - View character
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"View character"
@@ -181,9 +158,7 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
-itemDef	{
+itemDef {
 	name themodel
 	ownerdraw UI_PLAYERMODEL	// playermodel2 should have less fov, and pickable for angles...
    	//rect 330 0 300 480
@@ -194,19 +169,15 @@ itemDef	{
 	style 0
 	decoration 
 	visible 1
-	}
-
+}
 /*
 itemDef {
       	name camerga
       	text "Camera "
 	type ITEM_TYPE_MULTI
-
 	cvar "ui_teamArenaFirstRun"
 	//cvarFloatList { "Overall" 0 "Side" 1 "Back" 2 "Backside" 3 "Crotch" 4 "Torso" 5 "Head" 6 }
-
 	background MP_FATBUTTONBG
-
 	style 1
 	textstyle 6
       	textscale 0.333
@@ -225,7 +196,6 @@ itemDef {
       	text "Camera "
 	type ITEM_TYPE_MULTI
 	cvar "ui_playerview"
-
 	cvarFloatList { "Overall" 4 "Torso" 3 "Head" 2 "Side" 1 "Back" 0}
 	background MP_FATBUTTONBG
 	style 1
@@ -240,15 +210,14 @@ itemDef {
 	mouseEnter { setcvar ui_tip TIP_PROFILE_CAMERA fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-// -----------------------------------------------------------
-// TAB 2 - Stats page 
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 2 - Stats page 
+   ----------------------------------------------------------- */
 itemDef {
       	name statsfield
 	text	"Statistics"
 	background MP_DIALOGBG
-	backcolor 	MP_DIALOGBGCOLOR
+	backcolor MP_DIALOGBGCOLOR
 	style 1
 	type 0
 	textstyle 2
@@ -262,19 +231,10 @@ itemDef {
 	border 1
 	bordercolor   MP_BOX_BORDER
 	visible 1 
-
 }
-
-
-
-
-
-// -----------------------------------------------------------
-// TAB X - ALL
-// -----------------------------------------------------------
-
-
-
+/* -----------------------------------------------------------
+   TAB X - ALL
+   ----------------------------------------------------------- */
 itemDef {
       	name tab1
       	text "Info"
@@ -289,12 +249,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
-
 	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
 	visible 1 
 }
-
 itemDef {
       	name tab2
       	text "View Model"
@@ -309,11 +266,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 1;  play MP_SND_SELECT;  }
 	visible 1 
 }
-
 itemDef {
       	name tab3
       	text "Stats"
@@ -328,17 +283,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 2;  play MP_SND_SELECT;  }
 	visible 1 
 }
-
-
-
-
 // pressed tabs
-
-
 itemDef {
       	name tab1
       	text "Info"
@@ -353,10 +301,8 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	decoration
-
 	visible 1 
 }
-
 itemDef {
       	name tab2
       	text "View Model"
@@ -371,10 +317,8 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 }
-
 itemDef {
       	name tab3
       	text "Stats"
@@ -389,8 +333,5 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 }
-
-

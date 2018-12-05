@@ -1,3 +1,4 @@
+
 // Tool tips
 #ifdef UICONTEXTUALTIPS
 itemDef {
@@ -13,14 +14,12 @@ itemDef {
    	//rect -1 440 640 40
 	//rect -321 440 1280 40
 	rect -835 440 2340 40	// modified for ultra wide screen (5760x1200)
-
      	textalignx	 32	
 	textaligny	 16
 	border 1
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name ver
 	text OA3VERSION
@@ -38,9 +37,6 @@ itemDef {
 	textaligny	 16
 	visible 1 
 }
-
-
-
 itemDef {
       	name tooltip
 	cvar "ui_tip"
@@ -59,5 +55,3 @@ itemDef {
 	visible 1 
 }
 #endif
-
-

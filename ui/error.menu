@@ -52,11 +52,5 @@ menuDef {
 			   
 	   
 #include "ui/common/error.panel"
-
-
-}
-}
-}
-}
-}
+	}
 }

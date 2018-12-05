@@ -1,14 +1,8 @@
 
-
-
-
 #include "ui/common/borders600400.panel"
-
-
-// -----------------------------------------------------------
-// TAB 0 - Mods
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 0 - Mods
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"Mods"
@@ -29,7 +23,6 @@ itemDef {
 	showCVar { "0" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef
 {
 	name modlist
@@ -56,8 +49,6 @@ itemDef
 	showCVar { "0" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 itemDef {
       	name button1
       	text "Load"
@@ -70,22 +61,20 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-
-	action	{ uiScript runMod;	close mods; 
-			open mainmenu;
-			 play MP_SND_SELECT;  
-				}
-
+	action {
+		uiScript runMod;
+		close mods; 
+		open mainmenu;
+		play MP_SND_SELECT;  
+	}
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "0" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-// -----------------------------------------------------------
-// TAB 1 - Demos
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 1 - Demos
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"Recorded Demos"
@@ -106,9 +95,7 @@ itemDef {
 	showCVar { "1" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-itemDef
-{
+itemDef {
 	name modlist
    	rect 32 72 556 224
 	type ITEM_TYPE_LISTBOX
@@ -133,9 +120,6 @@ itemDef
 	showCVar { "1" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-
 itemDef {
       	name button1
       	text "Play"
@@ -148,21 +132,18 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-
 	action	{ 
-setcvar timedemo 0;
-uiScript runDemo;	close mods; 
-			open mainmenu;
-
-			 play MP_SND_SELECT;  
-				}
-
+		setcvar timedemo 0;
+		uiScript runDemo;
+		close mods; 
+		open mainmenu;
+		play MP_SND_SELECT;  
+	}
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "1" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name button1
       	text "Benchmark"
@@ -175,26 +156,22 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-
-	action	{ 
-setcvar timedemo 1;
-uiScript runDemo;	close mods; 
-setcvar com_errorMessage "Benchmark result" 
-			open mainmenu;
-
-			 play MP_SND_SELECT;  
-				}
-
+	action {
+		setcvar timedemo 1;
+		uiScript runDemo;
+		close mods; 
+		setcvar com_errorMessage "Benchmark result" 
+		open mainmenu;
+		play MP_SND_SELECT;  
+	}
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "1" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 itemDef {
       	name button1
-      //	text "tes"
+//	text "tes"
 	cvar "ui_timedemoResult"
 	style 1
 	type ITEM_TYPE_BUTTON
@@ -204,19 +181,15 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-
 	decoration
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "1" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-// -----------------------------------------------------------
-// TAB 2 - Cinematics
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 2 - Cinematics
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"Cinematics"
@@ -237,9 +210,7 @@ itemDef {
 	showCVar { "2" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-itemDef
-{
+itemDef {
 	name modlist
    	rect 32 72 556 280
 	type ITEM_TYPE_LISTBOX
@@ -276,28 +247,20 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-
-	action	{ 
-
-uiScript runCinematic;	close mods; 
-			open mainmenu;
-
-			 play MP_SND_SELECT;  
-				}
-
+	action {
+		uiScript runCinematic;
+		close mods; 
+		open mainmenu;
+		play MP_SND_SELECT;  
+	}
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "2" }
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-// -----------------------------------------------------------
-// TAB X - ALL
-// -----------------------------------------------------------
-
-
-
+/* -----------------------------------------------------------
+   TAB X - ALL
+   ----------------------------------------------------------- */
 itemDef {
       	name tab1
       	text "Mods"
@@ -312,13 +275,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
-
 	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab2
       	text "Demos"
@@ -333,12 +293,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 1;  play MP_SND_SELECT;  }
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab3
       	text "Movies"
@@ -353,12 +311,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 2;  play MP_SND_SELECT;  }
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab4
       	text "Other"
@@ -373,23 +329,11 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 3;  play MP_SND_SELECT;  }
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-
-
-
-
-
-
-
 // pressed tabs
-
-
 itemDef {
       	name tab1
       	text "Mods"
@@ -404,11 +348,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	decoration
-
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab2
       	text "Demos"
@@ -423,11 +365,9 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab3
       	text "Movies"
@@ -442,11 +382,9 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name tab4
       	text "Other"
@@ -461,7 +399,6 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }

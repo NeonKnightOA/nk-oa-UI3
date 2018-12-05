@@ -50,11 +50,5 @@ menuDef {
 #include "ui/sp/sp_selector.panel"
 #include "ui/common/tooltip.panel"
 
-
-
-}
-}
-}
-}
-}
+	}
 }

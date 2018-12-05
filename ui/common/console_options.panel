@@ -1,14 +1,10 @@
 
-
-
-// Even simpler options
-// No "tabs", no advanced video (just brightness adjustment)
-// intended for 'tuned' console ports, or rather, retroarch
-
-// -----------------------------------------------------------
-// TAB 0 - OPTIONS
-// -----------------------------------------------------------
-
+/* Even simpler options
+   No "tabs", no advanced video (just brightness adjustment)
+   intended for 'tuned' console ports, or rather, retroarch */
+/* -----------------------------------------------------------
+   TAB 0 - OPTIONS
+   ----------------------------------------------------------- */
 itemDef {
       	name dmgamefield
 	text	"Options"
@@ -28,8 +24,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name videofield
 	text	"View stuff"
@@ -49,9 +43,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
-
 itemDef {
       	name fraglimt
       	text "Gun Position"
@@ -68,13 +59,10 @@ itemDef {
    	rect 32 80 192 20
      	textalignx	12	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
-
 	mouseEnter { setcvar ui_tip TIP_OPTIONS_DRAWGUN fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Gun Bobbing"
@@ -91,14 +79,11 @@ itemDef {
    	rect 32 100 192 20
      	textalignx	12	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_OPTIONS_BOBMODEL fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-itemDef 
-      {
+itemDef {
         name effectsvol
         type ITEM_TYPE_SLIDER
         text "Field of View"
@@ -113,7 +98,6 @@ itemDef
 	forecolor 1 1 1 1
         visible MENU_TRUE
 }
-
 itemDef {
       	name fraglimt
       	text "HUD Style"
@@ -130,13 +114,10 @@ itemDef {
    	rect 32 160 192 20
      	textalignx	12	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_VIDEO_TEXTUREBITS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
 itemDef {
       	name fraglimt
       	text "Weaponbar Style"
@@ -153,14 +134,10 @@ itemDef {
    	rect 32 180 192 20
      	textalignx	12	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_VIDEO_TEXTUREBITS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
 itemDef {
       	name videofield
 	text	"Visual Clutter"
@@ -180,8 +157,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name fraglimt
       	text "Particle System"
@@ -199,12 +174,10 @@ itemDef {
    	rect 324 80 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_PARTICLES fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Projectile Trails"
@@ -222,12 +195,10 @@ itemDef {
    	rect 324 100 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_NOTRAILS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Shell Casings"
@@ -245,12 +216,10 @@ itemDef {
    	rect 324 120 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_BRASSTIME fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Rail style"
@@ -268,14 +237,10 @@ itemDef {
    	rect 324 140 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_OLDRAIL fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
 itemDef {
       	name fraglimt
       	text "Decals n' Marks"
@@ -293,12 +258,10 @@ itemDef {
    	rect 324 160 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_MARKS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Items Style"
@@ -316,14 +279,10 @@ itemDef {
    	rect 324 180 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_PREFS_SIMPLEITEMS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
 /*
 // doesn't work properly
 itemDef {
@@ -345,12 +304,9 @@ itemDef {
 	visible 1 
 }
 */
-
-
-// -----------------------------------------------------------
-// TAB 1 - Video
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 1 - Video
+   ----------------------------------------------------------- */
 itemDef {
       	name videofield
 	text	"Video"
@@ -370,8 +326,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name fraglimt
       	text "Vertical Sync "
@@ -393,9 +347,6 @@ itemDef {
 	mouseEnter { setcvar ui_tip TIP_VIDEO_COLORBITS fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
 itemDef {
       	name fraglimt
       	text "Flicker Reduce"
@@ -405,7 +356,7 @@ itemDef {
 	background MP_FATBUTTONBG
 	backcolor MP_BUTTONBGCOLOR
 	style 1
-  textalign ITEM_ALIGN_RIGHT
+	textalign ITEM_ALIGN_RIGHT
 	textstyle 6
       	textscale 0.5
 	cvarTest "ui_menutab"
@@ -418,14 +369,10 @@ itemDef {
 	mouseEnter { setcvar ui_tip TIP_VIDEO_RETROAA fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 // TODO: Screen Output Adjustment  (borders etc)
-
-
-// -----------------------------------------------------------
-// TAB 2 - Audio
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 2 - Audio
+   ----------------------------------------------------------- */
 itemDef {
       	name mapsfield
 	text	"Sound"
@@ -444,12 +391,8 @@ itemDef {
 	border 1
 	bordercolor   MP_BOX_BORDER
 	visible 1 
-
 }
-
-
-itemDef 
-      {
+itemDef {
         name effectsvol
         type ITEM_TYPE_SLIDER
         text ""
@@ -464,9 +407,7 @@ itemDef
 	forecolor 1 1 1 1
         visible MENU_TRUE
 }
-
-itemDef 
-      {
+itemDef {
         name effectsvol
         type ITEM_TYPE_SLIDER
         text ""
@@ -482,8 +423,6 @@ itemDef
 	forecolor 1 1 1 1
         visible MENU_TRUE
 }
-
-
 itemDef {
       	name videofield
 	text	"SFX"
@@ -503,8 +442,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name videofield
 	text	"BGM"
@@ -524,7 +461,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Use OpenAL Driver"
@@ -534,19 +470,17 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	style 1
 	textstyle 6
-  textalign ITEM_ALIGN_RIGHT
+	textalign ITEM_ALIGN_RIGHT
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
    	rect 64 240 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_OPENAL fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-	
 itemDef {
       	name fraglimt
       	text "Sound Quality"
@@ -561,18 +495,13 @@ itemDef {
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
-
-
    	rect 64 280 192 20
      	textalignx	129	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_QUALITY fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-	
-
 itemDef {
       	name videofield
 	text	"Communication"
@@ -606,17 +535,13 @@ itemDef {
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
-
-
    	rect 364 80 192 20
      	textalignx	129	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_CHATBEEP fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Team Chat Beep"
@@ -631,17 +556,13 @@ itemDef {
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
-
-
    	rect 364 100 192 20
      	textalignx	129	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_TEAMCHATBEEP fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-	
 itemDef {
       	name fraglimt
       	text "Team voice chat only"
@@ -656,18 +577,13 @@ itemDef {
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
-
-
    	rect 364 120 192 20
      	textalignx	129	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_QUALITY fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-	
 itemDef {
       	name fraglimt
       	text "Gestures"
@@ -682,24 +598,16 @@ itemDef {
       	textscale 0.255
 	cvarTest "ui_menutab"
 	showCVar { "2" }
-
-
    	rect 364 160 192 20
      	textalignx	129	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_AUDIO_QUALITY fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-	
-
-// -----------------------------------------------------------
-// TAB 3 - Other
-// -----------------------------------------------------------
-
+/* -----------------------------------------------------------
+   TAB 3 - Other
+   ----------------------------------------------------------- */
 itemDef {
       	name mapsfield
 	text	"Other"
@@ -719,9 +627,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
-
 itemDef {
       	name videofield
 	text	"Network"
@@ -741,8 +646,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name fraglimt
       	text "Rate"
@@ -760,15 +663,10 @@ itemDef {
    	rect 24 80 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_OTHER_COMBLOOD fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
-
 itemDef {
       	name videofield
 	text	"Content Control"
@@ -788,8 +686,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-
 itemDef {
       	name fraglimt
       	text "Gore"
@@ -807,12 +703,10 @@ itemDef {
    	rect 324 80 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_OTHER_COMBLOOD fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
 itemDef {
       	name fraglimt
       	text "Attire"
@@ -830,21 +724,13 @@ itemDef {
    	rect 324 100 192 20
      	textalignx	128	
 	textaligny	 17
-
 	forecolor MP_TEXTCOLOR
 	mouseEnter { setcvar ui_tip TIP_OTHER_SUGGESTIVETHEMES fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
-
-
-
-
-// -----------------------------------------------------------
-// TAB X - ALL
-// -----------------------------------------------------------
-
-
-
+/* -----------------------------------------------------------
+   TAB X - ALL
+   ----------------------------------------------------------- */
 itemDef {
       	name tab1
       	text "Controls"
@@ -859,12 +745,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
-
 	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
 	visible 1 
 }
-
 itemDef {
       	name tab2
       	text "Video"
@@ -879,11 +762,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 1;  play MP_SND_SELECT;  }
 	visible 1 
 }
-
 itemDef {
       	name tab3
       	text "Audio"
@@ -898,11 +779,9 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 2;  play MP_SND_SELECT;  }
 	visible 1 
 }
-
 itemDef {
       	name tab4
       	text "Other"
@@ -917,22 +796,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-
 	action { setcvar ui_menutab 3;  play MP_SND_SELECT;  }
 	visible 1 
 }
-
-
-
-
-
-
-
-
-
 // pressed tabs
-
-
 itemDef {
       	name tab1
       	text "Controls"
@@ -947,10 +814,8 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	decoration
-
 	visible 1 
 }
-
 itemDef {
       	name tab2
       	text "Video"
@@ -965,10 +830,8 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 }
-
 itemDef {
       	name tab3
       	text "Audio"
@@ -983,10 +846,8 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 }
-
 itemDef {
       	name tab4
       	text "Other"
@@ -1001,12 +862,9 @@ itemDef {
 	decoration
      	textalignx	 16	
 	textaligny	 16
-
 	visible 1 
 }
-
 // Some people need to be reminded they have a slowness setting turned on
-
 itemDef {
       	name videofield
 	text	"NOTE!! ^1SLOWNESS ACTIVATED!^6 Disable it in Video>Advanced"
@@ -1026,5 +884,3 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
-

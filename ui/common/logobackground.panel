@@ -1,8 +1,7 @@
-// Pieces together several 256x256 textures to make a nice sharp background for the menu.
-// They're 256x256 so we get it looking proper on old hardware.
-// Please do not use this for any ingame menus
 
-
+/* Pieces together several 256x256 textures to make a nice sharp background for the menu.
+   They're 256x256 so we get it looking proper on old hardware.
+   Please do not use this for any ingame menus */
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback1"
@@ -13,7 +12,6 @@ itemDef {
    	rect -64 0 256 256
 	visible 1 
 }
-
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback2"
@@ -24,7 +22,6 @@ itemDef {
    	rect -64 256 256 256
 	visible 1 
 }
-
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback3"
@@ -35,7 +32,6 @@ itemDef {
    	rect 192 0 256 256
 	visible 1 
 }
-
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback4"
@@ -46,8 +42,6 @@ itemDef {
    	rect 192 256 256 256
 	visible 1 
 }
-
-
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback4"
@@ -58,7 +52,6 @@ itemDef {
    	rect 448 0 256 256
 	visible 1 
 }
-
 itemDef {
       	name tes
 	background "ui/assets5/oalogoback5"
@@ -69,8 +62,6 @@ itemDef {
    	rect 448 256 256 256
 	visible 1 
 }
-
-
 itemDef {
       	name tes
 	background "models/players/nicebg"

@@ -1,3 +1,4 @@
+
 itemDef {
       	name mappreviewblurpass1
 	ownerdraw UI_MAPCINEMATIC
@@ -13,7 +14,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name mappreviewblurpass2
 	ownerdraw UI_MAPCINEMATIC
@@ -29,7 +29,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name mappreviewblurpass3
 	ownerdraw UI_MAPCINEMATIC
@@ -45,7 +44,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 itemDef {
       	name mappreviewblurpass4
 	ownerdraw UI_MAPCINEMATIC
@@ -61,7 +59,6 @@ itemDef {
 	bordercolor   MP_BOX_BORDER
 	visible 1 
 }
-
 /*
 itemDef {
       	name trophied

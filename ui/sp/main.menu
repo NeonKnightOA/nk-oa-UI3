@@ -74,10 +74,5 @@ itemDef {
 #include "ui/common/mainmenu-sp.panel"
 #include "ui/common/tooltip.panel"
 
-
-}
-}
-}
-}
-}
+	}
 }

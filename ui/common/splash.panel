@@ -1,6 +1,4 @@
 
-
-
 itemDef {
       	name bglayouter
 	style 1
@@ -18,7 +16,6 @@ itemDef {
       	scralign ALIGN_LEFT
 	hexcolor 3 1 2 3	// color schemes
 }
-
 itemDef {
       	name copyright
 	background gradv
@@ -37,8 +34,6 @@ itemDef {
       	scralign ALIGN_CENTER
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 // Characters
 itemDef {
       	name bglayouter
@@ -57,9 +52,7 @@ itemDef {
 	textaligny	 0
 	visible 1 
 	hexcolor 1 1 2 3	// color schemes
-
 }
-
 itemDef {
       	name bglayouter
 	background "ui/assets5/chars_l"
@@ -79,7 +72,6 @@ itemDef {
       	scralign ALIGN_LEFT
 	hexcolor 1 1 2 3	// color schemes
 }
-
 // More Characters
 itemDef {
       	name bglayouter
@@ -100,11 +92,7 @@ itemDef {
       	scralign ALIGN_RIGHT
 	hexcolor 1 1 2 3	// color schemes
 }
-
-
-
 // logo squares, goes on top of character art bar
-
 itemDef {
       	name bglayouter
 	style 1
@@ -121,7 +109,6 @@ itemDef {
 	visible 1 
       	scralign ALIGN_CENTER
 }
-
 itemDef {
       	name bglayouter
 	style 1
@@ -139,8 +126,6 @@ itemDef {
       	scralign ALIGN_CENTER
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 itemDef {
       	name bglayouter
 	style 1
@@ -157,8 +142,6 @@ itemDef {
 	visible 1 
       	scralign ALIGN_CENTER
 }
-
-
 itemDef {
       	name bglayouter
 	style 1
@@ -176,7 +159,6 @@ itemDef {
       	scralign ALIGN_CENTER
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name bglayouter
 	background "ui/assets/oa"
@@ -194,8 +176,6 @@ itemDef {
 	visible 1 
       	scralign ALIGN_CENTER
 }
-
-
 itemDef {
       	name bglayouter
 	background "ui/assets5/logotype"
@@ -213,10 +193,6 @@ itemDef {
 	visible 1 
       	scralign ALIGN_CENTER
 }
-
-
-
-
 /*
 itemDef {
       	name copyright
@@ -234,9 +210,7 @@ itemDef {
 	textaligny	 0
 	visible 1 
 }
-
 */
-
 // TODO: Redo a more proper boilerplate
 itemDef {
       	name copyright
@@ -254,13 +228,9 @@ itemDef {
 	textaligny	 0
 	visible 1 
 }
-
-
-
 itemDef {
       	name loadingbit2
 	style 1
-	
 	type 0
 	textstyle 2
       	textscale 0.5
@@ -269,7 +239,5 @@ itemDef {
 	textaligny	 24
 	backcolor 1 1 1 1
 	forecolor 1 1 1 1
-
 	visible 0
 }
-
