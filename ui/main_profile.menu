@@ -93,7 +93,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		onEsc {
 			close profile; 
 			uiScript update "ui_SetName";
-			open mp-menu;
+			open mpmenu;
 			play MP_SND_SELECT; 
 		}
 		#include "ui/common/symbol2.panel" 
@@ -119,7 +119,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			action {
 				close profile; 
 				uiScript update "ui_SetName";
-				open mp-menu;
+				open mpmenu;
 				play MP_SND_SELECT; 
 			}
 			visible 1 

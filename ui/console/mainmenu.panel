@@ -18,8 +18,8 @@ itemDef {
 		play MP_SND_SELECT;  
 		setcvar ui_menutab "4"; // immediately go to the last screen.
 		//uiAction randomizer; // TODO: this
-		open playmaker;
-		//open instantaction;
+		open createServer;
+		//open botmatch;
 	}
 	visible 1 
 	mouseEnter { setcvar ui_tip "Play a totally random botmatch!" fadein tooltip;   setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
@@ -41,7 +41,7 @@ itemDef {
 		//close main;
 		close mainmenu;
 		play MP_SND_SELECT;  
-		//open singleplayercampaign;
+		//open spladder;
 		open transition_sp;
 	}
 	visible 1 
@@ -93,7 +93,7 @@ itemDef {
 		close mainmenu;
 		setcvar ui_menutab "0";
 		play MP_SND_SELECT;  
-		open playmaker;
+		open createServer;
 	}
 	visible 1 
 }

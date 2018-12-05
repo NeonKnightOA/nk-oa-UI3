@@ -4,7 +4,7 @@
    ----------------------------------------------------------- */
 itemDef {
 	name dmgamefield
-	text	"Instant Action"
+	text	"Botmatch"
 	background MP_DIALOGBG
 	backcolor 	MP_DIALOGBGCOLOR
 	style 1
@@ -34,7 +34,7 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	forecolor MP_TEXTCOLOR
 	action {
-		close instantaction;
+		close botmatch;
 		open mainmenu;
 		setcvar ui_menutab 0;	// reset the tabs
 		play MP_SND_SELECT;  

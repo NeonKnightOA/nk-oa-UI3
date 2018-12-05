@@ -24,7 +24,7 @@
 TAB 0 - GAMETYPE MODES
 ----------------------------------------------------------- */
 onESC { 
-	close singleplayer;
+	close botmatch;
 	open mainmenu;
 	setcvar ui_menutab 0; // reset the tabs
 	play MP_SND_BACK; 
@@ -657,8 +657,8 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	forecolor MP_TEXTCOLOR
 	action { 
-	close singleplayer;
-	open sp-menu;
+	close botmatch;
+	open spmenu;
 	setcvar ui_menutab 0; // reset the tabs
 	play MP_SND_SELECT; 
 	}

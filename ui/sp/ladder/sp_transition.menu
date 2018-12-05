@@ -50,7 +50,7 @@ menuDef {
 
      opentransitionEnd
       {
-   	open singleplayercampaign;
+   	open spladder;
 	close transition_sp;
       }
 

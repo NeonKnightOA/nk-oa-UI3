@@ -25,7 +25,7 @@ itemDef { /* Cancel button */
 	action
 	{
 		close SPCUR_MENUNAME;
-		open singleplayercampaign;
+		open spladder;
 		setcvar ui_sptab 0;	// reset the tabs
 		play MP_SND_SELECT;  
 	}

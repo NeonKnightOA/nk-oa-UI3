@@ -4,7 +4,7 @@
    Designed for controllers really. Apologies if this is "too dumb"
    but i'd like to make the interface less daunting by default. */
 onEsc {
-	close playmaker;
+	close createServer;
 	open mainmenu;
 	setcvar ui_menutab 0;	// reset the tabs
 	play MP_SND_BACK;  
@@ -1375,7 +1375,7 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	action {
-		close playmaker;
+		close createServer;
 		open mainmenu;
 		setcvar ui_menutab 0;	// reset the tabs
 		play MP_SND_SELECT;  

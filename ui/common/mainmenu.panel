@@ -116,7 +116,7 @@ itemDef { /* Single Player */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Single Player"
 	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { close mainmenu; play MP_SND_SELECT; open sp-menu; }
+	action { close mainmenu; play MP_SND_SELECT; open spmenu; }
 	mouseEnter { setcvar ui_tip "Play with bots in different modes." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 	cvarTest "name" hideCVar { "UnnamedPlayer" } /* Hidden for first-timers */
 }
@@ -125,7 +125,7 @@ itemDef { /* Multiplayer */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Multiplayer"
 	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { close mainmenu; play MP_SND_SELECT; open mp-menu; }
+	action { close mainmenu; play MP_SND_SELECT; open mpmenu; }
 	mouseEnter { setcvar ui_tip "Play with others." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 	cvarTest "name" hideCVar { "UnnamedPlayer" } /* Hidden for first-timers */
 }

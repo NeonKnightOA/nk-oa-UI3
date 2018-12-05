@@ -29,7 +29,7 @@ itemDef { /* 00.Tutorial */
 	rect 32 80 256 32\
 	mouseEnter { setcvar ui_tip "Learn how to play OpenArena's different modes."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_00_tut;
 		setcvar ui_gametype 0;
 		setcvar g_gametype 0;
@@ -43,7 +43,7 @@ itemDef { /* 01. Free For All */
 	rect 32 96 256 32\
 	mouseEnter { setcvar ui_tip "You're on your own. Get as much frags as you can."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_01_ffa;
 		setcvar ui_gametype 0;
 		setcvar g_gametype 0;
@@ -58,7 +58,7 @@ itemDef { /* 02.Possession */
 	rect 32 112 256 32\
 	mouseEnter { setcvar ui_tip "There's a flag on the level. Catch it and keep it."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_02_pos;
 		setcvar ui_gametype 12;
 		setcvar g_gametype 13;
@@ -73,7 +73,7 @@ itemDef { /* 03. Last Man Standing */
 	rect 32 128 256 32\
 	mouseEnter { setcvar ui_tip "Nobody lives forever. Be the last one standing."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_03_lms;
 		setcvar ui_gametype 9;
 		setcvar g_gametype 10;
@@ -88,7 +88,7 @@ itemDef { /* 04. Team Deathmatch */
 	rect 32 144 256 32\
 	mouseEnter { setcvar ui_tip "You're not alone. Work with your team to frag as much as possible."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_04_team;
 		setcvar ui_gametype 2;
 		setcvar g_gametype 3;
@@ -103,7 +103,7 @@ itemDef { /* 05. Elimination */
 	rect 32 160 256 32\
 	mouseEnter { setcvar ui_tip "Work with your team to eradicate the opposition in round-based matches."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_05_elim;
 		setcvar ui_gametype 7;
 		setcvar g_gametype 8;
@@ -118,7 +118,7 @@ itemDef { /* 06. Double Domination */
 	rect 32 176 256 32\
 	mouseEnter { setcvar ui_tip "Work with your team to capture and hold the control points to rack up points."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_06_dd;
 		setcvar ui_gametype 10;
 		setcvar g_gametype 11;
@@ -133,7 +133,7 @@ itemDef { /* 07. Domination */
 	rect 32 192 256 32\
 	mouseEnter { setcvar ui_tip "Two points. Two teams. Hold the points in 10 sec to win the rounds."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_07_dom;
 		setcvar ui_gametype 11;
 		setcvar g_gametype 12;
@@ -148,7 +148,7 @@ itemDef { /* 08. Overload */
 	rect 32 208 256 32\
 	mouseEnter { setcvar ui_tip "Both teams have bases. Infiltrate and destroy the enemy crystal in order to win."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_08_over;
 		setcvar ui_gametype 5;
 		setcvar g_gametype 6;
@@ -163,7 +163,7 @@ itemDef { /* 09. One Flag CTF */
 	rect 32 224 256 32\
 	mouseEnter { setcvar ui_tip "Your team must take the central flag and deliver it to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_09_1fctf;
 		setcvar ui_gametype 4;
 		setcvar g_gametype 5;
@@ -178,7 +178,7 @@ itemDef { /* 10. Capture The Flag */
 	rect 32 240 256 32\
 	mouseEnter { setcvar ui_tip "A classic. Infiltrate the enemy base, steal their flag and bring it to your base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_10_ctf;
 		setcvar ui_gametype 3;
 		setcvar g_gametype 4;
@@ -193,7 +193,7 @@ itemDef { /* 11. CTF Elimination */
 	rect 32 256 256 32\
 	mouseEnter { setcvar ui_tip "Capture the flag, but with lives!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_11_ectf;
 		setcvar ui_gametype 8;
 		setcvar g_gametype 9;
@@ -208,7 +208,7 @@ itemDef { /* 12. Harvester */
 	rect 32 272 256 32\
 	mouseEnter { setcvar ui_tip "Each frag spawns a skull in the middle. Bring those skulls to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_12_harv;
 		setcvar ui_gametype 6;
 		setcvar g_gametype 7;
@@ -223,7 +223,7 @@ itemDef { /* 13. Tournament */
 	rect 32 288 256 32\
 	mouseEnter { setcvar ui_tip "That's it! Now you have to face final 1on1 challenges. If you do well, you'll be rewarded. :)"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_13_1on1;
 		setcvar ui_gametype 1;
 		setcvar g_gametype 1;
@@ -238,7 +238,7 @@ itemDef { /*  */
 	rect 32 304 256 32\
 	mouseEnter { setcvar ui_tip "Your determination and courage awarded you with this special match. Enjoy it!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close singleplayercampaign;
+	action { close spladder;
 		open singleplayercampaign_14_1on1bonus;
 		setcvar ui_gametype 1;
 		setcvar g_gametype 1;
@@ -338,7 +338,7 @@ itemDef { /* Cancel button */
 		fadeout tooltip;
 	}
 	action {
-		close singleplayercampaign;
+		close spladder;
 
 		open mainmenu;
 
