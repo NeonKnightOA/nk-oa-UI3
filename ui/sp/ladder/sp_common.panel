@@ -100,11 +100,7 @@ itemDef
 	decoration
 	textscale 0.5
 	rect 32 128 32 32
-	cvarTest SPCUR_MAP2_UNLOCKCVAR
-	showCVar
-	{
-		"1"
-	}
+	/* cvarTest SPCUR_MAP2_UNLOCKCVAR showCvar { "1" } */
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }
@@ -118,11 +114,7 @@ itemDef
 	decoration
 	textscale 0.5
 	rect 32 160 32 32
-	cvarTest SPCUR_MAP3_UNLOCKCVAR
-	showCVar
-	{
-		"1"
-	}
+	/* cvarTest SPCUR_MAP3_UNLOCKCVAR showCvar { "1" } */
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }
@@ -136,11 +128,7 @@ itemDef
 	decoration
 	textscale 0.5
 	rect 32 192 32 32
-	cvarTest SPCUR_MAP4_UNLOCKCVAR
-	showCVar
-	{
-		"1"
-	}
+	/* cvarTest SPCUR_MAP4_UNLOCKCVAR showCvar { "1" } */
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }

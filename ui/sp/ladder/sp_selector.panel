@@ -2,7 +2,7 @@
 /* Define Zone */
 /* 32 on 32 for menu items */
 #define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	16
+#define MENU_ITEM_TITLE_X2	316
 #define MENU_ITEM_TITLE_Y	32
 #define MENU_ITEM_T_WIDTH	300
 #define MENU_ITEM_T_HEIGHT	400
@@ -47,7 +47,6 @@ itemDef { /* Title */
 	bordercolor MP_BOX_BORDER
 	visible 1
 }
-
 /* itemDef { /* 00. Tutorial - It's now on its own menu. * /
 	name button_00_tut background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "^4Tutorial"
@@ -256,9 +255,9 @@ itemDef { /* 13. Tournament */
 		play MP_SND_SELECT;
 	}
 }
-itemDef { /*  */
+itemDef { /* 14. Tournament (bonus) */
 	name button_14_1on1_bonus background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
-	text "Tournament (Bonus)"
+	text "^3Tournament (Bonus)"
 	/* cvarTest "ui_sp_unlock_38" showCVar {"1"} */
 	rect MENU_ITEM_X MENU_ITEM_14 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Your determination and courage awarded you with this special match. Enjoy it!"; fadein tooltip; }

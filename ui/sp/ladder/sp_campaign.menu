@@ -47,7 +47,7 @@ menuDef {
 		}
 
 #include "ui/common/symbol2.panel"							   
-#include "ui/sp/sp_selector.panel"
+#include "ui/sp/ladder/sp_selector.panel"
 #include "ui/common/tooltip.panel"
 
 		/* always have these buttons available */
@@ -61,13 +61,13 @@ menuDef {
 			action { close spladder; open spmenu; setcvar ui_sptab 0; /* reset the tabs */ play MP_SND_SELECT; }
 			visible 1
 		}
-		itemDef { /* Cancel button */
+		itemDef { /* Endurance button */
 			name endbutton
 			background MP_WIDEBUTTONBG group uistuff style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR
 			mouseEnter { setcvar ui_tip "Enters the Endurance ladders" fadein tooltip; } mouseExit { fadeout tooltip; }
-			rect 32 384 256 32
+			rect 332 384 256 32
 			text "^4Endurance"
-			/* action { close spladder; open endurance; setcvar ui_sptab 0; /* reset the tabs */ play MP_SND_SELECT; } */
+			/* action { close spladder; open endurance; setcvar ui_sptab 0; /* reset the tabs * / play MP_SND_SELECT; } */
 			visible 1
 		}
 	}

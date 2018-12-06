@@ -22,36 +22,52 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
-
-// Instant action: Create a random botmatch. Random map, random gametype, random list of bots
+/* Quick Match: Create a random botmatch. Random map, random gametype, random list of bots */
 {
-  assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
-    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
-    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE							
-	cursor "ui/assets/cursor"			
-	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-	
-
-menuDef {
-    	name "botmatch"
-	background MP_BACKGROUND1
-    	fullScreen 1				
-	rect 0 0 640 480
-    	visible MENU_TRUE
-    	forecolor MP_FOCUSCOLOR			
-	focuscolor MP_TEXTCOLOR
-				
-	onOpen { 
-		uiScript loadGameInfo ;
-		uiScript updateSPMenu ;
-//		close main;
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+	}
+	menuDef {
+		name "quickmatch"
+		background MP_BACKGROUND1
+		fullScreen 1				
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR			
+		focuscolor MP_TEXTCOLOR
+		onOpen { 
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
 		}
-#include "ui/common/symbol2.panel"							   
-#include "ui/common/instantaction.panel"
-#include "ui/common/tooltip.panel"
-
+		#include "ui/common/symbol2.panel"
+		#include "ui/sp/quickmatch/quickmatch.panel"
+		#include "ui/common/tooltip.panel"
+		// always have this button available
+		itemDef {
+			name button1
+			text "Cancel"
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 32 384 256 32
+			textalignx	 32	
+			textaligny	 24
+			backcolor MP_BUTTONBGCOLOR
+			forecolor MP_TEXTCOLOR
+			action {
+				close botmatch;
+				open spmenu;
+				setcvar ui_menutab 0; // reset the tabs
+				play MP_SND_SELECT;  
+			}
+			visible 1 
+		}
 	}
 }

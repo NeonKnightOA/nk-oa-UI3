@@ -71,7 +71,7 @@ itemDef {
 #endif
 
 	   
-#include "ui/common/mainmenu-sp.panel"
+#include "ui/sp/mainmenu-sp.panel"
 #include "ui/common/tooltip.panel"
 
 	}

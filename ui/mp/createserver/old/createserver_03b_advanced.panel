@@ -1,0 +1,250 @@
+
+/* Rules selection */
+/* -----------------------------------------------------------
+   TAB 5 - ADVANCED GENERAL
+   ----------------------------------------------------------- */
+/* Section titles */
+itemDef {
+      	name title_generalrules
+	background MP_DIALOGBG backcolor MP_DIALOGBGCOLOR style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER visible 1 hexcolor 0 1 2 3	// color schemes 
+	text	"Networking"
+   	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef {
+      	name title_gametype
+	background MP_DIALOGBG backcolor MP_DIALOGBGCOLOR style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER visible 1 hexcolor 0 1 2 3	// color schemes 
+	text	"Game rules"
+   	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+/* --------------------------------------------- */
+/* Column 1 */
+/* --------------------------------------------- */
+itemDef { // 1. Require Password
+      	name c1_needpassword
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "If set, the match requires a password." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Req. Password "
+	cvar "g_needPassword"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 2. Password
+      	name c1_password
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_EDITFIELD
+	mouseEnter { setcvar ui_tip "The password required to join the match." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Password "
+	cvar "g_password"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 3. Delag Hitscan
+      	name c1_delaghitscan
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "Removes the need to predict enemy weapon fire." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Delag Hitscan "
+	cvar "g_delagHitscan"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 4. Autochange Map
+      	name c1_autochangemap
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "If checked, switches automatically to the next map." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Autoswitch Map "
+	cvar "g_autonextmap"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 5. Allow Downloads
+      	name c1_allowdownload
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "If checked, players will download missing packages." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Allow Downloads "
+	cvar "sv_allowdownload"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 6. Allow Voting
+      	name c1_allowvoting
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "If checked, players can vote after the end of the match." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Allow Voting "
+	cvar "sv_allowvote"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 7. Minimum Ping
+      	name c1_minping
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 3
+	mouseEnter { setcvar ui_tip "Determines the lowest amount of ping a player can have." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Minimum Ping "
+	cvar "sv_minping"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 8. Maximum Ping
+      	name c1_maxping
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 3
+	mouseEnter { setcvar ui_tip "Determines the highest amount of ping a player can have." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Maximum Ping "
+	cvar "sv_maxping"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 9. Auto Join Game
+      	name c1_autojoin
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "Forces players to join the match after connecting." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Join On Enter "
+	cvar "g_teamautojoin"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 10. Reconnect Limit
+      	name c1_reconnectlimit
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 3
+	mouseEnter { setcvar ui_tip "Time between allowed reconnections in order to stop flooding." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Reconnect Limit "
+	cvar "sv_reconnectLimit"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+/* --------------------------------------------- */
+/* Column 2 */
+/* --------------------------------------------- */
+itemDef { // 1. Auto Team Balance
+      	name c1_forcebalance
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "Forces players to even up the teams." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Auto Team Balance "
+	cvar "g_teamForceBalance"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 2. Force Balance
+      	name c1_forcerespawn
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Players will respawn after this amount of time." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Respawn Wave Time "
+	cvar "g_respawnTime"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 3. Catchup Rate
+      	name c1_catchup
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Rate of catchup." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Catchup Rate "
+	cvar "g_awardPushing"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 04. Forward Speed
+      	name c1_speed
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Controls the player's forward speed." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Forward speed "
+	cvar "g_speed"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 05. Knockback
+      	name c1_knockback
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Controls the weapon fire knockback." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Knockback "
+	cvar "g_knockback"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 06. Map Gravity
+      	name c1_gravity
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Controls the gravity setting of the map." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Map Gravity "
+	cvar "g_gravity"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 07. Server Gravity Modifier
+      	name c1_gravitymodifier
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Controls the amount of gravity of the server." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Server Gravity Rate "
+	cvar "g_gravityModifier"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 08. Award Pushing
+      	name c1_awardpushing
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_CHECKBOX
+	mouseEnter { setcvar ui_tip "If checked, players get a point for killing suiciding players." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Award Pushing "
+	cvar "g_awardPushing"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 09. Quad Factor
+      	name c1_quadfactor
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Specifies how much damage the Quad Damage adds to the weapon." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Quad Factor "
+	cvar "g_quadFactor"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+itemDef { // 10. Damage Modifier
+      	name c1_damagemodifier
+	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+	type ITEM_TYPE_NUMERICFIELD maxchars 5
+	mouseEnter { setcvar ui_tip "Controls the amount of damage done by weapons and triggers." fadein tooltip; } mouseExit { fadeout tooltip;}
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+      	text "Damage Mod. "
+	cvar "g_damageModifier"
+	cvarTest "ui_menutab" showCVar { MENU_TAB_5 }
+}
+/* --------------------------------------------- */
+itemDef {
+      	name buttontonext
+      	text "Back"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 384 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_5 }
+	mouseEnter { setcvar ui_tip "Return to rules screen." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		setcvar ui_menutab MENU_TAB_3;
+		play MP_SND_SELECT;
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}

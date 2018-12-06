@@ -2,7 +2,7 @@
 /* The Single-Player menu. */
 /* Define Zone */
 /* 32 on 32 for menu items */
-#define MENU_ITEM_T		32
+#define MENU_ITEM_TITLE_Y		32
 #define MENU_ITEM_1		96
 #define MENU_ITEM_2		128
 #define MENU_ITEM_3		160
@@ -26,7 +26,7 @@ itemDef {
 	type ITEM_TYPE_BUTTON
 	textstyle 2
 	textscale 0.7
-	rect MMENU_OFFSETITEMH MENU_ITEM_T MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_TITLE_Y MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	decoration
 	textalign MMENU_ALIGNITEM
 	textalignx 256 
@@ -38,15 +38,15 @@ itemDef {
 /* /Title */
 /* Button Zone */
 itemDef { /* Tutorials */
-	name buttonhmods
+	name buttonSPTutorials
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Tutorials"
 	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open tutorial; }*/
+	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open tutorials; }*/
 	mouseEnter { setcvar ui_tip "Learn how to play OpenArena." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Ladder */
-	name buttonhmain1
+	name buttonSPLadder
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Ladder"
 	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
@@ -54,16 +54,16 @@ itemDef { /* Ladder */
 	mouseEnter { setcvar ui_tip "Go through the OpenArena maps and gamemodes and reach the final bosses." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Botmatch (a.k.a. Instant Action) */
-	name buttonhmaina
+	name buttonSPBotmatch
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	text "Botmatch"
-	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "4"; open quickmatch; }
-	mouseEnter { setcvar ui_tip "Play a totally random botmatch!" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "4"; open botmatch; }
+	mouseEnter { setcvar ui_tip "Create a custom match against bots." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 	cvarTest "name" hideCVar { "UnnamedPlayer" } /* Hidden for first-timers */
 }
 itemDef { /* Quick Match */
-	name buttonhmain2
+	name buttonSPQuickMatch
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Quick Match"
 	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
@@ -71,7 +71,7 @@ itemDef { /* Quick Match */
 	mouseEnter { setcvar ui_tip "No options, no fiddling around. Just press this and play a random game!" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Arcade Mode */
-	name buttonhmain1
+	name buttonSPArcade
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Arcade Mode"
 	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
@@ -79,7 +79,7 @@ itemDef { /* Arcade Mode */
 	mouseEnter { setcvar ui_tip "Go through 10 exhaustive matches and follow your character's history." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Zone Domination */
-	name buttonhmain2
+	name buttonSPZoneDomination
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Zone Domination"
 	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
@@ -87,7 +87,7 @@ itemDef { /* Zone Domination */
 	mouseEnter { setcvar ui_tip "Fight against the CPU for the control of the OpenArena world." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Speedrun Mode */
-	name buttonhmain3
+	name buttonSPSpeedrun
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Speedrun Mode"
 	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
@@ -95,7 +95,7 @@ itemDef { /* Speedrun Mode */
 	mouseEnter { setcvar ui_tip "Finish the OpenArena maps in the shortest time possible." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Enable third-party maps */
-	name buttonhmain3
+	name checkboxThirdParty
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_CHECKBOX textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Enable third-party maps"
 	cvar "ui_thirdPartyMapsInSP"
@@ -103,7 +103,7 @@ itemDef { /* Enable third-party maps */
 	mouseEnter { setcvar ui_tip "Allows third-party maps for the Speedrun, Zone Domination, Arcade and Quick Match modes. Botmatch mode is always enabled for third-party maps." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 } */
 itemDef { /* Back */
-	name buttonhmain5
+	name buttonBack
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Back"
 	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT

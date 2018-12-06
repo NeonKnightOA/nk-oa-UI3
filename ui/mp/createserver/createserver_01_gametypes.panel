@@ -1,0 +1,350 @@
+
+/* Gametypes tab */
+
+// -----------------------------------------------------------
+// TAB 0 - GAMETYPE MODES
+// -----------------------------------------------------------
+
+itemDef {
+      	name dmgamefield
+	text	"Free for All Modes"
+	background MP_DIALOGBG
+	backcolor 	MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	decoration
+   	rect 16 32 300 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name teamgamefield
+	text	"Teamplay Modes"
+	background MP_DIALOGBG
+	backcolor 	MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+      	textscale 0.5
+	decoration
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+   	rect 316 32 300 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+
+itemDef {
+      	name button1
+      	text "Deathmatch"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 32 96 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip TIP_FFA fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	
+			 play MP_SND_SELECT;  
+			setcvar ui_netgametype 0;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+
+itemDef {
+      	name ffa2
+      	text "Tournament"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 32 128 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip TIP_TOURNAMENT fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	
+			setcvar ui_netgametype 1;	
+			play MP_SND_SELECT;  
+				}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "Last Man Standing"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 32 160 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Players must survive. Who lives last wins." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 10;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+itemDef {
+      	name ffa4
+      	text "Possession"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 32 192 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Hold the neutral flag the longest to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 13;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+// team types
+
+
+itemDef {
+      	name button1
+      	text "Team DM"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 96 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 3;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+
+itemDef {
+      	name ffa2
+      	text "Capture the Flag"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 128 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Team must protect their flag and take enemy's." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 4;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "One Flag"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 160 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Teams must take neutral flag to their base." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 5;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+
+itemDef {
+      	name ffa3
+      	text "Overload"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 192 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Cores in each base must be destroyed." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 6;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "Harvester"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 224 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Players must kill and collect their orbs." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 7;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "Elimination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 256 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Teams must survive to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 8;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "CTF Elimination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 288 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Teams must capture or sruvive to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 9;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "Double Domination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 320 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "A team must control two points for score." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 11;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+
+itemDef {
+      	name ffa3
+      	text "Domination"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 352 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { "0" }
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	mouseEnter { setcvar ui_tip "Score is raised depending on points controlled." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
+			setcvar ui_netgametype 12;	}
+	visible 1 
+	hexcolor 0 1 2 3	// color schemes
+}
+

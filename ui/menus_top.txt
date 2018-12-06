@@ -8,8 +8,8 @@
 	/* Single-player submenu */
 	loadMenu { "ui/sp/main.menu" }
 	loadMenu { "ui/sp/botmatch/botmatch.menu" }
-	loadMenu { "ui/sp/ladder/singleplayer.menu" }
-	loadMenu { "ui/sp/ladder/sp_transition.menu" }
+	loadMenu { "ui/sp/tutorials/sp_tutorial.menu" }
+/*	loadMenu { "ui/sp/ladder/sp_transition.menu" }
 	loadMenu { "ui/sp/ladder/sp_campaign.menu" }
 	loadMenu { "ui/sp/ladder/sp_rungs.menu" }
 	loadMenu { "ui/sp/ladder/00_tutorial_campaign.menu" }
@@ -26,12 +26,13 @@
 	loadMenu { "ui/sp/ladder/11_ectf_campaign.menu" }
 	loadMenu { "ui/sp/ladder/12_harv_campaign.menu" }
 	loadMenu { "ui/sp/ladder/13_1on1_campaign.menu" }
-	loadMenu { "ui/sp/ladder/14_1on1bonus_campaign.menu" }
+	loadMenu { "ui/sp/ladder/14_1on1bonus_campaign.menu" } */
 	loadMenu { "ui/sp/quickmatch/quickmatch.menu" }
 
 	/* Multiplayer submenu */
 	loadMenu { "ui/mp/main.menu" }
-	loadMenu { "ui/mp/joinserver.menu" }
+	loadMenu { "ui/mp/createserver/createserver.menu" }
+	loadMenu { "ui/mp/joinserver/joinserver.menu" }
 
 	/* Game options submenu */
 	loadMenu { "ui/main_options.menu" }

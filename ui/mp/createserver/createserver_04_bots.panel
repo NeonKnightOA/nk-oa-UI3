@@ -1,0 +1,266 @@
+
+/* Bots selection. Only available if  */
+/* -----------------------------------------------------------
+   TAB 3 - BOTS SELECTION
+   ----------------------------------------------------------- */
+// FFA Bots...
+itemDef {
+      	name mapsfield
+	text	"Slots and Bots"
+	background MP_DIALOGBG
+	backcolor MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME 
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+	decoration
+   	rect 16 32 600 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+itemDef {
+      	name teenfield
+	text	"Blue Team"
+	background "$whiteimage"
+	ownerdrawflag UI_SHOW_NETANYTEAMGAME  
+	//ownerdraw UI_BLUETEAMNAME
+	style 1
+	type 0
+	backcolor 0.2 0.2 0.6 0.4
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+	decoration
+   	rect 16 32 300 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+itemDef {
+      	name teenfield
+	text	"Red Team"
+	background "$whiteimage"
+	ownerdrawflag UI_SHOW_NETANYTEAMGAME  
+	//ownerdraw UI_REDTEAMNAME
+	style 1
+	type 0
+	backcolor 0.6 0.2 0.2 0.4
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+	decoration
+   	rect 316 32 300 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+// Blue Team Bots ...
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM1
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 32 64 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM2
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 32 128 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 32 192 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM4
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 32 256 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM5
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 32 320 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+// Red Team bots...
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM1
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 332 64 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM2
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 332 128 256 64
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 332 192 256 64
+     	textalignx	32	
+	textaligny	32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM4
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 332 256 256 64
+     	textalignx	32	
+	textaligny	32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM5
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+   	rect 332 320 256 64
+     	textalignx	32	
+	textaligny	32
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose bot." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+itemDef {
+      	name buttontonext
+      	text "Fight"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 414 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_4 }
+	mouseEnter { setcvar ui_tip "LETS FIGHT" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		setcvar ui_menutab 4; 
+		play MP_SND_SELECT;  
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}

@@ -1,0 +1,243 @@
+
+/* Confirmation? */
+/* -----------------------------------------------------------
+   TAB 4 - CONFIRM START SUMMARY SELECTION
+   ----------------------------------------------------------- */
+itemDef {
+      	name mapprf
+	ownerdraw UI_STARTMAPCINEMATIC
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+	decoration
+   	rect 16 32 600 400
+     	textalignx	0	
+	textaligny	0
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+      	name mapsfield
+	text "Confirm Match !"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+	decoration
+   	rect 16 32 600 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	backcolor 0.0 0.0 0.0 0.7
+	bordercolor   MP_BOX_BORDER
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+// The options summary. NON CLICKABLE!! and small.
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM1
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 128 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM2
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 144 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 160 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM4
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 176 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name bluebots
+      	text ""
+	ownerdraw UI_BLUETEAM5
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 192 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM1
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 208 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM2
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 224 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 240 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM4
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 256 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name redbots
+      	text ""
+	ownerdraw UI_REDTEAM5
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.25
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+   	rect 450 272 128 16
+     	textalignx	32	
+	textaligny	 32
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	decoration
+}
+itemDef {
+      	name buttontofight
+      	text "Start"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 1
+   	rect 64 352 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+	mouseEnter { setcvar ui_tip "Create the server!" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		uiScript StartServer;
+		play MP_SND_SELECT;
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+itemDef {
+      	name buttontofight
+      	text "Not Yet"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 1
+   	rect 364 352 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab" showCVar { MENU_TAB_7 }
+	mouseEnter { setcvar ui_tip "Create the server!" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		setcvar ui_menutab MENU_TAB_1; 
+		play MP_SND_SELECT;
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}

@@ -1,0 +1,22 @@
+		name SPCUR_MENUNAME
+		background MP_BACKGROUND1
+		fullScreen 1
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR
+		focuscolor MP_TEXTCOLOR
+
+		onOpen
+		{
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
+			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
+			setcvar ui_currentMap SPCUR_MAP1NUM;
+			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
+			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
+			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
+			setcvar SPCUR_MAP1_ADDITIONALRULES;
+			setcvar SPCUR_MAP1_ADDITIONALRULE1;
+			setcvar SPCUR_MAP1_ADDITIONALRULE2;
+			setcvar SPCUR_MAP1_ADDITIONALRULE3;
+		}

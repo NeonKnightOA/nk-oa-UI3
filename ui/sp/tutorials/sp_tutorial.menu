@@ -1,0 +1,412 @@
+/*
+===========================================================================
+Copyright (C) 2015 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+/* Tutorials: Learn how to play through a series of tutorials. */
+
+// Internal workings that don't really need to be modified
+
+#define SPCUR_MAP1_UNLOCKCVAR 	""
+#define SPCUR_MAP1NUM		0
+#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_0"
+#define SPCUR_MAP2NUM		1
+#define SPCUR_MAP3_UNLOCKCVAR 	""
+#define SPCUR_MAP3NUM		""
+#define SPCUR_MAP4_UNLOCKCVAR 	""
+
+#define SPCUR_MAP1_NAME			"FFA Tutorial" /* oad_tutorial1 */
+#define SPCUR_MAP2_NAME			"FFA Tutorial 2" /* oad_tutorial2 */
+#define SPCUR_MAP3_NAME			""
+#define SPCUR_MAP1_DESCRIPTION		"Learn the basics of OpenArena."
+#define SPCUR_MAP2_DESCRIPTION		""
+#define SPCUR_MAP3_DESCRIPTION		""
+#define SPCUR_MAP1_FRAGLIMIT		5
+#define SPCUR_MAP2_FRAGLIMIT		1
+#define SPCUR_MAP3_FRAGLIMIT		1
+#define SPCUR_MAP1_CAPTURELIMIT	0
+#define SPCUR_MAP2_CAPTURELIMIT	1
+#define SPCUR_MAP3_CAPTURELIMIT	1
+#define SPCUR_MAP1_TIMELIMIT		0
+#define SPCUR_MAP2_TIMELIMIT		1
+#define SPCUR_MAP3_TIMELIMIT		1
+#define SPCUR_MAP1_ADDITIONALRULE1	""
+#define SPCUR_MAP1_ADDITIONALRULE2	""
+#define SPCUR_MAP1_ADDITIONALRULE3	""
+#define SPCUR_MAP2_ADDITIONALRULE1	""
+#define SPCUR_MAP2_ADDITIONALRULE2	""
+#define SPCUR_MAP2_ADDITIONALRULE3	""
+#define SPCUR_MAP3_ADDITIONALRULE1	""
+#define SPCUR_MAP3_ADDITIONALRULE2	""
+#define SPCUR_MAP3_ADDITIONALRULE3	""
+
+{
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+	}
+	menuDef {
+		name "tutorials"
+		background MP_BACKGROUND1
+		fullScreen 1
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR
+		focuscolor MP_TEXTCOLOR
+
+		onOpen {
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
+			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
+			setcvar ui_currentMap SPCUR_MAP1NUM;
+			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
+			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
+			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
+			setcvar SPCUR_MAP1_ADDITIONALRULES;
+			setcvar SPCUR_MAP1_ADDITIONALRULE1;
+			setcvar SPCUR_MAP1_ADDITIONALRULE2;
+			setcvar SPCUR_MAP1_ADDITIONALRULE3;
+		}
+
+		#include "ui/common/mapbg.panel"
+
+		/* -----------------------------------------------------------
+		   TAB 0 - SELECTING MAP
+		   ----------------------------------------------------------- */
+
+		// MAP stats and info
+
+		#include "ui/sp/tutorials/sp_mapinfo.panel"
+
+		/* Ladder Name */
+
+		itemDef {
+			name dmgamefield
+			ownerdraw UI_GAMETYPE
+			text "Tutorials"
+			background MP_DIALOGBG
+			style 1
+			type 0
+			textstyle 2
+			textscale 0.5
+			decoration
+			rect 16 32 300 400
+			textalignx	 32	
+			textaligny	 24
+			border 1
+			bordercolor   MP_BOX_BORDER
+			backcolor 	MP_DIALOGBGCOLOR
+			visible 1 
+		}
+
+		/* Rungs */
+
+		/* For the rest of the ladders */
+		itemDef { /* Map 1*/
+			name button1
+			text SPCUR_MAP1_NAME
+			ownerdraw UI_MENUMAPNAME
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 32 128 256 32
+			textalignx	 32	
+			textaligny	 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mapnum SPCUR_MAP1NUM
+			action
+			{
+				setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
+				setcvar ui_currentMap SPCUR_MAP1NUM;
+				setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
+				setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
+				setcvar timelimit SPCUR_MAP1_TIMELIMIT;
+				setcvar SPCUR_MAP1_ADDITIONALRULES;
+				setcvar SPCUR_MAP1_ADDITIONALRULE1;
+				setcvar SPCUR_MAP1_ADDITIONALRULE2;
+				setcvar SPCUR_MAP1_ADDITIONALRULE3;
+				play MP_SND_SELECT;  
+			}
+			visible 1 
+		}
+		itemDef { /* Map 2*/
+			name button1
+			text SPCUR_MAP2_NAME
+			ownerdraw UI_MENUMAPNAME
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 32 160 256 32
+			textalignx	 32	
+			textaligny	 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mapnum SPCUR_MAP2NUM
+			/* cvarTest SPCUR_MAP2_UNLOCKCVAR showcvar { "1" } */
+			action
+			{
+				setcvar ui_tip SPCUR_MAP2_DESCRIPTION;
+				setcvar ui_currentMap SPCUR_MAP2NUM;
+				setcvar fraglimit SPCUR_MAP2_FRAGLIMIT;
+				setcvar capturelimit SPCUR_MAP2_CAPTURELIMIT;
+				setcvar timelimit SPCUR_MAP2_TIMELIMIT;
+				setcvar SPCUR_MAP2_ADDITIONALRULES;
+				setcvar SPCUR_MAP2_ADDITIONALRULE1;
+				setcvar SPCUR_MAP2_ADDITIONALRULE2;
+				setcvar SPCUR_MAP2_ADDITIONALRULE3;
+				play MP_SND_SELECT;  
+			}
+			visible 1 
+		}
+
+		itemDef { /* Map 3*/
+			name button1
+			text SPCUR_MAP3_NAME
+			ownerdraw UI_MENUMAPNAME
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 32 192 256 32
+			textalignx	 32
+			textaligny	 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mapnum SPCUR_MAP3NUM
+			/* cvarTest SPCUR_MAP3_UNLOCKCVAR showcvar { "1" } */
+			action
+			{
+				setcvar ui_tip SPCUR_MAP3_DESCRIPTION;
+				setcvar ui_currentMap SPCUR_MAP3NUM;	
+				setcvar fraglimit SPCUR_MAP3_FRAGLIMIT;
+				setcvar capturelimit SPCUR_MAP3_CAPTURELIMIT;
+				setcvar timelimit SPCUR_MAP3_TIMELIMIT;
+				setcvar SPCUR_MAP3_ADDITIONALRULES;
+				setcvar SPCUR_MAP3_ADDITIONALRULE1;
+				setcvar SPCUR_MAP3_ADDITIONALRULE2;
+				setcvar SPCUR_MAP3_ADDITIONALRULE3;
+				play MP_SND_SELECT;  
+			}
+			visible 1 
+		}
+
+		/* Common Stuff Area */
+
+		itemDef { /* Cancel button */
+			name button1
+			text "Cancel"
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			group buttonsthatdostuff
+			textscale 0.5
+			rect 32 384 256 32
+			textalignx	 32	
+			textaligny	 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mouseEnter { setcvar ui_tip "Go back to main menu."; fadein tooltip; }
+			mouseExit { fadeout tooltip; }
+			action {
+				close SPCUR_MENUNAME;
+				open spladder;
+				setcvar ui_sptab 0;	// reset the tabs
+				play MP_SND_SELECT;  
+			}
+			visible 1 
+		}
+
+		itemDef { /* FIGHT! button */
+			name buttong
+			text "FIGHT"
+			group buttonsthatdostuff
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 384 384 256 32
+			textalignx	 32	
+			textaligny	 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mouseEnter {
+				setcvar ui_tip "WHAT THE BUTTON SAYS!";
+				fadein tooltip;
+			}
+			mouseExit {
+				fadeout tooltip;
+			}
+			action { 
+				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
+				show fadlogotext;
+				show fadlogobg1;
+				show fadlogobg2;
+				show fadlogoside1;
+				show fadlogoside2;
+				show fadlogo;
+				show fadlogoup;
+				show fadlogodown;
+				hide buttonsthatdostuff;
+				playLooped null;
+				clearAlpha fadlogoblack;
+				fadein fadlogoblack;	
+
+				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
+				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
+
+				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;	
+				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
+
+				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
+				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
+
+				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
+			}
+			ontransitionend {
+				uiScript skirmishStart;
+			}
+			visible 1 
+		}
+
+		// This plays when you start a game and holds it up for a bit
+
+		itemDef {
+			name fadlogo
+			group logofade
+			background "gamestartingfade"
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.2 0.5 1.0 1.0
+			backcolor 1 0.2 0.1 1.0
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name fadlogobg1
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		itemDef {
+			name fadlogobg2
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		itemDef {
+			name fadlogoside1
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		itemDef {
+			name fadlogoside2
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		itemDef {
+			name fadlogoup
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		itemDef {
+			name fadlogodown
+			group logofade
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 0 640 480
+			textalignx	 32	
+			textaligny	 34
+			forecolor 0.0 0.0 0.0 1.0
+			backcolor 0.0 0.0 0.0 1.0
+			visible 0 
+			decoration
+		}
+
+		#include "ui/common/tooltip.panel"
+	}
+}

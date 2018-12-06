@@ -11,69 +11,62 @@ or (at your option) any later version.
 
 Open Arena is distributed in the hope that it will be
 useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 ===========================================================================
 */
 
 #include "ui/menudef.h"
 
 {
-  assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
-    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
-    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE							
-	cursor "ui/assets/cursor"			
-	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25	
-		
-  	}
-	
-
-menuDef {
-    	name "mpmenu"
-	background MP_BACKGROUND1
-    	fullScreen 1				
-	rect 0 0 640 480
-    	visible MENU_TRUE
-    	forecolor MP_FOCUSCOLOR			
-	focuscolor MP_TEXTCOLOR
-					
-	onOpen { 
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE 
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE 
+		cursor "ui/assets/cursor" 
+		itemFocusSound MP_SND_HOVER 
+		shadowColor 0.0 0.0 0.0 0.25 
+	}
+	menuDef {
+		name "mpmenu"
+		background MP_BACKGROUND1
+		fullScreen 1 
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR 
+		focuscolor MP_TEXTCOLOR
+		onOpen { 
 			close main;
 		}
-				
 
-#include "ui/common/symbol2.panel"
+		#include "ui/common/symbol2.panel"
 
-#ifdef PLAYERPORTRAITS
-// If one of those menus, display the portrait of the character!
+		#ifdef PLAYERPORTRAITS
+		// If one of those menus, display the portrait of the character!
 
-itemDef {
-      	name thisisyou
-	background "portraits/sorceress"
-	style 1
-	textstyle 2
-      	textscale 0.5
-   	rect 0 32 448 448
-	scralign ALIGN_LEFT
-	scralignfactor 0.7
-	forecolor 1 1 1 1
-	backcolor 1 1 1 1
-	visible 1 
-	decoration
-}
+		itemDef {
+			name thisisyou
+			background "portraits/sorceress"
+			style 1
+			textstyle 2
+			textscale 0.5
+			rect 0 32 448 448
+			scralign ALIGN_LEFT
+			scralignfactor 0.7
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			visible 1 
+			decoration
+		}
+		#endif
 
-#endif
+		#include "ui/mp/mainmenu-mp.panel"
 
-	   
-#include "ui/common/mainmenu-mp.panel"
-#include "ui/common/tooltip.panel"
+		#include "ui/common/tooltip.panel"
 
-
-}
+	}
 }

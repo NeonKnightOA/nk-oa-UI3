@@ -11,47 +11,165 @@ or (at your option) any later version.
 
 Open Arena is distributed in the hope that it will be
 useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Foobar; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 ===========================================================================
 */
 
+/* The "Simple" consolified game starting interface for easy selection
+   of setting up the game options and the like.
+   Designed for controllers really. Apologies if this is "too dumb"
+   but i'd like to make the interface less daunting by default. */
+
 #include "ui/menudef.h"
 
+/* Define zone */
+#define MENU_ITEM_TITLE_X1	16
+#define MENU_ITEM_TITLE_X2	316
+#define MENU_ITEM_TITLE_Y	32
+#define MENU_ITEM_TITLE_WIDTH	300
+#define MENU_ITEM_TITLE_HEIGHT	400
+#define MENU_ITEM_0	64
+#define MENU_ITEM_1	96
+#define MENU_ITEM_2	128
+#define MENU_ITEM_3	160
+#define MENU_ITEM_4	192
+#define MENU_ITEM_5	224
+#define MENU_ITEM_6	256
+#define MENU_ITEM_7	288
+#define MENU_ITEM_8	320
+#define MENU_ITEM_9	352
+#define MENU_ITEM_COLUMN_1	32
+#define MENU_ITEM_COLUMN_2	332
+#define MENU_ITEM_WIDTH	256
+#define MENU_ITEM_HEIGHT	32
+#define MENU_ITEM_HEIGHT_2	64
+/* / Define zone */
+
+/* Botmatch: Create a custom botmatch. */
 {
-  assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
-    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
-    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE							
-	cursor "ui/assets/cursor"			
-	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-	
-
-menuDef {
-    	name "createServer"
-	background MP_BACKGROUND1
-    	fullScreen 1				
-	rect 0 0 640 480
-    	visible MENU_TRUE
-    	forecolor MP_FOCUSCOLOR			
-	focuscolor MP_TEXTCOLOR
-				
-	onOpen { 
-		//uiScript loadGameInfo ;
-		//uiScript updateSPMenu ;
-		uiScript loadArenas;
-//		close main;
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE 
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE 
+		cursor "ui/assets/cursor" 
+		itemFocusSound MP_SND_HOVER 
+		shadowColor 0.0 0.0 0.0 0.25 
+	}
+	menuDef {
+		name "botmatch"
+		background MP_BACKGROUND1
+		fullScreen 1 
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR 
+		focuscolor MP_TEXTCOLOR
+		onOpen { 
+			uiScript loadArenas;
 		}
-#include "ui/common/symbol2.panel"							   
-#include "ui/common/playmaker.panel"
-#include "ui/common/tooltip.panel"
+		onEsc {
+			close botmatch;
+			open spmenu;
+			setcvar ui_menutab 0;	// reset the tabs
+			play MP_SND_BACK;
+		}
+		/* Include Zone */
+		#include "ui/common/symbol2.panel" 
+		#include "ui/common/tooltip.panel"
+		#include "ui/sp/botmatch/botmatch_bots.panel"
+		#include "ui/sp/botmatch/botmatch_confirm.panel"
+		#include "ui/sp/botmatch/botmatch_gametypes.panel"
+		#include "ui/sp/botmatch/botmatch_maps.panel"
+		#include "ui/sp/botmatch/botmatch_score.panel"
+		/* /Include Zone */
 
-
-}
+		/* -----------------------------------------------------------
+		 TAB X - ALL
+		 ----------------------------------------------------------- */
+		itemDef {
+			name tab1
+			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
+			text "Gametype"
+			rect 16 16 128 16
+			cvarTest "ui_menutab" hideCVar { "0" }
+		}
+		itemDef {
+			name tab2
+			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 1; play MP_SND_SELECT; }
+			text "Map"
+			rect 144 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" hideCVar { "1" }
+		}
+		itemDef {
+			name tab3
+			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 2; play MP_SND_SELECT; }
+			text "Rules"
+			rect 272 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" hideCVar { "2" }
+		}
+		itemDef {
+			name tab4
+			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 3; play MP_SND_SELECT; }
+			text "Slots"
+			rect 400 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" hideCVar { "3" }
+		}
+		// pressed tabs
+		itemDef {
+			name tab1
+			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON
+			text "Gametype"
+			rect 16 16 128 16
+			cvarTest "ui_menutab" showCVar { "0" }
+		}
+		itemDef {
+			name tab2
+			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON
+			text "Map"
+			rect 144 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" showCVar { "1" }
+		}
+		itemDef {
+			name tab3
+			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON
+			text "Rules"
+			rect 272 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" showCVar { "2" }
+		}
+		itemDef {
+			name tab4
+			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
+			type ITEM_TYPE_BUTTON
+			text "Slots"
+			rect 400 16 128 16
+			cvarTest "ui_gametype" hideCVar { "-1" }
+			cvarTest "ui_menutab" showCVar { "3" }
+		}
+		// always have this button available
+		itemDef {
+			name button1
+			background MP_WIDEBUTTONBG style 1 textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+			type ITEM_TYPE_BUTTON mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;}
+			text "Back"
+			cvarTest "ui_menutab" showCVar { "0" }
+			rect 32 384 256 32
+			action { close botmatch; open spmenu; setcvar ui_menutab 0; /* reset the tabs */ play MP_SND_SELECT; }
+		}
+	}
 }

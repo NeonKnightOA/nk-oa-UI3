@@ -1,0 +1,21 @@
+
+/* -----------------------------------------------------------
+   TAB 0 - QUICK MATCH
+   ----------------------------------------------------------- */
+itemDef {
+	name dmgamefield
+	text	"Quick Match"
+	background MP_DIALOGBG
+	backcolor 	MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 600 400
+	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+}

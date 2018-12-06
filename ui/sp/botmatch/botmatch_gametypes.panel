@@ -1,0 +1,125 @@
+
+/* Gametypes tab */
+/* -----------------------------------------------------------
+TAB 0 - GAMETYPE MODES
+----------------------------------------------------------- */
+itemDef { /* Title: Free for all modes */
+	name dmgamefield
+	background MP_DIALOGBG style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER backcolor MP_DIALOGBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	text "Free for All Modes"
+	cvarTest "ui_menutab" showCVar { "0" }
+}
+itemDef { /* Title: Teamplay modes */
+	name teamgamefield
+	background MP_DIALOGBG style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER backcolor MP_DIALOGBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	text "Teamplay Modes"
+	cvarTest "ui_menutab" showCVar { "0" }
+}
+/* Free For All Modes */
+itemDef {
+	name ffa1
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Free For All"
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 0; setcvar g_gametype 0; play MP_SND_SELECT; }
+}
+itemDef {
+	name ffa2
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Tournament"
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 1; setcvar g_gametype 1; play MP_SND_SELECT; }
+}
+itemDef {
+	name ffa3
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Last Man Standing"
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 9; setcvar g_gametype 10; play MP_SND_SELECT; }
+}
+itemDef {
+	name ffa4
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Possession"
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 12; setcvar g_gametype 13; play MP_SND_SELECT; }
+}
+/* Teamplay Modes */
+itemDef {
+	name team1
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Team Deathmatch"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 2; setcvar g_gametype 3; play MP_SND_SELECT; }
+}
+itemDef {
+	name team2
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Capture The Flag"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 3; setcvar g_gametype 4; play MP_SND_SELECT; }
+}
+itemDef {
+	name team3
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "One Flag CTF"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 4; setcvar g_gametype 5; play MP_SND_SELECT; }
+}
+itemDef {
+	name team4
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Overload"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 5; setcvar g_gametype 6; play MP_SND_SELECT; }
+}
+itemDef {
+	name team5
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Harvester"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 6; setcvar g_gametype 7; play MP_SND_SELECT; }
+}
+itemDef {
+	name team6
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Elimination"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 7; setcvar g_gametype 8; play MP_SND_SELECT; }
+}
+itemDef {
+	name team7
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "CTF Elimination"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 8; setcvar g_gametype 9; play MP_SND_SELECT; }
+}
+itemDef {
+	name team8
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Double Domination"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 10; setcvar g_gametype 11; play MP_SND_SELECT; }
+}
+itemDef {
+	name team9
+	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
+	text "Domination"
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	cvarTest "ui_menutab" showCVar { "0" }
+	action { setcvar ui_menutab 1; setcvar ui_gametype 11; setcvar g_gametype 12; play MP_SND_SELECT; }
+}

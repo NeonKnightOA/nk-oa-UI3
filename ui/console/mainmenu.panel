@@ -26,7 +26,7 @@ itemDef {
 }
 itemDef {
       	name buttonhmain1
-      	text BUTTON_SPLAYER
+      	text "Single Player"
 	background MP_LONGBUTTONBG
 	style 1
 	type ITEM_TYPE_BUTTON
@@ -74,7 +74,7 @@ itemDef {
 }
 itemDef {
       	name buttonhmain1
-      	text BUTTON_CUSTOM
+      	text "Custom Game"
 	background MP_LONGBUTTONBG
 	style 1
 	type ITEM_TYPE_BUTTON
@@ -145,7 +145,7 @@ itemDef {
 }
 itemDef {
       	name buttonhmain5
-      	text BUTTON_QUIT
+      	text "Quit"
 	background MP_LONGBUTTONBG
 	action {
 		play MP_SND_SELECT;  

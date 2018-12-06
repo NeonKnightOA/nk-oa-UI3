@@ -1,5 +1,5 @@
 /* For the first ladder */
-itemDef {
+itemDef { /* Map 1*/
 	name button1
 	text SPCUR_MAP1_NAME
 	ownerdraw UI_MENUMAPNAME
@@ -14,8 +14,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP1NUM
-	cvarTest ui_gametype
-	showcvar { "0" }
+	cvarTest ui_gametype showcvar { "0" }
 	action
 	{
 		setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
@@ -32,7 +31,7 @@ itemDef {
 	visible 1 
 }
 /* For the rest of the ladders */
-itemDef {
+itemDef { /* Map 1*/
 	name button1
 	text SPCUR_MAP1_NAME
 	ownerdraw UI_MENUMAPNAME
@@ -47,10 +46,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP1NUM
-	cvarTest SPCUR_MAP1_UNLOCKCVAR
-	showcvar { "1" }
-	cvarTest ui_gametype
-	hidecvar { "0" }
+	/* cvarTest SPCUR_MAP1_UNLOCKCVAR showcvar { "1" } */
+	cvarTest ui_gametype hidecvar { "0" }
 	action
 	{
 		setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
@@ -66,7 +63,7 @@ itemDef {
 	}
 	visible 1 
 }
-itemDef {
+itemDef { /* Map 2*/
 	name button1
 	text SPCUR_MAP2_NAME
 	ownerdraw UI_MENUMAPNAME
@@ -81,8 +78,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP2NUM
-	cvarTest SPCUR_MAP2_UNLOCKCVAR
-	showcvar { "1" }
+	/* cvarTest SPCUR_MAP2_UNLOCKCVAR showcvar { "1" } */
 	action
 	{
 		setcvar ui_tip SPCUR_MAP2_DESCRIPTION;
@@ -99,7 +95,7 @@ itemDef {
 	visible 1 
 }
 
-itemDef {
+itemDef { /* Map 3*/
 	name button1
 	text SPCUR_MAP3_NAME
 	ownerdraw UI_MENUMAPNAME
@@ -114,8 +110,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP3NUM
-	cvarTest SPCUR_MAP3_UNLOCKCVAR
-	showcvar { "1" }
+	/* cvarTest SPCUR_MAP3_UNLOCKCVAR showcvar { "1" } */
 	action
 	{
 		setcvar ui_tip SPCUR_MAP3_DESCRIPTION;

@@ -19,43 +19,13 @@ along with Open Arena; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
-
-#define MISSIONPACK_TITLE			"The Mission Pack"
-
-
-
-#define	BUTTON_PLAY				"Play"
-#define	BUTTON_SPLAYER				"^1Single Player"
-#define	BUTTON_CUSTOM				"Custom Game"
-#define	BUTTON_JOIN				"Multiplayer"
-#define	BUTTON_OPTIONS				"Options"
-#define	BUTTON_QUIT				"Quit"
-#define	BUTTON_EDIT				"Edit"
-#define	BUTTON_MODS				"Mods"
-#define	BUTTON_LIBRARY				"Library"
-#define	BUTTON_DONE				"Done"
-
-
-#define GAMETYPENAME_FFA			"Free for All"
-
-#define KEYNAME_CROUCH				"Crouch"
-
-
-
+/*
 #define TIP_VIDEO_ANISOTROPIC			"Raise this to increase sharpness on filtering. May slow down older hardware (< 2003)"
 
 
 // Hover tips of hints and helps that appear on the bottom of the menus
 
-#define TIP_FFA					"Free for all. Kill or be killed."
-#define TIP_TOURNAMENT				"One against one, winner fights the next player in line."
-
-
-
-#define TIP_PROFILE_TEAMMODEL			"Switch setting for Team or DM model." 
-#define TIP_PROFILE_PLAYERLIST			"Pick a character."
-#define TIP_PROFILE_NAME			"TYPE the name you wish to use. ^1(No real names!)"
-#define TIP_PROFILE_CAMERA			"Switch camera."
+*/
 
 #define TIP_VIDEO_RESOLUTION			"Set a screen resolution. ^1WARNING: Your monitor may not support certain resolutions"
 #define TIP_VIDEO_CUSTOMRES			"Set a custom resolution width. ^1ADVANCED - USE WITH CAUTION!"

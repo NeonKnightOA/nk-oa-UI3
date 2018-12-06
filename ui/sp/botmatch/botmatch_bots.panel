@@ -1,0 +1,112 @@
+
+/* -----------------------------------------------------------
+ TAB 3 - BOTS SELECTION
+ ----------------------------------------------------------- */
+// FFA Bots...
+itemDef {
+	name mapsfield
+	text "Your Opponent..."
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME 
+	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	rect 16 32 600 400
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+	name teenfield
+	text "Blue Team"
+	background "$whiteimage"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	//ownerdraw UI_BLUETEAMNAME
+	style 1
+	type 0
+	backcolor 0.2 0.2 0.6 0.4
+	textstyle 2
+	ownerdraw UI_PLAYERLOGO_METAL
+	textscale 0.5
+	cvarTest "ui_gametype"
+	hideCvar { "1" }
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	rect 16 32 300 400
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+	name teenfield
+	text "Red Team"
+	background "$whiteimage"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	//ownerdraw UI_REDTEAMNAME
+	style 1
+	type 0
+	backcolor 0.6 0.2 0.2 0.4
+	textstyle 2
+	textscale 0.5
+	ownerdraw UI_OPPONENTLOGO_METAL
+	cvarTest "ui_gametype"
+	hideCvar { "1" }
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	rect 316 32 170 400
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+	name teenfield
+	text "You"
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
+	//ownerdraw UI_REDTEAMNAME
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	ownerdraw UI_PLAYERMODEL
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	rect 16 32 166 500
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+	name teenfield
+	text "Opponent"
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
+	//ownerdraw UI_REDTEAMNAME
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	ownerdraw UI_OPPONENTMODEL 
+	cvarTest "ui_menutab"
+	showCVar { "3" }
+	decoration
+	rect 316 32 320 400
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}

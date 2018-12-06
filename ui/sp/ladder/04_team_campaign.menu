@@ -27,13 +27,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define SPCUR_MENUNAME		"singleplayercampaign_04_team"
 #define SPCUR_MENUFULLNAME	"Team Deathmatch"
 
-#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_8"
-#define SPCUR_MAP1NUM		10
-#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_9"
-#define SPCUR_MAP2NUM		11
-#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_10"
-#define SPCUR_MAP3NUM		12
-#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_11"
+#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_10"
+#define SPCUR_MAP1NUM		11
+#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_11"
+#define SPCUR_MAP2NUM		12
+#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_12"
+#define SPCUR_MAP3NUM		13
+#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_13"
 
 #define SPCUR_MAP1_NAME			"Meet Your Mates" /* oa_koth2 */
 #define SPCUR_MAP2_NAME			"Chaotic Match" /* kaos2 */
@@ -75,25 +75,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	}
 	menuDef
 	{
-		name SPCUR_MENUNAME
-		background MP_BACKGROUND1
-		fullScreen 1				
-		rect 0 0 640 480
-		visible MENU_TRUE
-		forecolor MP_FOCUSCOLOR			
-		focuscolor MP_TEXTCOLOR
+		#include "ui/sp/ladder/sp_initialmap.panel"
 
-		onOpen
-		{
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
-			setcvar ui_currentMap SPCUR_MAP1NUM;	// set it to the first map in the list
-			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
-			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
-			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
-		}
-
-		#include "ui/common/mapbg.panel"	
+		#include "ui/common/mapbg.panel"
 
 		/* -----------------------------------------------------------
 		   TAB 0 - SELECTING MAP
@@ -101,19 +85,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		// MAP stats and info
 
-		#include "ui/sp/sp_mapinfo.panel"
+		#include "ui/sp/ladder/sp_mapinfo.panel"
 
 		/* Ladder Name */
 
-		#include "ui/sp/sp_laddername.panel"
+		#include "ui/sp/ladder/sp_laddername.panel"
 
 		/* Rungs */
 
-		#include "ui/sp/sp_rungs.panel"
+		#include "ui/sp/ladder/sp_rungs.panel"
 
 		/* Common Stuff Area */
 
-		#include "ui/sp/sp_common.panel"
+		#include "ui/sp/ladder/sp_common.panel"
 
 		#include "ui/common/tooltip.panel"
 

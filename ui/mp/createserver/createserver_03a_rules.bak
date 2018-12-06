@@ -1,0 +1,236 @@
+// -----------------------------------------------------------
+// TAB 2 - RULES SELECTION
+// -----------------------------------------------------------
+
+itemDef {
+      	name mapsfield
+	text	"Rules"
+	background MP_DIALOGBG
+	backcolor 	MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+      	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+	decoration
+   	rect 16 32 600 400
+     	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+
+itemDef {
+      	name fraglimt
+      	text "Frag Limit          "
+	cvar "fraglimit"
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 32 64 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "When this is hit, the match ends." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+itemDef {
+      	name vampiret
+      	text "Vampire Damage   "
+	cvar "g_vampire"
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 3
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 332 64 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "How much life is obtained on damaging." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+itemDef {
+      	name timelimt
+      	text "Time Limit          "
+	background MP_FATBUTTONBG
+	cvar "timelimit"
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 3
+	style 1
+
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 32 128 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Amount of minutes allowed in the match." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+
+itemDef {
+      	name instantlygibonimpactofarail
+      	text "Instant Gib         "
+	background MP_FATBUTTONBG
+	cvar "g_instantgib"
+	type ITEM_TYPE_YESNO
+	maxchars 3
+	style 1
+
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 332 128 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Players have instant death railguns" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+
+itemDef {
+      	name capturelimt
+      	text "Capture Limit     "
+	background MP_FATBUTTONBG
+	cvar "capturelimit"
+	type ITEM_TYPE_NUMERICFIELD
+	ownerdrawflag UI_SHOW_NETANYTEAMGAME  
+	maxchars 3
+	style 1
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 32 192 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "How many captures needed for victory" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+
+itemDef {
+      	name capturelimt
+      	text "Rockets Only      "
+	background MP_FATBUTTONBG
+	cvar "g_rockets"
+	type ITEM_TYPE_YESNO
+	maxchars 3
+	style 1
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 332 192 256 64
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "All players have rocket launcher." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+
+
+itemDef {
+      	name puresever
+      	text "Pure Server       "
+	cvar "sv_pure"
+	background MP_FATBUTTONBG
+	style 1
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 32 256 256 64
+	
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "If pure, extra files on players are disabled." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+itemDef {
+      	name ffsever
+      	text "Friendly Fire       "
+	cvar "g_friendlyfire"
+	background MP_FATBUTTONBG
+	style 1
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 332 256 256 64
+	
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Percentage of friendly fire returned to attacker" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+itemDef {
+      	name dedsever
+      	text ""
+	type ITEM_TYPE_MULTI
+	cvar "ui_dedicated"
+	background MP_FATBUTTONBG
+	style 1
+
+	cvarFloatList { "Listen Server" 0 "Dedicated LAN Server" 1 "Dedicated Internet Server" 2 }
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 32 320 256 64
+	
+     	textalignx	16	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Role of server. If YOU want to play, choose Listen" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+
+
+itemDef {
+      	name forcejoin
+      	text "Auto Join           "
+	type ITEM_TYPE_YESNO
+	cvar "g_teamautojoin"
+	background MP_FATBUTTONBG
+	style 1
+	textstyle 6
+      	textscale 0.333
+	cvarTest "ui_menutab"
+	showCVar { "2" }
+   	rect 332 320 256 64
+	
+     	textalignx	32	
+	textaligny	 26
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Force players to join teams" fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	visible 1 
+}
+

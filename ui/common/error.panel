@@ -38,7 +38,7 @@ itemDef {
 }
 itemDef {
 	name buttonmain5
-	text BUTTON_QUIT
+	text "Quit"
 	background MP_WIDEBUTTONBG
 	style 1
 	type ITEM_TYPE_BUTTON

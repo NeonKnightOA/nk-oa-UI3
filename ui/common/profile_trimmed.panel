@@ -37,7 +37,7 @@ itemDef {
 	textaligny	 26
 	backcolor MP_BUTTON2BGCOLOR
 	forecolor MP_TEXTCOLOR
-	mouseEnter { setcvar ui_tip TIP_PROFILE_TEAMMODEL fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	mouseEnter { setcvar ui_tip "Switch setting for Team or DM model."  fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "0" }
@@ -67,7 +67,7 @@ itemDef {
 	horizontalscroll
 	cvarTest "ui_menutab"
 	showCVar { "0" }
-	mouseEnter { setcvar ui_tip TIP_PROFILE_PLAYERLIST fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	mouseEnter { setcvar ui_tip "Pick a character." fadein tooltip; } mouseExit { fadeout tooltip;} 	
 }
 /*
 itemDef {
@@ -131,7 +131,7 @@ itemDef {
      	textalignx	 32	
 	textaligny	 26
 	forecolor MP_TEXTCOLOR
-	mouseEnter { setcvar ui_tip TIP_PROFILE_NAME fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	mouseEnter { setcvar ui_tip "TYPE the name you wish to use. ^1(No real names!)" fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	visible 1 
 	cvarTest "ui_menutab"
 	showCVar { "0" }
@@ -187,7 +187,7 @@ itemDef {
      	textalignx	32	
 	textaligny	 26
 	forecolor MP_TEXTCOLOR
-	//mouseEnter { setcvar ui_tip TIP_PROFILE_CAMERA fadein tooltip; } mouseExit { fadeout tooltip;}  
+	//mouseEnter { setcvar ui_tip "Switch camera." fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible
 }
 */
@@ -207,7 +207,7 @@ itemDef {
      	textalignx	32	
 	textaligny	 26
 	forecolor MP_TEXTCOLOR
-	mouseEnter { setcvar ui_tip TIP_PROFILE_CAMERA fadein tooltip; } mouseExit { fadeout tooltip;}  
+	mouseEnter { setcvar ui_tip "Switch camera." fadein tooltip; } mouseExit { fadeout tooltip;}  
 	visible 1 
 }
 /* -----------------------------------------------------------

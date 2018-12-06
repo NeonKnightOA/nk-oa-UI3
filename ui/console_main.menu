@@ -86,7 +86,10 @@ itemDef {
       	text "Start"
 	background "azurebuttonlong"
 	style 1
-	action	{ 	open mainmenu;close main	}
+	action {
+		open mainmenu;
+		close main;
+	}
 	type ITEM_TYPE_BUTTON
 	textstyle 2
       	textscale 0.5
@@ -209,7 +212,10 @@ itemDef {
 itemDef {
       	name faderone
 	style WINDOW_STYLE_FILLED
-//	action	{ 	open mainmenu;close main	}
+//	action {
+		open mainmenu;
+		close main;
+	}
    	rect 0 0 640 480
      	textalignx	 32	
 	textaligny	 24

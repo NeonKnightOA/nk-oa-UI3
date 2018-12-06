@@ -153,7 +153,7 @@ itemDef {
 }
 itemDef {
 	name buttonhmain5
-	text BUTTON_QUIT
+	text "Quit"
 	background MP_WIDEBUTTONBG
 	group buttons
 	action {

@@ -1,0 +1,41 @@
+/* -----------------------------------------------------------
+ TAB 4 - CONFIRM START SUMMARY SELECTION
+ ----------------------------------------------------------- */
+itemDef {
+	name mapsfield
+	text "Confirm Match !"
+	background "azuredialog"
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { "4" }
+	decoration
+	rect 16 32 600 400
+	textalignx 32 
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
+}
+itemDef {
+	name buttontofight
+	text "Start"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+	textscale 1
+	rect 214 224 256 32
+	textalignx 32 
+	textaligny 24
+	cvarTest "ui_menutab"
+	showCVar { "4" }
+	backcolor MP_BUTTONBGCOLOR
+	forecolor MP_TEXTCOLOR
+	action { uiScript skirmishStart; 
+	play MP_SND_SELECT; 
+	}
+	visible 1 
+}
