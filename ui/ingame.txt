@@ -1,15 +1,15 @@
 // menu defs
 // 
 {	
-	/* loadMenu { "ui/defs/ingame_menu.menu" } */
-	loadMenu { "ui/defs/ingame_menu_alt.menu" }
+	/* loadMenu { "ui/defs/ingame/ingame_menu.menu" } */
+	loadMenu { "ui/defs/ingame/ingame_menu_alt.menu" }
 
 	/* loadMenu { "ui/defs/main_menu.menu" } */
-	loadMenu { "ui/defs/ingame_options.menu" }
-	loadMenu { "ui/defs/ingame_controls.menu" }
-	loadMenu { "ui/defs/ingame_profile.menu" }
-	loadMenu { "ui/defs/ingame_quit.menu" }
-	/* loadMenu { "ui/defs/main_play_maker.menu" } */
+	loadMenu { "ui/defs/ingame/ingame_options.menu" }
+	loadMenu { "ui/defs/ingame/ingame_controls.menu" }
+	loadMenu { "ui/defs/ingame/ingame_profile.menu" }
+	loadMenu { "ui/defs/ingame/ingame_quit.menu" }
+	/* loadMenu { "ui/defs/mp/createserver/createserver.menu" } */
 	loadMenu { "ui/defs/connecting.menu" }
  	/* loadMenu { "ui/defs/error.menu" } */
 }

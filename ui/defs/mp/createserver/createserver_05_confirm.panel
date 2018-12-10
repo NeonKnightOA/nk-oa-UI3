@@ -213,8 +213,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	action {
-		uiScript StartServer;
 		play MP_SND_SELECT;
+		uiScript StartServer;
 	}
 	visible 1
 	hexcolor 0 1 2 3	// color schemes 
@@ -235,8 +235,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	action {
-		setcvar ui_menutab MENU_TAB_1; 
 		play MP_SND_SELECT;
+		setcvar ui_menutab MENU_TAB_1;
 	}
 	visible 1
 	hexcolor 0 1 2 3	// color schemes 

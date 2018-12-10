@@ -2,7 +2,7 @@
 // 
 {
 	loadMenu { "ui/defs/loading.menu" }
-	loadMenu { "ui/defs/simple_hud.menu" }
- 	loadMenu { "ui/defs/score.menu" }
-	loadMenu { "ui/defs/teamscore.menu" }
+	/*loadMenu { "ui/defs/hud/simple_hud.menu" }*/
+ 	/*loadMenu { "ui/defs/hud/score.menu" }*/
+	/*loadMenu { "ui/defs/hud/teamscore.menu" }*/
 }

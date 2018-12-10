@@ -75,9 +75,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	}
 	menuDef
 	{
-		#include "ui/sp/ladder/sp_initialmap.panel"
 
-		#include "ui/common/mapbg.panel"
+#include "ui/defs/sp/ladder/sp_initialmap.panel"
+
+#include "ui/defs/mapbg.panel"
 
 		/* -----------------------------------------------------------
 		   TAB 0 - SELECTING MAP
@@ -85,21 +86,22 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		// MAP stats and info
 
-		#include "ui/sp/ladder/sp_mapinfo.panel"
+#include "ui/defs/sp/ladder/sp_mapinfo.panel"
 
 		/* Ladder Name */
 
-		#include "ui/sp/ladder/sp_laddername.panel"
+#include "ui/defs/sp/ladder/sp_laddername.panel"
 
 		/* Rungs */
 
-		#include "ui/sp/ladder/sp_rungs.panel"
+#include "ui/defs/sp/ladder/sp_rungs.panel"
 
 		/* Common Stuff Area */
 
-		#include "ui/sp/ladder/sp_common.panel"
+#include "ui/defs/sp/ladder/sp_common.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/defs/tooltip.panel"
+e "ui/common/tooltip.panel"
 
 	}
 }

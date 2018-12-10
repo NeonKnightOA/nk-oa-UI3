@@ -2,6 +2,6 @@
 // 
 {
 	loadMenu { "ui/defs/loading.menu" }
-	loadMenu { "ui/defs/hud_retro.menu" }
- 	loadMenu { "ui/defs/hud_retro_scoreboard.menu" }
+	loadMenu { "ui/defs/hud/hud_retro.menu" }
+ 	loadMenu { "ui/defs/hud/hud_retro_scoreboard.menu" }
 }

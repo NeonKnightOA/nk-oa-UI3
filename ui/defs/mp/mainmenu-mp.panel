@@ -42,7 +42,11 @@ itemDef { /* Player profile */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Profile"
 	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open profile; }
+	action {
+		play MP_SND_SELECT;
+		close mpmenu;
+		open profile;
+	}
 	mouseEnter { setcvar ui_tip "Customize your profile." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Join server */
@@ -50,7 +54,11 @@ itemDef { /* Join server */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Join server"
 	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open joinserver; }
+	action {
+		play MP_SND_SELECT;
+		close mpmenu;
+		open joinserver;
+	}
 	mouseEnter { setcvar ui_tip "Join an existing server." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Create server */
@@ -58,7 +66,11 @@ itemDef { /* Create server */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	text "Create server"
-	action { play MP_SND_SELECT; close mpmenu; open createserver; }
+	action {
+		play MP_SND_SELECT;
+		close mpmenu;
+		open createserver;
+	}
 	mouseEnter { setcvar ui_tip "Create a server so others can play with you." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Back */
@@ -66,6 +78,10 @@ itemDef { /* Back */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Back"
 	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open mainmenu; }
+	action {
+		play MP_SND_SELECT;
+		close mpmenu;
+		open mainmenu;
+	}
 	mouseEnter { setcvar ui_tip "Go back to the main menu" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }

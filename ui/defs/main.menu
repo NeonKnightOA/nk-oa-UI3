@@ -22,6 +22,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 /* MAIN - Console - for console systems.
  This menu will have no buttons and will automatically advance to the main menu. 
  It is one of those 'annoying copyright screens' */
+
 #include "ui/menudef.h"
 
 #define GOBACKTOMAIN "mainmenu"
@@ -48,8 +49,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
 		onEsc {
-			playLooped MP_MENUMUSIC
-			open mainmenu;close main
+			playLooped MP_MENUMUSIC;
+			close main;
+			open mainmenu;
 		}
 		onOpen {
 			setcvar timedemo 0; // always turn this off when entering the menu, may be an inconvenience to powerusers though
@@ -63,15 +65,18 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		opentransitionEnd {
 			fadein fadeoutsecond;
 			xtransition loadingbit2 0 0 255 1 0 0 640 1 4 400 ;
-			open splashtransitiontomenu;
 			close main;
 			close error_popmenu;
+			open splashtransitiontomenu;
 		}
-		// Skip 
 		itemDef {
 			name button1
 			style 0
-			action { playLooped MP_MENUMUSIC; open mainmenu;close main }
+			action {
+				playLooped MP_MENUMUSIC;
+				close main;
+				open mainmenu;
+			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2
 			textscale 0.5
@@ -81,7 +86,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			visible 1 
 		}
 
-		#include "ui/common/splash.panel"
+#include "ui/defs/splash.panel"
 
 		itemDef {
 			name loadingbit1

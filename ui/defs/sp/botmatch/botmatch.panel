@@ -51,10 +51,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 0; 
-		setcvar g_gametype 0; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 0; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -64,10 +63,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 1; 
-		setcvar g_gametype 1; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 1; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -77,10 +75,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 9; 
-		setcvar g_gametype 10; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 9; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -90,10 +87,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 12; 
-		setcvar g_gametype 13; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 12; 
+		setcvar ui_menutab 1; 
 	}
 }
 /* Teamplay Modes */
@@ -104,10 +100,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 2; 
-		setcvar g_gametype 3; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 2; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -117,10 +112,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 3; 
-		setcvar g_gametype 4; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 3; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -130,10 +124,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 4; 
-		setcvar g_gametype 5; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 4; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -143,10 +136,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 5; 
-		setcvar g_gametype 6; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 5; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -156,10 +148,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 6; 
-		setcvar g_gametype 7; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 6; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -169,10 +160,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 7; 
-		setcvar g_gametype 8; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 7; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -182,10 +172,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 8; 
-		setcvar g_gametype 9; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 8; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -195,10 +184,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 10; 
-		setcvar g_gametype 11; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 10; 
+		setcvar ui_menutab 1; 
 	}
 }
 itemDef {
@@ -208,10 +196,9 @@ itemDef {
 	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
-		setcvar ui_menutab 1; 
-		setcvar ui_gametype 11; 
-		setcvar g_gametype 12; 
 		play MP_SND_SELECT; 
+		setcvar ui_gametype 11; 
+		setcvar ui_menutab 1; 
 	}
 }
 // team types
@@ -274,45 +261,6 @@ itemDef {
 	bordercolor MP_BOX_BORDER
 	visible 1 
 }
-itemDef {
-	name button1
-	text "Close"
-	background MP_WIDEBUTTONBG
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.5
-	rect 128 448 256 32
-	textalignx 32 
-	textaligny 24
-	cvarTest "ui_menutab"
-	showCVar { "9" }
-	forecolor MP_TEXTCOLOR
-	backcolor MP_BUTTONBGCOLOR
-	action { setcvar ui_menutab 1; // reset the tabs
-	}
-	visible 1 
-}
-itemDef {
-	name buttontonext
-	text "Next"
-	background MP_WIDEBUTTONBG
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.5
-	rect 332 384 256 32
-	textalignx 32 
-	textaligny 24
-	cvarTest "ui_menutab"
-	showCVar { "1" }
-	backcolor MP_BUTTONBGCOLOR
-	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 2; uiScript updateSPMenu ;
-	play MP_SND_SELECT; 
-	}
-	visible 1 
-}
 /* -----------------------------------------------------------
  TAB 2 - SCORE DISPLAY
  ----------------------------------------------------------- */
@@ -332,24 +280,6 @@ itemDef {
 	textaligny 24
 	border 1
 	bordercolor MP_BOX_BORDER
-	visible 1 
-}
-itemDef {
-	name fraglimt
-	text "The Score "
-	cvar "ui_scoreTeam"
-	type ITEM_TYPE_NUMERICFIELD
-	maxchars 5
-	style 1
-	textstyle 6
-	textscale 0.333
-	cvarTest "ui_menutab"
-	showCVar { "2" }
-	rect 32 64 256 32
-	textalignx 32 
-	textaligny 26
-	forecolor MP_TEXTCOLOR
-	decoration 1
 	visible 1 
 }
 /* -----------------------------------------------------------
@@ -379,8 +309,7 @@ itemDef {
 	name teenfield
 	text "Blue Team"
 	background "$whiteimage"
-	ownerdrawflag UI_SHOW_ANYTEAMGAME 
-	//ownerdraw UI_BLUETEAMNAME
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
 	style 1
 	type 0
 	backcolor 0.2 0.2 0.6 0.4
@@ -403,8 +332,7 @@ itemDef {
 	name teenfield
 	text "Red Team"
 	background "$whiteimage"
-	ownerdrawflag UI_SHOW_ANYTEAMGAME 
-	//ownerdraw UI_REDTEAMNAME
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
 	style 1
 	type 0
 	backcolor 0.6 0.2 0.2 0.4
@@ -426,8 +354,7 @@ itemDef {
 itemDef {
 	name teenfield
 	text "You"
-	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
-	//ownerdraw UI_REDTEAMNAME
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME
 	style 1
 	type 0
 	textstyle 2
@@ -446,8 +373,7 @@ itemDef {
 itemDef {
 	name teenfield
 	text "Opponent"
-	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
-	//ownerdraw UI_REDTEAMNAME
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME
 	style 1
 	type 0
 	textstyle 2
@@ -500,166 +426,6 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	forecolor MP_TEXTCOLOR
 	action { uiScript skirmishStart; 
-	play MP_SND_SELECT; 
-	}
-	visible 1 
-}
-/* -----------------------------------------------------------
- TAB X - ALL
- ----------------------------------------------------------- */
-itemDef {
-	name tab1
-	text "Gametype"
-	background "azuretablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 16 16 128 16
-	cvarTest "ui_menutab"
-	hideCVar { "0" }
-	textalignx 16 
-	textaligny 16
-	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 0; play MP_SND_SELECT; }
-	visible 1 
-}
-itemDef {
-	name tab2
-	text "Map"
-	background "azuretablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 144 16 128 16
-	cvarTest "ui_menutab"
-	hideCVar { "1" }
-	textalignx 16 
-	textaligny 16
-	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 1; play MP_SND_SELECT; uiScript updateSPMenu ; }
-	visible 1 
-}
-itemDef {
-	name tab3
-	text "Score"
-	background "azuretablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 272 16 128 16
-	cvarTest "ui_menutab"
-	hideCVar { "2" }
-	textalignx 16 
-	textaligny 16
-	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 2; play MP_SND_SELECT; }
-	visible 1 
-}
-itemDef {
-	name tab4
-	text "Opponent"
-	background "azuretablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 400 16 128 16
-	cvarTest "ui_menutab"
-	hideCVar { "3" }
-	textalignx 16 
-	textaligny 16
-	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 3; play MP_SND_SELECT; }
-	visible 1 
-}
-// pressed tabs
-itemDef {
-	name tab1
-	text "Gametype"
-	background "azureuntablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 16 16 128 16
-	cvarTest "ui_menutab"
-	showCVar { "0" }
-	textalignx 16 
-	textaligny 16
-	decoration
-	visible 1 
-}
-itemDef {
-	name tab2
-	text "Map"
-	background "azureuntablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 144 16 128 16
-	cvarTest "ui_menutab"
-	showCVar { "1" }
-	decoration
-	textalignx 16 
-	textaligny 16
-	visible 1 
-}
-itemDef {
-	name tab3
-	text "Score"
-	background "azureuntablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 272 16 128 16
-	cvarTest "ui_menutab"
-	showCVar { "2" }
-	decoration
-	textalignx 16 
-	textaligny 16
-	visible 1 
-}
-itemDef {
-	name tab4
-	text "Opponent"
-	background "azureuntablong"
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.333
-	rect 400 16 128 16
-	cvarTest "ui_menutab"
-	showCVar { "3" }
-	decoration
-	textalignx 16 
-	textaligny 16
-	visible 1 
-}
-// always have this button available
-itemDef {
-	name button1
-	text "Back"
-	background MP_WIDEBUTTONBG
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.5
-	rect 32 384 256 32
-	textalignx 32 
-	textaligny 24
-	cvarTest "ui_menutab"
-	showCVar { "0" }
-	backcolor MP_BUTTONBGCOLOR
-	forecolor MP_TEXTCOLOR
-	action { 
-	close botmatch;
-	open spmenu;
-	setcvar ui_menutab 0; // reset the tabs
 	play MP_SND_SELECT; 
 	}
 	visible 1 

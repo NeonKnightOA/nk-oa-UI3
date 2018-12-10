@@ -42,7 +42,12 @@ itemDef { /* Tutorials */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Tutorials"
 	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open tutorials; }*/
+	/*action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open tutorials;
+		setcvar ui_menutab "0";
+	}*/
 	mouseEnter { setcvar ui_tip "Learn how to play OpenArena." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Ladder */
@@ -50,7 +55,12 @@ itemDef { /* Ladder */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Ladder"
 	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open transition_sp; }
+	action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open transition_sp;
+		setcvar ui_menutab "0";
+		}
 	mouseEnter { setcvar ui_tip "Go through the OpenArena maps and gamemodes and reach the final bosses." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Botmatch (a.k.a. Instant Action) */
@@ -58,7 +68,12 @@ itemDef { /* Botmatch (a.k.a. Instant Action) */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	text "Botmatch"
-	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "4"; open botmatch; }
+	action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open botmatch;
+		setcvar ui_menutab "0";
+	}
 	mouseEnter { setcvar ui_tip "Create a custom match against bots." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 	cvarTest "name" hideCVar { "UnnamedPlayer" } /* Hidden for first-timers */
 }
@@ -67,7 +82,11 @@ itemDef { /* Quick Match */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Quick Match"
 	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open quickmatch; }
+	action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open quickmatch;
+	}
 	mouseEnter { setcvar ui_tip "No options, no fiddling around. Just press this and play a random game!" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Arcade Mode */
@@ -75,7 +94,12 @@ itemDef { /* Arcade Mode */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Arcade Mode"
 	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open arcademode; }*/
+	/*action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open arcademode;
+		setcvar ui_menutab "0";
+	}*/
 	mouseEnter { setcvar ui_tip "Go through 10 exhaustive matches and follow your character's history." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Zone Domination */
@@ -83,7 +107,12 @@ itemDef { /* Zone Domination */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Zone Domination"
 	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open zonedomination; }*/
+	/*action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open zonedomination;
+		setcvar ui_menutab "0";
+	}*/
 	mouseEnter { setcvar ui_tip "Fight against the CPU for the control of the OpenArena world." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Speedrun Mode */
@@ -91,7 +120,12 @@ itemDef { /* Speedrun Mode */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Speedrun Mode"
 	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	/*action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open speedruns; }*/
+	/*action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open speedruns;
+		setcvar ui_menutab "0";
+	}*/
 	mouseEnter { setcvar ui_tip "Finish the OpenArena maps in the shortest time possible." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }
 itemDef { /* Enable third-party maps */
@@ -107,6 +141,10 @@ itemDef { /* Back */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Back"
 	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
-	action { close spmenu; play MP_SND_SELECT; setcvar ui_menutab "0"; open mainmenu; }
+	action {
+		play MP_SND_SELECT;
+		close spmenu;
+		open mainmenu;
+	}
 	mouseEnter { setcvar ui_tip "Go back to the main menu" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 }

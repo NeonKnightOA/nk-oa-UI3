@@ -107,8 +107,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	action {
-		setcvar ui_menutab 3;
 		play MP_SND_SELECT;
+		setcvar ui_menutab 3;
 	}
 	visible 1
 	hexcolor 0 1 2 3	// color schemes 

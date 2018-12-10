@@ -76,10 +76,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-
 		onOpen {
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
 			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 			setcvar ui_currentMap SPCUR_MAP1NUM;
 			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
@@ -89,20 +86,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			setcvar SPCUR_MAP1_ADDITIONALRULE1;
 			setcvar SPCUR_MAP1_ADDITIONALRULE2;
 			setcvar SPCUR_MAP1_ADDITIONALRULE3;
+			uiScript loadGameInfo;
+			uiScript updateSPMenu;
 		}
 
-		#include "ui/common/mapbg.panel"
+#include "ui/defs/mapbg.panel"
 
 		/* -----------------------------------------------------------
 		   TAB 0 - SELECTING MAP
 		   ----------------------------------------------------------- */
-
 		// MAP stats and info
 
-		#include "ui/sp/tutorials/sp_mapinfo.panel"
+#include "ui/defs/sp/sp_mapinfo.panel"
 
 		/* Ladder Name */
-
 		itemDef {
 			name dmgamefield
 			ownerdraw UI_GAMETYPE
@@ -121,9 +118,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			backcolor 	MP_DIALOGBGCOLOR
 			visible 1 
 		}
-
 		/* Rungs */
-
 		/* For the rest of the ladders */
 		itemDef { /* Map 1*/
 			name button1
@@ -140,8 +135,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			mapnum SPCUR_MAP1NUM
-			action
-			{
+			action {
+				play MP_SND_SELECT;
 				setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 				setcvar ui_currentMap SPCUR_MAP1NUM;
 				setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
@@ -151,7 +146,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				setcvar SPCUR_MAP1_ADDITIONALRULE1;
 				setcvar SPCUR_MAP1_ADDITIONALRULE2;
 				setcvar SPCUR_MAP1_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
 			}
 			visible 1 
 		}
@@ -171,8 +165,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			backcolor MP_BUTTONBGCOLOR
 			mapnum SPCUR_MAP2NUM
 			/* cvarTest SPCUR_MAP2_UNLOCKCVAR showcvar { "1" } */
-			action
-			{
+			action {
+				play MP_SND_SELECT;
 				setcvar ui_tip SPCUR_MAP2_DESCRIPTION;
 				setcvar ui_currentMap SPCUR_MAP2NUM;
 				setcvar fraglimit SPCUR_MAP2_FRAGLIMIT;
@@ -182,11 +176,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				setcvar SPCUR_MAP2_ADDITIONALRULE1;
 				setcvar SPCUR_MAP2_ADDITIONALRULE2;
 				setcvar SPCUR_MAP2_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
 			}
 			visible 1 
 		}
-
 		itemDef { /* Map 3*/
 			name button1
 			text SPCUR_MAP3_NAME
@@ -203,10 +195,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			backcolor MP_BUTTONBGCOLOR
 			mapnum SPCUR_MAP3NUM
 			/* cvarTest SPCUR_MAP3_UNLOCKCVAR showcvar { "1" } */
-			action
-			{
+			action {
+				play MP_SND_SELECT;
 				setcvar ui_tip SPCUR_MAP3_DESCRIPTION;
-				setcvar ui_currentMap SPCUR_MAP3NUM;	
+				setcvar ui_currentMap SPCUR_MAP3NUM;
 				setcvar fraglimit SPCUR_MAP3_FRAGLIMIT;
 				setcvar capturelimit SPCUR_MAP3_CAPTURELIMIT;
 				setcvar timelimit SPCUR_MAP3_TIMELIMIT;
@@ -214,13 +206,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				setcvar SPCUR_MAP3_ADDITIONALRULE1;
 				setcvar SPCUR_MAP3_ADDITIONALRULE2;
 				setcvar SPCUR_MAP3_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
 			}
 			visible 1 
 		}
-
 		/* Common Stuff Area */
-
 		itemDef { /* Cancel button */
 			name button1
 			text "Cancel"
@@ -238,14 +227,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			mouseEnter { setcvar ui_tip "Go back to main menu."; fadein tooltip; }
 			mouseExit { fadeout tooltip; }
 			action {
+				play MP_SND_SELECT;
 				close SPCUR_MENUNAME;
 				open spladder;
 				setcvar ui_sptab 0;	// reset the tabs
-				play MP_SND_SELECT;  
 			}
 			visible 1 
 		}
-
 		itemDef { /* FIGHT! button */
 			name buttong
 			text "FIGHT"
@@ -267,8 +255,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			mouseExit {
 				fadeout tooltip;
 			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
+			action {
 				show fadlogotext;
 				show fadlogobg1;
 				show fadlogobg2;
@@ -281,16 +268,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				playLooped null;
 				clearAlpha fadlogoblack;
 				fadein fadlogoblack;	
-
 				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
 				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-
 				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;	
 				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-
 				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
 				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-
 				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
 			}
 			ontransitionend {
@@ -298,9 +281,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			}
 			visible 1 
 		}
-
 		// This plays when you start a game and holds it up for a bit
-
 		itemDef {
 			name fadlogo
 			group logofade
@@ -316,7 +297,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0
 			decoration
 		}
-
 		itemDef {
 			name fadlogobg1
 			group logofade
@@ -331,7 +311,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0 
 			decoration
 		}
-
 		itemDef {
 			name fadlogobg2
 			group logofade
@@ -346,7 +325,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0 
 			decoration
 		}
-
 		itemDef {
 			name fadlogoside1
 			group logofade
@@ -361,7 +339,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0 
 			decoration
 		}
-
 		itemDef {
 			name fadlogoside2
 			group logofade
@@ -376,7 +353,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0 
 			decoration
 		}
-
 		itemDef {
 			name fadlogoup
 			group logofade
@@ -391,7 +367,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 0 
 			decoration
 		}
-
 		itemDef {
 			name fadlogodown
 			group logofade
@@ -407,6 +382,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			decoration
 		}
 
-		#include "ui/common/tooltip.panel"
+#include "ui/defs/tooltip.panel"
+
 	}
 }

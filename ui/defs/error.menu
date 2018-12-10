@@ -23,34 +23,30 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "ui/menudef.h"
 
 {
-  assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
-    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
-    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE				
-	cursor "ui/assets/cursor"			
-	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-	
-
-menuDef {
-    	name "error_popmenu"
-	background MP_BACKGROUND1
-    	fullScreen 1				
-	rect 0 0 640 480
-	popup
-    	visible MENU_TRUE
-    	forecolor MP_FOCUSCOLOR			
-	focuscolor MP_TEXTCOLOR
-	onOpen { 
-		//close main;
-		//open mainmenu;
-		setcvar timedemo 0; // always turn this off when entering the menu, may be an inconvenience to powerusers though
-		play "ui/voice/error";
-		setcvar ui_showError "1"
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
+		font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
+		bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE				
+		cursor "ui/assets/cursor"			
+		itemFocusSound MP_SND_HOVER		
+		shadowColor 0.0 0.0 0.0 0.25			
+	}
+	menuDef {
+		name "error_popmenu"
+		background MP_BACKGROUND1
+		fullScreen 1				
+		rect 0 0 640 480
+		popup
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR			
+		focuscolor MP_TEXTCOLOR
+		onOpen { 
+			play "ui/voice/error";
+			setcvar timedemo 0; // always turn this off when entering the menu, may be an inconvenience to powerusers though
+			setcvar ui_showError "1"
 		}
-			   
-	   
-#include "ui/common/error.panel"
+
+#include "ui/defs/error.panel"
+
 	}
 }

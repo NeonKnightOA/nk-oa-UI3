@@ -15,8 +15,8 @@ itemDef { /* Map 1*/
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP1NUM
 	cvarTest ui_gametype showcvar { "0" }
-	action
-	{
+	action {
+		play MP_SND_SELECT;  
 		setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 		setcvar ui_currentMap SPCUR_MAP1NUM;
 		setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
@@ -26,7 +26,6 @@ itemDef { /* Map 1*/
 		setcvar SPCUR_MAP1_ADDITIONALRULE1;
 		setcvar SPCUR_MAP1_ADDITIONALRULE2;
 		setcvar SPCUR_MAP1_ADDITIONALRULE3;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }
@@ -48,8 +47,8 @@ itemDef { /* Map 1*/
 	mapnum SPCUR_MAP1NUM
 	/* cvarTest SPCUR_MAP1_UNLOCKCVAR showcvar { "1" } */
 	cvarTest ui_gametype hidecvar { "0" }
-	action
-	{
+	action {
+		play MP_SND_SELECT;  
 		setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 		setcvar ui_currentMap SPCUR_MAP1NUM;
 		setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
@@ -59,7 +58,6 @@ itemDef { /* Map 1*/
 		setcvar SPCUR_MAP1_ADDITIONALRULE1;
 		setcvar SPCUR_MAP1_ADDITIONALRULE2;
 		setcvar SPCUR_MAP1_ADDITIONALRULE3;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }
@@ -79,8 +77,8 @@ itemDef { /* Map 2*/
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP2NUM
 	/* cvarTest SPCUR_MAP2_UNLOCKCVAR showcvar { "1" } */
-	action
-	{
+	action {
+		play MP_SND_SELECT;  
 		setcvar ui_tip SPCUR_MAP2_DESCRIPTION;
 		setcvar ui_currentMap SPCUR_MAP2NUM;
 		setcvar fraglimit SPCUR_MAP2_FRAGLIMIT;
@@ -90,7 +88,6 @@ itemDef { /* Map 2*/
 		setcvar SPCUR_MAP2_ADDITIONALRULE1;
 		setcvar SPCUR_MAP2_ADDITIONALRULE2;
 		setcvar SPCUR_MAP2_ADDITIONALRULE3;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }
@@ -111,10 +108,10 @@ itemDef { /* Map 3*/
 	backcolor MP_BUTTONBGCOLOR
 	mapnum SPCUR_MAP3NUM
 	/* cvarTest SPCUR_MAP3_UNLOCKCVAR showcvar { "1" } */
-	action
-	{
+	action {
+		play MP_SND_SELECT;
 		setcvar ui_tip SPCUR_MAP3_DESCRIPTION;
-		setcvar ui_currentMap SPCUR_MAP3NUM;	
+		setcvar ui_currentMap SPCUR_MAP3NUM;
 		setcvar fraglimit SPCUR_MAP3_FRAGLIMIT;
 		setcvar capturelimit SPCUR_MAP3_CAPTURELIMIT;
 		setcvar timelimit SPCUR_MAP3_TIMELIMIT;
@@ -122,7 +119,6 @@ itemDef { /* Map 3*/
 		setcvar SPCUR_MAP3_ADDITIONALRULE1;
 		setcvar SPCUR_MAP3_ADDITIONALRULE2;
 		setcvar SPCUR_MAP3_ADDITIONALRULE3;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }

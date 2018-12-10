@@ -25,11 +25,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
-		font "gfx/2d/bigchars" MEDIUMFONTSIZE 
-		bigFont "gfx/2d/bigchars" LARGEFONTSIZE 
-		cursor "ui/assets/cursor" 
-		itemFocusSound MP_SND_HOVER 
-		shadowColor 0.0 0.0 0.0 0.25 
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
 		name "mpmenu"
@@ -39,15 +39,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
-		onOpen { 
+		onOpen {
 			close main;
 		}
 
-		#include "ui/common/symbol2.panel"
+#include "ui/defs/symbol2.panel"
 
-		#ifdef PLAYERPORTRAITS
-		// If one of those menus, display the portrait of the character!
-
+#ifdef PLAYERPORTRAITS
+// If one of those menus, display the portrait of the character!
 		itemDef {
 			name thisisyou
 			background "portraits/sorceress"
@@ -62,11 +61,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			visible 1 
 			decoration
 		}
-		#endif
+#endif
 
-		#include "ui/mp/mainmenu-mp.panel"
+#include "ui/defs/mp/mainmenu-mp.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/defs/tooltip.panel"
 
 	}
 }

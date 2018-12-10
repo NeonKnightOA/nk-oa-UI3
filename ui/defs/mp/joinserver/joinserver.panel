@@ -60,7 +60,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 0;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
@@ -78,7 +81,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 1;  play MP_SND_SELECT;  }
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
@@ -134,10 +140,10 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 	
 	action {
+		play MP_SND_SELECT;  
 		close joinserver;
 		open mpmenu;
 		setcvar ui_menutab 0;	// reset the tabs
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }

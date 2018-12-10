@@ -29,8 +29,12 @@ itemDef {
 itemDef {
 	name buttontonext
 	background MP_WIDEBUTTONBG style 1 textstyle 2 textscale 0.5 textalignx 32 textaligny 24 backcolor MP_BUTTONBGCOLOR forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
-	type ITEM_TYPE_BUTTON action { setcvar ui_menutab 2; uiScript updateSPMenu; play MP_SND_SELECT; }
-	mouseEnter { setcvar ui_tip "Set up the rules." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	type ITEM_TYPE_BUTTON
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 2;
+	}
+	mouseEnter { setcvar ui_tip "Set up the rules." fadein tooltip; } mouseExit { fadeout tooltip;}
 	text "Next"
 	rect 332 384 256 32
 	cvarTest "ui_menutab" showCVar { "1" }

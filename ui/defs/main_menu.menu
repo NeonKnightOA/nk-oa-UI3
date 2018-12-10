@@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
-		name "mainmenu"
+	name "mainmenu"
 		background MP_BACKGROUND1
 		fullScreen 1 
 		rect 0 0 640 480
@@ -43,7 +43,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			close main;
 		}
 
-		#include "ui/common/symbol2.panel"
+#include "ui/defs/symbol2.panel"
 
 #ifdef PLAYERPORTRAITS
 		// If one of those menus, display the portrait of the character!
@@ -63,9 +63,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		}
 #endif
 
-		#include "ui/common/mainmenu.panel"
+#include "ui/defs/mainmenu.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/defs/tooltip.panel"
 
 	}
 }

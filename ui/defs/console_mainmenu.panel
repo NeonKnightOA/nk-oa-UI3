@@ -1,0 +1,111 @@
+
+itemDef {
+      	name buttonhmain1
+      	text "Single Player"
+	background MP_LONGBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect MMENU_OFFSETITEMH 128 512 32
+        textalign MMENU_ALIGNITEM
+     	textalignx	 256	
+	textaligny	 24
+	forecolor MP_TEXTCOLOR
+	action {
+		play MP_SND_SELECT;  
+		close mainmenu;
+		open spmenu;
+	}
+	visible 1 
+	mouseEnter { setcvar ui_tip "Play the single player challenges." fadein tooltip;   setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
+}
+itemDef {
+      	name buttonhmain1
+      	text "Join Sever"
+	background MP_LONGBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect MMENU_OFFSETITEMH 160 512 32
+	cvarTest "name"
+	hideCVar { "UnnamedPlayer" }	// hide this option for people that have not named yet
+         textalign MMENU_ALIGNITEM
+     	textalignx	 256	
+	textaligny	 24
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Join an existing server on the internet or your network." fadein tooltip;  setbackground MP_LONGBUTTONBGA  } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
+	action {
+		play MP_SND_SELECT;  
+		close mainmenu;
+		open mpmenu;
+		setcvar ui_menutab "0";
+	}
+	visible 1 
+}
+itemDef {
+      	name buttonhmain3
+      	text "Player"
+	background MP_LONGBUTTONBG
+	action {
+		play MP_SND_SELECT;
+		close mainmenu;
+		open profile;
+		setcvar ui_menutab "0";
+	}
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect MMENU_OFFSETITEMH 192 512 32
+        textalign MMENU_ALIGNITEM
+     	textalignx	 256	
+	textaligny	 24
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Choose your character and set health handicap." fadein tooltip;  setbackground MP_LONGBUTTONBGA  } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
+	visible 1 
+}
+itemDef {
+      	name buttonhmain2
+      	text "Setup"
+	background MP_LONGBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect MMENU_OFFSETITEMH 224 512 32
+        textalign MMENU_ALIGNITEM
+     	textalignx	 256		
+	textaligny	 24
+	forecolor MP_TEXTCOLOR
+	action {
+		play MP_SND_SELECT;
+		close mainmenu;
+		open optionsmenu;
+		setcvar ui_menutab "0";
+	}
+	mouseEnter { setcvar ui_tip "Configure system options." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
+	visible 1 
+}
+itemDef {
+      	name buttonhmain5
+      	text "Quit"
+	background MP_LONGBUTTONBG
+	action {
+		play MP_SND_SELECT;
+		close mainmenu;
+		open quitter;
+	}
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect MMENU_OFFSETITEMH 352 512 32
+        textalign MMENU_ALIGNITEM
+     	textalignx	 256	
+	textaligny	 24
+	forecolor MP_TEXTCOLOR
+	mouseEnter { setcvar ui_tip "Quit the game. =(" fadein tooltip;  setbackground MP_LONGBUTTONBGA  } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
+	visible 1 
+}

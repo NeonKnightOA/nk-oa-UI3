@@ -25,7 +25,6 @@ itemDef {
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name teamgamefield
 	text	"Teamplay Modes"
@@ -46,9 +45,6 @@ itemDef {
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-
 itemDef {
       	name button1
       	text "Deathmatch"
@@ -65,15 +61,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip TIP_FFA fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	
-			 play MP_SND_SELECT;  
-			setcvar ui_netgametype 0;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 0;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-
 itemDef {
       	name ffa2
       	text "Tournament"
@@ -90,14 +85,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip TIP_TOURNAMENT fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	
-			setcvar ui_netgametype 1;	
-			play MP_SND_SELECT;  
-				}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 1;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "Last Man Standing"
@@ -114,13 +109,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Players must survive. Who lives last wins." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 10;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 10;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 itemDef {
       	name ffa4
       	text "Possession"
@@ -137,19 +133,18 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Hold the neutral flag the longest to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 13;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 13;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 // team types
-
-
 itemDef {
       	name button1
-      	text "Team DM"
+      	text "Team Deathmatch"
 	background MP_WIDEBUTTONBG
 	style 1
 	type ITEM_TYPE_BUTTON
@@ -162,15 +157,14 @@ itemDef {
 	showCVar { "0" }
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
-
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 3;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 3;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
-
 itemDef {
       	name ffa2
       	text "Capture the Flag"
@@ -187,12 +181,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Team must protect their flag and take enemy's." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 4;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 4;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "One Flag"
@@ -209,13 +205,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Teams must take neutral flag to their base." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 5;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 5;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
-
 itemDef {
       	name ffa3
       	text "Overload"
@@ -232,12 +229,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Cores in each base must be destroyed." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 6;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 6;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "Harvester"
@@ -254,12 +253,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Players must kill and collect their orbs." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 7;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 7;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "Elimination"
@@ -276,12 +277,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Teams must survive to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 8;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 8;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "CTF Elimination"
@@ -298,12 +301,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Teams must capture or sruvive to win." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 9;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 9;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "Double Domination"
@@ -320,12 +325,14 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "A team must control two points for score." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 11;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 11;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-
 itemDef {
       	name ffa3
       	text "Domination"
@@ -342,9 +349,11 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_tip "Score is raised depending on points controlled." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	action	{ 	setcvar ui_menutab 1;	 play MP_SND_SELECT;  
-			setcvar ui_netgametype 12;	}
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_netgametype 12;
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
-

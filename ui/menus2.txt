@@ -36,16 +36,16 @@
 	loadMenu { "ui/defs/mp/joinserver/joinserver.menu" }
 
 	/* Game options submenu */
-	loadMenu { "ui/defs/main_options.menu" }
-	loadMenu { "ui/defs/main_controls.menu" }
-	loadMenu { "ui/defs/main_profile.menu" }
-	loadMenu { "ui/defs/main_adjustyourscreen.menu" }
+	loadMenu { "ui/defs/options/main_options.menu" }
+	loadMenu { "ui/defs/options/main_controls.menu" }
+	loadMenu { "ui/defs/profile/main_profile.menu" }
+	loadMenu { "ui/defs/options/main_adjustyourscreen.menu" }
 
 	/* Library/Extras */
-	loadMenu { "ui/defs/main_extras.menu" }
-	loadMenu { "ui/defs/main_gallery.menu" }
-	loadMenu { "ui/defs/main_mods.menu" }
-	loadMenu { "ui/defs/main_bios.menu" }
+	loadMenu { "ui/defs/gallery/main_extras.menu" }
+	loadMenu { "ui/defs/gallery/main_gallery.menu" }
+	loadMenu { "ui/defs/gallery/main_mods.menu" }
+	loadMenu { "ui/defs/gallery/main_bios.menu" }
 
 	/* Quit */
 	loadMenu { "ui/defs/main_credits.menu" }

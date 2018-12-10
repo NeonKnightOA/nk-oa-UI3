@@ -6,10 +6,7 @@
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
 
-		onOpen
-		{
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
+		onOpen {
 			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 			setcvar ui_currentMap SPCUR_MAP1NUM;
 			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
@@ -19,4 +16,6 @@
 			setcvar SPCUR_MAP1_ADDITIONALRULE1;
 			setcvar SPCUR_MAP1_ADDITIONALRULE2;
 			setcvar SPCUR_MAP1_ADDITIONALRULE3;
+			uiScript loadGameInfo ;
+			uiScript updateSPMenu ;
 		}

@@ -9,29 +9,25 @@ itemDef { /* Cancel button */
 	group buttonsthatdostuff
 	textscale 0.5
 	rect 32 384 256 32
-	textalignx	 32	
+	textalignx 32
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
-	mouseEnter
-	{
+	mouseEnter {
 		setcvar ui_tip "Go back to main menu."
 		fadein tooltip;
 	}
-	mouseExit
-	{
+	mouseExit {
 		fadeout tooltip;
-	} 	
-	action
-	{
+	}
+	action {
+		play MP_SND_SELECT;
 		close SPCUR_MENUNAME;
 		open spladder;
 		setcvar ui_sptab 0;	// reset the tabs
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 }
-
 itemDef { /* FIGHT! button */
 	name buttong
 	text "FIGHT"
@@ -42,21 +38,18 @@ itemDef { /* FIGHT! button */
 	textstyle 2
 	textscale 0.5
 	rect 384 384 256 32
-	textalignx	 32	
+	textalignx 32
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
-	mouseEnter
-	{
+	mouseEnter {
 		setcvar ui_tip "WHAT THE BUTTON SAYS!"
 		fadein tooltip;
 	}
-	mouseExit
-	{
+	mouseExit {
 		fadeout tooltip;
 	}
-	action
-	{ 
+	action { 
 		//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
 		show fadlogotext;
 		show fadlogobg1;
@@ -69,30 +62,22 @@ itemDef { /* FIGHT! button */
 		hide buttonsthatdostuff;
 		playLooped null;
 		clearAlpha fadlogoblack;
-		fadein fadlogoblack;	
-
+		fadein fadlogoblack;
 		transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
 		transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-
-		transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;	
+		transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
 		transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-
 		transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
 		transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-
 		xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
 	}
-	ontransitionend
-	{
+	ontransitionend {
 		uiScript skirmishStart
 	}
 	visible 1 
 }
-
 // here the jort have a tropy
-
-itemDef
-{
+itemDef {
 	name trophies
 	background "trophy_gold"
 	style 1
@@ -104,9 +89,7 @@ itemDef
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }
-
-itemDef
-{
+itemDef {
 	name trophies
 	background "trophy_gold"
 	style 1
@@ -118,9 +101,7 @@ itemDef
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }
-
-itemDef
-{
+itemDef {
 	name trophies
 	background "trophy_gold"
 	style 1
@@ -132,11 +113,8 @@ itemDef
 	backcolor 1 0.6 0.3 1
 	visible 1 
 }
-
 // This plays when you start a game and holds it up for a bit
-
-itemDef
-{
+itemDef {
 	name fadlogo
 	group logofade
 	background "gamestartingfade"
@@ -144,107 +122,94 @@ itemDef
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.2 0.5 1.0 1.0
 	backcolor 1 0.2 0.1 1.0
 	visible 0
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogobg1
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogobg2
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogoside1
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogoside2
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogoup
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-
-itemDef
-{
+itemDef {
 	name fadlogodown
 	group logofade
 	style 1
 	textstyle 2
 	textscale 0.5
 	rect 0 0 640 480
-	textalignx	 32	
-	textaligny	 34
+	textalignx 32
+	textaligny 34
 	forecolor 0.0 0.0 0.0 1.0
 	backcolor 0.0 0.0 0.0 1.0
 	visible 0 
 	decoration
 }
-

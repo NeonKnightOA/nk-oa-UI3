@@ -34,8 +34,9 @@ itemDef {
 	showCVar { "4" }
 	backcolor MP_BUTTONBGCOLOR
 	forecolor MP_TEXTCOLOR
-	action { uiScript skirmishStart; 
-	play MP_SND_SELECT; 
+	action {
+		play MP_SND_SELECT; 
+		uiScript skirmishStart; 
 	}
 	visible 1 
 }

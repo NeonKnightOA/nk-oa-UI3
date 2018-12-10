@@ -21,36 +21,34 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "ui/menudef.h"
 {
-  assetGlobalDef {
-    	smallFont "gfx/2d/bigchars" 	SMALLFONTSIZE
-    	font "gfx/2d/bigchars" 		MEDIUMFONTSIZE				
-    	bigFont "gfx/2d/bigchars" 	LARGEFONTSIZE							
-	cursor "ui/assets/cursor"			
-	itemFocusSound MP_SND_HOVER		
-	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-	
-
-menuDef {
-    	name "spladder"
-	background MP_BACKGROUND1
-    	fullScreen 1				
-	rect 0 0 640 480
-    	visible MENU_TRUE
-    	forecolor MP_FOCUSCOLOR			
-	focuscolor MP_TEXTCOLOR
-				
-	onOpen { 
-		uiScript loadGameInfo ;
-		uiScript updateSPMenu ;
-//		close main;
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+	}
+	menuDef {
+		name "spladder"
+		background MP_BACKGROUND1
+		fullScreen 1
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR
+		focuscolor MP_TEXTCOLOR
+		onOpen { 
+			uiScript loadGameInfo;
+			uiScript updateSPMenu;
 		}
 
-#include "ui/common/symbol2.panel"							   
-#include "ui/sp/ladder/sp_selector.panel"
-#include "ui/common/tooltip.panel"
+#include "ui/defs/symbol2.panel"
 
-		/* always have these buttons available */
+#include "ui/defs/sp/ladder/sp_selector.panel"
+
+#include "ui/defs/tooltip.panel"
+
+/* always have these buttons available */
 
 		itemDef { /* Cancel button */
 			name backbutton
@@ -58,7 +56,12 @@ menuDef {
 			mouseEnter { setcvar ui_tip "Go back to main menu" fadein tooltip; } mouseExit { fadeout tooltip; }
 			rect 32 384 256 32
 			text "Cancel"
-			action { close spladder; open spmenu; setcvar ui_sptab 0; /* reset the tabs */ play MP_SND_SELECT; }
+			action {
+				play MP_SND_SELECT;
+				close spladder;
+				open spmenu;
+				setcvar ui_sptab 0; // reset the tabs
+			}
 			visible 1
 		}
 		itemDef { /* Endurance button */
@@ -67,7 +70,12 @@ menuDef {
 			mouseEnter { setcvar ui_tip "Enters the Endurance ladders" fadein tooltip; } mouseExit { fadeout tooltip; }
 			rect 332 384 256 32
 			text "^4Endurance"
-			/* action { close spladder; open endurance; setcvar ui_sptab 0; /* reset the tabs * / play MP_SND_SELECT; } */
+			/* action {
+				play MP_SND_SELECT;
+				close spladder;
+				open endurance;
+				setcvar ui_sptab 0; // reset the tabs
+			} */
 			visible 1
 		}
 	}
