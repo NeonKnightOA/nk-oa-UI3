@@ -22,7 +22,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
-/* Quick Match: Create a random botmatch. Random map, random gametype, random list of bots */
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -33,41 +32,40 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
-		name "quickmatch"
+		name "mainmenu"
 		background MP_BACKGROUND1
-		fullScreen 1				
+		fullScreen 1 
 		rect 0 0 640 480
 		visible MENU_TRUE
-		forecolor MP_FOCUSCOLOR			
+		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen { 
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
+		onOpen {
+			close main;
 		}
+
 		#include "ui/common/symbol2.panel"
-		#include "ui/sp/quickmatch/quickmatch.panel"
-		#include "ui/common/tooltip.panel"
-		// always have this button available
+
+#ifdef PLAYERPORTRAITS
+		// If one of those menus, display the portrait of the character!
 		itemDef {
-			name button1
-			text "Cancel"
-			background MP_WIDEBUTTONBG
+			name thisisyou
+			background "portraits/sorceress"
 			style 1
-			type ITEM_TYPE_BUTTON
 			textstyle 2
 			textscale 0.5
-			rect 32 384 256 32
-			textalignx	 32	
-			textaligny	 24
-			backcolor MP_BUTTONBGCOLOR
-			forecolor MP_TEXTCOLOR
-			action {
-				close botmatch;
-				open spmenu;
-				setcvar ui_menutab 0; // reset the tabs
-				play MP_SND_SELECT;  
-			}
+			rect 0 32 448 448
+			scralign ALIGN_LEFT
+			scralignfactor 0.7
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
 			visible 1 
+			decoration
 		}
+#endif
+
+		#include "ui/common/mainmenu.panel"
+
+		#include "ui/common/tooltip.panel"
+
 	}
 }

@@ -1,0 +1,116 @@
+
+/* -----------------------------------------------------------
+   TAB 0 - QUICK MATCH
+   ----------------------------------------------------------- */
+itemDef {
+	name dmgamefield
+	text	"Quick Match"
+	background MP_DIALOGBG
+	backcolor 	MP_DIALOGBGCOLOR
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 600 400
+	textalignx	 32	
+	textaligny	 24
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+}
+
+itemDef { /* Map preview */
+      	name mappreviewblur
+	ownerdraw UI_MAPCINEMATIC
+	textstyle 2
+      	textscale 0.5
+	backcolor 1 1 1 1
+	decoration
+   	rect 330 48 300 220
+     	textalignx	0	
+	textaligny	0
+	border 1
+	bordercolor   MP_BOX_BORDER
+	visible 1 
+}
+
+itemDef { /* Selected map */
+      	name level_info
+	textstyle 2
+	ownerdraw UI_MAPS_SELECTION
+      	textscale 0.33
+	decoration
+	textalign ITEM_ALIGN_CENTER
+   	rect 400 266 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+/* itemDef { // Fraglimit 
+      	name mapfraglimit
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME 
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Fraglimit:"
+	cvar "fraglimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 296 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { // Capturelimit 
+      	name mapcapturelimit
+	ownerdrawflag UI_SHOW_ANYTEAMGAME 
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Capturelimit:"
+	cvar "capturelimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 296 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+} */
+
+itemDef { /* Timelimit */
+      	name maptimelimit
+	type ITEM_TYPE_NUMERICFIELD
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Timelimit:"
+	cvar "timelimit" 
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 311 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}
+
+itemDef { /* Gametype */
+      	name mapgametype
+	type 0
+      	ownerdraw UI_GAMETYPE
+	textstyle 2
+      	textscale 0.27
+	decoration
+	text "Gametype:"
+	textalign ITEM_ALIGN_LEFT
+   	rect 360 326 127 32
+     	textalignx	0	
+	textaligny	0
+	border 0
+	visible 1 
+}

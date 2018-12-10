@@ -38,7 +38,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define	MP_FATBUTTONBG "ui/moe/moebutton3"
 #define	MP_WIDEBUTTONBG "ui/moe/moebutton3"	
 #define	MP_WIDEBUTTONWONBG "ui/moe/moebutton3"	
-#define MP_FATBUTTONBG 	"ui/moe/moebutton3"
 #define	MP_LONGBUTTONBG "ui/moe/moebutton4"
 #define	MP_LONGBUTTONBGA "ui/moe/moebutton4a"
 

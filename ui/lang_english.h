@@ -61,8 +61,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define TIP_VIDEO_MONOLIGHTMAP			"Enables the use of colored lighting in the maps."
 #define TIP_VIDEO_MAPOVERBRIGHTBITS		"Controls the light amplification of the level."
 
-
-#define TIP_AUDIO_OPENAL			"Use the OpenAL driver, if available"
 #define TIP_AUDIO_VOLUME			"Adjust volume of the game."
 #define TIP_AUDIO_MUSICVOLUME			"Adjust volume of the music."
 #define TIP_AUDIO_VOICEVOLUME			"Volume of real-time voice communication"
@@ -74,5 +72,4 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #define TIP_OTHER_COMBLOOD			"Allows blood and gore"
 #define TIP_OTHER_SUGGESTIVETHEMES		"Reduces suggestive content, like cleavage"
-
 

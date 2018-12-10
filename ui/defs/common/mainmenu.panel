@@ -4,19 +4,19 @@
 #define MENU_ITEM_TITLE_Y		32
 #define MENU_ITEM_TITLE_WIDTH	256
 #define MENU_ITEM_TITLE_HEIGHT	32
-#define MENU_ITEM_1		96
-#define MENU_ITEM_2		128
-#define MENU_ITEM_3		160
-#define MENU_ITEM_4		192
-#define MENU_ITEM_5		224
-#define MENU_ITEM_6		256
-#define MENU_ITEM_7		288
-#define MENU_ITEM_8		320
-#define MENU_ITEM_9		352
-#define MENU_ITEM_10		384
-#define MENU_ITEM_WIDTH	512
-#define MENU_ITEM_WID_SPL	256
-#define MENU_ITEM_HEIGHT	32
+#define MENU_ITEM_1			96
+#define MENU_ITEM_2			128
+#define MENU_ITEM_3			160
+#define MENU_ITEM_4			192
+#define MENU_ITEM_5			224
+#define MENU_ITEM_6			256
+#define MENU_ITEM_7			288
+#define MENU_ITEM_8			320
+#define MENU_ITEM_9			352
+#define MENU_ITEM_10			384
+#define MENU_ITEM_WIDTH		512
+#define MENU_ITEM_WID_SPL		256
+#define MENU_ITEM_HEIGHT		32
 /* /Define Zone */
 /* Custom Zone */
 // Error

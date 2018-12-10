@@ -22,7 +22,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 /*
 #define TRANSITION_LOGOZOOM // Enable red logo zoomout for starting a game
 */
-#define MP_MENUMUSIC		"music/azuremenu" // music to use for menu
 #define MP_BACKGROUND	"ui/assets/splash22.jpg" // background of the menu
 #define MP_SND_SELECT		"ui/assets5/select.wav" // confirm noise
 #define MP_SND_HOVER		"ui/assets5/hover.wav" // hover noise
@@ -36,7 +35,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define MP_FATBUTTONBG	"azurebutton"
 #define MP_WIDEBUTTONBG	"azurebuttonlong" 
 #define MP_WIDEBUTTONWONBG	"azurebuttonlongwon" 
-#define MP_FATBUTTONBG	"azurebuttoncombo"
 #define MP_LONGBUTTONBG	"azurebuttonreallylong"
 #define MP_LONGBUTTONBGA	"azurebuttonreallylonga"
 #define MP_TABON			"ui/assets5/tabon.tga"

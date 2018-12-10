@@ -6,66 +6,66 @@
 // 
 {
 	/* Main menu */
-	loadMenu { "ui/console_main.menu" }
-	loadMenu { "ui/console_main_menu.menu" }
+	loadMenu { "ui/defs/console_main.menu" }
+	loadMenu { "ui/defs/console_main_menu.menu" }
 
 	/* Single-player submenu */
-	loadMenu { "ui/sp/main.menu" }
-	loadMenu { "ui/sp/botmatch/botmatch.menu" }
-	loadMenu { "ui/sp/tutorials/sp_tutorial.menu" }
-/*	loadMenu { "ui/sp/ladder/sp_transition.menu" }
-	loadMenu { "ui/sp/ladder/sp_campaign.menu" }
-	loadMenu { "ui/sp/ladder/sp_rungs.menu" }
-	loadMenu { "ui/sp/ladder/00_tutorial_campaign.menu" }
-	loadMenu { "ui/sp/ladder/01_ffa_campaign.menu" }
-	loadMenu { "ui/sp/ladder/02_pos_campaign.menu" }
-	loadMenu { "ui/sp/ladder/03_lms_campaign.menu" }
-	loadMenu { "ui/sp/ladder/04_team_campaign.menu" }
-	loadMenu { "ui/sp/ladder/05_elim_campaign.menu" }
-	loadMenu { "ui/sp/ladder/06_dom_campaign.menu" }
-	loadMenu { "ui/sp/ladder/07_ddom_campaign.menu" }
-	loadMenu { "ui/sp/ladder/08_over_campaign.menu" }
-	loadMenu { "ui/sp/ladder/09_1fctf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/10_ctf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/11_ectf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/12_harv_campaign.menu" }
-	loadMenu { "ui/sp/ladder/13_1on1_campaign.menu" }
-	loadMenu { "ui/sp/ladder/14_1on1bonus_campaign.menu" } */
-	loadMenu { "ui/sp/quickmatch/quickmatch.menu" }
+	loadMenu { "ui/defs/sp/main.menu" }
+	loadMenu { "ui/defs/sp/botmatch/botmatch.menu" }
+	loadMenu { "ui/defs/sp/tutorials/sp_tutorial.menu" }
+	loadMenu { "ui/defs/sp/ladder/sp_transition.menu" }
+	loadMenu { "ui/defs/sp/ladder/sp_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/sp_rungs.menu" }
+	loadMenu { "ui/defs/sp/ladder/00_tutorial_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/01_ffa_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/02_pos_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/03_lms_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/04_team_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/05_elim_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/06_dom_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/07_ddom_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/08_over_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/09_1fctf_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/10_ctf_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/11_ectf_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/12_harv_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/13_1on1_campaign.menu" }
+	loadMenu { "ui/defs/sp/ladder/14_1on1bonus_campaign.menu" }
+	loadMenu { "ui/defs/sp/quickmatch/quickmatch.menu" }
 
 	/* Multiplayer submenu */
-	loadMenu { "ui/mp/main.menu" }
-	loadMenu { "ui/mp/createserver/createserver.menu" }
-	loadMenu { "ui/mp/joinserver/joinserver.menu" }
+	loadMenu { "ui/defs/mp/main.menu" }
+	loadMenu { "ui/defs/mp/createserver/createserver.menu" }
+	loadMenu { "ui/defs/mp/joinserver/joinserver.menu" }
 
 	/* Game options submenu */
-	loadMenu { "ui/console/main_options.menu" }
-	loadMenu { "ui/main_controls.menu" }
-	loadMenu { "ui/console_profile.menu" }
-	loadMenu { "ui/main_adjustyourscreen.menu" }
+	loadMenu { "ui/defs/console_main_options.menu" }
+	loadMenu { "ui/defs/main_controls.menu" }
+	loadMenu { "ui/defs/console_profile.menu" }
+	loadMenu { "ui/defs/main_adjustyourscreen.menu" }
 
 	/* Library/Extras */
-	loadMenu { "ui/main_extras.menu" }
-	loadMenu { "ui/main_gallery.menu" }
-	loadMenu { "ui/main_mods.menu" }
-	loadMenu { "ui/main_bios.menu" }
+	loadMenu { "ui/defs/main_extras.menu" }
+	loadMenu { "ui/defs/main_gallery.menu" }
+	loadMenu { "ui/defs/main_mods.menu" }
+	loadMenu { "ui/defs/main_bios.menu" }
 
 	/* Quit */
-	loadMenu { "ui/main_credits.menu" }
-	loadMenu { "ui/main_popup_quit.menu" }
+	loadMenu { "ui/defs/main_credits.menu" }
+	loadMenu { "ui/defs/main_popup_quit.menu" }
 
 	/* Other relevant pages */
-	loadMenu { "ui/loading.menu" }
-	loadMenu { "ui/connecting.menu" }
-	loadMenu { "ui/error.menu" }
+	loadMenu { "ui/defs/loading.menu" }
+	loadMenu { "ui/defs/connecting.menu" }
+	loadMenu { "ui/defs/error.menu" }
 
 	/* Debug menu pages for development, video calibration and what not, not necessary to play the game */
-	loadMenu { "ui/menutest.menu" }
-	loadMenu { "ui/debug/debug.menu" }
-	loadMenu { "ui/debug/testfilter.menu" }
-	loadMenu { "ui/debug/testtmufilter.menu" }
-	loadMenu { "ui/debug/testblends.menu" }
-	loadMenu { "ui/debug/testgradients.menu" }
-	loadMenu { "ui/debug/testbilinear.menu" }
-	loadMenu { "ui/debug/testdots.menu" }
+	loadMenu { "ui/defs/menutest.menu" }
+	loadMenu { "ui/defs/debug/debug.menu" }
+	loadMenu { "ui/defs/debug/testfilter.menu" }
+	loadMenu { "ui/defs/debug/testtmufilter.menu" }
+	loadMenu { "ui/defs/debug/testblends.menu" }
+	loadMenu { "ui/defs/debug/testgradients.menu" }
+	loadMenu { "ui/defs/debug/testbilinear.menu" }
+	loadMenu { "ui/defs/debug/testdots.menu" }
 }

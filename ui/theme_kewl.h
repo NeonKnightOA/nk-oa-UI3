@@ -42,7 +42,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define	MP_FATBUTTONBG "ui/metal/buttonlonga"
 #define	MP_WIDEBUTTONBG "ui/metal/buttonlonga"	
 #define	MP_WIDEBUTTONWONBG "ui/metal/buttonlonga"	
-#define MP_FATBUTTONBG 	"ui/metal/buttonlonga"
 #define	MP_LONGBUTTONBG "ui/metal/buttonlonga"
 #define	MP_LONGBUTTONBGA "ui/metal/buttonlonga"
 
