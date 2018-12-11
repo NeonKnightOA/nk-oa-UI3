@@ -9,7 +9,7 @@ itemDef {
 	model_fovy   15
 	model_angle 180 0 0
 	style 0
-	decoration 
+	decoration
 	visible 1
 	backcolor MP_DIALOGBGCOLOR
 	forecolor MP_DIALOGBGCOLOR
@@ -25,7 +25,7 @@ itemDef {
 	model_fovy   15
 	model_angle 180 0 0
 	style 0
-	decoration 
+	decoration
 	visible 1
 	backcolor MP_DIALOGBGCOLOR
 	forecolor MP_DIALOGBGCOLOR
@@ -43,13 +43,12 @@ itemDef {
 	model_rotation  12
 	model_angle 0 0 0
 	style 0
-	decoration 
+	decoration
 	visible 1
 	cvarTest "ui_3dsymbol"
 	showCVar { "1" }
 }
-/*
-itemDef {
+/* itemDef {
 	name backgroundwaved
 	background "ui/assets/oa"
 	style 1
@@ -60,10 +59,8 @@ itemDef {
 	backcolor 	0 0 0 0.5
 	scralign ALIGN_LEFT
 	scralignfactor 1.0
-}
-*/
-/*
-itemDef{
+} */
+/* itemDef{
 	name backgroundwaved
 	background AzureBGBlendover
 	style 1
@@ -72,9 +69,8 @@ itemDef{
 	decoration 
 	visible 1
 	backcolor 	0.6 0.8 1 1
-}
-*/
-#ifdef USECINEMATICS
+} */
+/* #ifdef USECINEMATICS
 itemDef{
 	name backgroundcinemtic
 	rect  0 0 640 480
@@ -83,4 +79,4 @@ itemDef{
 	decoration 
 	visible 1
 }
-#endif
+#endif */

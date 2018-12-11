@@ -19,11 +19,9 @@ along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
-//
-// INTRO
-//	used to display the GPL notice and provide something to read while the rest of the menu
-//		loads
-//
+/* INTRO
+	used to display the GPL notice and provide something to read while the rest of the menu
+		loads */
 
 #include "ui/menudef.h"
 #include "ui/menudef2.h"
@@ -47,6 +45,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
 		onEsc {
+			playLooped MP_MENUMUSIC;
+			close main;
+			open mainmenu;
+		}
+		onClose {
 			playLooped MP_MENUMUSIC;
 			close main;
 			open mainmenu;

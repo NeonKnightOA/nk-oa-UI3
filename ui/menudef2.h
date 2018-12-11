@@ -49,19 +49,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // 48pt - 	1.0
 // 24pt - 	0.5
 // 9pt - 	0.1875
-
+/*
 #define SMALLFONTSIZE 	12
 #define MEDIUMFONTSIZE 	24
 #define LARGEFONTSIZE 	24
 
 #define KEYBINDBITTEXTSCALE .1875		// Controls menu columns
-
+*/
 #include "themesetting.txt" 	// User can change this
 
 // please remember to add a new line at the end of a file
 
 // always have this button in menus.
-#define GOBACK_BUTTON(_text,_menuToClose,_menuToOpen) \
+#define GOBACK_BUTTON(_text,_menuToClose,_menuToOpen, _cvarForTabs) \
 itemDef {\
 	name goback_button\
 	text _text\
@@ -86,6 +86,7 @@ itemDef {\
 		play MP_SND_SELECT;\
 		close _menuToClose;\
 		open _menuToOpen;\
+		setcvar _cvarForTabs 0;	/* reset the tabs*/ \
 	}\
 	visible 1\
 }

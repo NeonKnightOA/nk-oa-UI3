@@ -22,47 +22,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 #include "ui/menudef2.h"
+#include "ui/defs/sp/menudefsp.h"
 
 // Internal workings that don't really need to be modified
-
-#define SPCUR_MENUNAME		"singleplayercampaign_05_elim"
-#define SPCUR_MENUFULLNAME	"Elimination"
-
-#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_13"
-#define SPCUR_MAP1NUM		14
-#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_14"
-#define SPCUR_MAP2NUM		15
-#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_15"
-#define SPCUR_MAP3NUM		16
-#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_16"
-
-#define SPCUR_MAP1_NAME			"DELETE!" /* oa_minia */
-#define SPCUR_MAP2_NAME			"Full Pack" /* mlca1 */
-#define SPCUR_MAP3_NAME			"Bases!" /* am_lavactfxl */
-#define SPCUR_MAP1_DESCRIPTION		"In Elimination, both teams fight for supremacy. Everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry."
-#define SPCUR_MAP2_DESCRIPTION		"Three weapons were added to everybody's starting inventory: the Nailgun, Chaingun and Prox Launcher. Use them wisely."
-#define SPCUR_MAP3_DESCRIPTION		"In this rung, both teams have an own base, and a middle area uniting them. You can see where this is going, so charge forward!"
-#define SPCUR_MAP1_FRAGLIMIT		0
-#define SPCUR_MAP2_FRAGLIMIT		0
-#define SPCUR_MAP3_FRAGLIMIT		0
-#define SPCUR_MAP1_CAPTURELIMIT	5
-#define SPCUR_MAP2_CAPTURELIMIT	7
-#define SPCUR_MAP3_CAPTURELIMIT	9
-#define SPCUR_MAP1_TIMELIMIT		10
-#define SPCUR_MAP2_TIMELIMIT		10
-#define SPCUR_MAP3_TIMELIMIT		15
-#define SPCUR_MAP1_ADDITIONALRULES	""
-#define SPCUR_MAP1_ADDITIONALRULE1	""
-#define SPCUR_MAP1_ADDITIONALRULE2	""
-#define SPCUR_MAP1_ADDITIONALRULE3	""
-#define SPCUR_MAP2_ADDITIONALRULES	"New Weapons"
-#define SPCUR_MAP2_ADDITIONALRULE1	"g_elimination_chain 100"
-#define SPCUR_MAP2_ADDITIONALRULE2	"g_elimination_mine 10"
-#define SPCUR_MAP2_ADDITIONALRULE3	"g_elimination_nail 10"
-#define SPCUR_MAP3_ADDITIONALRULES	""
-#define SPCUR_MAP3_ADDITIONALRULE1	""
-#define SPCUR_MAP3_ADDITIONALRULE2	""
-#define SPCUR_MAP3_ADDITIONALRULE3	""
 
 {
 	assetGlobalDef
@@ -75,22 +37,38 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
-		onOpen { 
+		name singleplayercampaign_05_elim
+		background MP_BACKGROUND1
+		fullScreen 1
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR
+		focuscolor MP_TEXTCOLOR
+		onOpen {
+			setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
+			setcvar ui_currentMap 2;
+			setcvar fraglimit 10;
+			setcvar capturelimit 0;
+			setcvar timelimit 10;
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			uiScript loadGameInfo;
+			uiScript updateSPMenu;
 		}
 		onClose {
 			play MP_SND_BACK;
-			close SPCUR_MENUNAME;
+			close singleplayercampaign_05_elim;
 			open spladder;
 			setcvar ui_menutab 0;	// reset the tabs
 		}
 		onEsc {
 			play MP_SND_BACK;
-			close SPCUR_MENUNAME;
+			close singleplayercampaign_05_elim;
 			open spladder;
 			setcvar ui_menutab 0;	// reset the tabs
 		}
-
-#include "ui/defs/sp/ladder/sp_initialmap.panel"
 
 #include "ui/defs/mapbg.panel"
 
@@ -104,11 +82,31 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		/* Ladder Name */
 
-#include "ui/defs/sp/ladder/sp_laddername.panel"
+		itemDef
+		{
+			name dmgamefield
+			ownerdraw UI_GAMETYPE
+			text "Elimination"
+			background MP_DIALOGBG
+			style 1
+			type 0
+			textstyle 2
+			textscale 0.5
+			decoration
+			rect 16 32 300 400
+			textalignx 32
+			textaligny 24
+			border 1
+			bordercolor MP_BOX_BORDER
+			backcolor MP_DIALOGBGCOLOR
+			visible 1 
+		}
 
 		/* Rungs */
 
-#include "ui/defs/sp/ladder/sp_rungs.panel"
+		SP_RUNG("DELETE!",14,"ui_sp_unlock_13","ui_sp_unlock_14",7,"In Elimination, both teams fight for supremacy. Everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry.",MENU_ITEM_1,0,5,10,"","","","")
+		SP_RUNG("Full Pack",15,"ui_sp_unlock_14","ui_sp_unlock_15",7,"Three weapons were added to everybody's starting inventory: the Nailgun, Chaingun and Prox Launcher. Use them wisely.",MENU_ITEM_2,0,7,10,"New Weapons","g_elimination_chain 100","g_elimination_mine 10","g_elimination_nail 10")
+		SP_RUNG("Bases!",16,"ui_sp_unlock_15","ui_sp_unlock_16",7,"In this rung, both teams have an own base, and a middle area uniting them. You can see where this is going, so charge forward!",MENU_ITEM_3,0,9,15,"","","","")
 
 		/* Common Stuff Area */
 
@@ -116,5 +114,56 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/defs/tooltip.panel"
 
+		GOBACK_BUTTON("Cancel",singleplayercampaign_05_elim,spladder, ui_sptab)
+
+		itemDef { /* FIGHT! button */
+			name buttong
+			text "FIGHT"
+			group buttonsthatdostuff
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 384 384 256 32
+			textalignx 32
+			textaligny 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mouseEnter {
+				setcvar ui_tip "WHAT THE BUTTON SAYS!"
+				fadein tooltip;
+			}
+			mouseExit {
+				fadeout tooltip;
+			}
+			action { 
+				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
+				show fadlogotext;
+				show fadlogobg1;
+				show fadlogobg2;
+				show fadlogoside1;
+				show fadlogoside2;
+				show fadlogo;
+				show fadlogoup;
+				show fadlogodown;
+				hide buttonsthatdostuff;
+				playLooped null;
+				clearAlpha fadlogoblack;
+				fadein fadlogoblack;
+				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
+				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
+				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
+				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
+				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
+				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
+				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
+			}
+			ontransitionend {
+				close singleplayercampaign_05_elim;
+				uiScript skirmishStart;
+			}
+			visible 1 
+		}
 	}
 }

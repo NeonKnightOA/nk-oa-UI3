@@ -32,16 +32,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
 	assetGlobalDef {
-	smallFont "gfx/2d/bigchars" SMALLFONTSIZE
-	font "gfx/2d/bigchars" MEDIUMFONTSIZE
-	bigFont "gfx/2d/bigchars" LARGEFONTSIZE
-	cursor "ui/assets/cursor"
-	itemFocusSound MP_SND_HOVER
-	shadowColor 0.0 0.0 0.0 0.25
-	focuscolor MP_FOCUSCOLOR
-	fadeClamp 1.0
-	fadeCycle 5
-	fadeAmount 0.05
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+		focuscolor MP_FOCUSCOLOR
+		fadeClamp 1.0
+		fadeCycle 5
+		fadeAmount 0.05
 	}
 	menuDef {
 		name "splashtransitiontomenu"
@@ -54,6 +54,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		onEsc {
 			playLooped MP_MENUMUSIC;
 			close splashtransitiontomenu;
+			close error_popmenu;
+			open mainmenu;
+		}
+		onClose {
+			playLooped MP_MENUMUSIC;
+			close splashtransitiontomenu;
+			close error_popmenu;
 			open mainmenu;
 		}
 		onOpen {
@@ -70,6 +77,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			xtransition loadingbit2 0 0 255 1 0 0 640 1 4 400;
 		}
 		opentransitionEnd {
+			playLooped MP_MENUMUSIC;
 			close splashtransitiontomenu;
 			close error_popmenu;
 			open mainmenu;
