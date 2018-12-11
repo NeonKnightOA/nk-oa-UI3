@@ -43,7 +43,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		// Background stuff
 		// Faded background
 		itemDef {
-			name mappreviewblurpass6
+			name "mappreviewblurpass6"
 			decoration
 			background MP_DIALOGBG
 			style 1
@@ -55,7 +55,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		}
 		// Faded background
 		itemDef {
-			name mappreviewblurpass6
+			name "mappreviewblurpass6"
 			decoration
 			background MP_DIALOGBG
 			style 1

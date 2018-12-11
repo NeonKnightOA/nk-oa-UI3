@@ -41,14 +41,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
-		onOpen { 
-			close main;
+		onOpen {
+		}
+		onClose {
+			close controlsmenu;
+			open mainmenu;
 		}
 		onEsc { 
-			open mainmenu; 
-			setcvar ui_menutab 0; // reset the tabs
+			play MP_SND_BACK;
 			close controlsmenu;
-			play MP_SND_BACK; 
+			open mainmenu;
+			setcvar ui_menutab 0; // reset the tabs
 		}
 
 		#include "ui/common/symbol2.panel" 
@@ -72,10 +75,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			action { 
+				play MP_SND_SELECT;
+				close controlsmenu;
 				open mainmenu; 
 				setcvar ui_menutab 0; // reset the tabs
-				close controlsmenu;
-				play MP_SND_SELECT; 
 			}
 			visible 1 
 		}

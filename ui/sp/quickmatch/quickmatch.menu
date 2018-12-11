@@ -41,12 +41,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR			
 		focuscolor MP_TEXTCOLOR
 		onOpen { 
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
+			setcvar fraglimit 0;
+			setcvar capturelimit 0;
+			uiScript ui_randomIntToCvar "ui_timelimit" 10 20;
+			uiScript ui_randomIntToCvar "ui_gametype" 0 12;
+			uiScript loadArenas;
 		}
-		#include "ui/common/symbol2.panel"
-		#include "ui/sp/quickmatch/quickmatch.panel"
-		#include "ui/common/tooltip.panel"
+
+#include "ui/defs/symbol2.panel"
+
+#include "ui/defs/sp/quickmatch/quickmatch.panel"
+
+#include "ui/defs/tooltip.panel"
+
 		// always have this button available
 		itemDef {
 			name button1
@@ -62,12 +69,59 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			backcolor MP_BUTTONBGCOLOR
 			forecolor MP_TEXTCOLOR
 			action {
+				play MP_SND_SELECT;
 				close botmatch;
 				open spmenu;
 				setcvar ui_menutab 0; // reset the tabs
-				play MP_SND_SELECT;  
 			}
 			visible 1 
 		}
+	}
+	itemDef { /* FIGHT! button */
+		name buttong
+		text "FIGHT"
+		group buttonsthatdostuff
+		background MP_WIDEBUTTONBG
+		style 1
+		type ITEM_TYPE_BUTTON
+		textstyle 2
+		textscale 0.5
+		rect 384 384 256 32
+		textalignx	 32	
+		textaligny	 24
+		forecolor MP_TEXTCOLOR
+		backcolor MP_BUTTONBGCOLOR
+		mouseEnter {
+			setcvar ui_tip "WHAT THE BUTTON SAYS!"
+			fadein tooltip;
+		}
+		mouseExit {
+			fadeout tooltip;
+		}
+		action { 
+			show fadlogotext;
+			show fadlogobg1;
+			show fadlogobg2;
+			show fadlogoside1;
+			show fadlogoside2;
+			show fadlogo;
+			show fadlogoup;
+			show fadlogodown;
+			hide buttonsthatdostuff;
+			playLooped null;
+			clearAlpha fadlogoblack;
+			fadein fadlogoblack;	
+			transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
+			transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
+			transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;	
+			transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
+			transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
+			transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
+			xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
+		}
+		ontransitionend {
+			uiScript skirmishStart
+		}
+		visible 1 
 	}
 }

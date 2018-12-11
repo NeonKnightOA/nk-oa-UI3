@@ -41,6 +41,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
+		onOpen {
+		}
+		onClose {
+			close bios;
+			open extras;
+		}
+		onESC {
+			close bios;
+			open extras;
+		}
 
 		#include "ui/common/symbol.panel" 
 
@@ -68,8 +78,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor MP_BUTTONBGCOLOR
 			mouseEnter { setcvar ui_cdkeychecked "Return to biography selection" fadein tooltip; } mouseExit { fadeout tooltip;} 
 			action {
-				setcvar ui_browserSortKey 0; 
 				play MP_SND_SELECT; 
+				setcvar ui_browserSortKey 0; 
 			}
 			visible 1 
 		}
@@ -91,10 +101,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			forecolor MP_TEXTCOLOR
 			mouseEnter { setcvar ui_cdkeychecked "Go back to extras menu." fadein tooltip; } mouseExit { fadeout tooltip;} 
 			action {
+				play MP_SND_SELECT; 
 				close bios;
 				open extras;
 				setcvar ui_browserSortKey 0; // reset the tabs
-				play MP_SND_SELECT; 
 			}
 			visible 1 
 		}

@@ -24,45 +24,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // Internal workings that don't really need to be modified
 
-#define SPCUR_MENUNAME		"singleplayercampaign_02_pos"
-#define SPCUR_MENUFULLNAME	"Possession"
-
-#define SPCUR_MAP1_UNLOCKCVAR 	"ui_sp_unlock_4"
-#define SPCUR_MAP1NUM		5
-#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_5"
-#define SPCUR_MAP2NUM		6
-#define SPCUR_MAP3_UNLOCKCVAR 	"ui_sp_unlock_6"
-#define SPCUR_MAP3NUM		7
-#define SPCUR_MAP4_UNLOCKCVAR 	"ui_sp_unlock_7"
-
-#define SPCUR_MAP1_NAME			"Take The Flag!" /*oad_blitzkrieg*/
-#define SPCUR_MAP2_NAME			"Work hard" /*oad_underworks*/
-#define SPCUR_MAP3_NAME			"Chaos Online" /*oad_nemesis*/
-#define SPCUR_MAP1_DESCRIPTION		"Welcome to Possession. Here you have to find a flag and keep it with you for a set amount of time in order to win."
-#define SPCUR_MAP2_DESCRIPTION		"Another Possession match, this time in a less-mazey (but not less dangerous) arena."
-#define SPCUR_MAP3_DESCRIPTION		"Two more opponents joined to turn this into a five-way match. Have fun!"
-#define SPCUR_MAP1_FRAGLIMIT		100
-#define SPCUR_MAP2_FRAGLIMIT		125
-#define SPCUR_MAP3_FRAGLIMIT		150
-#define SPCUR_MAP1_CAPTURELIMIT	0
-#define SPCUR_MAP2_CAPTURELIMIT	0
-#define SPCUR_MAP3_CAPTURELIMIT	0
-#define SPCUR_MAP1_TIMELIMIT		10
-#define SPCUR_MAP2_TIMELIMIT		10
-#define SPCUR_MAP3_TIMELIMIT		15
-#define SPCUR_MAP1_ADDITIONALRULES	""
-#define SPCUR_MAP1_ADDITIONALRULE1	""
-#define SPCUR_MAP1_ADDITIONALRULE2	""
-#define SPCUR_MAP1_ADDITIONALRULE3	""
-#define SPCUR_MAP2_ADDITIONALRULES	""
-#define SPCUR_MAP2_ADDITIONALRULE1	""
-#define SPCUR_MAP2_ADDITIONALRULE2	""
-#define SPCUR_MAP2_ADDITIONALRULE3	""
-#define SPCUR_MAP3_ADDITIONALRULES	""
-#define SPCUR_MAP3_ADDITIONALRULE1	""
-#define SPCUR_MAP3_ADDITIONALRULE2	""
-#define SPCUR_MAP3_ADDITIONALRULE3	""
-
 {
 	assetGlobalDef
 	{
@@ -73,11 +34,41 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		itemFocusSound MP_SND_HOVER
 		shadowColor 0.0 0.0 0.0 0.25
 	}
-	menuDef
-	{
-		#include "ui/sp/ladder/sp_initialmap.panel"
+	menuDef {
+		name singleplayercampaign_02_pos
+		background MP_BACKGROUND1
+		fullScreen 1
+		rect 0 0 640 480
+		visible MENU_TRUE
+		forecolor MP_FOCUSCOLOR
+		focuscolor MP_TEXTCOLOR
+		onOpen {
+			setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
+			setcvar ui_currentMap 2;
+			setcvar fraglimit 10;
+			setcvar capturelimit 0;
+			setcvar timelimit 10;
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			uiScript loadGameInfo;
+			uiScript updateSPMenu;
+		}
+		onClose {
+			play MP_SND_BACK;
+			close singleplayercampaign_02_pos;
+			open spladder;
+			setcvar ui_menutab 0;	// reset the tabs
+		}
+		onEsc {
+			play MP_SND_BACK;
+			close singleplayercampaign_02_pos;
+			open spladder;
+			setcvar ui_menutab 0;	// reset the tabs
+		}
 
-		#include "ui/common/mapbg.panel"
+#include "ui/defs/mapbg.panel"
 
 		/* -----------------------------------------------------------
 		   TAB 0 - SELECTING MAP
@@ -85,21 +76,92 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		// MAP stats and info
 
-		#include "ui/sp/ladder/sp_mapinfo.panel"
+#include "ui/defs/sp/ladder/sp_mapinfo.panel"
 
 		/* Ladder Name */
 
-		#include "ui/sp/ladder/sp_laddername.panel"
+		itemDef
+		{
+			name dmgamefield
+			ownerdraw UI_GAMETYPE
+			text "Possession"
+			background MP_DIALOGBG
+			style 1
+			type 0
+			textstyle 2
+			textscale 0.5
+			decoration
+			rect 16 32 300 400
+			textalignx 32
+			textaligny 24
+			border 1
+			bordercolor MP_BOX_BORDER
+			backcolor MP_DIALOGBGCOLOR
+			visible 1 
+		}
 
 		/* Rungs */
 
-		#include "ui/sp/ladder/sp_rungs.panel"
+		SP_RUNG("Take The Flag!",5,"ui_sp_unlock_4","ui_sp_unlock_5",12,"Welcome to Possession. Here you have to find a flag and keep it with you for a set amount of time in order to win.",MENU_ITEM_1,100,0,10,"","","","")
+		SP_RUNG("Work Hard",6,"ui_sp_unlock_5","ui_sp_unlock_6",12,"Another Possession match, this time in a less-mazey (but not less dangerous) arena.",MENU_ITEM_2,125,0,10,"","","","")
+		SP_RUNG("Chaos Online",7,"ui_sp_unlock_6","ui_sp_unlock_7",12,"Two more opponents joined to turn this into a five-way match. Have fun!",MENU_ITEM_3,150,0,15,"","","","")
 
 		/* Common Stuff Area */
 
-		#include "ui/sp/ladder/sp_common.panel"
+#include "ui/defs/sp/ladder/sp_common.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/defs/tooltip.panel"
 
+		GOBACK_BUTTON("Cancel",singleplayercampaign_02_pos,spladder, ui_sptab)
+
+		itemDef { /* FIGHT! button */
+			name buttong
+			text "FIGHT"
+			group buttonsthatdostuff
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 384 384 256 32
+			textalignx 32
+			textaligny 24
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mouseEnter {
+				setcvar ui_tip "WHAT THE BUTTON SAYS!"
+				fadein tooltip;
+			}
+			mouseExit {
+				fadeout tooltip;
+			}
+			action { 
+				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
+				show fadlogotext;
+				show fadlogobg1;
+				show fadlogobg2;
+				show fadlogoside1;
+				show fadlogoside2;
+				show fadlogo;
+				show fadlogoup;
+				show fadlogodown;
+				hide buttonsthatdostuff;
+				playLooped null;
+				clearAlpha fadlogoblack;
+				fadein fadlogoblack;
+				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
+				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
+				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
+				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
+				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
+				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
+				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
+			}
+			ontransitionend {
+				close singleplayercampaign_02_pos;
+				uiScript skirmishStart;
+			}
+			visible 1 
+		}
 	}
 }

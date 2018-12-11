@@ -27,37 +27,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
-/* Define zone */
-#define MENU_TAB_1		0
-#define MENU_TAB_2		1
-#define MENU_TAB_3		2
-#define MENU_TAB_4		3
-#define MENU_TAB_5		4
-#define MENU_TAB_6		5
-#define MENU_TAB_7		6
-#define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	316
-#define MENU_ITEM_TITLE_Y	32
-#define MENU_ITEM_TITLE_WIDTH	300
-#define MENU_ITEM_TITLE_WIDTH_2	600
-#define MENU_ITEM_TITLE_HEIGHT	400
-#define MENU_ITEM_0	64
-#define MENU_ITEM_1	96
-#define MENU_ITEM_2	128
-#define MENU_ITEM_3	160
-#define MENU_ITEM_4	192
-#define MENU_ITEM_5	224
-#define MENU_ITEM_6	256
-#define MENU_ITEM_7	288
-#define MENU_ITEM_8	320
-#define MENU_ITEM_9	352
-#define MENU_ITEM_COLUMN_1	32
-#define MENU_ITEM_COLUMN_2	332
-#define MENU_ITEM_COLUMN_3	172
-#define MENU_ITEM_WIDTH	256
-#define MENU_ITEM_HEIGHT	32
-/* / Define zone */
-
 /* Create server: Create a custom online match. */
 {
 	assetGlobalDef {
@@ -76,15 +45,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onEsc {
+		onOpen {
+			setcvar ui_netgametype "-1";
+			setcvar ui_menutab 0;
+			uiScript loadArenas;
+		}
+		onClose {
 			play MP_SND_BACK;
 			close createserver;
 			open mpmenu;
 		}
-		onOpen {
-			uiScript loadArenas;
-			setcvar ui_netgametype "-1";
-			setcvar ui_menutab 0;
+		onESC {
+			play MP_SND_BACK;
+			close createserver;
+			open mpmenu;
 		}
 		/* Include Zone */
 
@@ -115,7 +89,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		itemDef {
 			name tab1
 			background MP_TABOFF style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR backcolor MP_TABOFFBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 0; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 0;
+			}
 			text "Gametype"
 			rect 16 16 128 16
 			cvarTest "ui_menutab" hideCVar { MENU_TAB_1 }
@@ -123,7 +101,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		itemDef {
 			name tab2
 			background MP_TABOFF style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR backcolor MP_TABOFFBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 1; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 1;
+			}
 			text "Map"
 			rect 144 16 128 16
 			cvarTest "ui_netgametype" hideCVar { "-1" }
@@ -132,7 +114,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		itemDef {
 			name tab3
 			background MP_TABOFF style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR backcolor MP_TABOFFBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 2; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 2;
+			}
 			text "Rules"
 			rect 272 16 128 16
 			cvarTest "ui_netgametype" hideCVar { "-1" }
@@ -141,7 +127,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		itemDef {
 			name tab4
 			background MP_TABOFF style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR backcolor MP_TABOFFBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 3; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 3;
+			}
 			text "Slots"
 			rect 400 16 128 16
 			cvarTest "ui_netgametype" hideCVar { "-1" }
@@ -190,16 +180,23 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			type ITEM_TYPE_BUTTON mouseEnter { setcvar ui_tip "Go back to main menu."; fadein tooltip; } mouseExit { fadeout tooltip;}
 			text "Back"
 			rect 32 384 256 32
-			action { play MP_SND_SELECT; close createserver; open mpmenu; }
+			action {
+				play MP_SND_SELECT;
+				close createserver;
+				open mpmenu;
+			}
 		}
 		// always have this button available
 		itemDef {
 			name button1
 			background MP_WIDEBUTTONBG style 1 textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
-			type ITEM_TYPE_BUTTON mouseEnter { setcvar ui_tip "Go back to main menu."; fadein tooltip; } mouseExit { fadeout tooltip;}
+			type ITEM_TYPE_BUTTON mouseEnter { setcvar ui_tip "Go to the confirmation screen."; fadein tooltip; } mouseExit { fadeout tooltip;}
 			text "Confirm"
 			rect 332 384 256 32
-			action { play MP_SND_SELECT; setcvar MENU_TAB_7; }
+			action {
+				play MP_SND_SELECT;
+				setcvar MENU_TAB_7;
+			}
 		}
 	}
 }

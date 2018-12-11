@@ -26,41 +26,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // Internal workings that don't really need to be modified
 
-#define SPCUR_MAP1_UNLOCKCVAR 	""
-#define SPCUR_MAP1NUM		0
-#define SPCUR_MAP2_UNLOCKCVAR 	"ui_sp_unlock_0"
-#define SPCUR_MAP2NUM		1
-#define SPCUR_MAP3_UNLOCKCVAR 	""
-#define SPCUR_MAP3NUM		""
-#define SPCUR_MAP4_UNLOCKCVAR 	""
-
-#define SPCUR_MAP1_NAME			"FFA Tutorial" /* oad_tutorial1 */
-#define SPCUR_MAP2_NAME			"FFA Tutorial 2" /* oad_tutorial2 */
-#define SPCUR_MAP3_NAME			""
-#define SPCUR_MAP1_DESCRIPTION		"Learn the basics of OpenArena."
-#define SPCUR_MAP2_DESCRIPTION		""
-#define SPCUR_MAP3_DESCRIPTION		""
-#define SPCUR_MAP1_FRAGLIMIT		5
-#define SPCUR_MAP2_FRAGLIMIT		1
-#define SPCUR_MAP3_FRAGLIMIT		1
-#define SPCUR_MAP1_CAPTURELIMIT	0
-#define SPCUR_MAP2_CAPTURELIMIT	1
-#define SPCUR_MAP3_CAPTURELIMIT	1
-#define SPCUR_MAP1_TIMELIMIT		0
-#define SPCUR_MAP2_TIMELIMIT		1
-#define SPCUR_MAP3_TIMELIMIT		1
-#define SPCUR_MAP1_ADDITIONALRULE1	""
-#define SPCUR_MAP1_ADDITIONALRULE2	""
-#define SPCUR_MAP1_ADDITIONALRULE3	""
-#define SPCUR_MAP2_ADDITIONALRULE1	""
-#define SPCUR_MAP2_ADDITIONALRULE2	""
-#define SPCUR_MAP2_ADDITIONALRULE3	""
-#define SPCUR_MAP3_ADDITIONALRULE1	""
-#define SPCUR_MAP3_ADDITIONALRULE2	""
-#define SPCUR_MAP3_ADDITIONALRULE3	""
-
 {
-	assetGlobalDef {
+	assetGlobalDef
+	{
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
 		font "gfx/2d/bigchars" MEDIUMFONTSIZE
 		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
@@ -69,29 +37,40 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
-		name "tutorials"
+		name tutorials
 		background MP_BACKGROUND1
 		fullScreen 1
 		rect 0 0 640 480
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-
 		onOpen {
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
-			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
-			setcvar ui_currentMap SPCUR_MAP1NUM;
-			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
-			setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
-			setcvar timelimit SPCUR_MAP1_TIMELIMIT;
-			setcvar SPCUR_MAP1_ADDITIONALRULES;
-			setcvar SPCUR_MAP1_ADDITIONALRULE1;
-			setcvar SPCUR_MAP1_ADDITIONALRULE2;
-			setcvar SPCUR_MAP1_ADDITIONALRULE3;
+			setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
+			setcvar ui_currentMap 2;
+			setcvar fraglimit 10;
+			setcvar capturelimit 0;
+			setcvar timelimit 10;
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			setcvar "";
+			uiScript loadGameInfo;
+			uiScript updateSPMenu;
+		}
+		onClose {
+			play MP_SND_BACK;
+			close tutorials;
+			open spladder;
+			setcvar ui_menutab 0;	// reset the tabs
+		}
+		onEsc {
+			play MP_SND_BACK;
+			close tutorials;
+			open spladder;
+			setcvar ui_menutab 0;	// reset the tabs
 		}
 
-		#include "ui/common/mapbg.panel"
+#include "ui/defs/mapbg.panel"
 
 		/* -----------------------------------------------------------
 		   TAB 0 - SELECTING MAP
@@ -99,14 +78,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		// MAP stats and info
 
-		#include "ui/sp/tutorials/sp_mapinfo.panel"
+#include "ui/defs/sp/ladder/sp_mapinfo.panel"
 
 		/* Ladder Name */
 
-		itemDef {
+		itemDef
+		{
 			name dmgamefield
 			ownerdraw UI_GAMETYPE
-			text "Tutorials"
+			text "Free For All"
 			background MP_DIALOGBG
 			style 1
 			type 0
@@ -114,137 +94,27 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			textscale 0.5
 			decoration
 			rect 16 32 300 400
-			textalignx	 32	
-			textaligny	 24
+			textalignx 32
+			textaligny 24
 			border 1
-			bordercolor   MP_BOX_BORDER
-			backcolor 	MP_DIALOGBGCOLOR
+			bordercolor MP_BOX_BORDER
+			backcolor MP_DIALOGBGCOLOR
 			visible 1 
 		}
 
 		/* Rungs */
 
-		/* For the rest of the ladders */
-		itemDef { /* Map 1*/
-			name button1
-			text SPCUR_MAP1_NAME
-			ownerdraw UI_MENUMAPNAME
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 128 256 32
-			textalignx	 32	
-			textaligny	 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mapnum SPCUR_MAP1NUM
-			action
-			{
-				setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
-				setcvar ui_currentMap SPCUR_MAP1NUM;
-				setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;
-				setcvar capturelimit SPCUR_MAP1_CAPTURELIMIT;
-				setcvar timelimit SPCUR_MAP1_TIMELIMIT;
-				setcvar SPCUR_MAP1_ADDITIONALRULES;
-				setcvar SPCUR_MAP1_ADDITIONALRULE1;
-				setcvar SPCUR_MAP1_ADDITIONALRULE2;
-				setcvar SPCUR_MAP1_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
-			}
-			visible 1 
-		}
-		itemDef { /* Map 2*/
-			name button1
-			text SPCUR_MAP2_NAME
-			ownerdraw UI_MENUMAPNAME
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 160 256 32
-			textalignx	 32	
-			textaligny	 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mapnum SPCUR_MAP2NUM
-			/* cvarTest SPCUR_MAP2_UNLOCKCVAR showcvar { "1" } */
-			action
-			{
-				setcvar ui_tip SPCUR_MAP2_DESCRIPTION;
-				setcvar ui_currentMap SPCUR_MAP2NUM;
-				setcvar fraglimit SPCUR_MAP2_FRAGLIMIT;
-				setcvar capturelimit SPCUR_MAP2_CAPTURELIMIT;
-				setcvar timelimit SPCUR_MAP2_TIMELIMIT;
-				setcvar SPCUR_MAP2_ADDITIONALRULES;
-				setcvar SPCUR_MAP2_ADDITIONALRULE1;
-				setcvar SPCUR_MAP2_ADDITIONALRULE2;
-				setcvar SPCUR_MAP2_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
-			}
-			visible 1 
-		}
-
-		itemDef { /* Map 3*/
-			name button1
-			text SPCUR_MAP3_NAME
-			ownerdraw UI_MENUMAPNAME
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 192 256 32
-			textalignx	 32
-			textaligny	 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mapnum SPCUR_MAP3NUM
-			/* cvarTest SPCUR_MAP3_UNLOCKCVAR showcvar { "1" } */
-			action
-			{
-				setcvar ui_tip SPCUR_MAP3_DESCRIPTION;
-				setcvar ui_currentMap SPCUR_MAP3NUM;	
-				setcvar fraglimit SPCUR_MAP3_FRAGLIMIT;
-				setcvar capturelimit SPCUR_MAP3_CAPTURELIMIT;
-				setcvar timelimit SPCUR_MAP3_TIMELIMIT;
-				setcvar SPCUR_MAP3_ADDITIONALRULES;
-				setcvar SPCUR_MAP3_ADDITIONALRULE1;
-				setcvar SPCUR_MAP3_ADDITIONALRULE2;
-				setcvar SPCUR_MAP3_ADDITIONALRULE3;
-				play MP_SND_SELECT;  
-			}
-			visible 1 
-		}
+		SP_RUNG("FFA Tutorial",0,"","ui_sp_unlock_0",0,"Learn the basics of OpenArena.",MENU_ITEM_1,5,0,0,"","","","")
+		SP_RUNG("FFA Tutorial 2",1,"","ui_sp_unlock_1",0,"Learn the basics of OpenArena.",MENU_ITEM_2,5,0,0,"","","","")
+/*		SP_RUNG("",,"","",,"",,,,,"","","","") */
 
 		/* Common Stuff Area */
 
-		itemDef { /* Cancel button */
-			name button1
-			text "Cancel"
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			group buttonsthatdostuff
-			textscale 0.5
-			rect 32 384 256 32
-			textalignx	 32	
-			textaligny	 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter { setcvar ui_tip "Go back to main menu."; fadein tooltip; }
-			mouseExit { fadeout tooltip; }
-			action {
-				close SPCUR_MENUNAME;
-				open spladder;
-				setcvar ui_sptab 0;	// reset the tabs
-				play MP_SND_SELECT;  
-			}
-			visible 1 
-		}
+#include "ui/defs/sp/ladder/sp_common.panel"
+
+#include "ui/defs/tooltip.panel"
+
+		GOBACK_BUTTON("Cancel",tutorials,spladder, ui_sptab)
 
 		itemDef { /* FIGHT! button */
 			name buttong
@@ -256,12 +126,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			textstyle 2
 			textscale 0.5
 			rect 384 384 256 32
-			textalignx	 32	
-			textaligny	 24
+			textalignx 32
+			textaligny 24
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!";
+				setcvar ui_tip "WHAT THE BUTTON SAYS!"
 				fadein tooltip;
 			}
 			mouseExit {
@@ -280,133 +150,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 				hide buttonsthatdostuff;
 				playLooped null;
 				clearAlpha fadlogoblack;
-				fadein fadlogoblack;	
-
+				fadein fadlogoblack;
 				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
 				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;	
+				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
 				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-
 				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
 				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-
 				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
 			}
 			ontransitionend {
+				close tutorials;
 				uiScript skirmishStart;
 			}
 			visible 1 
 		}
-
-		// This plays when you start a game and holds it up for a bit
-
-		itemDef {
-			name fadlogo
-			group logofade
-			background "gamestartingfade"
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.2 0.5 1.0 1.0
-			backcolor 1 0.2 0.1 1.0
-			visible 0
-			decoration
-		}
-
-		itemDef {
-			name fadlogobg1
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		itemDef {
-			name fadlogobg2
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		itemDef {
-			name fadlogoside1
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		itemDef {
-			name fadlogoside2
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		itemDef {
-			name fadlogoup
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		itemDef {
-			name fadlogodown
-			group logofade
-			style 1
-			textstyle 2
-			textscale 0.5
-			rect 0 0 640 480
-			textalignx	 32	
-			textaligny	 34
-			forecolor 0.0 0.0 0.0 1.0
-			backcolor 0.0 0.0 0.0 1.0
-			visible 0 
-			decoration
-		}
-
-		#include "ui/common/tooltip.panel"
 	}
 }

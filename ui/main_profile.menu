@@ -40,22 +40,21 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
 		cvarTest "ui_profileFromMP" showCvar { "0" }
-		cvarTest "ui_profileFromMP" hideCvar { "1" }
-		onOpen { uiScript update "ui_GetName"; }
-		onClose { uiScript update "ui_SetName"; }
-		onEsc {
-			close profile; 
-			uiScript update "ui_SetName";
-			open mainmenu;
-			play MP_SND_SELECT; 
+		onOpen {
+			uiScript update "ui_GetName";
 		}
-
-		#include "ui/common/symbol2.panel" 
-
-		#include "ui/common/profile_oc.panel"
-
-		#include "ui/common/tooltip.panel"
-
+		onClose {
+			play MP_SND_SELECT;
+			close profile;
+			open mainmenu;
+			uiScript update "ui_SetName";
+		}
+		onEsc {
+			play MP_SND_SELECT;
+			close profile;
+			open mainmenu;
+			uiScript update "ui_SetName";
+		}
 		itemDef {
 			name button1
 			text "Okay!"
@@ -69,14 +68,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			textaligny 24
 			cvarTest "ui_menutab" showCVar { "0" }
 			cvarTest "ui_profileFromMP" showCvar { "0" }
-			cvarTest "ui_profileFromMP" hideCvar { "1" }
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			action {
-				close profile; 
-				uiScript update "ui_SetName";
+				play MP_SND_SELECT;
+				close profile;
 				open mainmenu;
-				play MP_SND_SELECT; 
+				uiScript update "ui_SetName";
 			}
 			visible 1 
 		}
@@ -90,21 +88,27 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
 		cvarTest "ui_profileFromMP" showCvar { "1" }
-		cvarTest "ui_profileFromMP" hideCvar { "0" }
-		onOpen { uiScript update "ui_GetName"; }
-		onClose { uiScript update "ui_SetName"; }
-		onEsc {
-			close profile; 
-			uiScript update "ui_SetName";
-			open mpmenu;
+		onOpen {
+			uiScript update "ui_GetName";
+		}
+		onClose {
 			play MP_SND_SELECT; 
+			close profile; 
+			open mpmenu;
+			uiScript update "ui_SetName";
+		}
+		onEsc {
+			play MP_SND_SELECT; 
+			close profile; 
+			open mpmenu;
+			uiScript update "ui_SetName";
 		}
 
-		#include "ui/common/symbol2.panel" 
+#include "ui/common/symbol2.panel" 
 
-		#include "ui/common/profile_oc.panel"
+#include "ui/common/profile_oc.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/common/tooltip.panel"
 
 		itemDef {
 			name button1
@@ -119,14 +123,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			textaligny 24
 			cvarTest "ui_menutab" showCVar { "0" }
 			cvarTest "ui_profileFromMP" showCvar { "1" }
-			cvarTest "ui_profileFromMP" hideCvar { "0" }
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			action {
-				close profile; 
-				uiScript update "ui_SetName";
-				open mpmenu;
 				play MP_SND_SELECT; 
+				close profile; 
+				open mpmenu;
+				uiScript update "ui_SetName";
 			}
 			visible 1 
 		}

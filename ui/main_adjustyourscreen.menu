@@ -50,14 +50,24 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
+		onOpen {
+		}
+		onClose {
+			close adjustyourscreen;
+			open mainmenu;
+		}
+		onESC {
+			close adjustyourscreen;
+			open mainmenu;
+		}
 		itemDef {
 			name button1
 			text "Done"
 			background "azurebuttonlong"
 			style 1
 			action {
+				close adjustyourscreen;
 				open mainmenu;
-				close adjustyourscreen
 			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2
@@ -243,10 +253,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			background "azurebuttonlong"
 			style 1
 			action {
+				close main;
+				open adjustyourscreen;
 				setcvar r_alternateBrightness 0;
 				exec "vid_restart";
-				open adjustyourscreen;
-				close main;
 			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2
@@ -264,10 +274,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			background "azurebuttonlong"
 			style 1
 			action {
+				close main;
+				open adjustyourscreen;
 				setcvar r_alternateBrightness 1;
 				exec "vid_restart";
-				open adjustyourscreen;
-				close main;
 			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2
@@ -285,10 +295,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			background "azurebuttonlong"
 			style 1
 			action {
+				close main;
+				open adjustyourscreen;
 				setcvar r_alternateBrightness 2;
 				exec "vid_restart";
-				open adjustyourscreen;
-				close main;
 			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2

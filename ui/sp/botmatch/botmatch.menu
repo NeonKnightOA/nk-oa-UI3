@@ -27,29 +27,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/menudef.h"
 
-/* Define zone */
-#define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	316
-#define MENU_ITEM_TITLE_Y	32
-#define MENU_ITEM_TITLE_WIDTH	300
-#define MENU_ITEM_TITLE_HEIGHT	400
-#define MENU_ITEM_0	64
-#define MENU_ITEM_1	96
-#define MENU_ITEM_2	128
-#define MENU_ITEM_3	160
-#define MENU_ITEM_4	192
-#define MENU_ITEM_5	224
-#define MENU_ITEM_6	256
-#define MENU_ITEM_7	288
-#define MENU_ITEM_8	320
-#define MENU_ITEM_9	352
-#define MENU_ITEM_COLUMN_1	32
-#define MENU_ITEM_COLUMN_2	332
-#define MENU_ITEM_WIDTH	256
-#define MENU_ITEM_HEIGHT	32
-#define MENU_ITEM_HEIGHT_2	64
-/* / Define zone */
-
 /* Botmatch: Create a custom botmatch. */
 {
 	assetGlobalDef {
@@ -71,29 +48,46 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		onOpen { 
 			uiScript loadArenas;
 		}
-		onEsc {
+		onClose {
+			play MP_SND_BACK;
 			close botmatch;
 			open spmenu;
 			setcvar ui_menutab 0;	// reset the tabs
+		}
+		onEsc {
 			play MP_SND_BACK;
+			close botmatch;
+			open spmenu;
+			setcvar ui_menutab 0;	// reset the tabs
 		}
 		/* Include Zone */
-		#include "ui/common/symbol2.panel" 
-		#include "ui/common/tooltip.panel"
-		#include "ui/sp/botmatch/botmatch_bots.panel"
-		#include "ui/sp/botmatch/botmatch_confirm.panel"
-		#include "ui/sp/botmatch/botmatch_gametypes.panel"
-		#include "ui/sp/botmatch/botmatch_maps.panel"
-		#include "ui/sp/botmatch/botmatch_score.panel"
-		/* /Include Zone */
 
+#include "ui/common/symbol2.panel"
+
+#include "ui/common/tooltip.panel"
+
+#include "ui/sp/botmatch/botmatch_bots.panel"
+
+#include "ui/sp/botmatch/botmatch_confirm.panel"
+
+#include "ui/sp/botmatch/botmatch_gametypes.panel"
+
+#include "ui/sp/botmatch/botmatch_maps.panel"
+
+#include "ui/sp/botmatch/botmatch_score.panel"
+
+		/* /Include Zone */
 		/* -----------------------------------------------------------
 		 TAB X - ALL
 		 ----------------------------------------------------------- */
 		itemDef {
 			name tab1
 			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 0;
+			}
 			text "Gametype"
 			rect 16 16 128 16
 			cvarTest "ui_menutab" hideCVar { "0" }
@@ -101,7 +95,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		itemDef {
 			name tab2
 			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 1; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 1;
+			}
 			text "Map"
 			rect 144 16 128 16
 			cvarTest "ui_gametype" hideCVar { "-1" }
@@ -110,7 +108,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		itemDef {
 			name tab3
 			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 2; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 2;
+			}
 			text "Rules"
 			rect 272 16 128 16
 			cvarTest "ui_gametype" hideCVar { "-1" }
@@ -119,7 +121,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		itemDef {
 			name tab4
 			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON action { setcvar ui_menutab 3; play MP_SND_SELECT; }
+			type ITEM_TYPE_BUTTON
+			action {
+				play MP_SND_SELECT;
+				setcvar ui_menutab 3;
+			}
 			text "Slots"
 			rect 400 16 128 16
 			cvarTest "ui_gametype" hideCVar { "-1" }
@@ -169,7 +175,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			text "Back"
 			cvarTest "ui_menutab" showCVar { "0" }
 			rect 32 384 256 32
-			action { close botmatch; open spmenu; setcvar ui_menutab 0; /* reset the tabs */ play MP_SND_SELECT; }
+			action {
+				play MP_SND_SELECT;
+				close botmatch;
+				open spmenu;
+				setcvar ui_menutab 0; // reset the tabs
+			}
 		}
 	}
 }
