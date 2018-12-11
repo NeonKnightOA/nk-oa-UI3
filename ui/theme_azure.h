@@ -107,3 +107,4 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define MP_KEYBINDMENU		"ui/panels/keybind2.bit"
 // uncomment this for simpler keybind choices
 
+/* For general menu sorting */
