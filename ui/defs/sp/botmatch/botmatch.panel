@@ -1,25 +1,5 @@
 
 /* Botmatch menu */
-/* Define zone */
-#define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	316
-#define MENU_ITEM_TITLE_Y	32
-#define MENU_ITEM_TITLE_WIDTH	300
-#define MENU_ITEM_TITLE_HEIGHT	400
-#define MENU_ITEM_1	96
-#define MENU_ITEM_2	128
-#define MENU_ITEM_3	160
-#define MENU_ITEM_4	192
-#define MENU_ITEM_5	224
-#define MENU_ITEM_6	256
-#define MENU_ITEM_7	288
-#define MENU_ITEM_8	320
-#define MENU_ITEM_9	352
-#define MENU_ITEM_COLUMN_1	32
-#define MENU_ITEM_COLUMN_2	332
-#define MENU_ITEM_WIDTH	256
-#define MENU_ITEM_HEIGHT	32
-/* / Define zone */
 /* -----------------------------------------------------------
 TAB 0 - GAMETYPE MODES
 ----------------------------------------------------------- */
@@ -32,14 +12,14 @@ onESC {
 itemDef { /* Title: Free for all modes */
 	name dmgamefield
 	background MP_DIALOGBG style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER backcolor MP_DIALOGBGCOLOR visible 1
-	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH_FULL MENU_ITEM_TITLE_HEIGHT_FULL
 	text "Free for All Modes"
 	cvarTest "ui_menutab" showCVar { "0" }
 }
 itemDef { /* Title: Teamplay modes */
 	name teamgamefield
 	background MP_DIALOGBG style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER backcolor MP_DIALOGBGCOLOR visible 1
-	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
+	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH_FULL MENU_ITEM_TITLE_HEIGHT_FULL
 	text "Teamplay Modes"
 	cvarTest "ui_menutab" showCVar { "0" }
 }
@@ -48,7 +28,7 @@ itemDef {
 	name ffa1
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Free For All"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -60,7 +40,7 @@ itemDef {
 	name ffa2
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Tournament"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -72,7 +52,7 @@ itemDef {
 	name ffa3
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Last Man Standing"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -84,7 +64,7 @@ itemDef {
 	name ffa4
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Possession"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -97,7 +77,7 @@ itemDef {
 	name team1
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Team Deathmatch"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -109,7 +89,7 @@ itemDef {
 	name team2
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Capture The Flag"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -121,7 +101,7 @@ itemDef {
 	name team3
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "One Flag CTF"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -133,7 +113,7 @@ itemDef {
 	name team4
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Overload"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -145,7 +125,7 @@ itemDef {
 	name team5
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Harvester"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -157,7 +137,7 @@ itemDef {
 	name team6
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Elimination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -169,7 +149,7 @@ itemDef {
 	name team7
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "CTF Elimination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -181,7 +161,7 @@ itemDef {
 	name team8
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Double Domination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 
@@ -193,7 +173,7 @@ itemDef {
 	name team9
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 
 	text "Domination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT; 

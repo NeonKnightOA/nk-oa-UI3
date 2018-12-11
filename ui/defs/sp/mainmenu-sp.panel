@@ -1,22 +1,5 @@
 
 /* The Single-Player menu. */
-/* Define Zone */
-/* 32 on 32 for menu items */
-#define MENU_ITEM_TITLE_Y		32
-#define MENU_ITEM_1		96
-#define MENU_ITEM_2		128
-#define MENU_ITEM_3		160
-#define MENU_ITEM_4		192
-#define MENU_ITEM_5		224
-#define MENU_ITEM_6		256
-#define MENU_ITEM_7		288
-#define MENU_ITEM_8		320
-#define MENU_ITEM_9		352
-#define MENU_ITEM_10		384
-#define MENU_ITEM_WIDTH	512
-#define MENU_ITEM_WID_SPL	256
-#define MENU_ITEM_HEIGHT	32
-/* /Define Zone */
 /* Title */
 itemDef {
 	name buttontip1
@@ -26,7 +9,7 @@ itemDef {
 	type ITEM_TYPE_BUTTON
 	textstyle 2
 	textscale 0.7
-	rect MMENU_OFFSETITEMH MENU_ITEM_TITLE_Y MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_TITLE_Y MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	decoration
 	textalign MMENU_ALIGNITEM
 	textalignx 256 
@@ -41,7 +24,7 @@ itemDef { /* Tutorials */
 	name buttonSPTutorials
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Tutorials"
-	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	/*action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -54,7 +37,7 @@ itemDef { /* Ladder */
 	name buttonSPLadder
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Ladder"
-	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -66,7 +49,7 @@ itemDef { /* Ladder */
 itemDef { /* Botmatch (a.k.a. Instant Action) */
 	name buttonSPBotmatch
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	text "Botmatch"
 	action {
 		play MP_SND_SELECT;
@@ -81,7 +64,7 @@ itemDef { /* Quick Match */
 	name buttonSPQuickMatch
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Quick Match"
-	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -93,7 +76,7 @@ itemDef { /* Arcade Mode */
 	name buttonSPArcade
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Arcade Mode"
-	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	/*action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -106,7 +89,7 @@ itemDef { /* Zone Domination */
 	name buttonSPZoneDomination
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Zone Domination"
-	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	/*action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -119,7 +102,7 @@ itemDef { /* Speedrun Mode */
 	name buttonSPSpeedrun
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Speedrun Mode"
-	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	/*action {
 		play MP_SND_SELECT;
 		close spmenu;
@@ -133,14 +116,14 @@ itemDef { /* Enable third-party maps */
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_CHECKBOX textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^1Enable third-party maps"
 	cvar "ui_thirdPartyMapsInSP"
-	rect MMENU_OFFSETITEMH MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_8 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Allows third-party maps for the Speedrun, Zone Domination, Arcade and Quick Match modes. Botmatch mode is always enabled for third-party maps." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
 } */
 itemDef { /* Back */
 	name buttonBack
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Back"
-	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close spmenu;

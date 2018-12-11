@@ -22,7 +22,7 @@ itemDef {
 	name ffa1
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Free For All"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -34,7 +34,7 @@ itemDef {
 	name ffa2
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Tournament"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -46,7 +46,7 @@ itemDef {
 	name ffa3
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Last Man Standing"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -58,7 +58,7 @@ itemDef {
 	name ffa4
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Possession"
-	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -71,7 +71,7 @@ itemDef {
 	name team1
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Team Deathmatch"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -83,7 +83,7 @@ itemDef {
 	name team2
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Capture The Flag"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -95,7 +95,7 @@ itemDef {
 	name team3
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "One Flag CTF"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -107,7 +107,7 @@ itemDef {
 	name team4
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Overload"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -119,7 +119,7 @@ itemDef {
 	name team5
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Harvester"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -131,7 +131,7 @@ itemDef {
 	name team6
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Elimination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_6 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -143,7 +143,7 @@ itemDef {
 	name team7
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "CTF Elimination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_7 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -155,7 +155,7 @@ itemDef {
 	name team8
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Double Domination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_8 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;
@@ -167,7 +167,7 @@ itemDef {
 	name team9
 	background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
 	text "Domination"
-	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MENU_ITEM_COLUMN_2 MENU_ITEM_9 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	cvarTest "ui_menutab" showCVar { "0" }
 	action {
 		play MP_SND_SELECT;

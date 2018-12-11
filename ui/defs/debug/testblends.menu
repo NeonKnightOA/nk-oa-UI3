@@ -24,15 +24,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define	GOBACKTOMAIN  "mainmenu"
 {
 	assetGlobalDef {
-	smallFont "gfx/2d/bigchars" 12
-	font "gfx/2d/bigchars" 16
-	bigFont "gfx/2d/bigchars" 48
-	cursor "ui/assets/cursor"
-	itemFocusSound MP_SND_HOVER
-	shadowColor 0.0 0.0 0.0 0.25
-	fadeClamp 1.0
-	fadeCycle 1
-	fadeAmount 0.1
+		smallFont "gfx/2d/bigchars" 12
+		font "gfx/2d/bigchars" 16
+		bigFont "gfx/2d/bigchars" 48
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
+		fadeClamp 1.0
+		fadeCycle 1
+		fadeAmount 0.1
 	}
 	menuDef {
 		name "blendtest"
@@ -43,6 +43,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
 		onOpen {
+		}
+		onClose {
+			close blendtest;
+			open debug;
+		}
+		onESC {
+			close blendtest;
+			open debug;
 		}
 		itemDef {
 			name button1

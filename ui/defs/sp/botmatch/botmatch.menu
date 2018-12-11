@@ -26,29 +26,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
    but i'd like to make the interface less daunting by default. */
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
-/* Define zone */
-#define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	316
-#define MENU_ITEM_TITLE_Y	32
-#define MENU_ITEM_TITLE_WIDTH	300
-#define MENU_ITEM_TITLE_HEIGHT	400
-#define MENU_ITEM_0	64
-#define MENU_ITEM_1	96
-#define MENU_ITEM_2	128
-#define MENU_ITEM_3	160
-#define MENU_ITEM_4	192
-#define MENU_ITEM_5	224
-#define MENU_ITEM_6	256
-#define MENU_ITEM_7	288
-#define MENU_ITEM_8	320
-#define MENU_ITEM_9	352
-#define MENU_ITEM_COLUMN_1	32
-#define MENU_ITEM_COLUMN_2	332
-#define MENU_ITEM_WIDTH	256
-#define MENU_ITEM_HEIGHT	32
-#define MENU_ITEM_HEIGHT_2	64
-/* / Define zone */
 
 /* Botmatch: Create a custom botmatch. */
 {
@@ -70,6 +49,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		focuscolor MP_TEXTCOLOR
 		onOpen { 
 			uiScript loadArenas;
+		}
+		onClose {
+			play MP_SND_BACK;
+			close botmatch;
+			open spmenu;
+			setcvar ui_menutab 0;	// reset the tabs
 		}
 		onEsc {
 			play MP_SND_BACK;

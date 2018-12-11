@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 #define	GOBACKTOMAIN  "mainmenu"
 {
 	assetGlobalDef {
@@ -43,6 +44,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
 		onOpen {
+		}
+		onClose {
+			close bilineartest;
+			open debug;
+		}
+		onESC {
+			close bilineartest;
+			open debug;
 		}
 		// These gradients are huge and should expose filtering precision.
 		itemDef {

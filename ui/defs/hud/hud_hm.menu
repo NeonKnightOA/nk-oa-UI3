@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // using the far corners of the screen and a simple scifi esque design.
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
 #define GOBACKTOMAIN "open ingame";
 

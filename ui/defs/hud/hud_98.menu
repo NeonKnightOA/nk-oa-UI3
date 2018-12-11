@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // which in reality is more like a '2' hud in '3' proportions and layout.
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
 #define	GOBACKTOMAIN  "open ingame";
 

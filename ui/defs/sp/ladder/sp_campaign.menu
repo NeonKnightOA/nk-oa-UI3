@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -40,6 +41,18 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		onOpen { 
 			uiScript loadGameInfo;
 			uiScript updateSPMenu;
+		}
+		onClose {
+			play MP_SND_BACK;
+			close spladder;
+			open spmenu;
+			setcvar ui_menutab 0;	// reset the tabs
+		}
+		onEsc {
+			play MP_SND_BACK;
+			close spladder;
+			open spmenu;
+			setcvar ui_menutab 0;	// reset the tabs
 		}
 
 #include "ui/defs/symbol2.panel"

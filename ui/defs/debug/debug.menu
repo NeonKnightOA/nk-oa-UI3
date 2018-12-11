@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
 // Debug menu - Things in this menu should be all about aiding with extra functions and information
 // for developers to use.  No fanciness.
@@ -42,6 +43,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
+		onOpen {
+		}
+		onClose {
+			close debug;
+			open mainmenu;
+		}
+		onESC {
+			close debug;
+			open mainmenu;
+		}
 		itemDef {
 			name buttonhmaina
 			text "Filtering Test"

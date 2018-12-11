@@ -61,24 +61,4 @@ itemDef {
 	visible 1 
 	mouseEnter { setcvar ui_cdkeychecked "Developmental image gallery!" fadein tooltip; } mouseExit { fadeout tooltip;} 
 }
-itemDef {
-	name buttonhmain5
-	text "Quit"
-	background MP_WIDEBUTTONBG
-	action {
-		play MP_SND_SELECT;
-		close extras;
-		open mainmenu;
-	}
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.5
-	rect 32 300 256 32
-	textalignx	 32	
-	textaligny	 24
-	forecolor MP_TEXTCOLOR
-	backcolor MP_BUTTONBGCOLOR
-	mouseEnter { setcvar ui_cdkeychecked "Return to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 
-	visible 1 
-}
+	

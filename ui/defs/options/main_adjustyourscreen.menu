@@ -29,6 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 //
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 #define GOBACKTOMAIN "mainmenu"
 {
 	assetGlobalDef {
@@ -50,6 +51,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
+		onOpen {
+		}
+		onClose {
+			close adjustyourscreen;
+			open mainmenu;
+		}
+		onESC {
+			close adjustyourscreen;
+			open mainmenu;
+		}
 		itemDef {
 			name button1
 			text "Done"

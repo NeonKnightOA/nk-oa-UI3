@@ -1,23 +1,4 @@
 
-/* Define Zone */
-/* 32 on 32 for menu items */
-#define MENU_ITEM_TITLE_Y		32
-#define MENU_ITEM_TITLE_WIDTH	256
-#define MENU_ITEM_TITLE_HEIGHT	32
-#define MENU_ITEM_1			96
-#define MENU_ITEM_2			128
-#define MENU_ITEM_3			160
-#define MENU_ITEM_4			192
-#define MENU_ITEM_5			224
-#define MENU_ITEM_6			256
-#define MENU_ITEM_7			288
-#define MENU_ITEM_8			320
-#define MENU_ITEM_9			352
-#define MENU_ITEM_10			384
-#define MENU_ITEM_WIDTH		512
-#define MENU_ITEM_WID_SPL		256
-#define MENU_ITEM_HEIGHT		32
-/* /Define Zone */
 /* Custom Zone */
 // Error
 itemDef {
@@ -106,7 +87,7 @@ itemDef { /* Single Player */
 	name buttonhmain1
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Single Player"
-	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -119,7 +100,7 @@ itemDef { /* Multiplayer */
 	name buttonhmain1
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Multiplayer"
-	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -132,7 +113,7 @@ itemDef { /* Game Options */
 	name buttonhmain2
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Game Options"
-	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -145,7 +126,7 @@ itemDef { /* Controls */
 	name buttonhmain2
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Controls"
-	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_4 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -158,7 +139,7 @@ itemDef { /* Profile */
 	name buttonhmain3
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Profile"
-	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_5 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -172,7 +153,7 @@ itemDef { /* Library */
 	name buttonhmods
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Library"
-	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_6 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -185,7 +166,7 @@ itemDef { /* Extras */
 	name buttonhmods
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Extras"
-	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_7 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -198,7 +179,7 @@ itemDef { /* Quit */
 	name buttonhmain5
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "Quit"
-	rect MMENU_OFFSETITEMH MENU_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_8 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;
@@ -210,7 +191,7 @@ itemDef { /* Debug Mode */
 	name buttonhmaina
 	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
 	text "^3Debug Mode"
-	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
 	action {
 		play MP_SND_SELECT;
 		close mainmenu;

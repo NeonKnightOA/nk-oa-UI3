@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
 {
 	assetGlobalDef {
@@ -41,6 +42,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		focuscolor MP_TEXTCOLOR
 		onOpen {
 		}
+		onClose {
+			close joinserver;
+			open mpmenu;
+		}
+		onESC {
+			close joinserver;
+			open mpmenu;
+		}
 
 #include "ui/defs/symbol2.panel"
 
@@ -48,5 +57,29 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/defs/tooltip.panel"
 
+		itemDef {
+			name button1
+			text "Cancel"
+			background MP_WIDEBUTTONBG
+			style 1
+			type ITEM_TYPE_BUTTON
+			textstyle 2
+			textscale 0.5
+			rect 32 384 256 32
+			textalignx	 32	
+			textaligny	 24
+			cvarTest "ui_menutab"
+			showCVar { "0" }
+			forecolor MP_TEXTCOLOR
+			backcolor MP_BUTTONBGCOLOR
+			mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+			action {
+				play MP_SND_SELECT;  
+				close joinserver;
+				open mpmenu;
+				setcvar ui_menutab 0;	// reset the tabs
+			}
+			visible 1 
+		}
 	}
 }

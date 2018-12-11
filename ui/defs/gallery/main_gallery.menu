@@ -21,15 +21,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
+#include "ui/menudef2.h"
 
 {
-assetGlobalDef {
-	smallFont "gfx/2d/bigchars" SMALLFONTSIZE
-	font "gfx/2d/bigchars" MEDIUMFONTSIZE
-	bigFont "gfx/2d/bigchars" LARGEFONTSIZE
-	cursor "ui/assets/cursor"
-	itemFocusSound MP_SND_HOVER
-	shadowColor 0.0 0.0 0.0 0.25
+	assetGlobalDef {
+		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
+		font "gfx/2d/bigchars" MEDIUMFONTSIZE
+		bigFont "gfx/2d/bigchars" LARGEFONTSIZE
+		cursor "ui/assets/cursor"
+		itemFocusSound MP_SND_HOVER
+		shadowColor 0.0 0.0 0.0 0.25
 	}
 	menuDef {
 		name "gallery"
@@ -39,6 +40,16 @@ assetGlobalDef {
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
+		onOpen {
+		}
+		onClose {
+			close gallery;
+			open mainmenu;
+		}
+		onESC {
+			close gallery;
+			open mainmenu;
+		}
 
 #include "ui/defs/gallery/gallery.panel"
 
