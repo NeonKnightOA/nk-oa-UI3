@@ -24,9 +24,8 @@ itemDef {
 	backcolor 0.1 0.2 0.5 0.8
 	scralign ALIGN_LEFT
 	action {
-		// close main;
-		close ingamemenu;
 		play MP_SND_SELECT;  
+		close ingamemenu;
 	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
@@ -47,9 +46,8 @@ itemDef {
 	backcolor MP_BUTTONBGCOLOR
 	scralign ALIGN_LEFT
 	action {
-		//close main;
-		close ingamemenu;
 		play MP_SND_SELECT;  
+		close ingamemenu;
 	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
@@ -89,12 +87,11 @@ itemDef {
 	scralign ALIGN_LEFT
 	backcolor MP_BUTTONBGCOLOR
 	action {
-		// close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
-		play MP_SND_SELECT;  
+		open ingameoptionsmenu;
 		setcvar ui_menutab "0";
-		open ingameoptionsmenu;	
 	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
@@ -105,12 +102,11 @@ itemDef {
 	background MP_WIDEBUTTONBG
 	group buttons
 	action {
-		// close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
-		play MP_SND_SELECT;  
+		open ingameprofile;
 		setcvar ui_menutab "0";
-		open ingameprofile;	
 	}
 	style 1
 	type ITEM_TYPE_BUTTON
@@ -141,12 +137,11 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	action {
-		// close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
+		open ingamecontrolsmenu;
 		setcvar ui_menutab "0";
-		play MP_SND_SELECT;  
-		open ingamecontrolsmenu;	
 	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
@@ -157,8 +152,7 @@ itemDef {
 	background MP_WIDEBUTTONBG
 	group buttons
 	action {
-		play MP_SND_SELECT;  
-		//close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
 		uiScript "quit";

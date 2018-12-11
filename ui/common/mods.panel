@@ -1,5 +1,6 @@
 
 #include "ui/common/borders600400.panel"
+
 /* -----------------------------------------------------------
    TAB 0 - Mods
    ----------------------------------------------------------- */
@@ -62,10 +63,10 @@ itemDef {
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	action {
-		uiScript runMod;
+		play MP_SND_SELECT;  
 		close mods; 
 		open mainmenu;
-		play MP_SND_SELECT;  
+		uiScript runMod;
 	}
 	visible 1 
 	cvarTest "ui_menutab"
@@ -132,12 +133,12 @@ itemDef {
      	textalignx	 32	
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
-	action	{ 
-		setcvar timedemo 0;
-		uiScript runDemo;
+	action { 
+		play MP_SND_SELECT;
 		close mods; 
 		open mainmenu;
-		play MP_SND_SELECT;  
+		setcvar timedemo 0;
+		uiScript runDemo;
 	}
 	visible 1 
 	cvarTest "ui_menutab"
@@ -157,12 +158,12 @@ itemDef {
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	action {
+		play MP_SND_SELECT;  
+		close mods; 
+		open mainmenu;
+		setcvar com_errorMessage "Benchmark result" 
 		setcvar timedemo 1;
 		uiScript runDemo;
-		close mods; 
-		setcvar com_errorMessage "Benchmark result" 
-		open mainmenu;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 	cvarTest "ui_menutab"
@@ -248,10 +249,10 @@ itemDef {
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	action {
-		uiScript runCinematic;
+		play MP_SND_SELECT;  
 		close mods; 
 		open mainmenu;
-		play MP_SND_SELECT;  
+		uiScript runCinematic;
 	}
 	visible 1 
 	cvarTest "ui_menutab"
@@ -275,7 +276,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 0;  play MP_SND_SELECT;   }
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 0;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
@@ -293,7 +297,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 1;  play MP_SND_SELECT;  }
+	action {
+		play MP_SND_SELECT; 
+		setcvar ui_menutab 1;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
@@ -311,7 +318,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 2;  play MP_SND_SELECT;  }
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 2;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }
@@ -329,7 +339,10 @@ itemDef {
      	textalignx	 16	
 	textaligny	 16
 	forecolor MP_TEXTCOLOR
-	action { setcvar ui_menutab 3;  play MP_SND_SELECT;  }
+	action {
+		play MP_SND_SELECT;
+		setcvar ui_menutab 3;
+	}
 	visible 1 
 	hexcolor 0 1 2 3	// color schemes
 }

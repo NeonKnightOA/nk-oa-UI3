@@ -13,10 +13,9 @@ itemDef {
 	textaligny	 24
 	forecolor MP_TEXTCOLOR
 	action {
-		//close main;
+		play MP_SND_SELECT;
 		close ingamequitmenu;
 		open ingame;
-		play MP_SND_SELECT;  
 	}
 	visible 1 
 	mouseEnter { setcvar ui_tip "Go back to the menu." fadein tooltip;   setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip;  setbackground MP_LONGBUTTONBG} 
@@ -27,8 +26,7 @@ itemDef {
 	text "Disconnect from server"
 	background MP_LONGBUTTONBG
 	action {
-		play MP_SND_SELECT;  
-		//close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
 		uiScript "leave";
@@ -55,13 +53,11 @@ itemDef {
 	action {
 		play MP_SND_SELECT;
 		close ingame;
+		open ingamequitmenu;
 		setcvar ui_menutab "0";
-		play MP_SND_SELECT;  
-		open ingamequitmenu;	
 	}
 	action {
-		play MP_SND_SELECT;  
-		//close main;
+		play MP_SND_SELECT;
 		close mainmenu;
 		close ingame;
 		uiScript "quit";
