@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 #include "ui/menudef.h"
+#include "ui/headers/commonbuttons.h"
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -54,28 +55,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			setcvar ui_menutab 0;	// reset the tabs
 		}
 
-#include "ui/defs/symbol2.panel"
+#include "ui/common/symbol2.panel"
 
-#include "ui/defs/sp/ladder/sp_selector.panel"
+#include "ui/sp/ladder/sp_selector.panel"
 
-#include "ui/defs/tooltip.panel"
+#include "ui/common/tooltip.panel"
 
 /* always have these buttons available */
 
-		itemDef { /* Cancel button */
-			name backbutton
-			background MP_WIDEBUTTONBG group uistuff style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR
-			mouseEnter { setcvar ui_tip "Go back to main menu" fadein tooltip; } mouseExit { fadeout tooltip; }
-			rect 32 384 256 32
-			text "Cancel"
-			action {
-				play MP_SND_SELECT;
-				close spladder;
-				open spmenu;
-				setcvar ui_sptab 0; // reset the tabs
-			}
-			visible 1
-		}
+		GOBACK_BUTTON("Cancel",spladder,spmenu,ui_sptab)
+
 		itemDef { /* Endurance button */
 			name endbutton
 			background MP_WIDEBUTTONBG group uistuff style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR

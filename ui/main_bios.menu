@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+#include "ui/headers/commonbuttons.h"
 
 // Biographies of player characters - might deprecate this
 
@@ -84,29 +85,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			visible 1 
 		}
 		// always have this button available
-		itemDef {
-			name button1
-			text "Back"
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 384 256 32
-			textalignx 32 
-			textaligny 24
-			cvarTest "ui_browserSortKey"
-			showCVar { "0" }
-			backcolor MP_BUTTONBGCOLOR
-			forecolor MP_TEXTCOLOR
-			mouseEnter { setcvar ui_cdkeychecked "Go back to extras menu." fadein tooltip; } mouseExit { fadeout tooltip;} 
-			action {
-				play MP_SND_SELECT; 
-				close bios;
-				open extras;
-				setcvar ui_browserSortKey 0; // reset the tabs
-			}
-			visible 1 
-		}
+		GOBACK_BUTTON("Back",bios,extras,ui_menutab)
 	}
 }

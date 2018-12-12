@@ -62,12 +62,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define TIP_VIDEO_MAPOVERBRIGHTBITS		"Controls the light amplification of the level."
 
 
-#define TIP_AUDIO_OPENAL			"Use the OpenAL driver, if available"
 #define TIP_AUDIO_VOLUME			"Adjust volume of the game."
 #define TIP_AUDIO_MUSICVOLUME			"Adjust volume of the music."
 #define TIP_AUDIO_VOICEVOLUME			"Volume of real-time voice communication"
 #define TIP_AUDIO_TAUNTS			"Allow voice taunts to be heard."
-#define TIP_AUDIO_OPENAL			"Enable 3D sound. ^3The options below are ignored."
+#define TIP_AUDIO_OPENAL			"Enables 3D audio via the OpenAL driver, if available. ^3The options below are ignored."
 #define TIP_AUDIO_QUALITY			"Lower or raise the fidelity of the audio."
 #define TIP_AUDIO_DEPTH				"Reduce the output quality of the sounds"
 #define TIP_AUDIO_SAMPLEFORMAT			"Format to load sound effects as. ^14-bit is slower, but saves memory"

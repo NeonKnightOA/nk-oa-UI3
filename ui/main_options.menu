@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+#include "ui/headers/commonbuttons.h"
 
 {
 	assetGlobalDef {
@@ -59,29 +60,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		#include "ui/common/options.panel"
 
 		// always have this button available
-		itemDef {
-			name button1
-			text "Okay!"
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 384 256 32
-			textalignx 32 
-			textaligny 24
-			cvarTest "ui_browserSortKey"
-			hideCVar { "9" }
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			action { 
-				play MP_SND_SELECT;
-				close optionsmenu;
-				open mainmenu; 
-				setcvar ui_menutab 0; // reset the tabs
-			}
-			visible 1 
-		}
+		GOBACK_BUTTON("Back",optionsmenu,mainmenu,ui_menutab)
 
 		#include "ui/common/tooltip.panel"
 

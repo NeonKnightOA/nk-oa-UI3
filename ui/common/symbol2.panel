@@ -1,4 +1,4 @@
-
+/*
 // Because some old peecees hate that spinning symbol. :(
 itemDef {
 	name backgroundwave
@@ -17,7 +17,7 @@ itemDef {
 	color 	MP_DIALOGBGCOLOR
 	cvarTest "ui_no3dbg"
 	hideCVar { "1" }
-}
+} */
 itemDef {
 	name backgroundwave
 	background "ui/assets/oawave"

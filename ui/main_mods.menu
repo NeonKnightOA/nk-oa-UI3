@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+#include "ui/headers/commonbuttons.h"
 
 {
 	assetGlobalDef {
@@ -60,26 +61,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/tooltip.panel"
 
-		itemDef {
-			name button1
-			text "Back"
-			background "azurebuttonlong"
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 364 256 32
-			textalignx 32 
-			textaligny 24
-			uiScript loadMods ; 
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			action {
-				play MP_SND_SELECT; 
-				close mods; 
-				open mainmenu;
-			}
-			visible 1 
-		}
+		GOBACK_BUTTON("Back",mods,mainmenu,ui_menutab)
 	}
 }

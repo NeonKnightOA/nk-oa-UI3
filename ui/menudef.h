@@ -21,7 +21,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-
 #define ITEM_TYPE_TEXT 0                  // simple text
 #define ITEM_TYPE_BUTTON 1                // button, basically text with a border 
 #define ITEM_TYPE_RADIOBUTTON 2           // toggle button, may be grouped 
@@ -396,12 +395,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
 // if building with this in your ../ui/ file you MUST remove the ui/!!
-#include "ui/lang_english.h" // load english language
-// #include "lang_fr.h" // load french
-// #include "lang_de.h" // load german
-// #include "lang_sp.h" // load spanish
-// #include "lang_ja.h" // load japanese (won't be for a while unfortunately)
-#include "ui/version.h" 	
+#include "ui/headers/lang_english.h" // load english language
+// #include "ui/headers/lang_fr.h" // load french
+// #include "ui/headers/lang_de.h" // load german
+// #include "ui/headers/lang_sp.h" // load spanish
+// #include "ui/headers/lang_ja.h" // load japanese (won't be for a while unfortunately)
+#include "ui/headers/version.h" 	
 
 
 // Text Scales and stuff

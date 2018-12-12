@@ -26,6 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
    but i'd like to make the interface less daunting by default. */
 
 #include "ui/menudef.h"
+#include "ui/headers/commonbuttons.h"
 
 /* Botmatch: Create a custom botmatch. */
 {
@@ -168,19 +169,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			cvarTest "ui_menutab" showCVar { "3" }
 		}
 		// always have this button available
-		itemDef {
-			name button1
-			background MP_WIDEBUTTONBG style 1 textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR backcolor MP_BUTTONBGCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
-			type ITEM_TYPE_BUTTON mouseEnter { setcvar ui_tip "Go back to main menu." fadein tooltip; } mouseExit { fadeout tooltip;}
-			text "Back"
-			cvarTest "ui_menutab" showCVar { "0" }
-			rect 32 384 256 32
-			action {
-				play MP_SND_SELECT;
-				close botmatch;
-				open spmenu;
-				setcvar ui_menutab 0; // reset the tabs
-			}
-		}
+		
+		GOBACK_BUTTON("Back",botmatch,spmenu,ui_menutab)
 	}
 }

@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 //
 
 #include "ui/menudef.h"
-#define GOBACKTOMAIN "mainmenu"
+#include "ui/headers/commonbuttons.h"
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -355,5 +355,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			textaligny 16
 			visible 1 
 		}
+		GOBACK_BUTTON("Back",adjustyourscreen,mainmenu,ui_menutab)
 	}
 }
