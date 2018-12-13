@@ -1,20 +1,4 @@
 
-// Offsets and Alignments for main menus and the like (to adjust for like, background decoration images)
-
-#define MMENU_ALIGNITEM		ITEM_ALIGN_CENTER
-#define MMENU_OFFSETITEMH		60
-#define TABPOSY				32
-
-// Scheme color choices
-#define HEXGENERIC			0 1 2 3
-#define HEXTITLE				0 -1 -1 -1
-#define HEXLISTBOX			0 1 2 3
-#define HEXMAINBUTTON			0 1 2 3
-#define HEXMAINBG				0 1 2 3
-#define HEXBORDERS			1 1 2 3
-
-#define MP_KEYBINDMENU		"ui/panels/keybind2.bit"
-// uncomment this for simpler keybind choices
 /*Title area*/
 #define MENU_ITEM_TITLE_X1	16
 #define MENU_ITEM_TITLE_X2	316

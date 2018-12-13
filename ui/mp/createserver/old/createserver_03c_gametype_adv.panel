@@ -19,7 +19,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "Warmup time in seconds." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_0 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Warmup Time "
 	cvar "g_Warmup"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -30,7 +30,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "Seconds between rounds." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_0 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Respawn Delay "
 	cvar "elimination_warmup"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -41,7 +41,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "Amount of time between weapon respawns." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Weapon Respawn Time "
 	cvar "g_weaponRespawn"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -52,7 +52,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Amount of time between weapon respawns." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Weapon Respawn Time "
 	cvar "g_weaponTeamRespawn"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -64,7 +64,7 @@ itemDef { /* Elimination mode w/o Vampire */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "Matches will be played with full arsenal, no self damage, and no pickups." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Elimination Mode "
 	cvar "g_elimination"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -76,7 +76,7 @@ itemDef { /* Vampire w/o Elimination mode */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "The maximum amount of health a player can take from vampirism." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Vampire Max Health "
 	cvar "g_vampire_max_health"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -89,7 +89,7 @@ itemDef { /* Elimination mode w/o Vampire */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "Matches will be played with full arsenal, no self damage, and no pickups." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Elimination Mode "
 	cvar "g_elimination"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -101,7 +101,7 @@ itemDef { /* Vampire w/o Elimination mode */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "The maximum amount of health a player can take from vampirism." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Vampire Max Health "
 	cvar "g_vampire_max_health"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -136,7 +136,7 @@ itemDef { /* (Over) Obelisk Health */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 2
 	mouseEnter { setcvar ui_tip "Teams must do this amount of damage to an obelisk in order to win." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Obelisk Health "
 	cvar "g_obeliskHealth"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -147,7 +147,7 @@ itemDef { /* (Over) Obelisk Respawn Delay */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Time between scoring and a new round." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Respawn Delay "
 	cvar "g_obeliskRespawnDelay"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -158,7 +158,7 @@ itemDef { /* (Over) Obelisk Regeneration Amount */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 2
 	mouseEnter { setcvar ui_tip "Regeneration points of the obelisk during rest." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Regeneration Rate "
 	cvar "g_obeliskRegenAmount"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -169,7 +169,7 @@ itemDef { /* (Over) Obelisk Regeneration Period */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 2
 	mouseEnter { setcvar ui_tip "Time in seconds between regenerations." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Regeneration Period "
 	cvar "g_obeliskRegenPeriod"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -183,7 +183,7 @@ itemDef { /* (Harv) Skuls From Bodies */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "If checked, skulls will spawn from the fragged player's body." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Spawn From Bodies "
 	cvar "g_harvesterFromBodies"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -194,7 +194,7 @@ itemDef { /* (Harv) Skull Decay Timeout */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Time between a skull spawns and vanishes if no team member picks it up." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Skull Decay "
 	cvar "g_cubeTimeout"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -208,7 +208,7 @@ itemDef { /* (Elim) Active Warmup Time */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 5
 	mouseEnter { setcvar ui_tip "Seconds before the actual round begins." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Warmup Time "
 	cvar "elimination_activewarmup"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -219,7 +219,7 @@ itemDef { /* (Elim) Round Time */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Duration, in seconds, of the round." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Round Time "
 	cvar "elimination_roundTime"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -230,7 +230,7 @@ itemDef { /* (Elim) Lock Spectators */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_MULTI cvarFloatList { "Anybody" 0 "Anybody but enemies" 1 "Team Only" 2 }
 	mouseEnter { setcvar ui_tip "Specifies who the spectators can follow." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_5 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Spect. Can Follow "
 	cvar "elimination_lockspectator"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -241,7 +241,7 @@ itemDef { /* (Elim) Starting Armor */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Players will have this amount of armor at the beginning." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Starting Armor "
 	cvar "elimination_startArmor"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -252,7 +252,7 @@ itemDef { /* (Elim) Starting Health */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Players will have this amount of health at the beginning." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Starting Health "
 	cvar "elimination_startHealth"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -263,7 +263,7 @@ itemDef { /* (Elim) Self Damage */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "If checked, players can hurt themselves with their own weapon fire." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_5 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Self Damage "
 	cvar "elimination_selfDamage"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -278,7 +278,7 @@ itemDef { /* (eCTF) One Way Mode */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "Teams assume attacker and defender roles, and the roles are switched at the end of every round." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_6 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "One-Way Mode "
 	cvar "g_harvesterFromBodies"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -292,7 +292,7 @@ itemDef { /* Amount of Lives */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Specifies the amount of lives per player." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Amount of lives "
 	cvar "g_lms_lives"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -303,7 +303,7 @@ itemDef { /* Score Mode */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_MULTI cvarFloatList { "Round+OT" 0 "Only Round" 1 "Kill+OT" 2 "Only Kill" 2 }
 	mouseEnter { setcvar ui_tip "Specifies the scoring configuration." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Score mode "
 	cvar "g_lms_mode"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -317,7 +317,7 @@ itemDef { /* Capture Time */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Teams score a point after holding the flag during these seconds." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Capture Time "
 	cvar "g_ddCapture Time"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
@@ -328,7 +328,7 @@ itemDef { /* Respawn Delay */
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 4
 	mouseEnter { setcvar ui_tip "Time between scoring and a new round." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
+   	rect MENU_ITEM_COLUMN_3 MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
       	text "Respawn Delay "
 	cvar "g_ddRespawnDelay"
 	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }

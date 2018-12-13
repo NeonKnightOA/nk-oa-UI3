@@ -21,7 +21,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+
 #include "ui/headers/commonbuttons.h"
+
+#include "ui/headers/commoncontrols.h"
 
 {
 	assetGlobalDef {
@@ -55,14 +58,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			setcvar ui_menutab 0; // reset the tabs
 		}
 
-		#include "ui/common/symbol2.panel" 
+#include "ui/common/symbol2.panel" 
 
-		#include "ui/common/controls.panel"
+#include "ui/common/controls.panel"
 
-		// always have this button available
-		GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab)
+// always have this button available
 
-		#include "ui/common/tooltip.panel"
+GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab)
+
+#include "ui/common/tooltip.panel"
 
 	}
 }

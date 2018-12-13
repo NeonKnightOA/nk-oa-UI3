@@ -22,7 +22,7 @@ itemDef {
 	type ITEM_TYPE_NUMERICFIELD maxchars 3
 	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME
 	mouseEnter { setcvar ui_tip "When this is hit, the match ends." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_0 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Frag Limit "
 	cvar "fraglimit"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -32,7 +32,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 3
 	mouseEnter { setcvar ui_tip "Amount of minutes allowed in the match." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Time Limit "
 	cvar "timelimit"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -43,7 +43,7 @@ itemDef {
 	type ITEM_TYPE_NUMERICFIELD maxchars 3
 	ownerdrawflag UI_SHOW_NETANYTEAMGAME
 	mouseEnter { setcvar ui_tip "How many captures needed for victory" fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_1 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Capture Limit "
 	cvar "capturelimit"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -54,7 +54,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_NUMERICFIELD maxchars 3
 	mouseEnter { setcvar ui_tip "How much life is obtained on damaging." fadein tooltip; } mouseExit { fadeout tooltip;}
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_0 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_0 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Vampire "
 	cvar "g_vampire"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -64,7 +64,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "Players have instant death railguns" fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Instagib "
 	cvar "g_instantgib"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -74,7 +74,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "All players have rocket launcher." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Rockets Only "
 	cvar "g_rockets"
 	cvarTest "ui_menutab" showCVar { "2" }
@@ -84,7 +84,7 @@ itemDef {
 	background MP_FATBUTTONBG style 1 textstyle 6 textscale 0.333 textalignx 32 textaligny 26 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
 	type ITEM_TYPE_CHECKBOX
 	mouseEnter { setcvar ui_tip "Percentage of friendly fire returned to attacker" fadein tooltip; } mouseExit { fadeout tooltip;} 	
-   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT_2
+   	rect MENU_ITEM_COLUMN_2 MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT_2
       	text "Friendly Fire "
 	cvar "g_friendlyfire"
 	cvarTest "ui_menutab" showCVar { "2" }
