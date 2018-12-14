@@ -1,0 +1,56 @@
+
+CONTROLS_TITLE(MENU_TAB_6,MENU_ITEM_TITLE_X1,"Advanced gametype options")
+/* Left column: general gameplay options */
+CONTROLS_CHECKBOX_HIDE(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_1,"Elimination Mode ","g_elimination","ui_netGametype",7 8 9,"Matches will be played with full arsenal, no self damage, and no pickups.")
+CONTROLS_NUMERIC_HIDE(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_2,"Warmup Time ","g_Warmup",5,"ui_netGametype",7 8 9,"Warmup time in seconds.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_2,"Respawn Delay ","elimination_warmup",5,"ui_netGametype",7 8 9,"Warmup time in seconds.")
+CONTROLS_NUMERIC_HIDE(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_3,"Weapon Respawn Time ","g_weaponRespawn",5,"ui_netGametype",2,"Seconds between rounds.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_3,"Weapon Respawn Time ","g_weaponTeamRespawn",5,"ui_netGametype",2,"Amount of time between weapon respawns.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_1,MENU_ITEM_4,"Vampire Max Health ","g_vampire_max_health",5,"g_vampire",1,"The maximum amount of health a player can take from vampirism.")
+/* Right column: gametype-specific options */
+/* Overload */
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Obelisk Health ","g_obeliskHealth",5,"ui_netGametype",5,"Teams must do this amount of damage to an obelisk in order to win.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Respawn Delay ","g_obeliskRespawnDelay",5,"ui_netGametype",5,"Time between scoring and a new round.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_3,"Regeneration Rate ","g_obeliskRegenAmount",5,"ui_netGametype",5,"Regeneration points of the obelisk during rest.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_4,"Regeneration Period ","g_obeliskRegenPeriod",5,"ui_netGametype",5,"Time in seconds between regenerations.")
+/* Harvester */
+CONTROLS_CHECKBOX_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Spawn From Bodies ","g_harvesterFromBodies","ui_netGametype",6,"If checked, skulls will spawn from the fragged player's body.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Skull Decay ","g_cubeTimeout",4,"ui_netGametype",6,"Time between a skull spawns and vanishes if no team member picks it up.")
+/* Elimination */
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Warmup Time ","elimination_activewarmup",5,"ui_netGametype",7 8 9,"Seconds before the actual round begins.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Round Time ","elimination_roundTime",4,"ui_netGametype",7 8,"Duration, in seconds, of the round.")
+CONTROLS_MULTI_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_3,"Spect. Can Follow ","elimination_lockspectator",{ "Anybody" 0 "Anybody but enemies" 1 "Team Only" 2 },"ui_netGametype",7 8,"Specifies who the spectators can follow.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_4,"Starting Armor ","elimination_startArmor",4,"ui_netGametype",7 8,"Players will have this amount of armor at the beginning.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_5,"Starting Health ","elimination_startHealth",4,"ui_netGametype",7 8,"Players will have this amount of health at the beginning.")
+CONTROLS_CHECKBOX_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_6,"Self Damage ","elimination_selfDamage","ui_netGametype",7 8,"If checked, players can hurt themselves with their own weapon fire.")
+/* eCTF */
+CONTROLS_CHECKBOX_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_7,"One-Way Mode ","elimination_ctf_oneway","ui_netGametype",8,"Teams assume attacker and defender roles, and the roles are switched at the end of every round.")
+/* LMS */
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Amount of lives ","g_lms_lives",4,"ui_netGametype",9,"Specifies the amount of lives per player.")
+CONTROLS_MULTI_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_3,"Score mode ","g_lms_mode",{ "Round+OT" 0 "Only Round" 1 "Kill+OT" 2 "Only Kill" 2 },"ui_netGametype",9,"Specifies the scoring configuration.")
+/* DD */
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Capture Time ","g_ddCapture Time",4,"ui_netGametype",10,"Teams score a point after holding the flag during these seconds.")
+CONTROLS_NUMERIC_SHOW(MENU_TAB_6,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Respawn Delay ","g_ddRespawnDelay",4,"ui_netGametype",10,"Time between scoring and a new round.")
+/* --------------------------------------------- */
+itemDef {
+      	name buttontonext
+      	text "Back"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 32 384 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab" showCVar { MENU_TAB_6 }
+	mouseEnter { setcvar ui_tip "Return to rules screen." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		setcvar ui_menutab MENU_TAB_3;
+		play MP_SND_SELECT;
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}

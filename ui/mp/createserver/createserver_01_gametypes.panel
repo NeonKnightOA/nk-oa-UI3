@@ -1,53 +1,8 @@
 
-/* Gametypes tab */
+CONTROLS_TITLE(MENU_TAB_1,MENU_ITEM_TITLE_X1,"Free For All Modes")
+CONTROLS_TITLE(MENU_TAB_1,MENU_ITEM_TITLE_X2,"Teamplay Modes")
 
-// -----------------------------------------------------------
-// TAB 0 - GAMETYPE MODES
-// -----------------------------------------------------------
-
-itemDef {
-      	name dmgamefield
-	text	"Free for All Modes"
-	background MP_DIALOGBG
-	backcolor 	MP_DIALOGBGCOLOR
-	style 1
-	type 0
-	textstyle 2
-      	textscale 0.5
-	cvarTest "ui_menutab"
-	showCVar { "0" }
-	decoration
-   	rect 16 32 300 400
-     	textalignx	 32	
-	textaligny	 24
-	border 1
-	bordercolor   MP_BOX_BORDER
-	visible 1 
-	hexcolor 0 1 2 3	// color schemes
-}
-
-itemDef {
-      	name teamgamefield
-	text	"Teamplay Modes"
-	background MP_DIALOGBG
-	backcolor 	MP_DIALOGBGCOLOR
-	style 1
-	type 0
-	textstyle 2
-      	textscale 0.5
-	decoration
-	cvarTest "ui_menutab"
-	showCVar { "0" }
-   	rect 316 32 300 400
-     	textalignx	 32	
-	textaligny	 24
-	border 1
-	bordercolor   MP_BOX_BORDER
-	visible 1 
-	hexcolor 0 1 2 3	// color schemes
-}
-
-
+MENUITEM(_position,_text,_closemenu,_openmenu,_tipmenu)
 
 itemDef {
       	name button1

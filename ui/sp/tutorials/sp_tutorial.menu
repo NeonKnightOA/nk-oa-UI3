@@ -21,8 +21,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
-#include "ui/headers/commonbuttons.h"
+
 #include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commonsingleplayer.h"
+
+#include "ui/headers/commonbuttons.h"
 
 /* Tutorials: Learn how to play through a series of tutorials. */
 
@@ -47,11 +51,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
 		onOpen {
-			setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
-			setcvar ui_currentMap 2;
-			setcvar fraglimit 10;
+			setcvar ui_tip "Learn the basics of OpenArena.";
+			setcvar ui_currentMap 0;
+			setcvar fraglimit 5;
 			setcvar capturelimit 0;
-			setcvar timelimit 10;
+			setcvar timelimit 0;
 			setcvar "";
 			setcvar "";
 			setcvar "";
@@ -106,9 +110,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 		/* Rungs */
 
-		SP_RUNG("FFA Tutorial",0,"","ui_sp_unlock_0",0,"Learn the basics of OpenArena.",MENU_ITEM_1,5,0,0,"","","","")
-		SP_RUNG("FFA Tutorial 2",1,"","ui_sp_unlock_1",0,"Learn the basics of OpenArena.",MENU_ITEM_2,5,0,0,"","","","")
-/*		SP_RUNG("",,"","",,"",,,,,"","","","") */
+SP_RUNGFREE("FFA Tutorial",0,0,"Learn the basics of OpenArena.",MENU_ITEM_1,5,0,0,"","","","")
+SP_RUNGFREE("FFA Tutorial 2",1,0,"Learn the basics of OpenArena.",MENU_ITEM_2,5,0,0,"","","","")
 
 		/* Common Stuff Area */
 
@@ -116,7 +119,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/common/tooltip.panel"
 
-		GOBACK_BUTTON("Cancel",tutorials,spladder, ui_sptab)
+GOBACK_BUTTON("Cancel",tutorials,spladder, ui_sptab);
 
 		itemDef { /* FIGHT! button */
 			name buttong

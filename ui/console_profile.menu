@@ -49,9 +49,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			open mainmenu;
 			play MP_SND_SELECT;  
 		}
-		#include "ui/common/symbol2.panel"          
-		#include "ui/console/profile_unlockable.panel"
-		#include "ui/common/tooltip.panel"
+
+#include "ui/common/symbol2.panel"
+
+#include "ui/console/profile_unlockable.panel"
+
+#include "ui/common/tooltip.panel"
+
 		itemDef {
 			name button1
 			text "Okay!"
@@ -95,9 +99,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			open mpmenu;
 			play MP_SND_SELECT;  
 		}
-		#include "ui/common/symbol2.panel"          
-		#include "ui/console/profile_unlockable.panel"
-		#include "ui/common/tooltip.panel"
+
+#include "ui/common/symbol2.panel"
+
+#include "ui/console/profile_unlockable.panel"
+
+#include "ui/common/tooltip.panel"
+
 		itemDef {
 			name button1
 			text "Okay!"

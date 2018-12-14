@@ -1,0 +1,51 @@
+
+CONTROLS_TITLE(MENU_TAB_5,MENU_ITEM_TITLE_X1,"Networking")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_0,"Req. Password ","g_needPassword","If set, the match requires a password.")
+CONTROLS_TEXTFIELD(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_1,"Password ","g_password","The password required to join the match.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_2,"Delag Hitscan ","g_delagHitscan","Removes the need to predict enemy weapon fire.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_3,"Autoswitch Map ","g_autonextmap","If checked, switches automatically to the next map.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_4,"Allow Downloads ","sv_allowdownload","If checked, players will download missing packages.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_5,"Allow Voting ","sv_allowvote","If checked, players can vote after the end of the match.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_6,"Minimum Ping ","sv_minping",3,"Determines the lowest amount of ping a player can have.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_7,"Maximum Ping ","sv_maxping",3,"Determines the highest amount of ping a player can have.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_8,"Join On Enter ","g_teamautojoin","Forces players to join the match after connecting.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_1,MENU_ITEM_9,"Reconnect Limit ","sv_reconnectLimit",3,"Time between allowed reconnections in order to stop flooding.")
+
+CONTROLS_TITLE(MENU_TAB_5,MENU_ITEM_TITLE_X2,"Game rules")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_0,"Auto Team Balance ","g_teamForceBalance","Forces players to even up the teams.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Respawn Wave Time ","g_respawnTime",5,"Players will respawn after this amount of time.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Catchup Rate ","g_catchup",5,"Rate of catchup.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_3,"Forward speed ","g_speed",5,"Controls the player's forward speed.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_4,"Knockback ","g_knockback",5,"Controls the weapon fire knockback.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_5,"Map Gravity ","g_gravity",5,"Controls the gravity setting of the map.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_6,"Server Grav. Rate ","g_gravityModifier",5,"Controls the amount of gravity of the server.")
+CONTROLS_CHECKBOX(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_7,"Award Pushing ","g_awardPushing","If checked, players get a point for killing suiciding players.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_8,"Quad Factor ","g_quadFactor",5,"Specifies how much damage the Quad Damage adds to the weapon.")
+CONTROLS_NUMERIC(MENU_TAB_5,MENU_ITEM_COLUMN_2,MENU_ITEM_9,"Damage Mod. ","g_damageModifier",5,"Controls the amount of damage done by weapons and triggers.")
+/* --------------------------------------------- */
+/* Column 2 */
+/* --------------------------------------------- */
+itemDef {
+      	name buttontonext
+      	text "Back"
+	background MP_WIDEBUTTONBG
+	style 1
+	type ITEM_TYPE_BUTTON
+	textstyle 2
+      	textscale 0.5
+   	rect 332 384 256 32
+     	textalignx	 32	
+	textaligny	 24
+	cvarTest "ui_menutab"
+	showCVar { MENU_TAB_5 }
+	mouseEnter { setcvar ui_tip "Return to rules screen." fadein tooltip; } mouseExit { fadeout tooltip;} 	
+	forecolor MP_TEXTCOLOR
+	backcolor MP_BUTTONBGCOLOR
+	action {
+		setcvar ui_menutab MENU_TAB_3;
+		play MP_SND_SELECT;
+	}
+	visible 1
+	hexcolor 0 1 2 3	// color schemes 
+}
+

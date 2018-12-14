@@ -20,8 +20,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 #include "ui/menudef.h"
-#include "ui/headers/commonbuttons.h"
+
 #include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commonbuttons.h"
+
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -64,7 +67,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 /* always have these buttons available */
 
-		GOBACK_BUTTON("Cancel",spladder,spmenu,ui_sptab)
+		GOBACK_BUTTON("Cancel",spladder,spmenu,ui_sptab);
 
 		itemDef { /* Endurance button */
 			name endbutton

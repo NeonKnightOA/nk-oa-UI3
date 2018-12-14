@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+
 #include "ui/headers/commonbuttons.h"
 
 // Biographies of player characters - might deprecate this
@@ -53,11 +54,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			open extras;
 		}
 
-		#include "ui/common/symbol.panel" 
+#include "ui/common/symbol.panel" 
 
-		#include "ui/common/bios.panel"
+#include "ui/common/bios.panel"
 
-		#include "ui/common/tooltip.panel"
+#include "ui/common/tooltip.panel"
 
 		/* -----------------------------------------------------------
 		TAB X - ALL
@@ -85,6 +86,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			visible 1 
 		}
 		// always have this button available
-		GOBACK_BUTTON("Back",bios,extras,ui_menutab)
+		GOBACK_BUTTON("Back",bios,extras,ui_menutab);
 	}
 }

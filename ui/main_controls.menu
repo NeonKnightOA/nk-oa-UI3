@@ -22,9 +22,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/menudef.h"
 
-#include "ui/headers/commonbuttons.h"
+#include "ui/headers/commontabs.h"
 
-#include "ui/headers/commoncontrols.h"
+#include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commonwidgets.h"
+
+#include "ui/headers/commonbuttons.h"
 
 {
 	assetGlobalDef {
@@ -48,8 +52,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		onOpen {
 		}
 		onClose {
+			play MP_SND_BACK;
 			close controlsmenu;
 			open mainmenu;
+			setcvar ui_menutab 0; // reset the tabs
 		}
 		onEsc { 
 			play MP_SND_BACK;
@@ -62,11 +68,21 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/controls.panel"
 
-// always have this button available
-
-GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab)
-
 #include "ui/common/tooltip.panel"
+
+		/* Tabs */
+
+TAB(MENU_TAB_1,"Movement",MENU_TAB_NAME_1);
+
+TAB(MENU_TAB_2,"Weapons",MENU_TAB_NAME_2);
+
+TAB(MENU_TAB_3,"Actions",MENU_TAB_NAME_3);
+
+TAB(MENU_TAB_4,"Misc",MENU_TAB_NAME_4);
+
+		/* Back button */
+
+GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab);
 
 	}
 }

@@ -56,14 +56,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			setcvar ui_menutab 0; // reset the tabs
 		}
 
-		#include "ui/common/symbol2.panel" 
+#include "ui/common/symbol2.panel" 
 
-		#include "ui/common/options.panel"
+#include "ui/common/options.panel"
 
 		// always have this button available
-		GOBACK_BUTTON("Back",optionsmenu,mainmenu,ui_menutab)
+		GOBACK_BUTTON("Back",optionsmenu,mainmenu,ui_menutab);
 
-		#include "ui/common/tooltip.panel"
+#include "ui/common/tooltip.panel"
 
 	}
 }

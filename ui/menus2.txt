@@ -10,25 +10,10 @@
 	loadMenu { "ui/sp/main.menu" }
 	loadMenu { "ui/sp/botmatch/botmatch.menu" }
 	loadMenu { "ui/sp/tutorials/sp_tutorial.menu" }
-/*	loadMenu { "ui/sp/ladder/sp_transition.menu" }
-	loadMenu { "ui/sp/ladder/sp_campaign.menu" }
-	loadMenu { "ui/sp/ladder/sp_rungs.menu" }
-	loadMenu { "ui/sp/ladder/00_tutorial_campaign.menu" }
-	loadMenu { "ui/sp/ladder/01_ffa_campaign.menu" }
-	loadMenu { "ui/sp/ladder/02_pos_campaign.menu" }
-	loadMenu { "ui/sp/ladder/03_lms_campaign.menu" }
-	loadMenu { "ui/sp/ladder/04_team_campaign.menu" }
-	loadMenu { "ui/sp/ladder/05_elim_campaign.menu" }
-	loadMenu { "ui/sp/ladder/06_dom_campaign.menu" }
-	loadMenu { "ui/sp/ladder/07_ddom_campaign.menu" }
-	loadMenu { "ui/sp/ladder/08_over_campaign.menu" }
-	loadMenu { "ui/sp/ladder/09_1fctf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/10_ctf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/11_ectf_campaign.menu" }
-	loadMenu { "ui/sp/ladder/12_harv_campaign.menu" }
-	loadMenu { "ui/sp/ladder/13_1on1_campaign.menu" }
-	loadMenu { "ui/sp/ladder/14_1on1bonus_campaign.menu" } */
 	loadMenu { "ui/sp/quickmatch/quickmatch.menu" }
+	loadMenu { "ui/sp/ladder/sp_transition.menu" }
+	loadMenu { "ui/sp/ladder/sp_campaigns.menu" }
+	loadMenu { "ui/sp/ladder/sp_selector.menu" }
 
 	/* Multiplayer submenu */
 	loadMenu { "ui/mp/main.menu" }

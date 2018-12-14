@@ -54,8 +54,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			close transition_sp;
 		}
 
-		#include "ui/common/symbol2.panel"
-		#include "ui/common/tooltip.panel"
+#include "ui/common/symbol2.panel"
+
+#include "ui/common/tooltip.panel"
 
 		itemDef {
 			name windowone

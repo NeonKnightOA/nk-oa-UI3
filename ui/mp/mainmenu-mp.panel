@@ -1,52 +1,7 @@
 
-itemDef {
-	name buttontip1
-	text "Multiplayer"
-	background MP_LONGBUTTONBG
-	style 1
-	type ITEM_TYPE_BUTTON
-	textstyle 2
-	textscale 0.7
-	rect MMENU_OFFSETITEMH MENU_ITEM_TITLE_Y MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
-	decoration
-	textalign MMENU_ALIGNITEM
-	textalignx 256 
-	textaligny 24
-	forecolor MP_TEXTCOLOR
-	visible 1 
-	hexcolor 0 1 2 3 // color schemes
-}
-/* /Title */
-/* Button Zone */
-itemDef { /* Player profile */
-	name buttonhmods
-	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	text "Profile"
-	rect MMENU_OFFSETITEMH MENU_ITEM_1 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open profile; }
-	mouseEnter { setcvar ui_tip "Customize your profile." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
-}
-itemDef { /* Join server */
-	name buttonhmain1
-	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	text "Join server"
-	rect MMENU_OFFSETITEMH MENU_ITEM_2 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open joinserver; }
-	mouseEnter { setcvar ui_tip "Join an existing server." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
-}
-itemDef { /* Create server */
-	name buttonhmaina
-	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	rect MMENU_OFFSETITEMH MENU_ITEM_3 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
-	text "Create server"
-	action { play MP_SND_SELECT; close mpmenu; open createserver; }
-	mouseEnter { setcvar ui_tip "Create a server so others can play with you." fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
-}
-itemDef { /* Back */
-	name buttonhmain5
-	background MP_LONGBUTTONBG style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalign MMENU_ALIGNITEM textalignx 256 textaligny 24 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3 // color schemes
-	text "Back"
-	rect MMENU_OFFSETITEMH MENU_ITEM_9 MENU_ITEM_WIDTH_LARGE MENU_ITEM_HEIGHT
-	action { play MP_SND_SELECT; close mpmenu; open mainmenu; }
-	mouseEnter { setcvar ui_tip "Go back to the main menu" fadein tooltip; setbackground MP_LONGBUTTONBGA } mouseExit { fadeout tooltip; setbackground MP_LONGBUTTONBG} 
-}
+MENUTITLE("Multiplayer");
+MENUITEMACTION(MENU_ITEM_1,"Profile",mainmenu,profile,setcvar ui_profileFromMP 1,"Choose your character and set health handicap.");
+MENUITEM(MENU_ITEM_2,"Join server",mpmenu,joinserver,"Join an existing server.");
+MENUITEM(MENU_ITEM_3,"Create server",mpmenu,createserver,"Create a server so others can play with you.");
+MENUITEM(MENU_ITEM_9,"Back",mpmenu,mainmenu,"Go back to the main menu");
+

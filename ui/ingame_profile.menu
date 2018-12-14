@@ -39,17 +39,25 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
 		backcolor MP_DIALOGBGCOLOR 
-		onOpen { uiScript update "ui_GetName"; }
+		onOpen {
+			uiScript update "ui_GetName";
+		}
 		onEsc {
 			close ingameprofile; 
 			open ingame;
 			play MP_SND_BACK; 
+			uiScript update "ui_SetName";
 		}
-		onClose { uiScript update "ui_SetName"; }
+		onClose {
+			close ingameprofile; 
+			open ingame;
+			play MP_SND_BACK; 
+			uiScript update "ui_SetName";
+		}
 
-		#include "ui/common/symbol4.panel"
+#include "ui/common/symbol4.panel"
 
-		#include "ui/common/profile_oc.panel"
+#include "ui/common/profile_oc.panel"
 
 		itemDef {
 			name button1
