@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Welcome to Team Deathmatch. Here you'll play with fellows against a rival team. Be the one team to rule them all!";
+	setcvar ui_currentMap 11;
+	setcvar ui_gametype 2;
+	setcvar g_gametype 3;
+	setcvar fraglimit 35;
+	setcvar capturelimit 0;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_04_team;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_04_team;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Team Deathmatch"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Meet Your Mates",11,"ui_sp_unlock_11",2,"Welcome to Team Deathmatch. Here you'll play with fellows against a rival team. Be the one team to rule them all!",MENU_ITEM_1,35,0,10,"","","","")
+SP_RUNG("Chaotic Match",12,"ui_sp_unlock_12",2,"Since you got used so well to play in teams, here are other two bots to challenge you.",MENU_ITEM_2,50,0,10,"","","","")
+SP_RUNG("Friendly Fire",13,"ui_sp_unlock_13",2,"Another special rules match. In Friendly Fire matches, any damage you inflict on your teammates can be lethal, so watch your fire!",MENU_ITEM_3,65,0,15,"Friendly Fire","g_friendlyFire 1","","")
+

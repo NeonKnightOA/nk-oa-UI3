@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Double Domination has two teams battling to take control AND keep two points in order to score. Turtling is fundamental to DD, so make the most of it.";
+	setcvar ui_currentMap 20;
+	setcvar ui_gametype 10;
+	setcvar g_gametype 11;
+	setcvar fraglimit 0;
+	setcvar capturelimit 3;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_07_ddom;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_07_ddom;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Double Domination"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Double Trouble",20,"ui_sp_unlock_20",10,"Double Domination has two teams battling to take control AND keep two points in order to score. Turtling is fundamental to DD, so make the most of it.",MENU_ITEM_1,0,3,10,"","","","")
+SP_RUNG("Jump!",21,"ui_sp_unlock_21",10,"Two teams spawn in the middle of this fortification and have to hold the points. Remember: in space, no one can hear you.",MENU_ITEM_2,0,5,10,"","","","")
+SP_RUNG("Quick Capture",22,"ui_sp_unlock_22",10,"Special rule time! Teams only need to hold both points for 3 seconds in order to score. The map is large, however, so use the largeness to your advantage.",MENU_ITEM_3,0,7,15,"3 seconds to win","g_ddCaptureTime 3","","")
+

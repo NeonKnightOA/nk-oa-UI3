@@ -21,7 +21,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 #include "ui/menudef.h"
+
 #include "ui/headers/commonbuttons.h"
+
+#include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commonwidgets.h"
 
 {
 	assetGlobalDef {
@@ -40,7 +45,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
-		cvarTest "ui_profileFromMP" showCvar { "0" }
 		onOpen {
 			uiScript update "ui_GetName";
 		}
@@ -56,39 +60,24 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			open mainmenu;
 			uiScript update "ui_SetName";
 		}
-		itemDef {
-			name button1
-			text "Okay!"
-			background "azurebuttonlong"
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 364 256 32
-			textalignx 32 
-			textaligny 24
-			cvarTest "ui_menutab" showCVar { "0" }
-			cvarTest "ui_profileFromMP" showCvar { "0" }
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			action {
-				play MP_SND_SELECT;
-				close profile;
-				open mainmenu;
-				uiScript update "ui_SetName";
-			}
-			visible 1 
-		}
+
+#include "ui/common/symbol2.panel" 
+
+#include "ui/common/profile_oc.panel"
+
+#include "ui/common/tooltip.panel"
+
+GOBACK_BUTTON("Back",profile,mainmenu,ui_menutab)
+
 	}
 	menuDef {
-		name "profile"
+		name "profileFromMP"
 		background MP_BACKGROUND1
 		fullScreen 1 
 		rect 0 0 640 480
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
-		cvarTest "ui_profileFromMP" showCvar { "1" }
 		onOpen {
 			uiScript update "ui_GetName";
 		}
@@ -111,6 +100,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/tooltip.panel"
 
-		GOBACK_BUTTON("Back",profile,mainmenu,ui_menutab)
+GOBACK_BUTTON("Back",profile,mpmenu,ui_menutab)
+
 	}
 }

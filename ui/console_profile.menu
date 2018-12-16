@@ -40,9 +40,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR   
 		focuscolor MP_TEXTCOLOR
 		cvarTest "ui_profileFromMP" showCvar { "0" }
-		cvarTest "ui_profileFromMP" hideCvar { "1" }
-		onOpen { uiScript update "ui_GetName"; }
-		onClose { uiScript update "ui_SetName"; }
+		onOpen {
+			uiScript update "ui_GetName";
+		}
+		onClose {
+			uiScript update "ui_SetName";
+		}
 		onEsc {
 			close profile; 
 			uiScript update "ui_SetName";
@@ -67,9 +70,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			rect 32 364 256 32
 			textalignx  32 
 			textaligny  24
-			cvarTest "ui_menutab" showCVar { "0" }
+			cvarTest "ui_menutab" showCVar { MENU_TAB_1 }
 			cvarTest "ui_profileFromMP" showCvar { "0" }
-			cvarTest "ui_profileFromMP" hideCvar { "1" }
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			action {
@@ -90,9 +92,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		forecolor MP_FOCUSCOLOR   
 		focuscolor MP_TEXTCOLOR
 		cvarTest "ui_profileFromMP" showCvar { "1" }
-		cvarTest "ui_profileFromMP" hideCvar { "0" }
-		onOpen { uiScript update "ui_GetName"; }
-		onClose { uiScript update "ui_SetName"; }
+		onOpen {
+			uiScript update "ui_GetName";
+		}
+		onClose {
+			uiScript update "ui_SetName";
+		}
 		onEsc {
 			close profile; 
 			uiScript update "ui_SetName";
@@ -117,9 +122,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			rect 32 364 256 32
 			textalignx  32 
 			textaligny  24
-			cvarTest "ui_menutab" showCVar { "0" }
+			cvarTest "ui_menutab" showCVar { MENU_TAB_1 }
 			cvarTest "ui_profileFromMP" showCvar { "1" }
-			cvarTest "ui_profileFromMP" hideCvar { "0" }
 			forecolor MP_TEXTCOLOR
 			backcolor MP_BUTTONBGCOLOR
 			action {

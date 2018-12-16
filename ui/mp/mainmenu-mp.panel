@@ -1,7 +1,7 @@
 
-MENUTITLE("Multiplayer");
-MENUITEMACTION(MENU_ITEM_1,"Profile",mainmenu,profile,setcvar ui_profileFromMP 1,"Choose your character and set health handicap.");
-MENUITEM(MENU_ITEM_2,"Join server",mpmenu,joinserver,"Join an existing server.");
-MENUITEM(MENU_ITEM_3,"Create server",mpmenu,createserver,"Create a server so others can play with you.");
-MENUITEM(MENU_ITEM_9,"Back",mpmenu,mainmenu,"Go back to the main menu");
+MENUTITLE("Multiplayer")
+MENUITEM(MENU_ITEM_1,"Profile",mpmenu,profileFromMP,"Choose your character and set health handicap.")
+MENUITEM(MENU_ITEM_2,"Join server",mpmenu,joinserver,"Join an existing server.")
+MENUITEM(MENU_ITEM_3,"Create server",mpmenu,createserver,"Create a server so others can play with you.")
+MENUITEM(MENU_ITEM_9,"Back",mpmenu,mainmenu,"Go back to the main menu")
 

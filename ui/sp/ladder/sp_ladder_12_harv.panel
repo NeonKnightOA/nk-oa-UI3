@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "In Harvester, you frag the enemy team's mates in order to obtain their skulls from a generator in the middle area. Bringing those skulls to the enemy base grants you points. Good luck!";
+	setcvar ui_currentMap 35;
+	setcvar ui_gametype 6;
+	setcvar g_gametype 7;
+	setcvar fraglimit 0;
+	setcvar capturelimit 15;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_12_harv;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_12_harv;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Harvester"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Harvest What You Sow",35,"ui_sp_unlock_35",6,"In Harvester, you frag the enemy team's mates in order to obtain their skulls from a generator in the middle area. Bringing those skulls to the enemy base grants you points. Good luck!",MENU_ITEM_1,0,15,10,"","","","")
+SP_RUNG("No One Can Hear You",36,"ui_sp_unlock_36",6,"...so you might as well frag like there's no tomorrow, then harvest the rests to feed the receptacle. Just be careful and try not to fall.",MENU_ITEM_2,0,20,10,"Skulls From Bodies","g_harvesterFromBodies 1","","")
+SP_RUNG("Instant Gibs!",37,"ui_sp_unlock_37",6,"This final match of the Harvester ladder is played with Instagib rules. Everyone is given a supercharged, one-hit-kill Railgun.",MENU_ITEM_3,0,25,15,"Instagib","g_instantgib 1","","")
+

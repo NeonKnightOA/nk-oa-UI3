@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
+	setcvar ui_currentMap 2;
+	setcvar g_gametype 0;
+	setcvar ui_gametype 0;
+	setcvar fraglimit 10;
+	setcvar capturelimit 0;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_01_ffa;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_01_ffa;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Free For All"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNGFREE("Hot Beginning",2,0,"Here's your first match. Defeat these two opponents to advance.",MENU_ITEM_1,10,0,10,"","","","")
+SP_RUNG("Taking A Breath",3,"ui_sp_unlock_2",0,"Continue building momentum by defeating these two rivals in an outdoors map.",MENU_ITEM_2,15,0,10,"","","","")
+SP_RUNG("Consumption",4,"ui_sp_unlock_3",0,"First match with custom rules. Vampire mode. Enjoy self-nursery, or others will feast upon you.",MENU_ITEM_3,20,0,15,"Vampire","g_vampire 1","","")
+

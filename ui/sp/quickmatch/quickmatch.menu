@@ -57,7 +57,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "ui/common/tooltip.panel"
 
 		// always have this button available
-		GOBACK_BUTTON("Cancel",botmatch,spmenu,ui_sptab);
+		GOBACK_BUTTON("Cancel",botmatch,spmenu,ui_sptab)
 
 	itemDef { /* FIGHT! button */
 		name buttong
@@ -102,7 +102,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
 		}
 		ontransitionend {
-			uiScript skirmishStart
+			uiScript skirmishStart;
 		}
 		visible 1 
 	}

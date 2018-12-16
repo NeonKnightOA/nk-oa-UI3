@@ -20,42 +20,74 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 ===========================================================================
 */
 /*
-	CONTROLS_TITLE(_tab,_column,_text)
-	CONTROLS_CONTROL(_tab,_column,_position,_text,_command)
-	CONTROLS_CONTROL_HIDE(_tab,_column,_position,_text,_hidewithcvar,_hidewithcvarvalue,_command)
-	CONTROLS_CONTROL_SHOW(_tab,_column,_position,_text,_showwithcvar,_showwithcvarvalue,_command)
-	CONTROLS_CHECKBOX(_tab,_column,_position,_text,_cvar,_tip)
-	CONTROLS_CHECKBOX_HIDE(_tab,_column,_position,_text,_cvar,_hidewithcvar,_hidewithcvarvalue,_tip)
-	CONTROLS_CHECKBOX_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip)
-	CONTROLS_MULTI(_tab,_column,_position,_text,_cvar,_options,_tip)
-	CONTROLS_MULTI_HIDE(_tab,_column,_position,_text,_cvar,_options,_hidewithcvar,_hidewithcvarvalue,_tip)
-	CONTROLS_MULTI_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip)
-	CONTROLS_SLIDER(_tab,_column,_position,_text,_cvar,_default,_min,_max,_tip)
-	CONTROLS_SLIDER_HIDE(_tab,_column,_position,_text,_cvar,_default,_min,_max,_hidewithcvar,_hidewithcvarvalue,_tip)
-	CONTROLS_SLIDER_SHOW(_tab,_column,_position,_text,_cvar,_default,_min,_max,_showwithcvar,_showwithcvarvalue,_tip)
-	CONTROLS_NUMERIC(_tab,_column,_position,_text,_cvar,_maxchars,_tip)
-	CONTROLS_NUMERIC_HIDE(_tab,_column,_position,_text,_cvar,_maxchars,_hidewithcvar,_hidewithcvarvalue,_tip)
-	CONTROLS_NUMERIC_SHOW(_tab,_column,_position,_text,_cvar,_maxchars,_showwithcvar,_showwithcvarvalue,_tip)
-	CONTROLS_TEXTFIELD(_tab,_column,_position,_text,_cvar,_tip)
-	CONTROLS_TEXTFIELD_HIDE(_tab,_column,_position,_text,_cvar,_hidewithcvar,_hidewithcvarvalue,_tip)
-	CONTROLS_TEXTFIELD_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_TITLE(_tab,_column,_position,_text)
+	WIDGET_TITLE_SHOW(_tab,_column,_position,_showwithcvar,_showwithcvarvalue,_text)
+	WIDGET_OWNERDRAW(_tab,_column,_position,_ownerdraw)
+	WIDGET_OWNERDRAW_SHOW(_tab,_column,_position,_showwithcvar,_showwithcvarvalue,_ownerdraw)
+	WIDGET_CONTROL(_tab,_column,_position,_text,_command)
+	WIDGET_CONTROL_SHOW(_tab,_column,_position,_text,_showwithcvar,_showwithcvarvalue,_command)
+	WIDGET_CHECKBOX(_tab,_column,_position,_text,_cvar,_tip)
+	WIDGET_CHECKBOX_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_MULTIFLOAT(_tab,_column,_position,_text,_cvar,_options,_tip)
+	WIDGET_MULTIFLOAT_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_MULTISTRING(_tab,_column,_position,_text,_cvar,_options,_tip)
+	WIDGET_MULTISTRING_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_SLIDER(_tab,_column,_position,_text,_cvar,_default,_min,_max,_tip)
+	WIDGET_SLIDER_SHOW(_tab,_column,_position,_text,_cvar,_default,_min,_max,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_NUMERIC(_tab,_column,_position,_text,_cvar,_maxchars,_tip)
+	WIDGET_NUMERIC_SHOW(_tab,_column,_position,_text,_cvar,_maxchars,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_TEXTFIELD(_tab,_column,_position,_text,_cvar,_tip)
+	WIDGET_TEXTFIELD_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_BUTTONTAB(_tab,_column,_position,_text,_cvar,_cvarValue,_tip)
+	WIDGET_BUTTONTAB_SHOW(_tab,_column,_position,_text,_cvar,_cvarValue,_showwithcvar,_showwithcvarvalue,_tip)
+	WIDGET_LISTBOX(_tab,_column,_position,_width,_height,_feeder,_columns,_tip)
+	WIDGET_LISTBOX_SHOW(_tab,_column,_position,_width,_height,_feeder,_columns,_showwithcvar,_showwithcvarvalue,_tip)
 */
 
 /* -----------
    Titles
    ----------- */
-#define CONTROLS_TITLE(_tab,_column,_text) \
+#define WIDGET_TITLE(_tab,_column,_position,_text) \
 itemDef { \
 	name title style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TITLE_TEXTSCALE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-   	rect _column MENU_ITEM_TITLE_Y MENU_ITEM_WIDTH MENU_ITEM_HEIGHT \
+   	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	type 0 decoration \
 	text _text\
 }
+#define WIDGET_TITLE_SHOW(_tab,_column,_position,_showwithcvar,_showwithcvarvalue,_text) \
+itemDef { \
+	name title style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TITLE_TEXTSCALE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
+   	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
+	cvarTest "ui_menutab" showCVar { _tab } \
+	type 0 decoration \
+	text _text\
+	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
+}
+/* -----------
+   Ownerdraws (in title form)
+   ----------- */
+#define WIDGET_OWNERDRAW(_tab,_column,_position,_ownerdraw) \
+itemDef { \
+	name title style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TITLE_TEXTSCALE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
+   	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
+	cvarTest "ui_menutab" showCVar { _tab } \
+	type 0 decoration \
+	ownerdraw _ownerdraw\
+}
+#define WIDGET_OWNERDRAW_SHOW(_tab,_column,_position,_showwithcvar,_showwithcvarvalue,_ownerdraw) \
+itemDef { \
+	name title style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TITLE_TEXTSCALE textalign ITEM_ALIGN_CENTER textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
+   	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
+	cvarTest "ui_menutab" showCVar { _tab } \
+	type 0 decoration \
+	ownerdraw _ownerdraw\
+	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
+}
 /* -----------
    Keybinds
    ----------- */
-#define CONTROLS_CONTROL(_tab,_column,_position,_text,_command) \
+#define WIDGET_CONTROL(_tab,_column,_position,_text,_command) \
 itemDef { \
 	name keybind style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip "Press the already bound key to set a new one."; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -64,17 +96,7 @@ itemDef { \
 	text _text \
 	cvar _command \
 }
-#define CONTROLS_CONTROL_HIDE(_tab,_column,_position,_text,_hidewithcvar,_hidewithcvarvalue,_command) \
-itemDef { \
-	name keybind style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip "Press the already bound key to set a new one."; fadein tooltip; } mouseexit { fadeout tooltip; } \
-	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
-	cvarTest "ui_menutab" showCVar { _tab } \
-	text _text \
-	cvar _command \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
-}
-#define CONTROLS_CONTROL_SHOW(_tab,_column,_position,_text,_showwithcvar,_showwithcvarvalue,_command) \
+#define WIDGET_CONTROL_SHOW(_tab,_column,_position,_text,_showwithcvar,_showwithcvarvalue,_command) \
 itemDef { \
 	name keybind style 1 backcolor MP_BUTTONBGCOLOR visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalignx 0 textaligny 12 textalign ITEM_ALIGN_RIGHT textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_BIND mouseenter { setcvar ui_tip "Press the already bound key to set a new one."; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -87,7 +109,7 @@ itemDef { \
 /* -----------
    Checkboxes
    ----------- */
-#define CONTROLS_CHECKBOX(_tab,_column,_position,_text,_cvar,_tip) \
+#define WIDGET_CHECKBOX(_tab,_column,_position,_text,_cvar,_tip) \
 itemDef { \
 	name checkbox style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -96,17 +118,7 @@ itemDef { \
 	text _text \
 	cvar _cvar \
 }
-#define CONTROLS_CHECKBOX_HIDE(_tab,_column,_position,_text,_cvar,_hidewithcvar,_hidewithcvarvalue,_tip) \
-itemDef { \
-	name checkbox style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
-	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
-	cvarTest "ui_menutab" showCVar { _tab } \
-	text _text \
-	cvar _cvar \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
-}
-#define CONTROLS_CHECKBOX_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip) \
+#define WIDGET_CHECKBOX_SHOW(_tab,_column,_position,_text,_cvar,_showwithcvar,_showwithcvarvalue,_tip) \
 itemDef { \
 	name checkbox style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_CHECKBOX mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -119,7 +131,7 @@ itemDef { \
 /* -----------
    Multis
    ----------- */
-#define CONTROLS_MULTI(_tab,_column,_position,_text,_cvar,_options,_tip) \
+#define WIDGET_MULTIFLOAT(_tab,_column,_position,_text,_cvar,_options,_tip) \
 itemDef { \
 	name multi style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
  	type ITEM_TYPE_MULTI mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -127,9 +139,9 @@ itemDef { \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
 	cvar _cvar \
-	cvarFloatList _options \
+	cvarFloatList { _options } \
 }
-#define CONTROLS_MULTI_HIDE(_tab,_column,_position,_text,_cvar,_options,_hidewithcvar,_hidewithcvarvalue,_tip) \
+#define WIDGET_MULTIFLOAT_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip) \
 itemDef { \
 	name multi style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
  	type ITEM_TYPE_MULTI mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -137,10 +149,10 @@ itemDef { \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
 	cvar _cvar \
-	cvarFloatList _options \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
+	cvarFloatList { _options } \
+	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
 }
-#define CONTROLS_MULTI_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip) \
+#define WIDGET_MULTISTRING(_tab,_column,_position,_text,_cvar,_options,_tip) \
 itemDef { \
 	name multi style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
  	type ITEM_TYPE_MULTI mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -148,13 +160,23 @@ itemDef { \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
 	cvar _cvar \
-	cvarFloatList _options \
+	cvarStrList { _options } \
+}
+#define WIDGET_MULTISTRING_SHOW(_tab,_column,_position,_text,_cvar,_options,_showwithcvar,_showwithcvarvalue,_tip) \
+itemDef { \
+	name multi style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
+ 	type ITEM_TYPE_MULTI mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
+	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
+	cvarTest "ui_menutab" showCVar { _tab } \
+	text _text \
+	cvar _cvar \
+	cvarStrList { _options } \
 	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
 }
 /* -----------
    Sliders
    ----------- */
-#define CONTROLS_SLIDER(_tab,_column,_position,_text,_cvar,_default,_min,_max,_tip) \
+#define WIDGET_SLIDER(_tab,_column,_position,_text,_cvar,_default,_min,_max,_tip) \
 itemDef { \
 	name slider style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_SLIDER mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -163,17 +185,7 @@ itemDef { \
 	text _text \
 	cvarFloat _cvar _default _min _max \
 }
-#define CONTROLS_SLIDER_HIDE(_tab,_column,_position,_text,_cvar,_default,_min,_max,_hidewithcvar,_hidewithcvarvalue,_tip) \
-itemDef { \
-	name slider style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-	type ITEM_TYPE_SLIDER mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
-	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
-	cvarTest "ui_menutab" showCVar { _tab } \
-	text _text \
-	cvarFloat _cvar _default _min _max \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
-}
-#define CONTROLS_SLIDER_SHOW(_tab,_column,_position,_text,_cvar,_default,_min,_max,_showwithcvar,_showwithcvarvalue,_tip) \
+#define WIDGET_SLIDER_SHOW(_tab,_column,_position,_text,_cvar,_default,_min,_max,_showwithcvar,_showwithcvarvalue,_tip) \
 itemDef { \
 	name slider style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_SLIDER mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -187,7 +199,7 @@ itemDef { \
    Numerics
    ----------- */
 
-#define CONTROLS_NUMERIC(_tab,_column,_position,_text,_cvar,_maxchars,_tip) \
+#define WIDGET_NUMERIC(_tab,_column,_position,_text,_cvar,_maxchars,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_NUMERICFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -196,17 +208,7 @@ itemDef { \
 	text _text \
 	maxchars _maxchars \
 }
-#define CONTROLS_NUMERIC_HIDE(_tab,_column,_position,_text,_cvar,_maxchars,_hidewithcvar,_hidewithcvarvalue,_tip) \
-itemDef { \
-	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-	type ITEM_TYPE_NUMERICFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
-	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
-	cvarTest "ui_menutab" showCVar { _tab } \
-	text _text \
-	maxchars _maxchars \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
-}
-#define CONTROLS_NUMERIC_SHOW(_tab,_column,_position,_text,_cvar,_maxchars,_showwithcvar,_showwithcvarvalue,_tip) \
+#define WIDGET_NUMERIC_SHOW(_tab,_column,_position,_text,_cvar,_maxchars,_showwithcvar,_showwithcvarvalue,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_NUMERICFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -219,7 +221,7 @@ itemDef { \
 /* -----------
    Textfields
    ----------- */
-#define CONTROLS_TEXTFIELD(_tab,_column,_position,_text,_cvar,_tip) \
+#define WIDGET_TEXTFIELD(_tab,_column,_position,_text,_cvar,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_EDITFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -227,17 +229,7 @@ itemDef { \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
 }
-#define CONTROLS_TEXTFIELD_HIDE(_tab,_column,_position,_text,_cvar,_tip,_hidewithcvar,_hidewithcvarvalue) \
-itemDef { \
-	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
-	type ITEM_TYPE_EDITFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
-	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
-	cvarTest "ui_menutab" showCVar { _tab } \
-	text _text \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
-}
-
-#define CONTROLS_TEXTFIELD_SHOW(_tab,_column,_position,_text,_cvar,_tip,_showwithcvar,_showwithcvarvalue) \
+#define WIDGET_TEXTFIELD_SHOW(_tab,_column,_position,_text,_cvar,_tip,_showwithcvar,_showwithcvarvalue) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_EDITFIELD mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -246,11 +238,10 @@ itemDef { \
 	text _text \
 	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
 }
-
 /* -----------
    Buttons
    ----------- */
-#define CONTROLS_BUTTONTAB(_tab,_column,_position,_text,_cvar,_cvarValue,_tip) \
+#define WIDGET_BUTTONTAB(_tab,_column,_position,_text,_cvar,_cvarValue,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_BUTTON mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -259,7 +250,7 @@ itemDef { \
 	text _text \
 	action { play MP_SND_SELECT; setcvar _cvar _cvarValue; } \
 }
-#define CONTROLS_BUTTONTAB_HIDE(_tab,_column,_position,_text,_cvar,_cvarValue,_hidewithcvar,_hidewithcvarvalue,_tip) \
+#define WIDGET_BUTTONTAB_SHOW(_tab,_column,_position,_text,_cvar,_cvarValue,_showwithcvar,_showwithcvarvalue,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_BUTTON mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
@@ -267,16 +258,48 @@ itemDef { \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
 	action { play MP_SND_SELECT; setcvar _cvar _cvarValue; } \
-	cvarTest _hidewithcvar hideCVar { _hidewithcvarvalue } \
+	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
 }
-
-#define CONTROLS_BUTTONTAB_SHOW(_tab,_column,_position,_text,_cvar,_cvarValue,_showwithcvar,_showwithcvarvalue,_tip) \
+#define WIDGET_BUTTONACTIONS(_tab,_column,_position,_text,_command,_tip) \
 itemDef { \
 	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
 	type ITEM_TYPE_BUTTON mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
 	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
 	cvarTest "ui_menutab" showCVar { _tab } \
 	text _text \
-	action { play MP_SND_SELECT; setcvar _cvar _cvarValue; } \
+	action { play MP_SND_SELECT; _command; } \
+}
+#define WIDGET_BUTTONACTIONS_SHOW(_tab,_column,_position,_text,_command,_showwithcvar,_showwithcvarvalue,_tip) \
+itemDef { \
+	name keybinder style 1 visible 1 noFocusColor 0 textscale MENU2_ITEM_TEXTSCALE textalign ITEM_ALIGN_RIGHT textalignx 0 textaligny 12 textstyle 6 forecolor MP_TEXTCOLOR hexcolor 0 1 2 3 \
+	type ITEM_TYPE_BUTTON mouseenter { setcvar ui_tip _tip; fadein tooltip; } mouseexit { fadeout tooltip; } \
+	rect _column _position MENU2_ITEM_WIDTH MENU_ITEM_HEIGHT \
+	cvarTest "ui_menutab" showCVar { _tab } \
+	text _text \
+	action { play MP_SND_SELECT; _command; } \
+	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
+}
+/* -----------
+   Listboxes
+   ----------- */
+#define WIDGET_LISTBOX(_tab,_column,_position,_width,_height,_feeder,_columns,_tip) \
+itemDef { \
+	name listbox style WINDOW_STYLE_FILLED textscale .333 textalign 0 textaligny 16 background "listbg_azure" border 1 bordercolor MP_BOX_BORDER forecolor MP_BOX_FORE backcolor MP_BOX_BACK outlinecolor MP_BOX_OUTLINE visible 1 hexcolor 0 1 2 3 \
+	type ITEM_TYPE_LISTBOX elementwidth 32 elementheight 18 elementtype LISTBOX_TEXT \
+	cvarTest "ui_menutab" showCVar { "0" } \
+	rect 32 72 556 280 \
+	feeder FEEDER_MODS \
+	columns 1 2 190 25 \
+	mouseEnter { setcvar ui_tip TIP_LIBRARY_MODLIST fadein tooltip; } mouseExit { fadeout tooltip;} \
+}
+#define WIDGET_LISTBOX_SHOW(_tab,_column,_position,_width,_height,_feeder,_columns,_showwithcvar,_showwithcvarvalue,_tip) \
+itemDef { \
+	name listbox style WINDOW_STYLE_FILLED textscale .333 textalign 0 textaligny 16 background "listbg_azure" border 1 bordercolor MP_BOX_BORDER forecolor MP_BOX_FORE backcolor MP_BOX_BACK outlinecolor MP_BOX_OUTLINE visible 1 hexcolor 0 1 2 3 \
+	type ITEM_TYPE_LISTBOX elementwidth 32 elementheight 18 elementtype LISTBOX_TEXT \
+	cvarTest "ui_menutab" showCVar { "0" } \
+	rect 32 72 556 280 \
+	feeder FEEDER_MODS \
+	columns 1 2 190 25 \
+	mouseEnter { setcvar ui_tip TIP_LIBRARY_MODLIST fadein tooltip; } mouseExit { fadeout tooltip;} \
 	cvarTest _showwithcvar showCVar { _showwithcvarvalue } \
 }

@@ -26,8 +26,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
    but i'd like to make the interface less daunting by default. */
 
 #include "ui/menudef.h"
+
 #include "ui/headers/commonbuttons.h"
+
 #include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commontabs.h"
+
+#include "ui/headers/commonwidgets.h"
 
 /* Botmatch: Create a custom botmatch. */
 {
@@ -66,109 +72,26 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/symbol2.panel"
 
-#include "ui/common/tooltip.panel"
-
-#include "ui/sp/botmatch/botmatch_bots.panel"
-
-#include "ui/sp/botmatch/botmatch_confirm.panel"
-
 #include "ui/sp/botmatch/botmatch_gametypes.panel"
 
 #include "ui/sp/botmatch/botmatch_maps.panel"
 
 #include "ui/sp/botmatch/botmatch_score.panel"
 
+#include "ui/sp/botmatch/botmatch_bots.panel"
+
+#include "ui/sp/botmatch/botmatch_confirm.panel"
+
+#include "ui/common/tooltip.panel"
+
 		/* /Include Zone */
 		/* -----------------------------------------------------------
 		 TAB X - ALL
 		 ----------------------------------------------------------- */
-		itemDef {
-			name tab1
-			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			action {
-				play MP_SND_SELECT;
-				setcvar ui_menutab 0;
-			}
-			text "Gametype"
-			rect 16 16 128 16
-			cvarTest "ui_menutab" hideCVar { "0" }
-		}
-		itemDef {
-			name tab2
-			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			action {
-				play MP_SND_SELECT;
-				setcvar ui_menutab 1;
-			}
-			text "Map"
-			rect 144 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" hideCVar { "1" }
-		}
-		itemDef {
-			name tab3
-			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			action {
-				play MP_SND_SELECT;
-				setcvar ui_menutab 2;
-			}
-			text "Rules"
-			rect 272 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" hideCVar { "2" }
-		}
-		itemDef {
-			name tab4
-			background "azuretablong" style 1 textstyle 2 textscale 0.333 textalignx 16 textaligny 16 forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			action {
-				play MP_SND_SELECT;
-				setcvar ui_menutab 3;
-			}
-			text "Slots"
-			rect 400 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" hideCVar { "3" }
-		}
-		// pressed tabs
-		itemDef {
-			name tab1
-			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			text "Gametype"
-			rect 16 16 128 16
-			cvarTest "ui_menutab" showCVar { "0" }
-		}
-		itemDef {
-			name tab2
-			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			text "Map"
-			rect 144 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" showCVar { "1" }
-		}
-		itemDef {
-			name tab3
-			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			text "Rules"
-			rect 272 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" showCVar { "2" }
-		}
-		itemDef {
-			name tab4
-			background "azureuntablong" style 1 textstyle 2 textscale 0.33 textalignx 16 textaligny 16 decoration visible 1 hexcolor 0 1 2 3	// color schemes 
-			type ITEM_TYPE_BUTTON
-			text "Slots"
-			rect 400 16 128 16
-			cvarTest "ui_gametype" hideCVar { "-1" }
-			cvarTest "ui_menutab" showCVar { "3" }
-		}
+		TAB(MENU_TAB_1,"Gametype",MENU_TAB_NAME_1)
+		TAB(MENU_TAB_2,"Map",MENU_TAB_NAME_2)
+		TAB(MENU_TAB_3,"Rules",MENU_TAB_NAME_3)
+		TAB(MENU_TAB_4,"Slots",MENU_TAB_NAME_4)
 		// always have this button available
 		
 		GOBACK_BUTTON("Back",botmatch,spmenu,ui_menutab);

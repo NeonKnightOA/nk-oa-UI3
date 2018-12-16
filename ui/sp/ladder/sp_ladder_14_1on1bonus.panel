@@ -1,0 +1,49 @@
+
+onOpen {
+	setcvar ui_tip "This special match is played in a lowgrav-insta setting. So you better get used to this. Else, the spider guarding the area will feast on your soul. Good luck!";
+	setcvar ui_currentMap 41;
+	setcvar ui_gametype 1;
+	setcvar g_gametype 1;
+	setcvar fraglimit 20;
+	setcvar capturelimit 0;
+	setcvar timelimit 15;
+	setcvar "LowGrav InstaGib";
+	setcvar g_gravityModifier 0.5;
+	setcvar g_instantgib 1;
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_14_1on1bonus;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_14_1on1bonus;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Tournament (Bonus)"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Web Crawling",41,"ui_sp_unlock_41",1,"This special match is played in a lowgrav-insta setting. So you better get used to this. Else, the spider guarding the area will feast on your soul. Good luck!",MENU_ITEM_1,20,0,10,"LowGrav InstaGib","g_gravityModifier 0.5","g_instantgib 1","")
+

@@ -27,6 +27,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/headers/commonbuttons.h"
 
+#include "ui/headers/commonwidgets.h"
+
 // Internal workings that don't really need to be modified
 
 {
@@ -47,129 +49,21 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Here's your first match. Defeat these two opponents to advance.";
-			setcvar ui_currentMap 2;
-			setcvar g_gametype 0;
-			setcvar ui_gametype 0;
-			setcvar fraglimit 10;
-			setcvar capturelimit 0;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_01_ffa;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_01_ffa;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Free For All"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNGFREE("Hot Beginning",2,0,"Here's your first match. Defeat these two opponents to advance.",MENU_ITEM_1,10,0,10,"","","","")
-SP_RUNG("Taking A Breath",3,"ui_sp_unlock_2",0,"Continue building momentum by defeating these two rivals in an outdoors map.",MENU_ITEM_2,15,0,10,"","","","")
-SP_RUNG("Consumption",4,"ui_sp_unlock_3",0,"First match with custom rules. Vampire mode. Enjoy self-nursery, or others will feast upon you.",MENU_ITEM_3,20,0,15,"Vampire","g_vampire 1","","")
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_01_ffa.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_01_ffa,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_01_ffa,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_01_ffa;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_01_ffa)
+
 	}
 	menuDef { /* Possession */
 		name singleplayercampaign_02_pos
@@ -179,129 +73,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_01_ffa,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "In Possession, you have to find a flag and keep it with you for a set amount of time in order to win.";
-			setcvar ui_currentMap 5;
-			setcvar ui_gametype 12;
-			setcvar g_gametype 13;
-			setcvar fraglimit 100;
-			setcvar capturelimit 0;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_02_pos;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_02_pos;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Possession"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Take The Flag!",5,"ui_sp_unlock_5",12,"In Possession, you have to find a flag and keep it with you for a set amount of time in order to win.",MENU_ITEM_1,100,0,10,"","","","");
-SP_RUNG("Work Hard",6,"ui_sp_unlock_6",12,"Another Possession match, this time in a less-mazey (but not less dangerous) arena.",MENU_ITEM_2,125,0,10,"","","","");
-SP_RUNG("Chaos Online",7,"ui_sp_unlock_7",12,"Two more opponents joined to turn this into a five-way match. Have fun!",MENU_ITEM_3,150,0,15,"","","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_02_pos.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_02_pos,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_02_pos,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_02_pos;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_02_pos)
+
 	}
 	menuDef { /* Last Man Standing */
 		name singleplayercampaign_03_lms
@@ -311,129 +97,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_02_pos,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "In Last Man Standing, everyone has one live, so upon death they have to wait until the next round.";
-			setcvar ui_currentMap 8;
-			setcvar ui_gametype 9;
-			setcvar g_gametype 10;
-			setcvar fraglimit 7;
-			setcvar capturelimit 0;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_03_lms;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_03_lms;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Last Man Standing"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Beware The Fan!",8,"ui_sp_unlock_8",9,"In Last Man Standing, everyone has one live, so upon death they have to wait until the next round.",MENU_ITEM_1,7,0,10,"","","","");
-SP_RUNG("Pit of Death",9,"ui_sp_unlock_9",9,"There's a big pit in the middle. You'll want to avoid it.",MENU_ITEM_2,9,0,10,"","","","");
-SP_RUNG("Cat's Lives",10,"ui_sp_unlock_10",9,"Now everyone has lives! Seven, in fact, so use your lucky instincts to survive.",MENU_ITEM_3,1,0,15,"Lives","g_lms_lives 7","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_03_lms.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_03_lms,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_03_lms,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_03_lms;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_03_lms)
+
 	}
 	menuDef { /* Team Deathmatch */
 		name singleplayercampaign_04_team
@@ -443,129 +121,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_03_lms,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Welcome to Team Deathmatch. Here you'll play with fellows against a rival team. Be the one team to rule them all!";
-			setcvar ui_currentMap 11;
-			setcvar ui_gametype 2;
-			setcvar g_gametype 3;
-			setcvar fraglimit 35;
-			setcvar capturelimit 0;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_04_team;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_04_team;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Team Deathmatch"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Meet Your Mates",11,"ui_sp_unlock_11",2,"Welcome to Team Deathmatch. Here you'll play with fellows against a rival team. Be the one team to rule them all!",MENU_ITEM_1,35,0,10,"","","","");
-SP_RUNG("Chaotic Match",12,"ui_sp_unlock_12",2,"Since you got used so well to play in teams, here are other two bots to challenge you.",MENU_ITEM_2,50,0,10,"","","","");
-SP_RUNG("Friendly Fire",13,"ui_sp_unlock_13",2,"Another special rules match. In Friendly Fire matches, any damage you inflict on your teammates can be lethal, so watch your fire!",MENU_ITEM_3,65,0,15,"Friendly Fire","g_friendlyFire 1","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_04_team.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_04_team,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_04_team,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_04_team;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_04_team)
+
 	}
 	menuDef { /* Elimination */
 		name singleplayercampaign_05_elim
@@ -575,129 +145,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_04_team,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "In Elimination, everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry.";
-			setcvar ui_currentMap 14;
-			setcvar ui_gametype 7;
-			setcvar g_gametype 8;
-			setcvar fraglimit 0;
-			setcvar capturelimit 5;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_05_elim;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_05_elim;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Elimination"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("DELETE!",14,"ui_sp_unlock_14",7,"In Elimination, everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry.",MENU_ITEM_1,0,5,10,"","","","");
-SP_RUNG("Full Pack",15,"ui_sp_unlock_15",7,"Three weapons were added to everybody's inventory: Nailgun, Chaingun and Prox Launcher. Use them wisely.",MENU_ITEM_2,0,7,10,"New Weapons","g_elimination_chain 100","g_elimination_mine 10","g_elimination_nail 10");
-SP_RUNG("Bases!",16,"ui_sp_unlock_16",7,"In this rung, both teams have an own base, and a middle area uniting them. You can see where this is going, so charge forward!",MENU_ITEM_3,0,9,15,"","","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_05_elim.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_05_elim,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_05_elim,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_05_elim;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_05_elim)
+
 	}
 	menuDef { /* Domination */
 		name singleplayercampaign_06_dom
@@ -707,129 +169,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_05_elim,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Domination has both teams battling to gain control of white flags. Every flag gives a point per second, so the more flags you hold, the better for your team.";
-			setcvar ui_currentMap 17;
-			setcvar ui_gametype 11;
-			setcvar g_gametype 12;
-			setcvar fraglimit 0;
-			setcvar capturelimit 100;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_06_dom;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_06_dom;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Domination"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Private Property",17,"ui_sp_unlock_17",11,"Domination has both teams battling to gain control of white flags. Every flag gives a point per second, so the more flags you hold, the better for your team.",MENU_ITEM_1,0,100,10,"","","","");
-SP_RUNG("Landlord's Calling",18,"ui_sp_unlock_18",11,"Both teams grow larger, so make sure you split in order to maximize the effectiveness.",MENU_ITEM_2,0,150,10,"","","","");
-SP_RUNG("I Need A Map",19,"ui_sp_unlock_19",11,"OK, things got... a bit complicated. This place is a maze, so make sure you can remember key areas in order to secure the victory.",MENU_ITEM_3,0,200,15,"","","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_06_dom.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_06_dom,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_06_dom,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_06_dom;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_06_dom)
+
 	}
 	menuDef { /* Double Domination */
 		name singleplayercampaign_07_ddom
@@ -839,129 +193,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_06_dom,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Double Domination has two teams battling to take control AND keep two points in order to score. Turtling is fundamental to DD, so make the most of it.";
-			setcvar ui_currentMap 20;
-			setcvar ui_gametype 10;
-			setcvar g_gametype 11;
-			setcvar fraglimit 0;
-			setcvar capturelimit 3;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_07_ddom;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_07_ddom;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Double Domination"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Double Trouble",20,"ui_sp_unlock_20",10,"Double Domination has two teams battling to take control AND keep two points in order to score. Turtling is fundamental to DD, so make the most of it.",MENU_ITEM_1,0,3,10,"","","","");
-SP_RUNG("Jump!",21,"ui_sp_unlock_21",10,"Two teams spawn in the middle of this fortification and have to hold the points. Remember: in space, no one can hear you.",MENU_ITEM_2,0,5,10,"","","","");
-SP_RUNG("Quick Capture",22,"ui_sp_unlock_22",10,"Special rule time! Teams only need to hold both points for 3 seconds in order to score. The map is large, however, so use the largeness to your advantage.",MENU_ITEM_3,0,7,15,"3 seconds to win","g_ddCaptureTime 3","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_07_ddom.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_07_ddom,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_07_ddom,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_07_ddom;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_07_ddom)
+
 	}
 	menuDef { /* Overload */
 		name singleplayercampaign_08_over
@@ -971,129 +217,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_07_ddom,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Overload has two teams fighting to destroy the enemy team's crystal. The crystal is regenerated after its destruction, so you have to blow it up constantly.";
-			setcvar ui_currentMap 23;
-			setcvar ui_gametype 5;
-			setcvar g_gametype 6;
-			setcvar fraglimit 0;
-			setcvar capturelimit 3;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_08_over;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_08_over;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Overload"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Blow It Up!",23,"ui_sp_unlock_23",5,"Overload has two teams fighting to destroy the enemy team's crystal. The crystal is regenerated after its destruction, so you have to blow it up constantly.",MENU_ITEM_1,0,3,10,"","","","");
-SP_RUNG("Team, Split!",24,"ui_sp_unlock_24",5,"This map has TWO crystals you can blow up per base. Pick one with a partner, and let your other two partners take care of the other.",MENU_ITEM_2,0,4,10,"","","","");
-SP_RUNG("The Weak Spot",25,"ui_sp_unlock_25",5,"Special rule! The obelisks have half their health, so they're even easier to take them down. Good luck!",MENU_ITEM_3,0,5,15,"Half obelisk health","g_obeliskHealth 1250","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_08_over.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_08_over,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_08_over,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_08_over;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_08_over)
+
 	}
 	menuDef { /* One Flag CTF */
 		name singleplayercampaign_09_1fctf
@@ -1103,129 +241,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_08_over,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "In One Flag CTF, your team must take a white flag, located in the central area, and bring it to the enemy base.";
-			setcvar ui_currentMap 26;
-			setcvar ui_gametype 4;
-			setcvar g_gametype 5;
-			setcvar fraglimit 0;
-			setcvar capturelimit 5;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_09_1fctf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_09_1fctf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "One Flag CTF"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("The Retribution",26,"ui_sp_unlock_26",4,"In One Flag CTF, your team must take a white flag, located in the central area, and bring it to the enemy base.",MENU_ITEM_1,0,5,10,"","","","");
-SP_RUNG("Ragnarok!",27,"ui_sp_unlock_27",4,"Things just got a bit hard, but fortunately you have good companion... hopefully.",MENU_ITEM_2,0,6,10,"","","","");
-SP_RUNG("Boom!",28,"ui_sp_unlock_28",4,"This match is played with All Rockets rules. Everyone spawns with an infinite-charge Rocket Launcher. Have fun blasting your foes!",MENU_ITEM_3,0,7,15,"All Rockets","g_rockets 1","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_09_1fctf.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_09_1fctf,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_09_1fctf,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_09_1fctf;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_09_1fctf)
+
 	}
 	menuDef { /* Capture The Flag */
 		name singleplayercampaign_10_ctf
@@ -1235,129 +265,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_09_1fctf,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Welcome to Capture The Flag! Go to the enemy base, steal their flag, and bring it to your base. Go!";
-			setcvar ui_currentMap 29;
-			setcvar ui_gametype 3;
-			setcvar g_gametype 4;
-			setcvar fraglimit 0;
-			setcvar capturelimit 5;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_10_ctf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_10_ctf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Capture The Flag"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-		SP_RUNG("Capture The Castle",29,"ui_sp_unlock_29",3,"Welcome to Capture The Flag! Go to the enemy base, steal their flag, and bring it to your base. Go!",MENU_ITEM_1,0,5,10,"","","","");
-		SP_RUNG("Living Colours",30,"ui_sp_unlock_30",3,"This map may contain only colours, but is no less dangerous because of that, so you better learn the ways in and out of the bases.",MENU_ITEM_2,0,6,10,"","","","");
-		SP_RUNG("They Float!",31,"ui_sp_unlock_31",3,"The final match of the CTF ladder is played with Low Gravity rules. The gravity of the area has been halved.",MENU_ITEM_3,0,7,15,"Low Gravity","g_gravityModifier 0.5","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_10_ctf.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-		GOBACK_BUTTON("Cancel",singleplayercampaign_10_ctf,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_10_ctf,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_10_ctf;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_10_ctf)
+
 	}
 	menuDef { /* CTF Elimination */
 		name singleplayercampaign_11_ectf
@@ -1367,129 +289,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_09_1fctf,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "CTF Elimination is Elimination in a CTF setting. So, you start with all of the weapons, and you can score by eradicating the entire team or by capturing their flag.";
-			setcvar ui_currentMap 32;
-			setcvar ui_gametype 8;
-			setcvar g_gametype 9;
-			setcvar fraglimit 0;
-			setcvar capturelimit 5;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_11_ectf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_11_ectf;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "CTF Elimination"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-		SP_RUNG("Convolution",32,"ui_sp_unlock_32",8,"CTF Elimination is Elimination in a CTF setting. So, you start with all of the weapons, and you can score by eradicating the entire team or by capturing their flag.",MENU_ITEM_1,0,5,10,"","","","");
-		SP_RUNG("Collision",33,"ui_sp_unlock_33",8,"If the rules of eCTF aren't complex enough for you, here's a complex map to put you to test. Now, go and finish that enemy team!",MENU_ITEM_2,0,6,10,"","","","");
-		SP_RUNG("One Way Out!",34,"ui_sp_unlock_34",8,"This final match is played in "one-way" Attack vs. Defense mode. Attackers must infiltrate the defender's base in order to capture the flag. End of round, both team switch positions.",MENU_ITEM_3,0,7,15,"Attack vs. Defense","g_elimination_ctf_oneway 1","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_11_ectf.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-		GOBACK_BUTTON("Cancel",singleplayercampaign_11_ectf,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_11_ectf,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_11_ectf;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_11_ectf)
+
 	}
 	menuDef { /* Harvester */
 		name singleplayercampaign_12_harv
@@ -1499,129 +313,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_09_1fctf,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "In Harvester, you frag the enemy team's mates in order to obtain their skulls from a generator in the middle area. Bringing those skulls to the enemy base grants you points. Good luck!";
-			setcvar ui_currentMap 35;
-			setcvar ui_gametype 6;
-			setcvar g_gametype 7;
-			setcvar fraglimit 0;
-			setcvar capturelimit 15;
-			setcvar timelimit 10;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_12_harv;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_12_harv;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Harvester"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Harvest What You Sow",35,"ui_sp_unlock_35",6,"In Harvester, you frag the enemy team's mates in order to obtain their skulls from a generator in the middle area. Bringing those skulls to the enemy base grants you points. Good luck!",MENU_ITEM_1,0,15,10,"","","","");
-SP_RUNG("No One Can Hear You",36,"ui_sp_unlock_36",6,"...so you might as well frag like there's no tomorrow, then harvest the rests to feed the receptacle. Just be careful and try not to fall.",MENU_ITEM_2,0,20,10,"Skulls From Bodies","g_harvesterFromBodies 1","","");
-SP_RUNG("Instant Gibs!",37,"ui_sp_unlock_37",6,"This final match of the Harvester ladder is played with Instagib rules. Everyone is given a supercharged, one-hit-kill Railgun.",MENU_ITEM_3,0,25,15,"Instagib","g_instantgib 1","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_12_harv.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_12_harv,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_12_harv,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_12_harv;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_12_harv)
+
 	}
 	menuDef { /* Tournament */
 		name singleplayercampaign_13_1on1
@@ -1631,129 +337,21 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_12_harv,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "Here's the moment of the truth. Three straight 1-on-1 matches, no perks, no special rules... it's you and your enemy, face to face. Good luck!";
-			setcvar ui_currentMap 38;
-			setcvar ui_gametype 1;
-			setcvar g_gametype 1;
-			setcvar fraglimit 15;
-			setcvar capturelimit 0;
-			setcvar timelimit 15;
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_13_1on1;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_13_1on1;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Tournament"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-		SP_RUNG("Trial AND Error",38,"ui_sp_unlock_38",1,"Here's the moment of the truth. Three straight 1-on-1 matches, no perks, no special rules... it's you and your enemy, face to face. Good luck!",MENU_ITEM_1,15,0,15,"","","","");
-		SP_RUNG("One Step Ahead",39,"ui_sp_unlock_39",1,"One down, take down the next. He will be harder than your previous rival.",MENU_ITEM_2,15,0,15,"","","","");
-		SP_RUNG("All In!",40,"ui_sp_unlock_40",1,"This is it. Defeat this last enemy and you can claim victory. Expect a lot of aggresiveness as this match takes place.",MENU_ITEM_3,15,0,15,"","","","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_13_1on1.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-		GOBACK_BUTTON("Cancel",singleplayercampaign_13_1on1,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_13_1on1,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_13_1on1;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_13_1on1)
+
 	}
 	menuDef { /* Tournament (Bonus) */
 		name singleplayercampaign_14_1on1bonus
@@ -1763,126 +361,20 @@ GOBACK_BUTTON("Cancel",singleplayercampaign_12_harv,spladder, ui_sptab);
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
-		onOpen {
-			setcvar ui_tip "This special match is played in a lowgrav-insta setting. So you better get used to this. Else, the spider guarding the area will feast on your soul. Good luck!";
-			setcvar ui_currentMap 41;
-			setcvar ui_gametype 1;
-			setcvar g_gametype 1;
-			setcvar fraglimit 20;
-			setcvar capturelimit 0;
-			setcvar timelimit 15;
-			setcvar "LowGrav InstaGib";
-			setcvar g_gravityModifier 0.5;
-			setcvar g_instantgib 1;
-			setcvar "";
-			uiScript loadGameInfo;
-			uiScript updateSPMenu;
-		}
-		onClose {
-			play MP_SND_BACK;
-			close singleplayercampaign_14_1on1bonus;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
-		onEsc {
-			play MP_SND_BACK;
-			close singleplayercampaign_14_1on1bonus;
-			open spladder;
-			setcvar ui_menutab 0;	// reset the tabs
-		}
 
 #include "ui/common/mapbg.panel"
 
-		/* -----------------------------------------------------------
-		   TAB 0 - SELECTING MAP
-		   ----------------------------------------------------------- */
-
-		// MAP stats and info
-
 #include "ui/sp/ladder/sp_mapinfo.panel"
 
-		/* Ladder Name */
-
-		itemDef
-		{
-			name dmgamefield
-			ownerdraw UI_GAMETYPE
-			text "Tournament (Bonus)"
-			background MP_DIALOGBG
-			style 1
-			type 0
-			textstyle 2
-			textscale 0.5
-			decoration
-			rect 16 32 300 400
-			textalignx 32
-			textaligny 24
-			border 1
-			bordercolor MP_BOX_BORDER
-			backcolor MP_DIALOGBGCOLOR
-			visible 1 
-		}
-
-		/* Rungs */
-
-SP_RUNG("Web Crawling",41,"ui_sp_unlock_41",1,"This special match is played in a lowgrav-insta setting. So you better get used to this. Else, the spider guarding the area will feast on your soul. Good luck!",MENU_ITEM_1,20,0,10,"LowGrav InstaGib","g_gravityModifier 0.5","g_instantgib 1","");
-
-		/* Common Stuff Area */
+#include "ui/sp/ladder/sp_ladder_14_1on1bonus.panel"
 
 #include "ui/sp/ladder/sp_common.panel"
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",singleplayercampaign_14_1on1bonus,spladder, ui_sptab);
+GOBACK_BUTTON("Back",singleplayercampaign_14_1on1bonus,spladder, ui_sptab)
 
-		itemDef { /* FIGHT! button */
-			name buttong
-			text "FIGHT"
-			group buttonsthatdostuff
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 384 384 256 32
-			textalignx 32
-			textaligny 24
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter {
-				setcvar ui_tip "WHAT THE BUTTON SAYS!"
-				fadein tooltip;
-			}
-			mouseExit {
-				fadeout tooltip;
-			}
-			action { 
-				//	xtransition fadlogo -640 -480 1920 1440 0 0 640 480 2 166 ;
-				show fadlogotext;
-				show fadlogobg1;
-				show fadlogobg2;
-				show fadlogoside1;
-				show fadlogoside2;
-				show fadlogo;
-				show fadlogoup;
-				show fadlogodown;
-				hide buttonsthatdostuff;
-				playLooped null;
-				clearAlpha fadlogoblack;
-				fadein fadlogoblack;
-				transition fadlogobg1 -1260 0 640 480 -940 0 940 480 2 66 ;
-				transition fadlogobg2 1260 0 640 480  640 0 940 480 2 66 ;
-				transition fadlogoside1 -960 0 640 480 0 0 240 480 2 66 ;
-				transition fadlogoside2 960 0 640 480 400 0 240 480 2 66 ;
-				transition fadlogoup 0 -720 640 480     0 0 640 180 2 66 ;
-				transition fadlogodown 0 720 640 480     0 300 640 480 2 66 ;
-				xtransition fadlogo -640 -480 1920 1440 240 180 160 120 2 66 ;
-			}
-			ontransitionend {
-				close singleplayercampaign_14_1on1bonus;
-				uiScript skirmishStart;
-			}
-			visible 1 
-		}
+SP_FIGHTBUTTON(singleplayercampaign_14_1on1bonus)
+
 	}
 }

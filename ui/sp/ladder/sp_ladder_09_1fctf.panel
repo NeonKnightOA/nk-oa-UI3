@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "In One Flag CTF, your team must take a white flag, located in the central area, and bring it to the enemy base.";
+	setcvar ui_currentMap 26;
+	setcvar ui_gametype 4;
+	setcvar g_gametype 5;
+	setcvar fraglimit 0;
+	setcvar capturelimit 5;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_09_1fctf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_09_1fctf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "One Flag CTF"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("The Retribution",26,"ui_sp_unlock_26",4,"In One Flag CTF, your team must take a white flag, located in the central area, and bring it to the enemy base.",MENU_ITEM_1,0,5,10,"","","","")
+SP_RUNG("Ragnarok!",27,"ui_sp_unlock_27",4,"Things just got a bit hard, but fortunately you have good companion... hopefully.",MENU_ITEM_2,0,6,10,"","","","")
+SP_RUNG("Boom!",28,"ui_sp_unlock_28",4,"This match is played with All Rockets rules. Everyone spawns with an infinite-charge Rocket Launcher. Have fun blasting your foes!",MENU_ITEM_3,0,7,15,"All Rockets","g_rockets 1","","")
+

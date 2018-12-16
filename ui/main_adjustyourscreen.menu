@@ -88,7 +88,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.1 0.1 0.1 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -98,7 +98,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.2 0.2 0.2 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -108,7 +108,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.3 0.3 0.3 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -118,7 +118,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.4 0.4 0.4 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -128,7 +128,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.5 0.5 0.5 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -138,7 +138,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.6 0.6 0.6 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -148,7 +148,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.7 0.7 0.7 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -158,7 +158,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.8 0.8 0.8 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -168,7 +168,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.9 0.9 0.9 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -178,7 +178,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 1.0 1.0 1.0 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -189,7 +189,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 1.0 1.0 1.0 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -200,7 +200,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 0.05 0.05 0.05 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name cubesofcolor
@@ -211,7 +211,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 1 1 1 1
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name overbrighttest
@@ -222,7 +222,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 1.0 1.0 1.0 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name overbrighttest
@@ -233,7 +233,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			backcolor 1.0 1.0 1.0 1.0
 			forecolor 1 1 1 1
 			visible MENU_TRUE
-			decoration 1
+			decoration
 		}
 		itemDef {
 			name effectsvol
@@ -356,6 +356,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 			textaligny 16
 			visible 1 
 		}
-		GOBACK_BUTTON("Back",adjustyourscreen,mainmenu,ui_menutab);
+		GOBACK_BUTTON("Back",adjustyourscreen,mainmenu,ui_menutab)
 	}
 }

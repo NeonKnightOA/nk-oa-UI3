@@ -1,24 +1,24 @@
 
-CONTROLS_TITLE(MENU_TAB_3,MENU_ITEM_TITLE_X1,"Server settings")
-CONTROLS_NUMERIC_SHOW(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_0,"Frag Limit ","fraglimit",3,"After this amount of frags, the match ends.","ui_netGametype",0 1 2 9 12)
-CONTROLS_NUMERIC_SHOW(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_0,"Capture Limit ","capturelimit",3,"After this amount of points, the match ends.","ui_netGametype",3 4 5 6 7 8 10 11)
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_1,"Time Limit ","timelimit",3,"After this amount of minutes, the match ends.")
-CONTROLS_TEXTFIELD(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_2,"Host Name ","sv_hostname","Name of your server.")
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_3,"Min. Players ","bot_minplayers",3,"The server is filled with this amount of bots if set.")
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_4,"Max. Players ","sv_maxclients",3,"Amount of players this server can support.")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_5,"Pure Server ","sv_pure","If pure, extra files on players are disabled.")
-CONTROLS_MULTI(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_6,"Dedicated ","ui_dedicated",{ "Listen" 0 "Dedicated LAN" 1 "Dedicated Internet" 2 },"Role of server. If YOU want to play, choose Listen.")
-CONTROLS_CHECKBOX_HIDE(MENU_TAB_3,MENU_ITEM_COLUMN_1,MENU_ITEM_7,"Enable Warmup ","g_doWarmup","ui_netGametype",1 7 8 9,"Enables warmup mode.")
+WIDGET_TITLE(MENU_TAB_3,MENU_ITEM_TITLE_LEFT,MENU_ITEM_TITLE_Y,"Server settings")
+WIDGET_NUMERIC_SHOW(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_0,"Frag Limit ","fraglimit",3,"After this amount of frags, the match ends.","ui_netGametype",0 1 2 9 12)
+WIDGET_NUMERIC_SHOW(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_0,"Capture Limit ","capturelimit",3,"After this amount of points, the match ends.","ui_netGametype",3 4 5 6 7 8 10 11)
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_1,"Time Limit ","timelimit",3,"After this amount of minutes, the match ends.")
+WIDGET_TEXTFIELD(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_2,"Host Name ","sv_hostname","Name of your server.")
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_3,"Min. Players ","bot_minplayers",3,"The server is filled with this amount of bots if set.")
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_4,"Max. Players ","sv_maxclients",3,"Amount of players this server can support.")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_5,"Pure Server ","sv_pure","If pure, extra files on players are disabled.")
+WIDGET_MULTIFLOAT(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_6,"Dedicated ","ui_dedicated","Listen" 0 "Dedicated LAN" 1 "Dedicated Internet" 2,"Role of server. If YOU want to play, choose Listen.")
+WIDGET_CHECKBOX_SHOW(MENU_TAB_3,MENU_ITEM_LEFT,MENU_ITEM_7,"Enable Warmup ","g_doWarmup","ui_netGametype",0 2 3 4 5 6 10 11 12,"Enables warmup mode.")
 
-CONTROLS_TITLE(MENU_TAB_3,MENU_ITEM_TITLE_X2,"Game modifiers")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_0,"Friendly Fire ","g_friendlyfire","Percentage of friendly fire returned to attacker")
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_1,"Vampire ","g_vampire",5,"How much life is obtained on damaging.")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_2,"Instagib ","g_instantgib","Players have instant death railguns")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_3,"Rockets Only ","g_rockets","All players have rocket launcher.")
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_4,"Regeneration ","g_regen",5,"Players regenerate this amount of health per second if below 100.")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_5,"Grappling Hook ","g_grapple","If checked, players start with the Grappling Hook on their inventories.")
-CONTROLS_CHECKBOX(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_6,"Runes ","g_runes","If checked, the match can use the Ammo Regen, Scout, Doubler and Guard runes.")
-CONTROLS_NUMERIC(MENU_TAB_3,MENU_ITEM_COLUMN_2,MENU_ITEM_7,"Spawn Protection ","g_spawnProtect",5,"Amount of miliseconds players will be protected against weapon fire.")
+WIDGET_TITLE(MENU_TAB_3,MENU_ITEM_TITLE_RIGHT,MENU_ITEM_TITLE_Y,"Game modifiers")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_0,"Friendly Fire ","g_friendlyfire","Percentage of friendly fire returned to attacker")
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_1,"Vampire ","g_vampire",5,"How much life is obtained on damaging.")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_2,"Instagib ","g_instantgib","Players have instant death railguns")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_3,"Rockets Only ","g_rockets","All players have rocket launcher.")
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_4,"Regeneration ","g_regen",5,"Players regenerate this amount of health per second if below 100.")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_5,"Grappling Hook ","g_grapple","If checked, players start with the Grappling Hook on their inventories.")
+WIDGET_CHECKBOX(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_6,"Runes ","g_runes","If checked, the match can use the Ammo Regen, Scout, Doubler and Guard runes.")
+WIDGET_NUMERIC(MENU_TAB_3,MENU_ITEM_RIGHT,MENU_ITEM_7,"Spawn Protection ","g_spawnProtect",5,"Amount of miliseconds players will be protected against weapon fire.")
 /* --------------------------------------------- */
 itemDef {
       	name buttontoadvanced
@@ -28,7 +28,7 @@ itemDef {
 	type ITEM_TYPE_BUTTON
 	textstyle 2
       	textscale 0.5
-   	rect 32 352 256 32
+   	rect MENU_ITEM_LEFT 352 256 32
      	textalignx	 32	
 	textaligny	 24
 	cvarTest "ui_menutab"
@@ -51,7 +51,7 @@ itemDef {
 	type ITEM_TYPE_BUTTON
 	textstyle 2
       	textscale 0.5
-   	rect 332 352 256 32
+   	rect MENU_ITEM_RIGHT 352 256 32
      	textalignx	 32	
 	textaligny	 24
 	cvarTest "ui_menutab"

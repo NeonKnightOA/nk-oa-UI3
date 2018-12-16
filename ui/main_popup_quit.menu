@@ -22,6 +22,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
+#include "ui/headers/commonoptions.h"
+
+#include "ui/headers/commonmainmenu.h"
+
 {
 	assetGlobalDef {
 		smallFont "gfx/2d/bigchars" SMALLFONTSIZE
@@ -39,6 +43,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR
 		focuscolor MP_TEXTCOLOR
+		onClose {
+			close quitter;
+			open mainmenu;
+		}
+		onEsc {
+			close quitter;
+			open mainmenu;
+		}
 
 #include "ui/common/symbol2.panel"
 

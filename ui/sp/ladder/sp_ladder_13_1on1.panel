@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Here's the moment of the truth. Three straight 1-on-1 matches, no perks, no special rules... it's you and your enemy, face to face. Good luck!";
+	setcvar ui_currentMap 38;
+	setcvar ui_gametype 1;
+	setcvar g_gametype 1;
+	setcvar fraglimit 15;
+	setcvar capturelimit 0;
+	setcvar timelimit 15;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_13_1on1;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_13_1on1;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Tournament"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Trial AND Error",38,"ui_sp_unlock_38",1,"Here's the moment of the truth. Three straight 1-on-1 matches, no perks, no special rules... it's you and your enemy, face to face. Good luck!",MENU_ITEM_1,15,0,15,"","","","")
+SP_RUNG("One Step Ahead",39,"ui_sp_unlock_39",1,"One down, take down the next. He will be harder than your previous rival.",MENU_ITEM_2,15,0,15,"","","","")
+SP_RUNG("All In!",40,"ui_sp_unlock_40",1,"This is it. Defeat this last enemy and you can claim victory. Expect a lot of aggresiveness as this match takes place.",MENU_ITEM_3,15,0,15,"","","","")
+

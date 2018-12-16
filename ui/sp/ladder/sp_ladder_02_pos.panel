@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "In Possession, you have to find a flag and keep it with you for a set amount of time in order to win.";
+	setcvar ui_currentMap 5;
+	setcvar ui_gametype 12;
+	setcvar g_gametype 13;
+	setcvar fraglimit 100;
+	setcvar capturelimit 0;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_02_pos;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_02_pos;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Possession"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Take The Flag!",5,"ui_sp_unlock_5",12,"In Possession, you have to find a flag and keep it with you for a set amount of time in order to win.",MENU_ITEM_1,100,0,10,"","","","")
+SP_RUNG("Work Hard",6,"ui_sp_unlock_6",12,"Another Possession match, this time in a less-mazey (but not less dangerous) arena.",MENU_ITEM_2,125,0,10,"","","","")
+SP_RUNG("Chaos Online",7,"ui_sp_unlock_7",12,"Two more opponents joined to turn this into a five-way match. Have fun!",MENU_ITEM_3,150,0,15,"","","","")
+

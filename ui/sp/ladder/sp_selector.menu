@@ -67,21 +67,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 /* always have these buttons available */
 
-		GOBACK_BUTTON("Cancel",spladder,spmenu,ui_sptab);
+GOBACK_BUTTON("Cancel",spladder,spmenu,ui_sptab)
 
-		itemDef { /* Endurance button */
-			name endbutton
-			background MP_WIDEBUTTONBG group uistuff style 1 type ITEM_TYPE_BUTTON textstyle 2 textscale 0.5 textalignx 32 textaligny 24 forecolor MP_TEXTCOLOR
-			mouseEnter { setcvar ui_tip "Enters the Endurance ladders" fadein tooltip; } mouseExit { fadeout tooltip; }
-			rect 332 384 256 32
-			text "^4Endurance"
-			/* action {
-				play MP_SND_SELECT;
-				close spladder;
-				open endurance;
-				setcvar ui_sptab 0; // reset the tabs
-			} */
-			visible 1
-		}
+GONEXT_BUTTON_SHOW("Endurance",spladder,endurance,ui_sptab,"ui_sp_unlock_",2,"Opens the Endurance ladders section.")
+
 	}
 }

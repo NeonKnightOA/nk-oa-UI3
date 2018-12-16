@@ -107,3 +107,4 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 // uncomment this for simpler keybind choices
 
 /* For general menu sorting */
+#define MP_SND_BACK			""

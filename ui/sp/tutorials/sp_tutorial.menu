@@ -119,7 +119,7 @@ SP_RUNGFREE("FFA Tutorial 2",1,0,"Learn the basics of OpenArena.",MENU_ITEM_2,5,
 
 #include "ui/common/tooltip.panel"
 
-GOBACK_BUTTON("Cancel",tutorials,spladder, ui_sptab);
+GOBACK_BUTTON("Cancel",tutorials,spladder, ui_sptab)
 
 		itemDef { /* FIGHT! button */
 			name buttong

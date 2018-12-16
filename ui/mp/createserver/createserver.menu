@@ -70,6 +70,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		}
 		/* Include Zone */
 
+TAB(MENU_TAB_1,"Gametype",MENU2_TAB_NAME_1)
+
+TAB(MENU_TAB_2,"Map",MENU2_TAB_NAME_2)
+
+TAB(MENU_TAB_3,"Rules",MENU2_TAB_NAME_3)
+
+TAB(MENU_TAB_4,"Slots",MENU2_TAB_NAME_4)
+
 #include "ui/common/borders600400.panel"
 
 #include "ui/common/symbol2.panel"
@@ -89,14 +97,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "ui/mp/createserver/createserver_04_bots.panel"
 
 #include "ui/mp/createserver/createserver_05_confirm.panel"
-
-TAB(MENU_TAB_1,"Gametype",MENU2_TAB_NAME_1)
-
-TAB(MENU_TAB_2,"Map",MENU2_TAB_NAME_2)
-
-TAB(MENU_TAB_3,"Rules",MENU2_TAB_NAME_3)
-
-TAB(MENU_TAB_4,"Slots",MENU2_TAB_NAME_4)
 
 // always have this button available
 GOBACK_BUTTON("Back",createserver,mpmenu,"ui_menutab","Goes back to the Multiplayer menu.")

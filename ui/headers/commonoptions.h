@@ -19,27 +19,72 @@ along with Open Arena; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 ===========================================================================
 */
-/* Menu tabs */
+/*Menu tabs*/
+#define MENU_TAB_1		0 /* Main tab 1 */
+#define MENU_TAB_2		1 /* Main tab 2 */
+#define MENU_TAB_3		2 /* Main tab 3 */
+#define MENU_TAB_4		3 /* Main tab 4 */
+#define MENU_TAB_5		4 /* Submenu 1 */
+#define MENU_TAB_6		5 /* Submenu 2 */
+#define MENU_TAB_7		6 /* Submenu 3 */
+#define MENU_TAB_8		7 /* Submenu 4 */
+#define MENU_TAB_9		8 /* Submenu 5 */
+#define MENU_TAB_10		9 /* Submenu 6 */
+#define MENU_TAB_11		10 /* Submenu 7 */
+#define MENU_TAB_12		11 /* Submenu 8 */
+#define MENU_TAB_13		12 /* Submenu 9 */
+#define MENU_TAB_14		13 /* Submenu 10 */
+#define MENU_TAB_NAME_1	16 /* Main tab 1 - horizontal placement */
+#define MENU_TAB_NAME_2	144 /* Main tab 2 - horizontal placement */
+#define MENU_TAB_NAME_3	272 /* Main tab 3 - horizontal placement */
+#define MENU_TAB_NAME_4	400 /* Main tab 4 - horizontal placement */
+#define MENU_TAB_NAME_WIDTH	128 /* Tab general width */
+#define MENU_TAB_NAME_HEIGHT	16 /* Tab general height */
+#define MENU_TAB_MARGIN_X	48 /* Tab general horizontal margin */
+#define MENU_TAB_MARGIN_Y	12 /* Tab general vertical margin */
+#define MENU_TAB_TEXTSCALE	0.30 /* Tab general text scale */
 
-#define MENU_TAB_1		0
-#define MENU_TAB_2		1
-#define MENU_TAB_3		2
-#define MENU_TAB_4		3
-#define MENU_TAB_5		4
-#define MENU_TAB_6		5
-#define MENU_TAB_7		6
+/* Setup 1 - Titles */
+#define MENU_ITEM_TITLE_LEFT			16 /* Left */
+#define MENU_ITEM_TITLE_CENTER		166 /* Center */
+#define MENU_ITEM_TITLE_RIGHT			316 /* Right */
+#define MENU_ITEM_TITLE_WIDTH			300 /* Half of the screen: use with Left and Right */
+#define MENU_ITEM_TITLE_WIDTH_FULL	600 /* Full screen: use with Center */
+#define MENU_ITEM_TITLE_HEIGHT		32 /* Default title height */
+#define MENU_ITEM_TITLE_HEIGHT_DOUBLE	64 /* Doubled title height */
+#define MENU_ITEM_TITLE_Y				32 /* Title default vertical position */
+/* Setup 2 - Titles */
+#define MENU2_ITEM_TITLE_LEFT			32 /* Left */
+#define MENU2_ITEM_TITLE_CENTER		172 /* Center */
+#define MENU2_ITEM_TITLE_RIGHT		332 /* Right */
+#define MENU2_ITEM_TITLE_Y			70
+#define MENU2_ITEM_TITLE_TEXTSCALE	0.5
 
-/*Titles - Setup 1*/
-#define MENU_ITEM_TITLE_X1	16
-#define MENU_ITEM_TITLE_X2	316
-#define MENU_ITEM_TITLE_Y		32
-#define MENU_ITEM_TITLE_WIDTH	256
-#define MENU_ITEM_TITLE_WIDTH_FULL	300
-#define MENU_ITEM_TITLE_WIDTH_FULL_2	600
-#define MENU_ITEM_TITLE_HEIGHT	32
-#define MENU_ITEM_TITLE_HEIGHT_FULL	400
+/* Setup 1 - Individual items - General settings */
+#define MENU_ITEM_LEFT			32
+#define MENU_ITEM_CENTER			172
+#define MENU_ITEM_RIGHT			332
+#define MENU_ITEM_WIDTH			256 /* For two-columned menus */
+#define MENU_ITEM_WIDTH_FULL		512 /* For single-columned menus */
+#define MENU_ITEM_HEIGHT			32 /* Default item height */
+#define MENU_ITEM_HEIGHT_DOUBLE	64 /* Double item height */
+/* Setup 2 - Individual items - General settings */
+#define MENU2_ITEM_LEFT			150
+#define MENU2_ITEM_CENTER		300
+#define MENU2_ITEM_RIGHT			450
+#define MENU2_ITEM_WIDTH			144 /* For two-columned menus */
+#define MENU2_ITEM_WIDTH_FULL	288 /* For single-columned menus */
+#define MENU2_ITEM_HEIGHT		16 /* Default item height */
+#define MENU2_ITEM_HEIGHT_DOUBLE	32 /* Double item height */
+#define MENU2_ITEM_TEXTSCALE		0.28
+/* Setup 3 - Individual items - General settings */
+#define MENU3_ITEM_WIDTH			192 /* For two-columned menus */
+#define MENU3_ITEM_WIDTH_FULL	384 /* For single-columned menus */
+#define MENU3_ITEM_HEIGHT		20 /* Default item height */
+#define MENU3_ITEM_HEIGHT_DOUBLE	40 /* Double item height */
 
-/*Individual items - Setup 1*/
+/* Setup 1 - Individual items - Vertical positions (32-pixel jumps) */
+#define MENU_ITEM_M1	32
 #define MENU_ITEM_0	64
 #define MENU_ITEM_1	96
 #define MENU_ITEM_2	128
@@ -51,34 +96,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define MENU_ITEM_8	320
 #define MENU_ITEM_9	352
 #define MENU_ITEM_10	384
-#define MENU_ITEM_WIDTH_LARGE	512
-#define MENU_ITEM_WIDTH_SMALL	256
-#define MENU_ITEM_HEIGHT		32
-#define MENU_ITEM_HEIGHT_2		64
-#define MENU_ITEM_COLUMN_1	32
-#define MENU_ITEM_COLUMN_2	332
-#define MENU_ITEM_COLUMN_3	172
-
-/*Titles - Setup 2*/
-#define MENU2_TAB_NAME_1	16
-#define MENU2_TAB_NAME_2	144
-#define MENU2_TAB_NAME_3	272
-#define MENU2_TAB_NAME_4	400
-#define MENU2_TAB_NAME_WIDTH	128
-#define MENU2_TAB_NAME_HEIGHT	16
-#define MENU2_TAB_MARGIN_X		48
-#define MENU2_TAB_MARGIN_Y		12
-#define MENU2_TAB_TEXTSCALE	0.30
-
-/*Individual items - Setup 2*/
-#define MENU2_ITEM_COLUMN_1	150
-#define MENU2_ITEM_COLUMN_2	450
-#define MENU2_ITEM_TEXTSCALE		0.28
-#define MENU2_ITEM_TITLE_TEXTSCALE		0.5
-#define MENU2_ITEM_WIDTH	144
-#define MENU2_ITEM_HEIGHT	16
-
-#define MENU2_ITEM_TITLE_Y	70
+#define MENU_ITEM_11	416
+#define MENU_ITEM_12	448
+#define MENU_ITEM_13	480
+/* Setup 2 - Individual items - Vertical positions (20-pixel jumps) */
+#define MENU2_ITEM_0	80
 #define MENU2_ITEM_1	100
 #define MENU2_ITEM_2	120
 #define MENU2_ITEM_3	140
@@ -92,3 +114,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define MENU2_ITEM_11	300
 #define MENU2_ITEM_12	320
 #define MENU2_ITEM_13	340
+#define MENU2_ITEM_14	360
+#define MENU2_ITEM_15	380
+#define MENU2_ITEM_16	400
+#define MENU2_ITEM_17	420
+#define MENU2_ITEM_18	440
+#define MENU2_ITEM_19	460
+#define MENU2_ITEM_20	480

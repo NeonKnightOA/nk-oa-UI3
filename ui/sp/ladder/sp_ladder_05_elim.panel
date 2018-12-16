@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "In Elimination, everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry.";
+	setcvar ui_currentMap 14;
+	setcvar ui_gametype 7;
+	setcvar g_gametype 8;
+	setcvar fraglimit 0;
+	setcvar capturelimit 5;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_05_elim;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_05_elim;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Elimination"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("DELETE!",14,"ui_sp_unlock_14",7,"In Elimination, everyone has one live, and one team must deplete the other team's lives. No items, but everyone starts with full weaponry.",MENU_ITEM_1,0,5,10,"","","","")
+SP_RUNG("Full Pack",15,"ui_sp_unlock_15",7,"Three weapons were added to everybody's inventory: Nailgun, Chaingun and Prox Launcher. Use them wisely.",MENU_ITEM_2,0,7,10,"New Weapons","g_elimination_chain 100","g_elimination_mine 10","g_elimination_nail 10")
+SP_RUNG("Bases!",16,"ui_sp_unlock_16",7,"In this rung, both teams have an own base, and a middle area uniting them. You can see where this is going, so charge forward!",MENU_ITEM_3,0,9,15,"","","","")
+

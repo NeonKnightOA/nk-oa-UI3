@@ -1,7 +1,4 @@
 
-/* -----------------------------------------------------------
-    TAB 0 - SELECTING A "LADDER"
-    ----------------------------------------------------------- */
 itemDef { /* Title */
 	name windowone
 	text "Select a Ladder"
@@ -13,7 +10,7 @@ itemDef { /* Title */
 /*	cvarTest "ui_sptab"
 	showCVar { "0" } */
 	decoration
-	rect MENU_ITEM_TITLE_X1 MENU_ITEM_TITLE_Y MENU_ITEM_T_WIDTH MENU_ITEM_T_HEIGHT
+	rect MENU_ITEM_TITLE_LEFT MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
 	textalignx 32	
 	scralign ALIGN_CENTER
 	textaligny 24
@@ -22,27 +19,14 @@ itemDef { /* Title */
 	bordercolor MP_BOX_BORDER
 	visible 1
 }
-/* itemDef { /* 00. Tutorial - It's now on its own menu. * /
-	name button_00_tut background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
-	text "^4Tutorial"
-	rect 32 80 256 32\
-	mouseEnter { setcvar ui_tip "Learn how to play OpenArena's different modes."; fadein tooltip; }
-	mouseExit { fadeout tooltip; }
-	action { close spladder;
-		open singleplayercampaign_00_tut;
-		setcvar ui_gametype 0;
-		setcvar g_gametype 0;
-		setcvar ui_sptab 0;
-		play MP_SND_SELECT;
-	}
-} */
 itemDef { /* 01. Free For All */
 	name button_01_ffa background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Free For All"
-	rect MENU_ITEM_X MENU_ITEM_1 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_1 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "You're on your own. Get as much frags as you can."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_01_ffa;
 		setcvar ui_gametype 0;
 		setcvar g_gametype 0;
@@ -54,10 +38,11 @@ itemDef { /* 02. Possession */
 	name button_02_pos background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Possession"
 	/* cvarTest "ui_sp_unlock_2" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_2 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_2 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "There's a flag on the level. Catch it and keep it."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_02_pos;
 		setcvar ui_gametype 12;
 		setcvar g_gametype 13;
@@ -69,10 +54,11 @@ itemDef { /* 03. Last Man Standing */
 	name button_03_lms background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Last Man Standing"
 	/* cvarTest "ui_sp_unlock_5" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_3 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_3 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Nobody lives forever. Be the last one standing."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_03_lms;
 		setcvar ui_gametype 9;
 		setcvar g_gametype 10;
@@ -84,10 +70,11 @@ itemDef { /* 04. Team Deathmatch */
 	name button_04_team background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Team Deathmatch"
 	/* cvarTest "ui_sp_unlock_8" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_4 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_4 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "You're not alone. Work with your team to frag as much as possible."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_04_team;
 		setcvar ui_gametype 2;
 		setcvar g_gametype 3;
@@ -99,10 +86,11 @@ itemDef { /* 05. Elimination */
 	name button_05_elim background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Elimination"
 	/* cvarTest "ui_sp_unlock_11" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_5 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_5 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Work with your team to eradicate the opposition in round-based matches."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_05_elim;
 		setcvar ui_gametype 7;
 		setcvar g_gametype 8;
@@ -114,10 +102,11 @@ itemDef { /* 06. Double Domination */
 	name button_06_dd background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Double Domination"
 	/* cvarTest "ui_sp_unlock_14" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_6 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_6 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Work with your team to capture and hold the control points to rack up points."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_06_dd;
 		setcvar ui_gametype 10;
 		setcvar g_gametype 11;
@@ -129,10 +118,11 @@ itemDef { /* 07. Domination */
 	name button_07_dom background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Domination"
 	/* cvarTest "ui_sp_unlock_17" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_7 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_7 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Two points. Two teams. Hold the points in 10 sec to win the rounds."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_07_dom;
 		setcvar ui_gametype 11;
 		setcvar g_gametype 12;
@@ -144,10 +134,11 @@ itemDef { /* 08. Overload */
 	name button_08_over background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Overload"
 	/* cvarTest "ui_sp_unlock_20" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_8 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_8 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Both teams have bases. Infiltrate and destroy the enemy crystal in order to win."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_08_over;
 		setcvar ui_gametype 5;
 		setcvar g_gametype 6;
@@ -159,10 +150,11 @@ itemDef { /* 09. One Flag CTF */
 	name button_09_1fctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "One Flag CTF"
 	/* cvarTest "ui_sp_unlock_23" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_9 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_9 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Your team must take the central flag and deliver it to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_09_1fctf;
 		setcvar ui_gametype 4;
 		setcvar g_gametype 5;
@@ -174,10 +166,11 @@ itemDef { /* 10. Capture The Flag */
 	name button_10_ctf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Capture The Flag"
 	/* cvarTest "ui_sp_unlock_26" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_10 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_10 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "A classic. Infiltrate the enemy base, steal their flag and bring it to your base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_10_ctf;
 		setcvar ui_gametype 3;
 		setcvar g_gametype 4;
@@ -189,10 +182,11 @@ itemDef { /* 11. CTF Elimination */
 	name button_11_ectf background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "CTF Elimination"
 	/* cvarTest "ui_sp_unlock_29" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_11 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_11 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Capture the flag, but with lives!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_11_ectf;
 		setcvar ui_gametype 8;
 		setcvar g_gametype 9;
@@ -204,10 +198,11 @@ itemDef { /* 12. Harvester */
 	name button_12_harv background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Harvester"
 	/* cvarTest "ui_sp_unlock_32" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_12 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_12 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Each frag spawns a skull in the middle. Bring those skulls to the enemy base."; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_12_harv;
 		setcvar ui_gametype 6;
 		setcvar g_gametype 7;
@@ -219,10 +214,11 @@ itemDef { /* 13. Tournament */
 	name button_13_1on1 background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "Tournament"
 	/* cvarTest "ui_sp_unlock_35" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_13 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_13 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "That's it! Now you have to face final 1on1 challenges. If you do well, you'll be rewarded. :)"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_13_1on1;
 		setcvar ui_gametype 1;
 		setcvar g_gametype 1;
@@ -234,10 +230,11 @@ itemDef { /* 14. Tournament (bonus) */
 	name button_14_1on1_bonus background MP_WIDEBUTTONBG style 1 type ITEM_TYPE_BUTTON group uistuff textstyle 2 textscale 0.3 textalignx 32 textaligny 24 visible 1 forecolor MP_TEXTCOLOR
 	text "^3Tournament (Bonus)"
 	/* cvarTest "ui_sp_unlock_38" showCVar {"1"} */
-	rect MENU_ITEM_X MENU_ITEM_14 MENU_ITEM_WIDTH_SMALL MENU_ITEM_HEIGHT
+	rect MENU_ITEM_LEFT MENU2_ITEM_14 MENU_ITEM_WIDTH MENU_ITEM_HEIGHT
 	mouseEnter { setcvar ui_tip "Your determination and courage awarded you with this special match. Enjoy it!"; fadein tooltip; }
 	mouseExit { fadeout tooltip; }
-	action { close spladder;
+	action {
+		close spladder;
 		open singleplayercampaign_14_1on1bonus;
 		setcvar ui_gametype 1;
 		setcvar g_gametype 1;
@@ -256,7 +253,7 @@ itemDef { /* Player's info and stats */
 	textstyle 2
 	textscale 0.5
 	decoration
-	rect MENU_ITEM_TITLE_X2 MENU_ITEM_TITLE_Y MENU_ITEM_T_WIDTH MENU_ITEM_T_HEIGHT
+	rect MENU_ITEM_TITLE_RIGHT MENU_ITEM_TITLE_Y MENU_ITEM_TITLE_WIDTH MENU_ITEM_TITLE_HEIGHT
 	textalignx 32	
 	textaligny 24
 	border 1

@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "In Last Man Standing, everyone has one live, so upon death they have to wait until the next round.";
+	setcvar ui_currentMap 8;
+	setcvar ui_gametype 9;
+	setcvar g_gametype 10;
+	setcvar fraglimit 7;
+	setcvar capturelimit 0;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_03_lms;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_03_lms;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Last Man Standing"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Beware The Fan!",8,"ui_sp_unlock_8",9,"In Last Man Standing, everyone has one live, so upon death they have to wait until the next round.",MENU_ITEM_1,7,0,10,"","","","")
+SP_RUNG("Pit of Death",9,"ui_sp_unlock_9",9,"There's a big pit in the middle. You'll want to avoid it.",MENU_ITEM_2,9,0,10,"","","","")
+SP_RUNG("Cat's Lives",10,"ui_sp_unlock_10",9,"Now everyone has lives! Seven, in fact, so use your lucky instincts to survive.",MENU_ITEM_3,1,0,15,"Lives","g_lms_lives 7","","")
+

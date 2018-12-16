@@ -3,35 +3,20 @@
 /* -----------------------------------------------------------
  TAB 1 - MAP SELECTION
  ----------------------------------------------------------- */
-itemDef {
-	name mapsfield
-	background MP_DIALOGBG style 1 type 0 textstyle 2 textscale 0.5 decoration textalignx 32 textaligny 24 border 1 bordercolor MP_BOX_BORDER visible 1 hexcolor 0 1 2 3	// color schemes
-	rect 16 32 600 400
-	text "Maps"
-	cvarTest "ui_menutab" showCVar { "1" }
-}
-itemDef {
-	name maplist
-	textscale .333 textalign 0 background "listbg_azure" textaligny 16 border 1 bordercolor MP_BOX_BORDER forecolor MP_BOX_FORE backcolor MP_BOX_BACK outlinecolor MP_BOX_OUTLINE visible 1 hexcolor 0 1 2 3	// color schemes
-	type ITEM_TYPE_LISTBOX style WINDOW_STYLE_FILLED elementwidth 32 elementheight 18 elementtype LISTBOX_TEXT columns 1 2 190 25
-	mouseEnter { setcvar ui_tip "Select a map. TAB exits the list." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	feeder FEEDER_MAPS
-	rect 32 72 256 300
-	cvarTest "ui_menutab" showCVar { "1" }
-}
+WIDGET_TITLE(MENU_TAB_2,MENU_ITEM_TITLE_LEFT,MENU_ITEM_TITLE_Y,"Maps")
+WIDGET_LISTBOX(MENU_TAB_2,MENU_ITEM_LEFT,MENU2_ITEM_0,256,300,FEEDER_MAPS,1 2 190 25,"Select a map")
 itemDef {
 	name mappreview
-	textstyle 2 textscale 0.5 decoration textalignx 0 textaligny 0 border 1 bordercolor MP_BOX_BORDER visible 1 
 	ownerdraw UI_STARTMAPCINEMATIC
+	textstyle 2
+	textscale 0.5
+	cvarTest "ui_menutab"
+	showCVar { "1" }
+	decoration
 	rect 300 72 296 222
-	cvarTest "ui_menutab" showCVar { "1" }
-}
-itemDef {
-	name buttontonext
-	background MP_WIDEBUTTONBG style 1 textstyle 2 textscale 0.5 textalignx 32 textaligny 24 backcolor MP_BUTTONBGCOLOR forecolor MP_TEXTCOLOR visible 1 hexcolor 0 1 2 3	// color schemes
-	type ITEM_TYPE_BUTTON action { setcvar ui_menutab 2; uiScript updateSPMenu; play MP_SND_SELECT; }
-	mouseEnter { setcvar ui_tip "Set up the rules." fadein tooltip; } mouseExit { fadeout tooltip;} 	
-	text "Next"
-	rect 332 384 256 32
-	cvarTest "ui_menutab" showCVar { "1" }
+	textalignx 0 
+	textaligny 0
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1 
 }

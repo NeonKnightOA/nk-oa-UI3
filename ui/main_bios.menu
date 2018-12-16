@@ -60,32 +60,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/tooltip.panel"
 
-		/* -----------------------------------------------------------
-		TAB X - ALL
-		----------------------------------------------------------- */
-		itemDef {
-			name ret
-			text "Return"
-			background MP_WIDEBUTTONBG
-			style 1
-			type ITEM_TYPE_BUTTON
-			textstyle 2
-			textscale 0.5
-			rect 32 384 256 32
-			textalignx 32 
-			textaligny 24
-			cvarTest "ui_browserSortKey"
-			hideCVar { "0" }
-			forecolor MP_TEXTCOLOR
-			backcolor MP_BUTTONBGCOLOR
-			mouseEnter { setcvar ui_cdkeychecked "Return to biography selection" fadein tooltip; } mouseExit { fadeout tooltip;} 
-			action {
-				play MP_SND_SELECT; 
-				setcvar ui_browserSortKey 0; 
-			}
-			visible 1 
-		}
-		// always have this button available
-		GOBACK_BUTTON("Back",bios,extras,ui_menutab);
+// always have this button available
+GOBACK_BUTTON("Back",bios,extras,ui_menutab)
+
 	}
 }

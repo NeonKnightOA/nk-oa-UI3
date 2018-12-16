@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Domination has both teams battling to gain control of white flags. Every flag gives a point per second, so the more flags you hold, the better for your team.";
+	setcvar ui_currentMap 17;
+	setcvar ui_gametype 11;
+	setcvar g_gametype 12;
+	setcvar fraglimit 0;
+	setcvar capturelimit 100;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_06_dom;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_06_dom;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Domination"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Private Property",17,"ui_sp_unlock_17",11,"Domination has both teams battling to gain control of white flags. Every flag gives a point per second, so the more flags you hold, the better for your team.",MENU_ITEM_1,0,100,10,"","","","")
+SP_RUNG("Landlord's Calling",18,"ui_sp_unlock_18",11,"Both teams grow larger, so make sure you split in order to maximize the effectiveness.",MENU_ITEM_2,0,150,10,"","","","")
+SP_RUNG("I Need A Map",19,"ui_sp_unlock_19",11,"OK, things got... a bit complicated. This place is a maze, so make sure you can remember key areas in order to secure the victory.",MENU_ITEM_3,0,200,15,"","","","")
+

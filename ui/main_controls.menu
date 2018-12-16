@@ -70,19 +70,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "ui/common/tooltip.panel"
 
-		/* Tabs */
-
-TAB(MENU_TAB_1,"Movement",MENU_TAB_NAME_1);
-
-TAB(MENU_TAB_2,"Weapons",MENU_TAB_NAME_2);
-
-TAB(MENU_TAB_3,"Actions",MENU_TAB_NAME_3);
-
-TAB(MENU_TAB_4,"Misc",MENU_TAB_NAME_4);
-
-		/* Back button */
-
-GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab);
+/* Back button */
+GOBACK_BUTTON("Back",controlsmenu,mainmenu,ui_menutab)
 
 	}
 }

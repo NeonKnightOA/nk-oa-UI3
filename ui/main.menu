@@ -48,12 +48,18 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		forecolor MP_FOCUSCOLOR 
 		focuscolor MP_TEXTCOLOR
 		onEsc {
-			playLooped MP_MENUMUSIC
-			open mainmenu;close main
+			playLooped MP_MENUMUSIC;
+			open mainmenu;
+			close main;
 		}
+		/*onClose {
+			close main;
+			open mainmenu;
+			playLooped MP_MENUMUSIC;
+		}*/
 		onOpen {
 			setcvar timedemo 0; // always turn this off when entering the menu, may be an inconvenience to powerusers though
-			setitemcolor fadeinfirst backcolor 0 0 0 1; 
+			setitemcolor fadeinfirst backcolor 0 0 0 1;
 			fadeout fadeinfirst;
 			fadeout loadingbit2;
 			setitemcolor fadeoutsecond backcolor 0 0 0 -24 
@@ -62,7 +68,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		}
 		opentransitionEnd {
 			fadein fadeoutsecond;
-			xtransition loadingbit2 0 0 255 1 0 0 640 1 4 400 ;
+			xtransition loadingbit2 0 0 255 1 0 0 640 1 4 400;
+		}
+		opentransitionEnd{
 			open splashtransitiontomenu;
 			close main;
 			close error_popmenu;
@@ -71,7 +79,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 		itemDef {
 			name button1
 			style 0
-			action { playLooped MP_MENUMUSIC; open mainmenu;close main }
+			action {
+				playLooped MP_MENUMUSIC;
+				open mainmenu;
+				close main;
+			}
 			type ITEM_TYPE_BUTTON
 			textstyle 2
 			textscale 0.5

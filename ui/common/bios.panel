@@ -10,8 +10,7 @@ itemDef {
 	type 0
 	textstyle 2
 	textscale 0.5
-	cvarTest "ui_browserSortKey"
-	showCVar { "0" }
+	cvarTest "ui_browserSortKey" showCVar { "0" }
 	decoration
 	rect 16 32 300 400
 	textalignx 32 
@@ -30,8 +29,7 @@ itemDef {
 	textstyle 2
 	textscale 0.5
 	decoration
-	cvarTest "ui_browserSortKey"
-	showCVar { "0" }
+	cvarTest "ui_browserSortKey" showCVar { "0" }
 	rect 316 32 300 400
 	textalignx 32 
 	textaligny 24
@@ -51,8 +49,7 @@ itemDef {
 	rect 32 96 256 32
 	textalignx 32 
 	textaligny 24
-	cvarTest "ui_browserSortKey"
-	showCVar { "0" }
+	cvarTest "ui_browserSortKey" showCVar { "0" }
 	forecolor MP_TEXTCOLOR
 	backcolor MP_BUTTONBGCOLOR
 	mouseEnter { setcvar ui_cdkeychecked "Free for all. Kill or be killed." fadein tooltip; } mouseExit { fadeout tooltip;} 
@@ -75,8 +72,7 @@ itemDef {
 	textalignx 32 
 	backcolor 1 1 1 1
 	textaligny 24
-	cvarTest "ui_browserSortKey"
-	showCVar { "0" }
+	cvarTest "ui_browserSortKey" showCVar { "0" }
 	forecolor MP_TEXTCOLOR
 	action {
 		setcvar ui_browserSortKey 1; 
@@ -95,8 +91,7 @@ itemDef {
 	textstyle 2
 	textscale 0.27
 	backcolor 1 1 1 1
-	cvarTest "ui_browserSortKey"
-	showCVar { "1" }
+	cvarTest "ui_browserSortKey" showCVar { "1" }
 	decoration
 	rect 270 0 370 480
 	textalignx 12 
@@ -110,8 +105,7 @@ itemDef {
 	type 0
 	textstyle 2
 	textscale 0.6
-	cvarTest "ui_browserSortKey"
-	showCVar { "1" }
+	cvarTest "ui_browserSortKey" showCVar { "1" }
 	decoration
 	rect 0 32 640 370
 	textalignx 12 
@@ -126,8 +120,7 @@ itemDef {
 	textstyle 2
 	textscale 0.27
 	autowrapped
-	cvarTest "ui_browserSortKey"
-	showCVar { "1" }
+	cvarTest "ui_browserSortKey" showCVar { "1" }
 	decoration
 	rect 32 64 277 370
 	textalignx 12 

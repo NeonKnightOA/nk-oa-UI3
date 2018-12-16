@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Overload has two teams fighting to destroy the enemy team's crystal. The crystal is regenerated after its destruction, so you have to blow it up constantly.";
+	setcvar ui_currentMap 23;
+	setcvar ui_gametype 5;
+	setcvar g_gametype 6;
+	setcvar fraglimit 0;
+	setcvar capturelimit 3;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_08_over;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_08_over;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Overload"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Blow It Up!",23,"ui_sp_unlock_23",5,"Overload has two teams fighting to destroy the enemy team's crystal. The crystal is regenerated after its destruction, so you have to blow it up constantly.",MENU_ITEM_1,0,3,10,"","","","")
+SP_RUNG("Team, Split!",24,"ui_sp_unlock_24",5,"This map has TWO crystals you can blow up per base. Pick one with a partner, and let your other two partners take care of the other.",MENU_ITEM_2,0,4,10,"","","","")
+SP_RUNG("The Weak Spot",25,"ui_sp_unlock_25",5,"Special rule! The obelisks have half their health, so they're even easier to take them down. Good luck!",MENU_ITEM_3,0,5,15,"Half obelisk health","g_obeliskHealth 1250","","")
+

@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "Welcome to Capture The Flag! Go to the enemy base, steal their flag, and bring it to your base. Go!";
+	setcvar ui_currentMap 29;
+	setcvar ui_gametype 3;
+	setcvar g_gametype 4;
+	setcvar fraglimit 0;
+	setcvar capturelimit 5;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_10_ctf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_10_ctf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "Capture The Flag"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Capture The Castle",29,"ui_sp_unlock_29",3,"Welcome to Capture The Flag! Go to the enemy base, steal their flag, and bring it to your base. Go!",MENU_ITEM_1,0,5,10,"","","","")
+SP_RUNG("Living Colours",30,"ui_sp_unlock_30",3,"This map may contain only colours, but is no less dangerous because of that, so you better learn the ways in and out of the bases.",MENU_ITEM_2,0,6,10,"","","","")
+SP_RUNG("They Float!",31,"ui_sp_unlock_31",3,"The final match of the CTF ladder is played with Low Gravity rules. The gravity of the area has been halved.",MENU_ITEM_3,0,7,15,"Low Gravity","g_gravityModifier 0.5","","")
+

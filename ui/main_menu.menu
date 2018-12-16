@@ -49,7 +49,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/common/symbol2.panel"
 
-#ifdef PLAYERPORTRAITS
+/* #ifdef PLAYERPORTRAITS
 		// If one of those menus, display the portrait of the character!
 		itemDef {
 			name thisisyou
@@ -65,7 +65,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 			visible 1 
 			decoration
 		}
-#endif
+#endif */
 
 #include "ui/common/mainmenu.panel"
 

@@ -8,8 +8,8 @@
 
 		onOpen
 		{
-			uiScript loadGameInfo ;
-			uiScript updateSPMenu ;
+			uiScript loadGameInfo 
+			uiScript updateSPMenu 
 			setcvar ui_tip SPCUR_MAP1_DESCRIPTION;
 			setcvar ui_currentMap SPCUR_MAP1NUM;
 			setcvar fraglimit SPCUR_MAP1_FRAGLIMIT;

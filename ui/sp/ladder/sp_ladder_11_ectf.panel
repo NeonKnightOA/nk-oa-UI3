@@ -1,0 +1,51 @@
+
+onOpen {
+	setcvar ui_tip "CTF Elimination is Elimination in a CTF setting. So, you start with all of the weapons, and you can score by eradicating the entire team or by capturing their flag.";
+	setcvar ui_currentMap 32;
+	setcvar ui_gametype 8;
+	setcvar g_gametype 9;
+	setcvar fraglimit 0;
+	setcvar capturelimit 5;
+	setcvar timelimit 10;
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	setcvar "";
+	uiScript loadGameInfo;
+	uiScript updateSPMenu;
+}
+onClose {
+	play MP_SND_BACK;
+	close singleplayercampaign_11_ectf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+onEsc {
+	play MP_SND_BACK;
+	close singleplayercampaign_11_ectf;
+	open spladder;
+	setcvar ui_menutab 0;	// reset the tabs
+}
+itemDef {
+	name dmgamefield
+	ownerdraw UI_GAMETYPE
+	text "CTF Elimination"
+	background MP_DIALOGBG
+	style 1
+	type 0
+	textstyle 2
+	textscale 0.5
+	decoration
+	rect 16 32 300 400
+	textalignx 32
+	textaligny 24
+	border 1
+	bordercolor MP_BOX_BORDER
+	backcolor MP_DIALOGBGCOLOR
+	visible 1 
+}
+
+SP_RUNG("Convolution",32,"ui_sp_unlock_32",8,"CTF Elimination is Elimination in a CTF setting. So, you start with all of the weapons, and you can score by eradicating the entire team or by capturing their flag.",MENU_ITEM_1,0,5,10,"","","","")
+SP_RUNG("Collision",33,"ui_sp_unlock_33",8,"If the rules of eCTF aren't complex enough for you, here's a complex map to put you to test. Now, go and finish that enemy team!",MENU_ITEM_2,0,6,10,"","","","")
+SP_RUNG("One Way Out!",34,"ui_sp_unlock_34",8,"This final match is played in "one-way" Attack vs. Defense mode. Attackers must infiltrate the defender's base in order to capture the flag. End of round, both team switch positions.",MENU_ITEM_3,0,7,15,"Attack vs. Defense","g_elimination_ctf_oneway 1","","")
+
