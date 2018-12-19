@@ -40,7 +40,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 	menuDef {
 		name "main"
 		background "black"
-		fullScreen 1 
+		fullscreen 1 
 		rect -1000 0 2000 480
 		visible MENU_TRUE
 		forecolor MP_FOCUSCOLOR 

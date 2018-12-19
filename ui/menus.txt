@@ -5,8 +5,8 @@
 	loadMenu { "ui/splashtransition.menu" }
 	loadMenu { "ui/main.menu" }
 	loadMenu { "ui/main_menu.menu" }
-
-	/* Single-player submenu */
+/*
+	/* Single-player submenu * /
 	loadMenu { "ui/sp/main.menu" }
 	loadMenu { "ui/sp/botmatch/botmatch.menu" }
 	loadMenu { "ui/sp/tutorials/sp_tutorial.menu" }
@@ -15,11 +15,11 @@
 	loadMenu { "ui/sp/ladder/sp_campaigns.menu" }
 	loadMenu { "ui/sp/ladder/sp_selector.menu" }
 
-	/* Multiplayer submenu */
+	/* Multiplayer submenu * /
 	loadMenu { "ui/mp/main.menu" }
 	loadMenu { "ui/mp/createserver/createserver.menu" }
 	loadMenu { "ui/mp/joinserver/joinserver.menu" }
-
+*/
 	/* Game options submenu */
 	loadMenu { "ui/main_options.menu" }
 	loadMenu { "ui/main_controls.menu" }
