@@ -1,26 +1,24 @@
 /*
 ===========================================================================
 Copyright (C) 1999-2005 Id Software, Inc.
-Modified 2007-2015 Open Arena Team
 
-This file is part of Open Arena.
+This file is part of Quake III Arena source code.
 
-Open Arena is free software; you can redistribute it
+Quake III Arena source code is free software; you can redistribute it
 and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 2 of the License,
 or (at your option) any later version.
 
-Open Arena is distributed in the hope that it will be
+Quake III Arena source code is distributed in the hope that it will be
 useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Open Arena; if not, write to the Free Software
+along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
-
 
 #define ITEM_TYPE_TEXT 0                  // simple text
 #define ITEM_TYPE_BUTTON 1                // button, basically text with a border 
@@ -48,13 +46,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define ITEM_TEXTSTYLE_OUTLINED 4         // drop shadow ( need a color for this )
 #define ITEM_TEXTSTYLE_OUTLINESHADOWED 5  // drop shadow ( need a color for this )
 #define ITEM_TEXTSTYLE_SHADOWEDMORE 6         // drop shadow ( need a color for this )
-
+                          
 // rfactory change
 // Changed RD
 #define ITEM_TEXTSTYLE_NEON 7
 // end changed RD
-    
-                          
+
 #define WINDOW_BORDER_NONE 0              // no border
 #define WINDOW_BORDER_FULL 1              // full border based on border color ( single pixel )
 #define WINDOW_BORDER_HORZ 2              // horizontal borders only
@@ -97,9 +94,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define FEEDER_CINEMATICS					0x0f			// cinematics
 #define FEEDER_Q3HEADS_FULL	 				0x10			// model heads 
 
-// rfactory changes
+// rfactory change
 // Changed RD
 #define FEEDER_SAVE							0x10			// save games
+// leilei - there is no need for game saving code by the way. Save games are blanked out.
 
 // Bind Primary or Alternate
 #define BIND_BOTH							0x00
@@ -145,6 +143,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define UI_SHOW_NETANYNONTEAMGAME	 				0x00000400
 #define UI_SHOW_NETANYTEAMGAME		 				0x00000800
 #define UI_SHOW_NOTFAVORITESERVERS				0x00001000
+/* Neon_Knight: More ownerdraw checks. */
+#define UI_SHOW_ANYTEAMOBJECTIVEGAME			0x00010000
+#define UI_SHOW_ANYNONTEAMOBJECTIVEGAME			0x00020000
+#define UI_SHOW_NETANYTEAMOBJECTIVEGAME			0x00040000
+#define UI_SHOW_NETANYNONTEAMOBJECTIVEGAME			0x00080000
+#define UI_SHOW_ANYROUNDGAME			0x00100000
+#define UI_SHOW_ANYNONROUNDGAME			0x00200000
+#define UI_SHOW_NETANYROUNDGAME			0x00400000
+#define UI_SHOW_NETANYNONROUNDGAME			0x00800000
+#define UI_SHOW_ANYTEAMROUNDGAME			0x01000000
+#define UI_SHOW_ANYNONTEAMROUNDGAME			0x02000000
+#define UI_SHOW_NETANYTEAMROUNDGAME			0x04000000
+#define UI_SHOW_NETANYNONTEAMROUNDGAME			0x08000000
 
 // rfactory changes
 // Changed RD
@@ -235,7 +246,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define CG_2NDPLACE 68
 #define CG_CAPTURES 69
 
-// rfactory changes
+// rfactory change
 // HUD extensions
 #define CG_LOAD_LEVELSHOT         75
 #define CG_LOAD_MEDIA             76
@@ -247,6 +258,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define CG_LOAD_SOUND_LABEL       82
 #define CG_LOAD_GRAPHIC           83
 #define CG_LOAD_GRAPHIC_LABEL     84
+#define CG_LOAD_GAMETYPE          85	// leilei - gametype was missing. this is important.
 #define CG_LOAD_FRAGLIMIT         86	// leilei 
 #define CG_LOAD_TIMELIMIT         87	// leilei 
 #define CG_LOAD_CAPTURELIMIT      88	// leilei 
@@ -265,6 +277,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define CG_WEAPONSELECT           99
 #define CG_CENTERPRINT           100
 // end Hud groups
+
 
 
 
@@ -327,26 +340,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define UI_STARTMAPCINEMATIC 255
 #define UI_MAPS_SELECTION 256
 #define UI_PLAYERMODEL2 257
-#define UI_OPPONENTMODEL2 198		// leilei FIXME what!?
-#define UI_PLAYERMODELV 259
+#define UI_OPPONENTMODEL2 258
 #define UI_MENUMAPNAME 260		// leilei - sp ladder menus addition
-#define UI_PLAYERMODEL_OC 262
 #define UI_PLAYERPORTRAIT 261
-
-#define  ALIGN_STRETCH 		 0
-#define  ALIGN_CENTER		 1
-#define  ALIGN_LETTERBOX	 2
-#define  ALIGN_TOP		 3
-#define  ALIGN_BOTTOM		 4
-#define  ALIGN_RIGHT		 5
-#define  ALIGN_LEFT		 6
-#define  ALIGN_TOPRIGHT		 7
-#define  ALIGN_TOPLEFT		 8
-#define  ALIGN_BOTTOMRIGHT 	 9
-#define  ALIGN_BOTTOMLEFT	 10
-#define  ALIGN_TOP_STRETCH	 11
-#define  ALIGN_BOTTOM_STRETCH	 12
-
+#define UI_PLAYERMODEL_OC 262
 
 #define VOICECHAT_GETFLAG			"getflag"				// command someone to get the flag
 #define VOICECHAT_OFFENSE			"offense"				// command someone to go on offense
@@ -382,32 +379,3 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_DEATHINSULT		"death_insult"			// you just killed me
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
-// if building with this in your ../ui/ file you MUST remove the ui/!!
-#include "ui/lang_english.h" // load english language
-// #include "lang_fr.h" // load french
-// #include "lang_de.h" // load german
-// #include "lang_sp.h" // load spanish
-// #include "lang_ja.h" // load japanese (won't be for a while unfortunately)
-#include "ui/version.h" 	
-
-
-// Text Scales and stuff
-// 
-// 48pt - 	1.0
-// 24pt - 	0.5
-// 9pt - 	0.1875
-
-#define SMALLFONTSIZE 	12
-#define MEDIUMFONTSIZE 	24
-#define LARGEFONTSIZE 	24
-
-#define KEYBINDBITTEXTSCALE .1875		// Controls menu columns
-
-
-#include "themesetting.txt" 	// User can change this
-
-// please remember to add a new line at the end of a file
-
-
-
-

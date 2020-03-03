@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // MODERN - someone would complain otherwise.
 
 #include "ui/menudef.h"
+#include "ui/menudef-extra.h"
 #define	GOBACKTOMAIN  "open ingame";
 {
   assetGlobalDef {

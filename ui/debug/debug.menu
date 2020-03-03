@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
+#include "ui/menudef-extra.h"
 
 // Debug menu - Things in this menu should be all about aiding with extra functions and information
 // for developers to use.  No fanciness.
